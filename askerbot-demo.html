@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Askerbot – Demo</title>
+  <link rel="stylesheet" href="./assets/styles.css">
+  <script defer src="./assets/demo.js"></script>
+</head>
+<body>
+  <!-- 
+    Instruks for embed i Enonic XP:
+    Enonic XP → Content Studio → Side (Page) → Part → "Embed iframe"
+    URL: https://<mitt-netlify-domene>/askerbot-demo/askerbot-demo.html
+    Anbefalt iframe-størrelse: width=360–420, height=480–560, border=0, border-radius=14px
+  -->
+
+  <header class="hdr">
+    <img src="./assets/af-logo.png" alt="Asker Fotball" class="logo">
+    <strong>Askerbot – demo</strong>
+    <button id="btnClose" class="x" aria-label="Lukk">×</button>
+  </header>
+
+  <main id="dialog" role="dialog" aria-label="Askerbot demo" aria-modal="true" tabindex="-1">
+    <div class="shortcuts">
+      <button data-msg="terminliste">Se terminliste</button>
+      <button data-msg="kontakt">Kontakt oss</button>
+      <button data-msg="camp">Meld på camp</button>
+    </div>
+
+    <div id="msgs" class="msgs" aria-live="polite"></div>
+
+    <form id="form" class="inp" autocomplete="off">
+      <input id="i" type="text" placeholder="Skriv en melding …" aria-label="Skriv melding">
+      <button type="submit">Send</button>
+    </form>
+  </main>
+</body>
+</html>

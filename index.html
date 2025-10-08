@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Askerbot – Demo</title>
+  <style>
+/* Askerbot Demo Styles - Inline versjon */
+/* Mobil først, tilgjengelighet og kontrast ≥ 4.5:1 */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: #fff;
+  color: #333;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+/* Header med sticky top og mørk bakgrunn */
+.hdr {
+  position: sticky;
+  top: 0;
+  background: #111;
+  color: #fff;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 10;
+}
+
+.logo {
+  height: 22px;
+  width: auto;
+  flex-shrink: 0;
+}
+
+.hdr strong {
+  flex: 1;
+  font-size: 16px;
+}
+
+.x {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.x:hover,
+.x:focus {
+  background: rgba(255, 255, 255, 0.1);
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+/* Hovedcontainer med maks bredde for desktop */
+#dialog {
+  max-width: 420px;
+  margin: 0 auto;
+  min-height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+
+/* Snarveiknapper */
+.shortcuts {
+  padding: 12px 14px 8px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.shortcuts button {
+  background: #f2f2f5;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  padding: 6px 12px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: #333;
+}
+
+.shortcuts button:hover,
+.shortcuts button:focus {
+  background: #e8f5ff;
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Meldingsområde med autoscroll */
+.msgs {
+  flex: 1;
+  padding: 8px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 320px;
+  max-height: 360px;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+/* Melding bobler */
+.m {
+  padding: 10px 14px;
+  border-radius: 18px;
+  max-width: 85%;
+  word-wrap: break-word;
+  animation: fadeIn 0.3s ease-in;
+}
+
+.m.bot {
+  background: #f2f2f5;
+  color: #333;
+  align-self: flex-start;
+}
+
+.m.you {
+  background: #e8f5ff;
+  color: #333;
+  align-self: flex-end;
+  text-align: right;
+}
+
+/* Input område */
+.inp {
+  border-top: 1px solid #eee;
+  padding: 14px;
+  display: flex;
+  gap: 8px;
+  background: #fff;
+  /* Ekstra padding nederst for mobil tastatur */
+  padding-bottom: max(14px, env(safe-area-inset-bottom));
+}
+
+.inp input {
+  flex: 1;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 16px;
+  background: #fff;
+  transition: border-color 0.2s;
+}
+
+.inp input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.inp button {
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  white-space: nowrap;
+}
+
+.inp button:hover,
+.inp button:focus {
+  background: #333;
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+
+/* Animasjoner (deaktiveres hvis bruker foretrekker redusert bevegelse) */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .m {
+    animation: none;
+  }
+  
+  .msgs {
+    scroll-behavior: auto;
+  }
+}
+
+/* Responsive design for smale skjermer */
+@media (max-width: 380px) {
+  .hdr {
+    padding: 10px 12px;
+  }
+  
+  .shortcuts {
+    padding: 10px 12px 6px;
+  }
+  
+  .msgs {
+    padding: 6px 12px;
+    min-height: 280px;
+  }
+  
+  .inp {
+    padding: 12px;
+  }
+  
+  .shortcuts button {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+}
+
+/* Hjelpeklasser for fokus og tilgjengelighet */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Fokusrammer for tastatur navigasjon */
+button:focus,
+input:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+
+/* Hvis iframe embed */
+@media (max-width: 420px) {
+  #dialog {
+    max-width: none;
+    margin: 0;
+  }
+}
+  </style>
+</head>
+<body>
+  <!-- 
+    Instruks for embed i Enonic XP:
+    Enonic XP → Content Studio → Side (Page) → Part → "Embed iframe"
+    URL: https://<mitt-netlify-domene>/index.html
+    Anbefalt iframe-størrelse: width=360–420, height=480–560, border=0, border-radius=14px
+  -->
+
+  <header class="hdr">
+    <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+      <circle cx="12" cy="12" r="10" fill="#1e40af" stroke="#1e3a8a" stroke-width="2"/>
+      <text x="12" y="16" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10" font-weight="bold">AF</text>
+      <path d="M12 2 L12 22 M2 12 L22 12 M6.5 6.5 L17.5 17.5 M17.5 6.5 L6.5 17.5" stroke="white" stroke-width="1" opacity="0.6"/>
+    </svg>
+    <strong>Askerbot – demo</strong>
+    <button id="btnClose" class="x" aria-label="Lukk">×</button>
+  </header>
+
+  <main id="dialog" role="dialog" aria-label="Askerbot demo" aria-modal="true" tabindex="-1">
+    <div class="shortcuts">
+      <button data-msg="terminliste">Se terminliste</button>
+      <button data-msg="kontakt">Kontakt oss</button>
+      <button data-msg="camp">Meld på camp</button>
+    </div>
+
+    <div id="msgs" class="msgs" aria-live="polite"></div>
+
+    <form id="form" class="inp" autocomplete="off">
+      <input id="i" type="text" placeholder="Skriv en melding …" aria-label="Skriv melding">
+      <button type="submit">Send</button>
+    </form>
+  </main>
+
+  <script>
+/**
+ * Askerbot Demo - OpenAI API integration (Inline versjon)
+ * Bruker Netlify Edge Functions for AI-svar
+ */
+
+// DOM elementer
+const msgs = document.getElementById('msgs');
+const form = document.getElementById('form');
+const input = document.getElementById('i');
+const dialog = document.getElementById('dialog');
+const closeBtn = document.getElementById('btnClose');
+const shortcuts = document.querySelectorAll('.shortcuts [data-msg]');
+
+/**
+ * Legg til melding i chatten
+ * @param {string} text - Meldingstekst
+ * @param {string} who - 'bot' eller 'you'
+ */
+function addMsg(text, who = 'bot') {
+  const d = document.createElement('div');
+  d.className = 'm ' + (who === 'you' ? 'you' : 'bot');
+  d.textContent = text;
+  msgs.appendChild(d);
+  
+  // Autoscroll til bunnen
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+/**
+ * Send melding til OpenAI API via Netlify Edge Function
+ * @param {string} raw - Rå tekst fra bruker
+ */
+async function respond(raw) {
+  const message = String(raw).trim();
+  
+  // Vis loading state
+  const loadingMsg = document.createElement('div');
+  loadingMsg.className = 'm bot';
+  loadingMsg.textContent = 'Skriver...';
+  loadingMsg.style.opacity = '0.6';
+  msgs.appendChild(loadingMsg);
+  msgs.scrollTop = msgs.scrollHeight;
+  
+  try {
+    // Kall Netlify Edge Function
+    const response = await fetch('/.netlify/functions/chat', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ message })
+    });
+
+    // Fjern loading melding
+    msgs.removeChild(loadingMsg);
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      addMsg(errorData.error || 'Beklager, jeg kan ikke svare akkurat nå. Prøv igjen senere.', 'bot');
+      return;
+    }
+
+    const data = await response.json();
+    
+    // Legg til AI-svar
+    addMsg(data.reply, 'bot');
+    
+  } catch (error) {
+    // Fjern loading melding
+    if (msgs.contains(loadingMsg)) {
+      msgs.removeChild(loadingMsg);
+    }
+    
+    console.error('Chat error:', error);
+    addMsg('Beklager, jeg kan ikke svare akkurat nå. Prøv igjen senere.', 'bot');
+  }
+}
+
+/**
+ * Lukk demoen og vis bekreftelse
+ */
+function closeDemo() {
+  document.body.innerHTML = '<p style="padding:16px; text-align:center; font-size:18px; color:#333;">Demo lukket ✅</p>';
+}
+
+// Førstegangsmeldinger når siden lastes
+addMsg('Hei! Jeg er Askerbot, Asker Fotballs digitale assistent. Hvordan kan jeg hjelpe deg i dag?');
+addMsg('Du kan spørre meg om alt som gjelder klubben - terminlister, påmelding, kontaktinfo, eller bare si hei!');
+
+// Sett fokus på input når siden er klar
+window.requestAnimationFrame(() => {
+  input.focus();
+});
+
+// Form submit håndtering
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const value = (input.value || '').trim();
+  
+  if (!value) return;
+  
+  // Legg til brukermelding
+  addMsg(value, 'you');
+  
+  // Tøm input
+  input.value = '';
+  
+  // Generer respons
+  respond(value);
+  
+  // Behold fokus på input
+  input.focus();
+});
+
+// Snarveiknapper håndtering
+shortcuts.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const key = btn.dataset.msg;
+    const text = btn.textContent;
+    
+    // Legg til som brukermelding
+    addMsg(text, 'you');
+    
+    // Generer respons basert på data-msg attributt
+    respond(key);
+    
+    // Behold fokus på input
+    input.focus();
+  });
+});
+
+// Lukk-knapp håndtering
+closeBtn.addEventListener('click', closeDemo);
+
+// Tastatursnarveier
+window.addEventListener('keydown', (e) => {
+  // Esc lukker demoen
+  if (e.key === 'Escape') {
+    e.preventDefault();
+    closeDemo();
+  }
+  
+  // Enter sender melding (håndteres av form submit)
+  // Tab navigerer mellom elementer (standard oppførsel)
+});
+
+// Håndter window resize for mobil tastatur
+window.addEventListener('resize', () => {
+  // Sikre at input ikke dekkes av mobil tastatur
+  setTimeout(() => {
+    if (document.activeElement === input) {
+      input.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }, 100);
+});
+
+// Feilhåndtering for uventede feil
+window.addEventListener('error', (e) => {
+  console.warn('Askerbot demo feil:', e.error);
+  // Ikke vis feil til bruker i demo-modus
+});
+
+// Sikre at alt er lastet før vi starter
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => {
+    input.focus();
+  });
+}
+  </script>
+</body>
+</html>
