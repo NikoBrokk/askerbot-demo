@@ -1,6 +1,7 @@
 [build]
   # Netlify vil automatisk bygge og deploye statiske filer
-  publish = "."
+  command = "echo 'No build needed'"
+  publish = ""
   
   # Edge Functions konfigurasjon
   [build.functions]
