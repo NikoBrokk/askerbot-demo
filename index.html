@@ -5,461 +5,619 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Askerbot – Demo</title>
   <style>
-/* Askerbot Demo Styles - Inline versjon */
-/* Mobil først, tilgjengelighet og kontrast ≥ 4.5:1 */
+    :root {
+      --bot-width: 380px;
+      --bot-height: 560px;
+      --radius: 16px;
+      --primary: #0f172a;
+      --cyan: #06b6d4;
+      --blue: #3b82f6;
+      --gray-50: #f8fafc;
+      --gray-100: #f1f5f9;
+      --gray-200: #e2e8f0;
+      --gray-600: #475569;
+      --gray-800: #1e293b;
+      --shadow: 0 18px 60px rgba(0, 0, 0, 0.35);
+      --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-body {
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  background: #fff;
-  color: #333;
-  line-height: 1.5;
-  overflow-x: hidden;
-}
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: #fff;
+      color: #333;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
 
-/* Header med sticky top og mørk bakgrunn */
-.hdr {
-  position: sticky;
-  top: 0;
-  background: #111;
-  color: #fff;
-  padding: 12px 14px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  z-index: 10;
-}
+    /* Bot Container */
+    .ga-bot {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 2147483000;
+      font-family: inherit;
+    }
 
-.logo {
-  height: 22px;
-  width: auto;
-  flex-shrink: 0;
-}
+    /* Bot Button */
+    .ga-bot__button {
+      width: 60px;
+      height: 60px;
+      border: none;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--cyan) 100%);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
 
-.hdr strong {
-  flex: 1;
-  font-size: 16px;
-}
+    .ga-bot__button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 20px 70px rgba(0, 0, 0, 0.4);
+    }
 
-.x {
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 24px;
-  cursor: pointer;
-  padding: 4px;
-  border-radius: 4px;
-  transition: background-color 0.2s;
-}
+    .ga-bot__button:focus {
+      outline: 2px solid var(--cyan);
+      outline-offset: 2px;
+    }
 
-.x:hover,
-.x:focus {
-  background: rgba(255, 255, 255, 0.1);
-  outline: 2px solid #fff;
-  outline-offset: 2px;
-}
+    .ga-bot__button svg {
+      width: 32px;
+      height: 32px;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    }
 
-/* Hovedcontainer med maks bredde for desktop */
-#dialog {
-  max-width: 420px;
-  margin: 0 auto;
-  min-height: calc(100vh - 60px);
-  display: flex;
-  flex-direction: column;
-  background: #fff;
-}
+    /* Bot Panel */
+    .ga-bot__panel {
+      position: absolute;
+      bottom: 80px;
+      right: 0;
+      width: var(--bot-width);
+      max-height: 70vh;
+      background: white;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      opacity: 0;
+      transform: translateY(20px) scale(0.95);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      pointer-events: none;
+      overflow: hidden;
+    }
 
-/* Snarveiknapper */
-.shortcuts {
-  padding: 12px 14px 8px;
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
+    .ga-bot--open .ga-bot__panel {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      pointer-events: auto;
+    }
 
-.shortcuts button {
-  background: #f2f2f5;
-  border: 1px solid #ddd;
-  border-radius: 16px;
-  padding: 6px 12px;
-  font-size: 13px;
-  cursor: pointer;
-  transition: all 0.2s;
-  color: #333;
-}
+    /* Panel Header */
+    .ga-bot__header {
+      background: var(--gray-50);
+      padding: 16px;
+      border-bottom: 1px solid var(--gray-200);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
 
-.shortcuts button:hover,
-.shortcuts button:focus {
-  background: #e8f5ff;
-  border-color: #007bff;
-  outline: none;
-}
+    .ga-bot__header strong {
+      flex: 1;
+      font-size: 16px;
+      color: var(--gray-800);
+    }
 
-/* Meldingsområde med autoscroll */
-.msgs {
-  flex: 1;
-  padding: 8px 14px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  min-height: 320px;
-  max-height: 360px;
-  overflow-y: auto;
-  scroll-behavior: smooth;
-}
+    .ga-bot__close {
+      background: none;
+      border: none;
+      font-size: 24px;
+      color: var(--gray-600);
+      cursor: pointer;
+      padding: 4px;
+      border-radius: 4px;
+      transition: background-color 0.2s;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-/* Melding bobler */
-.m {
-  padding: 10px 14px;
-  border-radius: 18px;
-  max-width: 85%;
-  word-wrap: break-word;
-  animation: fadeIn 0.3s ease-in;
-}
+    .ga-bot__close:hover,
+    .ga-bot__close:focus {
+      background: var(--gray-200);
+      outline: 2px solid var(--cyan);
+      outline-offset: 2px;
+    }
 
-.m.bot {
-  background: #f2f2f5;
-  color: #333;
-  align-self: flex-start;
-}
+    /* CTA Buttons */
+    .ga-bot__cta {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
 
-.m.you {
-  background: #e8f5ff;
-  color: #333;
-  align-self: flex-end;
-  text-align: right;
-}
+    .ga-bot__cta button {
+      background: white;
+      border: 1px solid var(--gray-200);
+      border-radius: 20px;
+      padding: 6px 12px;
+      font-size: 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+      color: var(--gray-800);
+      flex: 1;
+      min-width: 0;
+    }
 
-/* Input område */
-.inp {
-  border-top: 1px solid #eee;
-  padding: 14px;
-  display: flex;
-  gap: 8px;
-  background: #fff;
-  /* Ekstra padding nederst for mobil tastatur */
-  padding-bottom: max(14px, env(safe-area-inset-bottom));
-}
+    .ga-bot__cta button:hover,
+    .ga-bot__cta button:focus {
+      background: var(--cyan);
+      border-color: var(--cyan);
+      color: white;
+      outline: none;
+    }
 
-.inp input {
-  flex: 1;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 10px 14px;
-  font-size: 16px;
-  background: #fff;
-  transition: border-color 0.2s;
-}
+    /* Messages */
+    .ga-bot__messages {
+      flex: 1;
+      padding: 16px;
+      overflow-y: auto;
+      scroll-behavior: smooth;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-height: 200px;
+    }
 
-.inp input:focus {
-  outline: none;
-  border-color: #007bff;
-  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
-}
+    .ga-bot__message {
+      padding: 12px 16px;
+      border-radius: var(--radius);
+      max-width: 85%;
+      word-wrap: break-word;
+      animation: fadeIn 0.3s ease-in;
+    }
 
-.inp button {
-  background: #111;
-  color: #fff;
-  border: none;
-  border-radius: 10px;
-  padding: 10px 16px;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background-color 0.2s;
-  white-space: nowrap;
-}
+    .ga-bot__message--user {
+      background: var(--cyan);
+      color: white;
+      align-self: flex-end;
+      margin-left: auto;
+    }
 
-.inp button:hover,
-.inp button:focus {
-  background: #333;
-  outline: 2px solid #007bff;
-  outline-offset: 2px;
-}
+    .ga-bot__message--assistant {
+      background: var(--gray-100);
+      color: var(--gray-800);
+      align-self: flex-start;
+    }
 
-/* Animasjoner (deaktiveres hvis bruker foretrekker redusert bevegelse) */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+    .ga-bot__message--error {
+      background: #fee2e2;
+      color: #dc2626;
+      align-self: flex-start;
+    }
 
-@media (prefers-reduced-motion: reduce) {
-  .m {
-    animation: none;
-  }
-  
-  .msgs {
-    scroll-behavior: auto;
-  }
-}
+    /* Sources */
+    .ga-bot__sources {
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px solid var(--gray-200);
+    }
 
-/* Responsive design for smale skjermer */
-@media (max-width: 380px) {
-  .hdr {
-    padding: 10px 12px;
-  }
-  
-  .shortcuts {
-    padding: 10px 12px 6px;
-  }
-  
-  .msgs {
-    padding: 6px 12px;
-    min-height: 280px;
-  }
-  
-  .inp {
-    padding: 12px;
-  }
-  
-  .shortcuts button {
-    font-size: 12px;
-    padding: 5px 10px;
-  }
-}
+    .ga-bot__sources-title {
+      font-size: 12px;
+      color: var(--gray-600);
+      margin-bottom: 4px;
+    }
 
-/* Hjelpeklasser for fokus og tilgjengelighet */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
+    .ga-bot__sources-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
 
-/* Fokusrammer for tastatur navigasjon */
-button:focus,
-input:focus {
-  outline: 2px solid #007bff;
-  outline-offset: 2px;
-}
+    .ga-bot__sources-list a {
+      color: var(--cyan);
+      text-decoration: none;
+      font-size: 12px;
+      padding: 2px 0;
+    }
 
-/* Hvis iframe embed */
-@media (max-width: 420px) {
-  #dialog {
-    max-width: none;
-    margin: 0;
-  }
-}
+    .ga-bot__sources-list a:hover {
+      text-decoration: underline;
+    }
+
+    /* Typing Indicator */
+    .ga-bot__typing {
+      padding: 16px;
+      color: var(--gray-600);
+      font-style: italic;
+      font-size: 14px;
+      border-top: 1px solid var(--gray-200);
+    }
+
+    /* Form */
+    .ga-bot__form {
+      padding: 16px;
+      border-top: 1px solid var(--gray-200);
+      display: flex;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .ga-bot__form input {
+      flex: 1;
+      border: 1px solid var(--gray-200);
+      border-radius: 20px;
+      padding: 10px 16px;
+      font-size: 14px;
+      background: white;
+      transition: border-color 0.2s;
+    }
+
+    .ga-bot__form input:focus {
+      outline: none;
+      border-color: var(--cyan);
+      box-shadow: 0 0 0 2px rgba(6, 182, 212, 0.2);
+    }
+
+    .ga-bot__form button {
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 20px;
+      padding: 10px 16px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.2s;
+      white-space: nowrap;
+    }
+
+    .ga-bot__form button:hover,
+    .ga-bot__form button:focus {
+      background: var(--gray-800);
+      outline: 2px solid var(--cyan);
+      outline-offset: 2px;
+    }
+
+    .ga-bot__form button:disabled {
+      background: var(--gray-200);
+      color: var(--gray-600);
+      cursor: not-allowed;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      .ga-bot {
+        bottom: 16px;
+        right: 16px;
+      }
+
+      .ga-bot__panel {
+        width: calc(100vw - 32px);
+        max-width: var(--bot-width);
+        right: -16px;
+      }
+
+      .ga-bot__messages {
+        min-height: 150px;
+      }
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      .ga-bot__message {
+        animation: none;
+      }
+      
+      .ga-bot__panel {
+        transition: opacity 0.2s;
+        transform: none;
+      }
+    }
   </style>
 </head>
 <body>
-  <!-- 
-    Instruks for embed i Enonic XP:
-    Enonic XP → Content Studio → Side (Page) → Part → "Embed iframe"
-    URL: https://<mitt-netlify-domene>/index.html
-    Anbefalt iframe-størrelse: width=360–420, height=480–560, border=0, border-radius=14px
-  -->
+  <div class="ga-bot" id="gaBot">
+    <button class="ga-bot__button" id="gaBotBtn" aria-haspopup="dialog" aria-expanded="false" aria-controls="gaBotPanel" title="Åpne Gabrielsen AI">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="10" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="2"/>
+        <path d="M8 12h8M12 8v8" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        <text x="12" y="16" text-anchor="middle" fill="white" font-family="system-ui" font-size="10" font-weight="bold">G</text>
+      </svg>
+    </button>
 
-  <header class="hdr">
-    <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-      <circle cx="12" cy="12" r="10" fill="#1e40af" stroke="#1e3a8a" stroke-width="2"/>
-      <text x="12" y="16" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10" font-weight="bold">AF</text>
-      <path d="M12 2 L12 22 M2 12 L22 12 M6.5 6.5 L17.5 17.5 M17.5 6.5 L6.5 17.5" stroke="white" stroke-width="1" opacity="0.6"/>
-    </svg>
-    <strong>Askerbot – demo</strong>
-    <button id="btnClose" class="x" aria-label="Lukk">×</button>
-  </header>
+    <section id="gaBotPanel" class="ga-bot__panel" role="dialog" aria-modal="true" aria-label="Askerbot – demo">
+      <header class="ga-bot__header">
+        <strong>Askerbot – demo</strong>
+        <div class="ga-bot__cta">
+          <button data-quick="Se terminliste">Se terminliste</button>
+          <button data-quick="Kontakt oss">Kontakt oss</button>
+          <button data-quick="Meld på camp">Meld på camp</button>
+        </div>
+        <button class="ga-bot__close" aria-label="Lukk chat">&times;</button>
+      </header>
 
-  <main id="dialog" role="dialog" aria-label="Askerbot demo" aria-modal="true" tabindex="-1">
-    <div class="shortcuts">
-      <button data-msg="terminliste">Se terminliste</button>
-      <button data-msg="kontakt">Kontakt oss</button>
-      <button data-msg="camp">Meld på camp</button>
-    </div>
+      <ol class="ga-bot__messages" id="gaMsgs" aria-live="polite"></ol>
+      <div class="ga-bot__typing" id="gaTyping" hidden>Askerbot skriver…</div>
 
-    <div id="msgs" class="msgs" aria-live="polite"></div>
-
-    <form id="form" class="inp" autocomplete="off">
-      <input id="i" type="text" placeholder="Skriv en melding …" aria-label="Skriv melding">
-      <button type="submit">Send</button>
-    </form>
-  </main>
+      <form class="ga-bot__form" id="gaForm" autocomplete="off">
+        <input id="gaInput" type="text" inputmode="text" placeholder="Skriv en melding …" aria-label="Skriv en melding" />
+        <button id="gaSend" type="submit">Send</button>
+      </form>
+    </section>
+  </div>
 
   <script>
-/**
- * Askerbot Demo - OpenAI API integration (Inline versjon)
- * Bruker Netlify Edge Functions for AI-svar
- */
+    /**
+     * Gabrielsen AI Chatbot Widget
+     * Minimal, tilgjengelig chatbot for iframe embedding
+     */
+    (function() {
+      'use strict';
 
-// DOM elementer
-const msgs = document.getElementById('msgs');
-const form = document.getElementById('form');
-const input = document.getElementById('i');
-const dialog = document.getElementById('dialog');
-const closeBtn = document.getElementById('btnClose');
-const shortcuts = document.querySelectorAll('.shortcuts [data-msg]');
+      // DOM elements
+      const bot = document.getElementById('gaBot');
+      const button = document.getElementById('gaBotBtn');
+      const panel = document.getElementById('gaBotPanel');
+      const messages = document.getElementById('gaMsgs');
+      const typing = document.getElementById('gaTyping');
+      const form = document.getElementById('gaForm');
+      const input = document.getElementById('gaInput');
+      const sendButton = document.getElementById('gaSend');
 
-/**
- * Legg til melding i chatten
- * @param {string} text - Meldingstekst
- * @param {string} who - 'bot' eller 'you'
- */
-function addMsg(text, who = 'bot') {
-  const d = document.createElement('div');
-  d.className = 'm ' + (who === 'you' ? 'you' : 'bot');
-  d.textContent = text;
-  msgs.appendChild(d);
-  
-  // Autoscroll til bunnen
-  msgs.scrollTop = msgs.scrollHeight;
-}
+      // State
+      let isOpen = false;
+      let messagesHistory = [];
+      let isInitialized = false;
+      let debounceTimer = null;
 
-/**
- * Send melding til OpenAI API via Netlify Edge Function
- * @param {string} raw - Rå tekst fra bruker
- */
-async function respond(raw) {
-  const message = String(raw).trim();
-  
-  // Vis loading state
-  const loadingMsg = document.createElement('div');
-  loadingMsg.className = 'm bot';
-  loadingMsg.textContent = 'Skriver...';
-  loadingMsg.style.opacity = '0.6';
-  msgs.appendChild(loadingMsg);
-  msgs.scrollTop = msgs.scrollHeight;
-  
-  try {
-    // Kall Netlify Edge Function
-    const response = await fetch('/.netlify/functions/chat', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ message })
-    });
+      // Focus trap elements
+      const focusableElements = 'button, input, textarea, select, details, [tabindex]:not([tabindex="-1"])';
+      
+      /**
+       * Toggle bot panel
+       */
+      function toggleBot() {
+        isOpen = !isOpen;
+        bot.classList.toggle('ga-bot--open', isOpen);
+        button.setAttribute('aria-expanded', isOpen.toString());
+        
+        if (isOpen) {
+          panel.setAttribute('aria-hidden', 'false');
+          if (!isInitialized) {
+            initializeBot();
+          }
+          // Focus first focusable element in panel
+          setTimeout(() => {
+            const firstFocusable = panel.querySelector(focusableElements);
+            if (firstFocusable) firstFocusable.focus();
+          }, 100);
+        } else {
+          panel.setAttribute('aria-hidden', 'true');
+          button.focus();
+        }
+      }
 
-    // Fjern loading melding
-    msgs.removeChild(loadingMsg);
+      /**
+       * Initialize bot with welcome message
+       */
+      function initializeBot() {
+        if (isInitialized) return;
+        
+        addMessage('Hei! Jeg er Askerbot, Asker Fotballs digitale assistent. Hvordan kan jeg hjelpe deg i dag?', 'assistant');
+        isInitialized = true;
+      }
 
-    if (!response.ok) {
-      const errorData = await response.json();
-      addMsg(errorData.error || 'Beklager, jeg kan ikke svare akkurat nå. Prøv igjen senere.', 'bot');
-      return;
-    }
+      /**
+       * Add message to chat
+       */
+      function addMessage(content, type = 'user', sources = null) {
+        const li = document.createElement('li');
+        li.className = `ga-bot__message ga-bot__message--${type}`;
+        
+        if (sources && sources.length > 0) {
+          li.innerHTML = `
+            <div>${escapeHtml(content)}</div>
+            <div class="ga-bot__sources">
+              <div class="ga-bot__sources-title">Kilder:</div>
+              <ul class="ga-bot__sources-list">
+                ${sources.map(source => `<li><a href="${escapeHtml(source.url)}" target="_blank" rel="noopener">${escapeHtml(source.title)}</a></li>`).join('')}
+              </ul>
+            </div>
+          `;
+        } else {
+          li.textContent = content;
+        }
+        
+        messages.appendChild(li);
+        scrollToBottom();
+        
+        // Add to history
+        messagesHistory.push({ role: type === 'assistant' ? 'assistant' : 'user', content });
+      }
 
-    const data = await response.json();
-    
-    // Legg til AI-svar
-    addMsg(data.reply, 'bot');
-    
-  } catch (error) {
-    // Fjern loading melding
-    if (msgs.contains(loadingMsg)) {
-      msgs.removeChild(loadingMsg);
-    }
-    
-    console.error('Chat error:', error);
-    addMsg('Beklager, jeg kan ikke svare akkurat nå. Prøv igjen senere.', 'bot');
-  }
-}
+      /**
+       * Scroll to bottom of messages
+       */
+      function scrollToBottom() {
+        messages.scrollTop = messages.scrollHeight;
+      }
 
-/**
- * Lukk demoen og vis bekreftelse
- */
-function closeDemo() {
-  document.body.innerHTML = '<p style="padding:16px; text-align:center; font-size:18px; color:#333;">Demo lukket ✅</p>';
-}
+      /**
+       * Escape HTML
+       */
+      function escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+      }
 
-// Førstegangsmeldinger når siden lastes
-addMsg('Hei! Jeg er Askerbot, Asker Fotballs digitale assistent. Hvordan kan jeg hjelpe deg i dag?');
-addMsg('Du kan spørre meg om alt som gjelder klubben - terminlister, påmelding, kontaktinfo, eller bare si hei!');
+      /**
+       * Show/hide typing indicator
+       */
+      function setTyping(show) {
+        typing.hidden = !show;
+        if (show) {
+          sendButton.disabled = true;
+          input.disabled = true;
+        } else {
+          sendButton.disabled = false;
+          input.disabled = false;
+        }
+      }
 
-// Sett fokus på input når siden er klar
-window.requestAnimationFrame(() => {
-  input.focus();
-});
+      /**
+       * Send message to API
+       */
+      async function sendMessage(messageText) {
+        const trimmedMessage = messageText.trim();
+        if (!trimmedMessage) return;
 
-// Form submit håndtering
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const value = (input.value || '').trim();
-  
-  if (!value) return;
-  
-  // Legg til brukermelding
-  addMsg(value, 'you');
-  
-  // Tøm input
-  input.value = '';
-  
-  // Generer respons
-  respond(value);
-  
-  // Behold fokus på input
-  input.focus();
-});
+        // Add user message
+        addMessage(trimmedMessage, 'user');
+        
+        // Show typing
+        setTyping(true);
+        
+        try {
+          const response = await fetch('/.netlify/functions/chat', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              messages: messagesHistory
+            })
+          });
 
-// Snarveiknapper håndtering
-shortcuts.forEach(btn => {
-  btn.addEventListener('click', () => {
-    const key = btn.dataset.msg;
-    const text = btn.textContent;
-    
-    // Legg til som brukermelding
-    addMsg(text, 'you');
-    
-    // Generer respons basert på data-msg attributt
-    respond(key);
-    
-    // Behold fokus på input
-    input.focus();
-  });
-});
+          if (!response.ok) {
+            throw new Error(`HTTP ${response.status}`);
+          }
 
-// Lukk-knapp håndtering
-closeBtn.addEventListener('click', closeDemo);
+          const data = await response.json();
+          
+          // Add assistant response
+          addMessage(data.reply, 'assistant', data.sources);
+          
+        } catch (error) {
+          console.error('Chat error:', error);
+          addMessage('Fikk ikke kontakt med Askerbot. Prøv igjen senere.', 'error');
+        } finally {
+          setTyping(false);
+          input.focus();
+        }
+      }
 
-// Tastatursnarveier
-window.addEventListener('keydown', (e) => {
-  // Esc lukker demoen
-  if (e.key === 'Escape') {
-    e.preventDefault();
-    closeDemo();
-  }
-  
-  // Enter sender melding (håndteres av form submit)
-  // Tab navigerer mellom elementer (standard oppførsel)
-});
+      /**
+       * Handle form submission
+       */
+      function handleSubmit(e) {
+        e.preventDefault();
+        
+        // Debounce to prevent double submission
+        if (debounceTimer) {
+          clearTimeout(debounceTimer);
+        }
+        
+        debounceTimer = setTimeout(() => {
+          const message = input.value.trim();
+          if (message) {
+            input.value = '';
+            sendMessage(message);
+          }
+        }, 200);
+      }
 
-// Håndter window resize for mobil tastatur
-window.addEventListener('resize', () => {
-  // Sikre at input ikke dekkes av mobil tastatur
-  setTimeout(() => {
-    if (document.activeElement === input) {
-      input.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }
-  }, 100);
-});
+      /**
+       * Handle quick buttons
+       */
+      function handleQuickButton(e) {
+        const message = e.target.dataset.quick;
+        if (message) {
+          sendMessage(message);
+        }
+      }
 
-// Feilhåndtering for uventede feil
-window.addEventListener('error', (e) => {
-  console.warn('Askerbot demo feil:', e.error);
-  // Ikke vis feil til bruker i demo-modus
-});
+      /**
+       * Focus trap for accessibility
+       */
+      function trapFocus(e) {
+        if (!isOpen) return;
+        
+        const focusableElements = panel.querySelectorAll(focusableElements);
+        const firstFocusable = focusableElements[0];
+        const lastFocusable = focusableElements[focusableElements.length - 1];
 
-// Sikre at alt er lastet før vi starter
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', () => {
-    input.focus();
-  });
-}
+        if (e.key === 'Tab') {
+          if (e.shiftKey) {
+            if (document.activeElement === firstFocusable) {
+              lastFocusable.focus();
+              e.preventDefault();
+            }
+          } else {
+            if (document.activeElement === lastFocusable) {
+              firstFocusable.focus();
+              e.preventDefault();
+            }
+          }
+        }
+      }
+
+      /**
+       * Handle keyboard shortcuts
+       */
+      function handleKeydown(e) {
+        if (e.key === 'Escape' && isOpen) {
+          e.preventDefault();
+          toggleBot();
+        } else if (e.key === 'Tab') {
+          trapFocus(e);
+        }
+      }
+
+      // Event listeners
+      button.addEventListener('click', toggleBot);
+      document.querySelector('.ga-bot__close').addEventListener('click', toggleBot);
+      form.addEventListener('submit', handleSubmit);
+      document.addEventListener('keydown', handleKeydown);
+      
+      // Quick buttons
+      document.querySelectorAll('[data-quick]').forEach(btn => {
+        btn.addEventListener('click', handleQuickButton);
+      });
+
+      // Initialize
+      panel.setAttribute('aria-hidden', 'true');
+    })();
   </script>
 </body>
 </html>
