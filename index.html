@@ -29,7 +29,7 @@
 
     body {
       font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-      background: #fff;
+      background: transparent;
       color: #333;
       line-height: 1.5;
       overflow-x: hidden;
@@ -46,35 +46,26 @@
 
     /* Bot Button */
     .ga-bot__button {
-      width: 180px;
-      height: 180px;
+      background: transparent;
       border: none;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--primary) 0%, var(--cyan) 100%);
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: var(--shadow);
       transition: all 0.3s ease;
       position: relative;
-      overflow: hidden;
+      padding: 0;
+      margin: 0;
     }
 
     .ga-bot__button:hover {
       transform: scale(1.05);
-      box-shadow: 0 20px 70px rgba(0, 0, 0, 0.4);
     }
 
     .ga-bot__button:focus {
       outline: 2px solid var(--cyan);
       outline-offset: 2px;
-    }
-
-    .ga-bot__button svg {
-      width: 32px;
-      height: 32px;
-      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+      border-radius: 8px;
     }
 
     /* Bot Panel */
@@ -348,7 +339,7 @@
 <body>
   <div class="ga-bot" id="gaBot">
     <button class="ga-bot__button" id="gaBotBtn" aria-haspopup="dialog" aria-expanded="false" aria-controls="gaBotPanel" title="Åpne Gabrielsen AI">
-      <img src="./logo.png" alt="Gabrielsen AI" style="width: 96px; height: 96px; filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));" />
+      <img src="./logo.png" alt="Gabrielsen AI" style="width: 64px; height: 64px;" />
     </button>
 
     <section id="gaBotPanel" class="ga-bot__panel" role="dialog" aria-modal="true" aria-label="Askerbot – demo">

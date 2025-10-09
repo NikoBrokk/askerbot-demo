@@ -22,8 +22,9 @@ Legg til denne iframe-koden i Enonic XP Content Studio:
 <iframe
   title="Askerbot"
   src="https://askerbot-demo.netlify.app"
-  style="position:fixed; right:24px; bottom:24px; width:380px; height:560px; border:0; border-radius:16px; box-shadow:0 18px 60px rgba(0,0,0,.35); z-index:2147483000;"
+  style="position:fixed; right:24px; bottom:24px; width:380px; height:560px; border:0; border-radius:16px; box-shadow:0 18px 60px rgba(0,0,0,.35); z-index:2147483000; background:transparent;"
   loading="lazy"
+  allowtransparency="true"
 ></iframe>
 ```
 
