@@ -1,22 +1,15 @@
 [build]
-  # Netlify vil automatisk bygge og deploye statiske filer
   command = "echo 'No build needed'"
-  publish = ""
-  
-  # Edge Functions konfigurasjon
-  [build.functions]
-    directory = "netlify/functions"
+  publish = "."
 
-# Edge Functions settings
 [functions]
+  directory = "netlify/functions"
 
-# Redirect rules for SPA-like behavior (valgfritt)
 [[redirects]]
   from = "/"
   to = "/askerbot-demo.html"
   status = 200
 
-# Headers for CORS og sikkerhet
 [[headers]]
   for = "/.netlify/functions/*"
   [headers.values]
@@ -25,13 +18,9 @@
     Access-Control-Allow-Methods = "POST, GET, OPTIONS"
     Cache-Control = "no-cache"
 
-# Sikkerhetsheaders for hele siden
 [[headers]]
   for = "/*"
   [headers.values]
     X-Frame-Options = "SAMEORIGIN"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
-
-# Environment variables (settes i Netlify dashboard)
-# OPENAI_API_KEY = "sk-..."
