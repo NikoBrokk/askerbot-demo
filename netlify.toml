@@ -8,15 +8,12 @@
 
 # Edge Functions settings
 [functions]
-  # Timeout for Edge Functions (maks 10 sekunder)
-  timeout = 10
 
 # Redirect rules for SPA-like behavior (valgfritt)
 [[redirects]]
   from = "/"
   to = "/askerbot-demo.html"
   status = 200
-  conditions = {Role = ["admin"]}
 
 # Headers for CORS og sikkerhet
 [[headers]]
