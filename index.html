@@ -46,8 +46,8 @@
 
     /* Bot Button */
     .ga-bot__button {
-      width: 60px;
-      height: 60px;
+      width: 180px;
+      height: 180px;
       border: none;
       border-radius: 50%;
       background: linear-gradient(135deg, var(--primary) 0%, var(--cyan) 100%);
@@ -348,11 +348,7 @@
 <body>
   <div class="ga-bot" id="gaBot">
     <button class="ga-bot__button" id="gaBotBtn" aria-haspopup="dialog" aria-expanded="false" aria-controls="gaBotPanel" title="Åpne Gabrielsen AI">
-      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="12" cy="12" r="10" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="2"/>
-        <path d="M8 12h8M12 8v8" stroke="white" stroke-width="2" stroke-linecap="round"/>
-        <text x="12" y="16" text-anchor="middle" fill="white" font-family="system-ui" font-size="10" font-weight="bold">G</text>
-      </svg>
+      <img src="./logo.png" alt="Gabrielsen AI" style="width: 96px; height: 96px; filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));" />
     </button>
 
     <section id="gaBotPanel" class="ga-bot__panel" role="dialog" aria-modal="true" aria-label="Askerbot – demo">
