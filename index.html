@@ -93,21 +93,13 @@
       pointer-events: auto;
     }
 
-    /* Panel Header */
-    .ga-bot__header {
-      background: var(--gray-50);
+    /* Close Button Container */
+    .ga-bot__close-container {
       padding: 16px;
-      border-bottom: 1px solid var(--gray-200);
       display: flex;
-      align-items: center;
-      gap: 12px;
+      justify-content: flex-end;
+      border-bottom: 1px solid var(--gray-200);
       flex-shrink: 0;
-    }
-
-    .ga-bot__header strong {
-      flex: 1;
-      font-size: 16px;
-      color: var(--gray-800);
     }
 
     .ga-bot__close {
@@ -131,35 +123,6 @@
       background: var(--gray-200);
       outline: 2px solid var(--cyan);
       outline-offset: 2px;
-    }
-
-    /* CTA Buttons */
-    .ga-bot__cta {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-top: 8px;
-    }
-
-    .ga-bot__cta button {
-      background: white;
-      border: 1px solid var(--gray-200);
-      border-radius: 20px;
-      padding: 6px 12px;
-      font-size: 12px;
-      cursor: pointer;
-      transition: all 0.2s;
-      color: var(--gray-800);
-      flex: 1;
-      min-width: 0;
-    }
-
-    .ga-bot__cta button:hover,
-    .ga-bot__cta button:focus {
-      background: var(--cyan);
-      border-color: var(--cyan);
-      color: white;
-      outline: none;
     }
 
     /* Messages */
@@ -323,6 +286,81 @@
       }
     }
 
+    /* New Chat Components */
+    .af-chat {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .af-chat__log {
+      flex: 1;
+    }
+
+    .af-chat__chips {
+      padding: 8px 16px;
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .af-chip {
+      display: inline-block;
+      padding: 6px 10px;
+      border: 1px solid #E5E7EB;
+      border-radius: 9999px;
+      font-size: 14px;
+      margin: 4px 6px 0 0;
+      cursor: pointer;
+      background: #fff;
+      transition: all 0.2s;
+      color: var(--gray-800);
+    }
+
+    .af-chip:hover {
+      background: #F9FAFB;
+    }
+
+    .af-chip:focus {
+      outline: 2px solid #2563EB;
+      outline-offset: 2px;
+    }
+
+    .af-footer {
+      font-size: 12px;
+      color: #98A2B3;
+      margin-top: 8px;
+      padding: 8px 16px;
+      text-align: right;
+    }
+
+    .af-footer a {
+      color: #98A2B3;
+      text-decoration: none;
+    }
+
+    .af-footer a:hover {
+      text-decoration: underline;
+    }
+
+    .af-avatar-bot {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+
+    .af-message-bot {
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .af-message-user {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-end;
+    }
+
     /* Reduced motion */
     @media (prefers-reduced-motion: reduce) {
       .ga-bot__message {
@@ -338,22 +376,20 @@
 </head>
 <body>
   <div class="ga-bot" id="gaBot">
-    <button class="ga-bot__button" id="gaBotBtn" aria-haspopup="dialog" aria-expanded="false" aria-controls="gaBotPanel" title="Åpne Gabrielsen AI">
+    <button class="ga-bot__button" id="gaBotBtn" aria-haspopup="dialog" aria-expanded="false" aria-controls="gaBotPanel" aria-label="Åpne chat med Gabrielsen AI" title="Åpne Gabrielsen AI">
       <img src="./logo.png" alt="Gabrielsen AI" style="width: 192px; height: 192px;" />
     </button>
 
-    <section id="gaBotPanel" class="ga-bot__panel" role="dialog" aria-modal="true" aria-label="Askerbot – demo">
-      <header class="ga-bot__header">
-        <strong>Askerbot – demo</strong>
-        <div class="ga-bot__cta">
-          <button data-quick="Se terminliste">Se terminliste</button>
-          <button data-quick="Kontakt oss">Kontakt oss</button>
-          <button data-quick="Meld på camp">Meld på camp</button>
-        </div>
+    <section id="gaBotPanel" class="ga-bot__panel" role="dialog" aria-modal="true" aria-label="Gabrielsen AI chat">
+      <div class="ga-bot__close-container">
         <button class="ga-bot__close" aria-label="Lukk chat">&times;</button>
-      </header>
+      </div>
 
-      <ol class="ga-bot__messages" id="gaMsgs" aria-live="polite"></ol>
+      <div class="af-chat">
+        <ol class="ga-bot__messages af-chat__log" id="gaMsgs" role="log" aria-live="polite"></ol>
+        <div class="af-chat__chips" id="afChips" hidden></div>
+        <div class="af-footer">Levert av <a href="https://lupenobos.no" target="_blank" rel="noopener">Gabrielsen AI</a></div>
+      </div>
       <div class="ga-bot__typing" id="gaTyping" hidden>Askerbot skriver…</div>
 
       <form class="ga-bot__form" id="gaForm" autocomplete="off">
@@ -380,6 +416,7 @@
       const form = document.getElementById('gaForm');
       const input = document.getElementById('gaInput');
       const sendButton = document.getElementById('gaSend');
+      const chipsContainer = document.getElementById('afChips');
 
       // State
       let isOpen = false;
@@ -420,7 +457,8 @@
       function initializeBot() {
         if (isInitialized) return;
         
-        addMessage('Hei! Jeg er Askerbot, Asker Fotballs digitale assistent. Hvordan kan jeg hjelpe deg i dag?', 'assistant');
+        addMessage('Hei! Jeg er Gabrielsen AI, Asker Fotballs digitale assistent. Still meg et spørsmål så svarer jeg utifra klubbens info!', 'assistant');
+        renderChips(['Meld på camp', 'Neste A-kamp', 'Priser akademi']);
         isInitialized = true;
       }
 
@@ -431,18 +469,44 @@
         const li = document.createElement('li');
         li.className = `ga-bot__message ga-bot__message--${type}`;
         
-        if (sources && sources.length > 0) {
-          li.innerHTML = `
-            <div>${escapeHtml(content)}</div>
-            <div class="ga-bot__sources">
-              <div class="ga-bot__sources-title">Kilder:</div>
-              <ul class="ga-bot__sources-list">
-                ${sources.map(source => `<li><a href="${escapeHtml(source.url)}" target="_blank" rel="noopener">${escapeHtml(source.title)}</a></li>`).join('')}
-              </ul>
-            </div>
-          `;
+        if (type === 'assistant') {
+          li.className += ' af-message-bot';
+          const avatar = document.createElement('img');
+          avatar.src = './assets/logo.png';
+          avatar.alt = 'Gabrielsen AI';
+          avatar.className = 'af-avatar-bot';
+          li.appendChild(avatar);
+          
+          const contentDiv = document.createElement('div');
+          if (sources && sources.length > 0) {
+            contentDiv.innerHTML = `
+              <div>${escapeHtml(content)}</div>
+              <div class="ga-bot__sources">
+                <div class="ga-bot__sources-title">Kilder:</div>
+                <ul class="ga-bot__sources-list">
+                  ${sources.map(source => `<li><a href="${escapeHtml(source.url)}" target="_blank" rel="noopener">${escapeHtml(source.title)}</a></li>`).join('')}
+                </ul>
+              </div>
+            `;
+          } else {
+            contentDiv.textContent = content;
+          }
+          li.appendChild(contentDiv);
         } else {
-          li.textContent = content;
+          li.className += ' af-message-user';
+          if (sources && sources.length > 0) {
+            li.innerHTML = `
+              <div>${escapeHtml(content)}</div>
+              <div class="ga-bot__sources">
+                <div class="ga-bot__sources-title">Kilder:</div>
+                <ul class="ga-bot__sources-list">
+                  ${sources.map(source => `<li><a href="${escapeHtml(source.url)}" target="_blank" rel="noopener">${escapeHtml(source.title)}</a></li>`).join('')}
+                </ul>
+              </div>
+            `;
+          } else {
+            li.textContent = content;
+          }
         }
         
         messages.appendChild(li);
@@ -457,6 +521,29 @@
        */
       function scrollToBottom() {
         messages.scrollTop = messages.scrollHeight;
+      }
+
+      /**
+       * Render chip buttons
+       */
+      function renderChips(chipTexts) {
+        chipsContainer.innerHTML = '';
+        chipTexts.forEach(text => {
+          const chip = document.createElement('button');
+          chip.type = 'button';
+          chip.className = 'af-chip';
+          chip.textContent = text;
+          chip.setAttribute('data-text', text);
+          chipsContainer.appendChild(chip);
+        });
+        chipsContainer.hidden = false;
+      }
+
+      /**
+       * Hide chips
+       */
+      function hideChips() {
+        chipsContainer.hidden = true;
       }
 
       /**
@@ -488,6 +575,9 @@
       async function sendMessage(messageText) {
         const trimmedMessage = messageText.trim();
         if (!trimmedMessage) return;
+
+        // Hide chips when sending a message
+        hideChips();
 
         // Add user message
         addMessage(trimmedMessage, 'user');
@@ -545,11 +635,12 @@
       }
 
       /**
-       * Handle quick buttons
+       * Handle chip clicks
        */
-      function handleQuickButton(e) {
-        const message = e.target.dataset.quick;
+      function handleChipClick(e) {
+        const message = e.target.getAttribute('data-text');
         if (message) {
+          input.value = message;
           sendMessage(message);
         }
       }
@@ -597,9 +688,11 @@
       form.addEventListener('submit', handleSubmit);
       document.addEventListener('keydown', handleKeydown);
       
-      // Quick buttons
-      document.querySelectorAll('[data-quick]').forEach(btn => {
-        btn.addEventListener('click', handleQuickButton);
+      // Chip buttons - use event delegation since chips are dynamically created
+      document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('af-chip')) {
+          handleChipClick(e);
+        }
       });
 
       // Initialize
