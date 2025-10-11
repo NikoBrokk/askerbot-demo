@@ -33,16 +33,36 @@ exports.handler = async (event, context) => {
 
   try {
     // Parse melding fra request body
-    const { message } = JSON.parse(event.body);
+    const body = JSON.parse(event.body);
+    const { message, messages } = body;
     
-    if (!message || typeof message !== 'string') {
+    // Støtt både ny format (messages array) og gammel format (message string)
+    let messageToSend;
+    if (messages && Array.isArray(messages)) {
+      // Ny format: ta den siste brukermeldingen
+      const lastUserMessage = [...messages].reverse().find(msg => msg.role === 'user');
+      if (!lastUserMessage) {
+        return {
+          statusCode: 400,
+          headers: {
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*'
+          },
+          body: JSON.stringify({ error: 'No user message found in messages array' })
+        };
+      }
+      messageToSend = lastUserMessage.content;
+    } else if (message && typeof message === 'string') {
+      // Gammel format: direkte message string
+      messageToSend = message;
+    } else {
       return {
         statusCode: 400,
         headers: {
           'Content-Type': 'application/json',
           'Access-Control-Allow-Origin': '*'
         },
-        body: JSON.stringify({ error: 'Message is required' })
+        body: JSON.stringify({ error: 'Message or messages is required' })
       };
     }
 
@@ -76,7 +96,7 @@ exports.handler = async (event, context) => {
           },
           {
             role: 'user',
-            content: message
+            content: messageToSend
           }
         ],
         max_tokens: 200,
