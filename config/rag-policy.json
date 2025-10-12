@@ -1,0 +1,7 @@
+{
+  "answerLanguage": "no",
+  "maxSources": 3,
+  "sourcePriority": ["askerfotball.no"],
+  "fallbackOnUncertain": "Jeg finner ikke et sikkert svar – kontakt klubben her: /kontakt/",
+  "alwaysCite": true
+}

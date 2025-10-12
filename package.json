@@ -1,0 +1,40 @@
+{
+  "name": "askerbot-demo",
+  "version": "1.0.0",
+  "description": "Asker Fotball chatbot with knowledge base",
+  "main": "index.html",
+  "scripts": {
+    "fetch": "node scripts/fetch.js",
+    "parse": "node scripts/parse.js",
+    "chunk": "node scripts/chunk.js",
+    "embed": "python scripts/embed.py",
+    "bm25": "node scripts/build-bm25.js",
+    "reindex": "node scripts/reindex.js",
+    "dev": "python -m http.server 8000",
+    "serve": "npx serve ."
+  },
+  "keywords": [
+    "chatbot",
+    "fotball",
+    "asker",
+    "rag",
+    "knowledge-base"
+  ],
+  "author": "Asker Fotball",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/askerfotball/askerbot-demo"
+  },
+  "dependencies": {
+    "@chroma-core/default-embed": "^0.1.8",
+    "@xenova/transformers": "^2.17.2",
+    "chromadb": "^3.0.17",
+    "dotenv": "^17.2.3",
+    "openai": "^6.3.0",
+    "wink-bm25-text-search": "^3.1.2"
+  }
+}

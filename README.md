@@ -9,6 +9,26 @@ Minimal, tilgjengelig chatbot-widget som kan embeddes i iframe på eksterne dome
   ├─ index.html          // Alt UI + CSS + JS inline
   ├─ netlify.toml        // Headers for iframe-embedding + redirects
   ├─ README.md           // Dokumentasjon
+  ├─ package.json        // Node.js dependencies og scripts
+  ├─ config/             // Konfigurasjon
+  │   └─ rag-policy.json // RAG policy settings
+  ├─ qa/                 // Quality Assurance
+  │   └─ checklist.md    // Testspørsmål og QA-checklist
+  ├─ scripts/            // Data processing scripts
+  │   ├─ fetch.js        // Hent HTML fra askerfotball.no
+  │   ├─ parse.js        // Parse HTML til strukturert JSON
+  │   ├─ chunk.js        // Del innhold i chunks for RAG
+  │   ├─ embed.py        // Generer embeddings med ChromaDB
+  │   ├─ build-bm25.js   // Bygg BM25 søkeindeks
+  │   └─ reindex.js      // Komplett reindexing pipeline
+  ├─ storage/            // Datastorage
+  │   ├─ chunks/         // Tekstchunks (JSONL format)
+  │   ├─ index/
+  │   │   ├─ chroma/     // Vektorembeddings (ChromaDB)
+  │   │   └─ bm25/       // BM25 søkeindeks
+  │   ├─ logs/           // Execution logs
+  │   ├─ parsed/         // Parsed JSON dokumenter
+  │   └─ raw/            // Raw HTML files
   └─ netlify/
       └─ functions/
           └─ chat.js     // OpenAI API integration
@@ -41,6 +61,9 @@ Legg til denne iframe-koden i Enonic XP Content Studio:
 git clone <repo-url>
 cd askerbot-demo
 
+# Installer dependencies
+npm install
+
 # Start lokal server (valgfritt)
 python -m http.server 8000
 # Eller
@@ -48,6 +71,50 @@ npx serve .
 
 # Åpne http://localhost:8000
 ```
+
+### Data Pipeline
+
+For å bygge kunnskapsbasen:
+
+```bash
+# Komplett reindexing (anbefalt)
+npm run reindex
+
+# Eller kjør steg for steg:
+# 1. Hent HTML fra askerfotball.no
+npm run fetch
+
+# 2. Parse HTML til strukturert JSON
+npm run parse
+
+# 3. Del innhold i chunks (400-800 tegn med 80 tegn overlap)
+npm run chunk
+
+# 4. Generer embeddings med ChromaDB (semantic search)
+npm run embed
+
+# 5. Bygg BM25 søkeindeks (keyword search)
+npm run bm25
+```
+
+#### Hva skjer i hvert steg:
+
+- **`npm run reindex`**: Kjører hele pipelinen automatisk (fetch → parse → chunk → embed → bm25) med progress-logging og feilhåndtering
+- **`npm run fetch`**: Henter HTML fra alle sider på askerfotball.no og lagrer i `storage/raw/`
+- **`npm run parse`**: Parser HTML til strukturert JSON med metadata (tittel, URL, breadcrumbs) i `storage/parsed/`
+- **`npm run chunk`**: Deler tekstinnhold i overlappende chunks for bedre søkeresultater i `storage/chunks/`
+- **`npm run embed`**: Generer vektorembeddings med ChromaDB for semantisk søk i `storage/index/chroma/`
+- **`npm run bm25`**: Bygger BM25-indeks for nøkkelordsøk i `storage/index/bm25/`
+
+#### Reindexing Pipeline
+
+`npm run reindex` kjører en komplett pipeline som:
+- ✅ Rydder gamle indekser automatisk
+- ✅ Kjører alle 5 steg i riktig rekkefølge
+- ✅ Viser progress-logging med timestamps
+- ✅ Stoppar ved første feil med detaljert feilmelding
+- ✅ Lager detaljert logg i `storage/logs/reindex-YYYY-MM-DD.json`
+- ✅ Viser oppsummering med varighet og status
 
 ### Deploy til Netlify
 ```bash
@@ -62,6 +129,12 @@ git push
 ### Environment Variables
 I Netlify Dashboard → Site Settings → Environment Variables:
 - `OPENAI_API_KEY` = `sk-your-openai-api-key`
+
+For lokal utvikling, opprett `.env` fil basert på `.env.example`:
+```bash
+cp .env.example .env
+# Rediger .env med dine API-nøkler
+```
 
 ## Sikkerhet og domener
 
@@ -97,6 +170,37 @@ Content-Security-Policy = "frame-ancestors 'self' https://askerfotball.no https:
 - **Method**: POST
 - **Body**: `{ messages: [{role: 'user'|'assistant', content: string}] }`
 - **Response**: `{ reply: string, sources?: Array<{title:string,url:string}> }`
+
+### Søkeindekser
+Prosjektet bruker to komplementære søkeindekser:
+
+- **ChromaDB (Semantic Search)**: Vektorembeddings for semantisk søk som forstår mening og kontekst
+- **BM25 (Keyword Search)**: Tradisjonell tekstsøk som matcher nøkkelord og fraser
+
+Dette gir en robust søkeopplevelse som kombinerer semantisk forståelse med presis nøkkelordsøk.
+
+### RAG Policy Configuration
+
+RAG-oppførselen konfigureres i `config/rag-policy.json`:
+
+```json
+{
+  "answerLanguage": "no",
+  "maxSources": 3,
+  "sourcePriority": ["askerfotball.no"],
+  "fallbackOnUncertain": "Jeg finner ikke et sikkert svar – kontakt klubben her: /kontakt/",
+  "alwaysCite": true
+}
+```
+
+### Quality Assurance
+
+Test chatboten med spørsmålene i `qa/checklist.md`:
+
+- **10 testspørsmål** som dekker alle hovedområder
+- **Kildevalidering** - sjekk at alle svar har relevante kilder
+- **Debugging-tips** for å løse problemer
+- **Automatisk testing** med `npm run reindex`
 
 ## Tilgjengelighet
 
