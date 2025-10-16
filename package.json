@@ -1,5 +1,5 @@
 {
-  "name": "askerbot-demo",
+  "name": "askerbot",
   "version": "1.0.0",
   "description": "Asker Fotball chatbot with knowledge base",
   "main": "index.html",
@@ -35,7 +35,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/askerfotball/askerbot-demo"
+    "url": "https://github.com/askerfotball/askerbot"
   },
   "dependencies": {
     "@chroma-core/default-embed": "^0.1.8",

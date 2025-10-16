@@ -28,7 +28,7 @@
 
 ### Enonic XP integrasjon
 - **Metode**: Iframe-embedding (minst invasivt)
-- **Kode**: `<iframe src="https://askerbot-demo.netlify.app" style="..."></iframe>`
+- **Kode**: `<iframe src="https://askerbot.netlify.app" style="..."></iframe>`
 - **Sikkerhet**: CSP-headers tillater kun askerfotball.no
 
 ## 3) Krav til chatboten
