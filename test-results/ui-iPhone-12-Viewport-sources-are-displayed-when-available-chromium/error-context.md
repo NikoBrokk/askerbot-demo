@@ -1,0 +1,44 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - button "Åpne chat med Gabrielsen AI" [expanded] [ref=e2] [cursor=pointer]:
+    - img "Gabrielsen AI" [ref=e3]
+  - dialog "Gabrielsen AI chat" [ref=e4]:
+    - button "Lukk chat" [ref=e5] [cursor=pointer]: ×
+    - generic [ref=e6]:
+      - log [ref=e7]:
+        - listitem [ref=e8]:
+          - img "Gabrielsen AI" [ref=e9]
+          - generic [ref=e10]: Hei på deg 😄 Jeg er Gabrielsen AI – like pålitelig som flomlyset på Føyka en mandag kveld! Spør meg om alt fra klubbhistorie til trenerteam!
+        - listitem [ref=e11]: Hvordan melder jeg meg på akademiet?
+        - listitem [ref=e12]:
+          - img "Gabrielsen AI" [ref=e13]
+          - generic [ref=e14]:
+            - generic [ref=e15]:
+              - text: For å melde deg på OBOS-akademiet, kan du bruke påmeldingslenken som er tilgjengelig på Asker Fotballs nettsider. Når du melder deg på, får du plass inntil den sies opp skriftlig med e-post til
+              - link "lars.henrik@askerfotball.no" [ref=e16] [cursor=pointer]:
+                - /url: mailto:lars.henrik@askerfotball.no
+              - text: med en måneds varsel.
+            - link "OBOS-AKADEMIET / Asker Fotball →" [ref=e18] [cursor=pointer]:
+              - /url: https://askerfotball.no/lag/utviklingslag/akademi
+              - generic [ref=e19]: OBOS-AKADEMIET / Asker Fotball
+              - generic [ref=e20]: →
+      - generic [ref=e21]:
+        - button "OBOS Akademi" [ref=e22] [cursor=pointer]
+        - button "A-laget" [ref=e23] [cursor=pointer]
+        - button "Akademi+" [ref=e24] [cursor=pointer]
+        - button "Kontakt klubben" [ref=e25] [cursor=pointer]
+    - generic [ref=e27]:
+      - textbox "Skriv en melding" [active] [ref=e28]:
+        - /placeholder: Skriv en melding …
+      - button "Send" [ref=e29] [cursor=pointer]
+    - generic [ref=e30]:
+      - generic [ref=e31]:
+        - text: Levert av
+        - link "Gabrielsen AI" [ref=e32] [cursor=pointer]:
+          - /url: https://lupenobos.no
+      - link "Gabrielsen AI" [ref=e33] [cursor=pointer]:
+        - /url: https://lupenobos.no
+        - img "Gabrielsen AI" [ref=e34]
+```

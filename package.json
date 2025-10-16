@@ -10,8 +10,16 @@
     "embed": "python scripts/embed.py",
     "bm25": "node scripts/build-bm25.js",
     "reindex": "node scripts/reindex.js",
+    "chromadb:start": "cd services && ./start_chromadb_service.sh",
+    "chromadb:test": "cd services && python chromadb_service.py",
+    "quality": "node scripts/quality-report.js",
     "dev": "python -m http.server 8000",
-    "serve": "npx serve ."
+    "serve": "npx serve .",
+    "start": "node express-server.js",
+    "server": "node express-server.js",
+    "test:smoke": "node scripts/smoke-rag.js",
+    "test:ui": "npx playwright test --reporter=list",
+    "predeploy:check": "npm run test:smoke && npm run test:ui"
   },
   "keywords": [
     "chatbot",
@@ -35,6 +43,11 @@
     "chromadb": "^3.0.17",
     "dotenv": "^17.2.3",
     "openai": "^6.3.0",
-    "wink-bm25-text-search": "^3.1.2"
+    "wink-bm25-text-search": "^2.0.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.0",
+    "express": "^5.1.0",
+    "netlify-cli": "^23.9.1"
   }
 }

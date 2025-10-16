@@ -1,7 +1,7 @@
 {
   "answerLanguage": "no",
-  "maxSources": 3,
+  "maxSources": 1,
   "sourcePriority": ["askerfotball.no"],
-  "fallbackOnUncertain": "Jeg finner ikke et sikkert svar – kontakt klubben her: /kontakt/",
+  "fallbackOnUncertain": "Uffda, her ble jeg stående uvitende i offside, prøv denne lenken eller endre spørsmålet! Kontakt klubben direkte på askerfotball.no/kontakt/ for nøyaktig informasjon.",
   "alwaysCite": true
 }

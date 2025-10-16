@@ -7,11 +7,14 @@
   <style>
     :root {
       --bot-width: 380px;
-      --bot-height: 560px;
+      --bot-height: 600px; /* Increased height */
       --radius: 16px;
       --primary: #0f172a;
       --cyan: #06b6d4;
       --blue: #3b82f6;
+      --purple-light: #e1bee7;
+      --purple-dark: #6A0DAD;
+      --purple-medium: #9c27b0;
       --gray-50: #f8fafc;
       --gray-100: #f1f5f9;
       --gray-200: #e2e8f0;
@@ -38,8 +41,8 @@
     /* Bot Container */
     .ga-bot {
       position: fixed;
-      bottom: 24px;
-      right: 24px;
+      bottom: 0;
+      right: 0;
       z-index: 2147483000;
       font-family: inherit;
     }
@@ -56,6 +59,8 @@
       position: relative;
       padding: 0;
       margin: 0;
+      width: 154px; /* 20% smaller than 192px */
+      height: 154px;
     }
 
     .ga-bot__button:hover {
@@ -74,7 +79,8 @@
       bottom: 80px;
       right: 0;
       width: var(--bot-width);
-      max-height: 70vh;
+      max-height: 75vh; /* Increased from 70vh to 75vh */
+      height: var(--bot-height); /* Set fixed height for consistency */
       background: white;
       border-radius: var(--radius);
       box-shadow: var(--shadow);
@@ -85,6 +91,7 @@
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       pointer-events: none;
       overflow: hidden;
+      position: relative;
     }
 
     .ga-bot--open .ga-bot__panel {
@@ -93,16 +100,11 @@
       pointer-events: auto;
     }
 
-    /* Close Button Container */
-    .ga-bot__close-container {
-      padding: 16px;
-      display: flex;
-      justify-content: flex-end;
-      border-bottom: 1px solid var(--gray-200);
-      flex-shrink: 0;
-    }
-
+    /* Close Button - positioned in top-right corner */
     .ga-bot__close {
+      position: absolute;
+      top: 12px;
+      right: 12px;
       background: none;
       border: none;
       font-size: 24px;
@@ -116,6 +118,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      z-index: 10;
     }
 
     .ga-bot__close:hover,
@@ -129,13 +132,17 @@
     .ga-bot__messages {
       flex: 1;
       padding: 16px;
+      padding-top: 48px; /* Add top padding to account for close button */
       overflow-y: auto;
+      overflow-x: hidden;
       scroll-behavior: smooth;
       list-style: none;
       display: flex;
       flex-direction: column;
       gap: 12px;
-      min-height: 200px;
+      min-height: 200px; /* Reduced to make room for footer */
+      max-height: calc(75vh - 220px); /* Reduced to account for footer */
+      -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS/macOS */
     }
 
     .ga-bot__message {
@@ -143,12 +150,15 @@
       border-radius: var(--radius);
       max-width: 85%;
       word-wrap: break-word;
+      word-break: break-word;
+      overflow-wrap: break-word;
+      hyphens: auto;
       animation: fadeIn 0.3s ease-in;
     }
 
     .ga-bot__message--user {
-      background: var(--cyan);
-      color: white;
+      background: var(--purple-light);
+      color: var(--purple-dark);
       align-self: flex-end;
       margin-left: auto;
     }
@@ -165,44 +175,68 @@
       align-self: flex-start;
     }
 
-    /* Sources */
-    .ga-bot__sources {
+    /* Single Source Box */
+    .ga-bot__source-box {
       margin-top: 8px;
-      padding-top: 8px;
-      border-top: 1px solid var(--gray-200);
+      padding: 12px 16px;
+      background: var(--gray-100);
+      border-radius: var(--radius);
+      border: 1px solid var(--gray-200);
+      transition: all 0.2s ease;
     }
 
-    .ga-bot__sources-title {
-      font-size: 12px;
-      color: var(--gray-600);
-      margin-bottom: 4px;
+    .ga-bot__source-box:hover {
+      background: var(--gray-50);
+      border-color: var(--cyan);
+      transform: translateY(-1px);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
 
-    .ga-bot__sources-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .ga-bot__sources-list a {
-      color: var(--cyan);
+    .ga-bot__source-box a {
+      color: var(--gray-800);
       text-decoration: none;
-      font-size: 12px;
-      padding: 2px 0;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
     }
 
-    .ga-bot__sources-list a:hover {
-      text-decoration: underline;
+    .ga-bot__source-box a:hover {
+      color: var(--cyan);
     }
 
-    /* Typing Indicator */
-    .ga-bot__typing {
-      padding: 16px;
-      color: var(--gray-600);
-      font-style: italic;
+    .ga-bot__source-title {
       font-size: 14px;
-      border-top: 1px solid var(--gray-200);
+      font-weight: 500;
+      flex: 1;
+    }
+
+    .ga-bot__source-arrow {
+      font-size: 16px;
+      color: var(--cyan);
+      transition: transform 0.2s ease;
+    }
+
+    .ga-bot__source-box:hover .ga-bot__source-arrow {
+      transform: translateX(2px);
+    }
+
+    /* Animated Input Placeholder */
+    .ga-bot__form input.typing {
+      background: linear-gradient(135deg, #f8fafc 0%, #e1bee7 100%);
+      color: var(--purple-dark);
+      font-style: italic;
+    }
+
+    .ga-bot__form input.typing::placeholder {
+      color: var(--purple-dark);
+      animation: wave 1.5s ease-in-out infinite;
+    }
+
+    @keyframes wave {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-2px); }
     }
 
     /* Form */
@@ -210,8 +244,15 @@
       padding: 16px;
       border-top: 1px solid var(--gray-200);
       display: flex;
+      flex-direction: column;
       gap: 8px;
       flex-shrink: 0;
+      margin-top: 0;
+    }
+
+    .ga-bot__form-input-row {
+      display: flex;
+      gap: 8px;
     }
 
     .ga-bot__form input {
@@ -231,7 +272,7 @@
     }
 
     .ga-bot__form button {
-      background: var(--primary);
+      background: var(--purple-dark);
       color: white;
       border: none;
       border-radius: 20px;
@@ -245,8 +286,8 @@
 
     .ga-bot__form button:hover,
     .ga-bot__form button:focus {
-      background: var(--gray-800);
-      outline: 2px solid var(--cyan);
+      background: var(--purple-medium);
+      outline: 2px solid var(--purple-dark);
       outline-offset: 2px;
     }
 
@@ -271,8 +312,8 @@
     /* Responsive */
     @media (max-width: 480px) {
       .ga-bot {
-        bottom: 16px;
-        right: 16px;
+        bottom: 0;
+        right: 0;
       }
 
       .ga-bot__panel {
@@ -282,7 +323,43 @@
       }
 
       .ga-bot__messages {
-        min-height: 150px;
+        min-height: 180px; /* Reduced to make room for footer */
+        padding-top: 44px; /* Slightly less padding on mobile */
+        max-height: calc(75vh - 180px); /* Reduced to account for footer */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
+      }
+
+      .ga-bot__close {
+        top: 8px;
+        right: 8px;
+        width: 28px;
+        height: 28px;
+        font-size: 20px;
+      }
+
+      .af-chat__chips {
+        padding: 6px 12px;
+        gap: 6px;
+      }
+
+      .af-chip {
+        padding: 6px 12px;
+        font-size: 13px;
+        margin: 0;
+      }
+
+      .ga-bot__form {
+        padding: 12px;
+      }
+
+      .af-footer {
+        font-size: 14px;
+        padding: 10px 12px;
+      }
+
+      .af-footer-logo {
+        width: 28px;
+        height: 28px;
       }
     }
 
@@ -300,45 +377,94 @@
     .af-chat__chips {
       padding: 8px 16px;
       border-bottom: 1px solid var(--gray-200);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 8px;
     }
 
     .af-chip {
       display: inline-block;
-      padding: 6px 10px;
-      border: 1px solid #E5E7EB;
-      border-radius: 9999px;
+      padding: 8px 14px;
+      border: none;
+      border-radius: 20px;
       font-size: 14px;
-      margin: 4px 6px 0 0;
+      font-weight: 500;
+      margin: 0;
       cursor: pointer;
-      background: #fff;
-      transition: all 0.2s;
-      color: var(--gray-800);
+      background: #6A0DAD;
+      color: white;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 4px rgba(106, 13, 173, 0.2);
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .af-chip:hover {
-      background: #F9FAFB;
+      background: #7B1FA2;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 8px rgba(106, 13, 173, 0.3);
     }
 
     .af-chip:focus {
-      outline: 2px solid #2563EB;
+      outline: 2px solid #6A0DAD;
       outline-offset: 2px;
     }
 
     .af-footer {
-      font-size: 12px;
-      color: #98A2B3;
-      margin-top: 8px;
-      padding: 8px 16px;
-      text-align: right;
+      font-size: 16px;
+      color: var(--gray-800);
+      margin-top: 0;
+      padding: 12px 16px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      font-weight: 500;
+      background: #f8fafc;
+      border-top: 1px solid var(--gray-200);
+      flex-shrink: 0;
     }
 
-    .af-footer a {
-      color: #98A2B3;
+    .af-footer-text {
+      flex: 1;
+      text-align: center;
+    }
+
+    .af-footer-logo {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+    }
+
+    .af-footer-link {
+      color: var(--purple-dark);
       text-decoration: none;
+      font-weight: 500;
+      background: var(--purple-light);
+      padding: 4px 8px;
+      border-radius: 12px;
+      transition: all 0.2s ease;
+      display: inline-block;
     }
 
-    .af-footer a:hover {
-      text-decoration: underline;
+    .af-footer-link:hover {
+      background: var(--purple-medium);
+      color: white;
+      transform: translateY(-1px);
+      box-shadow: 0 2px 4px rgba(106, 13, 173, 0.3);
+    }
+
+    .af-footer-logo-link {
+      display: inline-block;
+      transition: transform 0.2s ease;
+    }
+
+    .af-footer-logo-link:hover {
+      transform: scale(1.1);
     }
 
     .af-avatar-bot {
@@ -377,25 +503,30 @@
 <body>
   <div class="ga-bot" id="gaBot">
     <button class="ga-bot__button" id="gaBotBtn" aria-haspopup="dialog" aria-expanded="false" aria-controls="gaBotPanel" aria-label="Åpne chat med Gabrielsen AI" title="Åpne Gabrielsen AI">
-      <img src="./logo.png" alt="Gabrielsen AI" style="width: 192px; height: 192px;" />
+      <img src="./assets/logo.png" alt="Gabrielsen AI" style="width: 154px; height: 154px;" />
     </button>
 
     <section id="gaBotPanel" class="ga-bot__panel" role="dialog" aria-modal="true" aria-label="Gabrielsen AI chat">
-      <div class="ga-bot__close-container">
-        <button class="ga-bot__close" aria-label="Lukk chat">&times;</button>
-      </div>
+      <button class="ga-bot__close" aria-label="Lukk chat">&times;</button>
 
       <div class="af-chat">
         <ol class="ga-bot__messages af-chat__log" id="gaMsgs" role="log" aria-live="polite"></ol>
         <div class="af-chat__chips" id="afChips" hidden></div>
-        <div class="af-footer">Levert av <a href="https://lupenobos.no" target="_blank" rel="noopener">Gabrielsen AI</a></div>
       </div>
-      <div class="ga-bot__typing" id="gaTyping" hidden>Askerbot skriver…</div>
 
       <form class="ga-bot__form" id="gaForm" autocomplete="off">
-        <input id="gaInput" type="text" inputmode="text" placeholder="Skriv en melding …" aria-label="Skriv en melding" />
-        <button id="gaSend" type="submit">Send</button>
+        <div class="ga-bot__form-input-row">
+          <input id="gaInput" type="text" inputmode="text" placeholder="Skriv en melding …" aria-label="Skriv en melding" />
+          <button id="gaSend" type="submit">Send</button>
+        </div>
       </form>
+      
+      <div class="af-footer">
+        <div class="af-footer-text">Levert av <a href="https://lupenobos.no" target="_blank" rel="noopener" class="af-footer-link">Gabrielsen AI</a></div>
+        <a href="https://lupenobos.no" target="_blank" rel="noopener" class="af-footer-logo-link">
+          <img src="./assets/logo.png" alt="Gabrielsen AI" class="af-footer-logo" />
+        </a>
+      </div>
     </section>
   </div>
 
@@ -412,7 +543,6 @@
       const button = document.getElementById('gaBotBtn');
       const panel = document.getElementById('gaBotPanel');
       const messages = document.getElementById('gaMsgs');
-      const typing = document.getElementById('gaTyping');
       const form = document.getElementById('gaForm');
       const input = document.getElementById('gaInput');
       const sendButton = document.getElementById('gaSend');
@@ -457,9 +587,40 @@
       function initializeBot() {
         if (isInitialized) return;
         
-        addMessage('Hei! Jeg er Gabrielsen AI, Asker Fotballs digitale assistent. Still meg et spørsmål så svarer jeg utifra klubbens info!', 'assistant');
-        renderChips(['Meld på camp', 'Neste A-kamp', 'Priser akademi']);
+        addMessage('Hei på deg 😄\n\nJeg er Gabrielsen AI – like pålitelig som flomlyset på Føyka en mandag kveld! Spør meg om alt fra klubbhistorie til trenerteam!', 'assistant');
+        
+        // Vis chips umiddelbart etter velkomstmelding
+        setTimeout(() => {
+          renderChips(['OBOS Akademi', 'A-laget', 'Akademi+', 'Kontakt klubben']);
+        }, 100);
+        
         isInitialized = true;
+      }
+
+      /**
+       * Clean text by removing URLs and citation references
+       */
+      function linkifyText(text) {
+        // Remove URLs (http/https)
+        let cleanedText = text.replace(/https?:\/\/[^\s]+/g, '');
+        
+        // Remove citation references like [Kilde 1], [Kilde 2], etc.
+        cleanedText = cleanedText.replace(/\[Kilde \d+\]/g, '');
+        
+        // Remove markdown links like [text](url)
+        cleanedText = cleanedText.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1');
+        
+        // Remove "Basert på" references
+        cleanedText = cleanedText.replace(/\(Basert på[^)]*\)/g, '');
+        
+        // Clean up extra spaces
+        cleanedText = cleanedText.replace(/\s+/g, ' ').trim();
+        
+        // Only convert emails to clickable links
+        const emailRegex = /([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/g;
+        let linkedText = cleanedText.replace(emailRegex, '<a href="mailto:$1" style="color: inherit; text-decoration: underline;">$1</a>');
+        
+        return linkedText;
       }
 
       /**
@@ -479,33 +640,41 @@
           
           const contentDiv = document.createElement('div');
           if (sources && sources.length > 0) {
-            contentDiv.innerHTML = `
-              <div>${escapeHtml(content)}</div>
-              <div class="ga-bot__sources">
-                <div class="ga-bot__sources-title">Kilder:</div>
-                <ul class="ga-bot__sources-list">
-                  ${sources.map(source => `<li><a href="${escapeHtml(source.url)}" target="_blank" rel="noopener">${escapeHtml(source.title)}</a></li>`).join('')}
-                </ul>
-              </div>
-            `;
+            // Show all sources as clickable boxes
+            let sourcesHtml = `<div>${linkifyText(escapeHtml(content))}</div>`;
+            sources.forEach(source => {
+              sourcesHtml += `
+                <div class="ga-bot__source-box">
+                  <a href="${escapeHtml(source.url)}" target="_blank" rel="noopener">
+                    <span class="ga-bot__source-title">${escapeHtml(source.title)}</span>
+                    <span class="ga-bot__source-arrow">→</span>
+                  </a>
+                </div>
+              `;
+            });
+            contentDiv.innerHTML = sourcesHtml;
           } else {
-            contentDiv.textContent = content;
+            contentDiv.innerHTML = linkifyText(escapeHtml(content));
           }
           li.appendChild(contentDiv);
         } else {
           li.className += ' af-message-user';
           if (sources && sources.length > 0) {
-            li.innerHTML = `
-              <div>${escapeHtml(content)}</div>
-              <div class="ga-bot__sources">
-                <div class="ga-bot__sources-title">Kilder:</div>
-                <ul class="ga-bot__sources-list">
-                  ${sources.map(source => `<li><a href="${escapeHtml(source.url)}" target="_blank" rel="noopener">${escapeHtml(source.title)}</a></li>`).join('')}
-                </ul>
-              </div>
-            `;
+            // Show all sources as clickable boxes
+            let sourcesHtml = `<div>${linkifyText(escapeHtml(content))}</div>`;
+            sources.forEach(source => {
+              sourcesHtml += `
+                <div class="ga-bot__source-box">
+                  <a href="${escapeHtml(source.url)}" target="_blank" rel="noopener">
+                    <span class="ga-bot__source-title">${escapeHtml(source.title)}</span>
+                    <span class="ga-bot__source-arrow">→</span>
+                  </a>
+                </div>
+              `;
+            });
+            li.innerHTML = sourcesHtml;
           } else {
-            li.textContent = content;
+            li.innerHTML = linkifyText(escapeHtml(content));
           }
         }
         
@@ -520,7 +689,10 @@
        * Scroll to bottom of messages
        */
       function scrollToBottom() {
-        messages.scrollTop = messages.scrollHeight;
+        // Use requestAnimationFrame to ensure DOM is updated
+        requestAnimationFrame(() => {
+          messages.scrollTop = messages.scrollHeight;
+        });
       }
 
       /**
@@ -559,11 +731,14 @@
        * Show/hide typing indicator
        */
       function setTyping(show) {
-        typing.hidden = !show;
         if (show) {
+          input.classList.add('typing');
+          input.placeholder = 'Gabrielsen AI tenker...';
           sendButton.disabled = true;
           input.disabled = true;
         } else {
+          input.classList.remove('typing');
+          input.placeholder = 'Skriv en melding …';
           sendButton.disabled = false;
           input.disabled = false;
         }
@@ -640,7 +815,7 @@
       function handleChipClick(e) {
         const message = e.target.getAttribute('data-text');
         if (message) {
-          input.value = message;
+          input.value = ''; // Clear the input field
           sendMessage(message);
         }
       }

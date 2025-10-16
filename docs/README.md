@@ -254,6 +254,92 @@ return {
 3. Verifiser at CSP tillater embedding
 4. Test på mobil og desktop
 
+## Quality Assurance
+
+### Testspørsmål for validering av kunnskapsbase
+
+Test disse spørsmålene for å verifisere at chatboten gir korrekte svar med tilhørende kilder:
+
+#### 1. Grunnleggende klubbinformasjon
+**Spørsmål:** "Hva er Asker Fotball?"
+**Forventet:** Svar om at det er en fotballklubb, "mer enn en fotballklubb", grunnlagt osv.
+**Kilder:** Om klubben-sider
+
+#### 2. Stadion og fasiliteter
+**Spørsmål:** "Hvor spiller Asker Fotball hjemmekampene sine?"
+**Forventet:** Føyka Stadion, kapasitet, historie
+**Kilder:** Om stadion-sider
+
+#### 3. Akademi og utviklingslag
+**Spørsmål:** "Hva er OBOS-Akademiet?"
+**Forventet:** Informasjon om fotballakademi for 7-13 år, pris, påmelding
+**Kilder:** Lag/utviklingslag/akademi-sider
+
+#### 4. Kontakt og ansatte
+**Spørsmål:** "Hvordan kan jeg kontakte Asker Fotball?"
+**Forventet:** E-post, adresse, ansvarlige personer
+**Kilder:** Kontakt-sider, ansatte-sider
+
+#### 5. Klubbens historie
+**Spørsmål:** "Når ble Føyka Stadion åpnet?"
+**Forventet:** 1. juli 1950
+**Kilder:** Historiske fakta, stadion-informasjon
+
+### Kilder mangler?
+
+#### Sjekkliste for kildevalidering:
+- [ ] **Alle svar har kilder**: Hver respons skal inkludere minst én kilde
+- [ ] **Kilder er relevante**: Kildene skal faktisk inneholde informasjonen som brukes i svaret
+- [ ] **Kilder er oppdaterte**: URL-ene skal fungere og peke til riktige sider
+- [ ] **Kilder er fra askerfotball.no**: Prioriter kilder fra klubbens egne sider
+- [ ] **Kilder dekker spørsmålet**: Kildene skal gi tilstrekkelig dekning av spørsmålet
+
+#### Vanlige problemer:
+1. **Generiske svar uten kilder**: Chatboten gir generelle svar uten å referere til spesifikke kilder
+2. **Feil kilder**: URL-ene peker til feil sider eller eksisterer ikke
+3. **Manglende kilder**: Spørsmål som burde ha kilder får ingen
+4. **Urelevante kilder**: Kildene inneholder ikke informasjonen som brukes i svaret
+5. **Utgåtte lenker**: Kildene peker til sider som ikke lenger eksisterer
+
+#### Debugging-tips:
+- Sjekk om spørsmålet matcher innhold i `storage/chunks/`
+- Verifiser at BM25-indeksen finner relevante chunks
+- Kontroller at ChromaDB embeddings gir gode resultater
+- Test både nøkkelordsøk og semantisk søk
+- Kjør `npm run reindex` hvis kunnskapsbasen er utdatert
+
+## System Improvements
+
+This chatbot has been enhanced with modern parsing capabilities and improved data quality:
+
+### HTML Parsing Enhancements
+- **Modern Content Selectors**: Added support for Angular, React, and Vue app containers
+- **Smart Content Scoring**: Implemented content quality scoring to select the best content sections
+- **Navigation Filtering**: Automatic detection and filtering of navigation and UI elements
+- **Fallback Parsing**: Multiple fallback strategies for problematic pages
+- **Better Title Extraction**: Improved title extraction from multiple sources
+
+### Smart Chunking Strategy
+- **Larger Chunks**: Increased size to 1000-1500 characters
+- **Semantic Breakpoints**: Split on headings, paragraphs, and sentences rather than just words
+- **Smart Overlap**: Intelligent overlap between chunks to preserve context
+- **Content Type Detection**: Automatic detection of chunk types (player lists, news, etc.)
+- **Quality Assessment**: Built-in quality scoring for each chunk
+
+### ChromaDB Search Service
+- **HTTP API**: RESTful API for semantic search
+- **Multiple Embedding Providers**: Support for both local and cloud embeddings
+- **Health Monitoring**: Built-in health checks and statistics
+- **Error Handling**: Robust error handling and fallbacks
+- **Easy Deployment**: Simple startup scripts and configuration
+
+### Data Quality Improvements
+- **Content Validation**: Automatic validation of parsed content
+- **Navigation Filtering**: Smart filtering of navigation and UI elements
+- **Quality Scoring**: Multi-factor quality assessment
+- **Fallback Strategies**: Multiple fallback parsing methods
+- **Quality Reporting**: Comprehensive quality analysis and reporting
+
 ## Support
 
 For spørsmål eller problemer, sjekk:
