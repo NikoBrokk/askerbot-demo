@@ -9,7 +9,7 @@ node_modules/
 .env.production.local
 
 # Generated data (can be recreated with npm run reindex)
-storage/
+# storage/ - Commented out to include in deployment
 
 # Logs
 *.log
