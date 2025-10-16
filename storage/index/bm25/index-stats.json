@@ -1,0 +1,47 @@
+{
+  "total_chunks": 50,
+  "index_created_at": "2025-10-15T14:30:18.776Z",
+  "chunk_files": [
+    "lag.jsonl",
+    "lag_samfunn_asker-united.jsonl",
+    "lag_samfunn_om-samfunnslagene.jsonl",
+    "lag_utviklingslag.jsonl",
+    "lag_utviklingslag_2012-kullet.jsonl",
+    "lag_utviklingslag_akademi.jsonl",
+    "lag_utviklingslag_g19-junior.jsonl",
+    "lag_utviklingslag_gutter-13.jsonl",
+    "lag_utviklingslag_gutter-14.jsonl",
+    "lag_utviklingslag_gutter-15.jsonl",
+    "lag_utviklingslag_om-utviklingslagene.jsonl",
+    "nyheter.jsonl",
+    "nyheter_askerfotballen-historie.jsonl",
+    "nyheter_butikk.jsonl",
+    "nyheter_mange-fordeler-gjennom-asker-fotball.jsonl",
+    "nyheter_sommerens-beste-eventyr-obos-camp.jsonl",
+    "nyheter_velkommen-til-obos-akademi.jsonl",
+    "om-klubben.jsonl",
+    "om-klubben_ansatte.jsonl",
+    "om-klubben_arsmoter.jsonl",
+    "om-klubben_historiske-fakta.jsonl",
+    "om-klubben_klubbens-lover.jsonl",
+    "om-klubben_marked.jsonl",
+    "om-klubben_media.jsonl",
+    "om-klubben_samfunn.jsonl",
+    "om-klubben_solidaritetsfondet.jsonl",
+    "om-klubben_styret-asker-fotball.jsonl",
+    "om-klubben_to-steg-frem.jsonl",
+    "om-klubben_varslingsknapp-asker-fotball.jsonl",
+    "om-stadion_fotballhuset.jsonl",
+    "om-stadion_foyka-stadion.jsonl",
+    "om-stadion_slik-finner-du-frem.jsonl",
+    "resultater.jsonl",
+    "terminliste.jsonl"
+  ],
+  "bm25_config": {
+    "k1": 1.2,
+    "b": 0.75,
+    "fldWeights": {
+      "content": 1
+    }
+  }
+}

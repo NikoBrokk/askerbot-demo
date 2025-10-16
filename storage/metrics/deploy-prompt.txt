@@ -1,0 +1,53 @@
+# Deploy-forberedelse for Askerbot
+
+## Pre-deploy sjekk (KJØR FØRST)
+
+```bash
+# 1. Start dev server
+npm start
+
+# 2. Kjør RAG smoke test
+node scripts/smoke-rag.js
+
+# 3. Kjør UI tests
+npx playwright test --reporter=list
+
+# 4. Sjekk at alle tester passerer
+# KRAV: Snittscore ≥7.5, fallback-rate ≤20%, UI-tester bestått
+```
+
+## Hvis testene består:
+
+```bash
+# Commit og push
+git add -A
+git commit -m "chore: predeploy pass - RAG score $(node -e "console.log(require('./storage/metrics/smoke-rag.json').statistics.averageScore.toFixed(2))")/10, fallback $(node -e "console.log(require('./storage/metrics/smoke-rag.json').statistics.fallbackRate.toFixed(1))")%"
+git push
+```
+
+## Hvis testene feiler:
+
+**STOPP - Ikke deploy!**
+
+Sjekk predeploy-rapporten: `storage/metrics/predeploy-report.md`
+
+**Vanlige problemer:**
+- RAG-score for lav: Sjekk BM25/Chroma indeksering
+- Fallback-rate for høy: Juster fallback-terskel
+- UI-tester feiler: Debug close-knapp og response timing
+
+## Netlify deploy (kun hvis testene består):
+
+```bash
+# Hvis Netlify CLI er konfigurert:
+netlify deploy --prod
+
+# Ellers: Push til main branch og la Netlify auto-deploy
+```
+
+## Notater
+
+- Endepunkt: http://localhost:8888/.netlify/functions/chat
+- RAG-policy: config/rag-policy.json
+- Testresultater: storage/metrics/
+- Rapporter: storage/metrics/predeploy-report.md
