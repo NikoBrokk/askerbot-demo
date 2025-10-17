@@ -7,7 +7,7 @@
 const EMBEDDED_KNOWLEDGE = {
   "klubb_info": {
     "title": "Om klubben",
-    "content": "Asker Fotball er fotballklubben i Asker. Klubben spiller på Føyka stadion og har både A-lag og ungdomslag. Klubben er en del av OBOS-ligaen og har et sterkt fokus på ungdomsutvikling.",
+    "content": "Asker Fotball er fotballklubben i Asker. Klubben spiller på Føyka stadion og har både A-lag og ungdomslag. Klubben er sponset av OBOS og har et sterkt fokus på ungdomsutvikling.",
     "url": "https://askerfotball.no"
   },
   "akademi_info": {
@@ -37,7 +37,7 @@ const EMBEDDED_KNOWLEDGE = {
   },
   "lag_struktur": {
     "title": "Lag og struktur",
-    "content": "Asker Fotball har A-lag, samfunnslag og utviklingslag. A-laget spiller i OBOS-ligaen. Samfunnslagene er for voksne som vil spille fotball på et mer avslappet nivå. Utviklingslagene inkluderer OBOS Akademi for barn 7-13 år.",
+    "content": "Asker Fotball har A-lag, samfunnslag og utviklingslag. A-laget spiller i sin respektive divisjon. Samfunnslagene er for voksne som vil spille fotball på et mer avslappet nivå. Utviklingslagene inkluderer OBOS Akademi for barn 7-13 år.",
     "url": "https://askerfotball.no/lag"
   },
   "priser_medlemskap": {
@@ -60,7 +60,7 @@ const EMBEDDED_KNOWLEDGE = {
 // FAQ Configuration for common chip questions
 const FAQ_RESPONSES = {
   "obos akademi": {
-    reply: "OBOS Akademi er et fotballakademi for jenter og gutter i alderen 7-13 år.\n\nDet følger skoleruta og tar kun fri på skolens fridager. Man kan delta fra 1-5 dager per uke.\n\nPris: 955,- til 2500,- per måned avhengig av antall dager.",
+    reply: "OBOS Akademi\n\nEt fotballakademi for jenter og gutter i alderen 7-13 år.\n\nFølger skoleruta og tar kun fri på skolens fridager.\n\nMan kan delta fra 1-5 dager per uke.\n\nPris: 955,- til 2500,- per måned avhengig av antall dager.\n\nAkademiet fokuserer på teknisk utvikling og fotballglede.",
     sources: [
       {
         title: "OBOS Akademi",
@@ -75,7 +75,7 @@ const FAQ_RESPONSES = {
     ]
   },
   "akademi+": {
-    reply: "OBOS Akademi+ er for de ekstra ivrige fotballspillerne.\n\nDette er en intensiv variant av akademiet for barn som ønsker mer trening og utvikling.\n\nKontakt lars.henrik@askerfotball.no for mer informasjon.",
+    reply: "OBOS Akademi+\n\nFor de ekstra ivrige fotballspillerne.\n\nDette er en intensiv variant av akademiet.\n\nFor barn som ønsker mer trening og utvikling.\n\nKontakt lars.henrik@askerfotball.no for mer informasjon.\n\nPerfekt for de som vil ta fotballen til neste nivå.",
     sources: [
       {
         title: "OBOS Akademi+", 
@@ -90,7 +90,7 @@ const FAQ_RESPONSES = {
     ]
   },
   "kontakt klubben": {
-    reply: "For å kontakte Asker Fotball:\n\nAdministrasjon:\nRolf-Magne Walstad - Daglig og sportslig leder\nE-post: walstad@askerfotball.no\n\nMorten Sommerfeldt - Markedsansvarlig\nE-post: morten@askerfotball.no\nTelefon: +47 907 51 170\n\nGenerelt:\nE-post: post@askerfotball.no",
+    reply: "Kontakt Asker Fotball\n\nAdministrasjon:\n\nRolf-Magne Walstad\nDaglig og sportslig leder\nE-post: walstad@askerfotball.no\n\nMorten Sommerfeldt\nMarkedsansvarlig\nE-post: morten@askerfotball.no\nTelefon: +47 907 51 170\n\nGenerelt:\nE-post: post@askerfotball.no\n\nVi svarer raskt på alle henvendelser.",
     source: {
       title: "Kontakt",
       url: "https://askerfotball.no/om-klubben/ansatte",
@@ -98,7 +98,7 @@ const FAQ_RESPONSES = {
     }
   },
   "a-laget": {
-    reply: "Asker Fotball A-lag har en sterk spillertropp med både erfarne og unge spillere.\n\nHovedtrener: Magnus Bredal\nAssistenttrener: Bård Heggset",
+    reply: "Asker Fotball A-lag\n\nSterk spillertropp med både erfarne og unge spillere.\n\nTrenerteam:\n\nMagnus Bredal - Hovedtrener\nBård Heggset - Assistenttrener\nIsmet Duracak - Keepertrener\nJakob Lillestjerna - Analyseansvarlig\nAlain Antonio Astudillo - Medisinsk ansvarlig\n\nMed fokus på resultater og utvikling.",
     source: {
       title: "A-laget",
       url: "https://askerfotball.no/lag", 
@@ -254,7 +254,7 @@ function getSemanticMatches(query, key) {
       score: 20
     },
     'klubb_info': {
-      terms: ['klubb', 'navn', 'laget', 'heter', 'hva', 'hvem', 'identitet', 'organisasjon', 'forening', 'OBOS-ligaen', 'ungdomsutvikling'],
+      terms: ['klubb', 'navn', 'laget', 'heter', 'hva', 'hvem', 'identitet', 'organisasjon', 'forening', 'OBOS', 'ungdomsutvikling'],
       score: 15
     },
     'stadion': {

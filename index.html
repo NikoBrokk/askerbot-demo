@@ -10,7 +10,7 @@
   <style>
     :root {
       --bot-width: 380px;
-      --bot-height: 650px; /* Increased height to accommodate footer */
+      --bot-height: 600px; /* Adjusted height to fit better on screen */
       --radius: 16px;
       --primary: #0f172a;
       --cyan: #06b6d4;
@@ -42,18 +42,26 @@
       min-height: 100vh;
     }
 
-    /* Bot Container - v2.0 */
+    /* Bot Container - v2.0 - Enhanced positioning */
     .ga-bot {
       position: fixed !important;
-      bottom: 0px !important; /* Position at bottom of iframe */
-      right: 0px !important; /* Position at right of iframe */
-      z-index: 9999 !important; /* High z-index to stay on top */
+      bottom: 20px !important; /* Fixed position from viewport bottom */
+      right: 20px !important; /* Fixed position from viewport right */
+      z-index: 999999 !important; /* Very high z-index to stay on top */
       font-family: inherit;
-      /* Force positioning */
+      width: 90px !important; /* 50% larger than 60px */
+      height: 90px !important;
+      /* Force positioning - override any other positioning */
       top: auto !important;
       left: auto !important;
       margin: 0 !important;
       padding: 0 !important;
+      transform: none !important;
+      /* Additional positioning safeguards */
+      position: fixed !important;
+      float: none !important;
+      clear: none !important;
+      display: block !important;
     }
 
     /* Bot Button */
@@ -68,12 +76,13 @@
       position: relative;
       padding: 0;
       margin: 0;
-      width: 60px; /* Much smaller for just the logo */
-      height: 60px;
+      width: 90px; /* 50% larger than 60px */
+      height: 90px;
     }
 
     .ga-bot__button:hover {
-      transform: scale(1.05);
+      transform: scale(1.08);
+      transition: transform 0.2s ease;
     }
 
     .ga-bot__button:focus {
@@ -84,23 +93,22 @@
 
     /* Bot Panel */
     .ga-bot__panel {
-      position: absolute;
-      bottom: 0;
-      right: 0;
+      position: fixed;
+      bottom: 130px; /* Moved down a bit more, but still above the logo */
+      right: 20px; /* Align with button */
       width: var(--bot-width);
       height: var(--bot-height); /* Fixed height to prevent layout shifts */
-      max-height: 75vh;
+      max-height: calc(100vh - 160px); /* Adjusted to account for new position */
       background: white; /* White background only when open */
       border-radius: var(--radius);
       box-shadow: var(--shadow); /* Shadow only when open */
       display: flex;
       flex-direction: column;
       opacity: 0;
-      transform: translateY(20px) scale(0.95);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transform: translateY(30px) scale(0.9);
+      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       pointer-events: none;
       overflow: hidden;
-      position: relative;
       visibility: hidden; /* Completely hidden when closed */
     }
 
@@ -109,13 +117,14 @@
       transform: translateY(0) scale(1);
       pointer-events: auto;
       visibility: visible; /* Show when open */
+      animation: slideInUp 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 
-    /* Hide button when panel is open */
+    /* Keep button visible when panel is open */
     .ga-bot--open .ga-bot__button {
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
     }
 
     /* Close Button - positioned in top-right corner */
@@ -324,6 +333,17 @@
       }
     }
 
+    @keyframes slideInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
     /* Responsive */
     @media (max-width: 480px) {
       .ga-bot {
@@ -335,8 +355,9 @@
       .ga-bot__panel {
         width: calc(100vw - 40px); /* Account for margins */
         max-width: var(--bot-width);
-        right: 0; /* Align with button */
-        bottom: 0; /* Keep at bottom on mobile too */
+        right: 20px; /* Align with button */
+        bottom: 130px; /* Position above button on mobile too */
+        max-height: calc(100vh - 160px); /* Ensure it fits on mobile */
       }
 
       .ga-bot__messages {
@@ -518,11 +539,22 @@
     /* Force bottom-right positioning - override any other styles */
     #gaBot {
       position: fixed !important;
-      bottom: 0px !important;
-      right: 0px !important;
+      bottom: 20px !important;
+      right: 20px !important;
       top: auto !important;
       left: auto !important;
-      z-index: 9999 !important;
+      z-index: 999999 !important;
+      width: 90px !important; /* 50% larger than 60px */
+      height: 90px !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      transform: none !important;
+      /* Additional positioning safeguards */
+      float: none !important;
+      clear: none !important;
+      display: block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
     }
 
     /* Reduced motion */
@@ -539,9 +571,9 @@
   </style>
 </head>
 <body>
-  <div class="ga-bot" id="gaBot" style="position: fixed !important; bottom: 20px !important; right: 20px !important; z-index: 9999 !important;">
+  <div class="ga-bot" id="gaBot" style="position: fixed !important; bottom: 20px !important; right: 20px !important; z-index: 999999 !important; width: 90px !important; height: 90px !important; margin: 0 !important; padding: 0 !important; transform: none !important; top: auto !important; left: auto !important; float: none !important; clear: none !important; display: block !important; visibility: visible !important; opacity: 1 !important;">
     <button class="ga-bot__button" id="gaBotBtn" aria-haspopup="dialog" aria-expanded="false" aria-controls="gaBotPanel" aria-label="Åpne chat med Gabrielsen AI" title="Åpne Gabrielsen AI">
-      <img src="./assets/logo.png" alt="Gabrielsen AI" style="width: 60px; height: 60px;" />
+      <img src="./assets/logo.png" alt="Gabrielsen AI" style="width: 90px; height: 90px;" />
     </button>
 
     <section id="gaBotPanel" class="ga-bot__panel" role="dialog" aria-modal="true" aria-label="Gabrielsen AI chat">
@@ -561,9 +593,6 @@
       
       <div class="af-footer">
         <div class="af-footer-text">Levert av <a href="https://lupenobos.no" target="_blank" rel="noopener" class="af-footer-link">Gabrielsen AI</a></div>
-        <a href="https://lupenobos.no" target="_blank" rel="noopener" class="af-footer-logo-link">
-          <img src="./assets/logo.png" alt="Gabrielsen AI" class="af-footer-logo" />
-        </a>
       </div>
     </section>
   </div>
