@@ -14,7 +14,7 @@
   for = "/*"
   [headers.values]
     X-Frame-Options = "SAMEORIGIN"
-    Content-Security-Policy = "frame-ancestors 'self' https://askerfotball.no"
+    Content-Security-Policy = "frame-ancestors 'self' https://askerfotball.no https://*.entity.no https://*.entity.com"
 
 [[headers]]
   for = "/.netlify/functions/*"

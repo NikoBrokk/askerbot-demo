@@ -42,13 +42,13 @@
       min-height: 100vh;
     }
 
-    /* Bot Container - v2.0 - Enhanced positioning */
+    /* Bot Container - v2.0 - Enhanced positioning for iframe context */
     .ga-bot {
       position: fixed !important;
       bottom: 20px !important; /* Fixed position from viewport bottom */
       right: 20px !important; /* Fixed position from viewport right */
-      z-index: 999999 !important; /* Very high z-index to stay on top */
-      font-family: inherit;
+      z-index: 2147483647 !important; /* Maximum z-index value for iframe contexts */
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif !important;
       width: 90px !important; /* 50% larger than 60px */
       height: 90px !important;
       /* Force positioning - override any other positioning */
@@ -57,11 +57,12 @@
       margin: 0 !important;
       padding: 0 !important;
       transform: none !important;
-      /* Additional positioning safeguards */
-      position: fixed !important;
+      /* Additional positioning safeguards for iframe */
       float: none !important;
       clear: none !important;
       display: block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
     }
 
     /* Bot Button */
@@ -536,25 +537,49 @@
       justify-content: flex-end;
     }
 
-    /* Force bottom-right positioning - override any other styles */
+    /* Force bottom-right positioning - override any other styles for iframe */
     #gaBot {
       position: fixed !important;
       bottom: 20px !important;
       right: 20px !important;
       top: auto !important;
       left: auto !important;
-      z-index: 999999 !important;
+      z-index: 2147483647 !important; /* Maximum z-index for iframe contexts */
       width: 90px !important; /* 50% larger than 60px */
       height: 90px !important;
       margin: 0 !important;
       padding: 0 !important;
       transform: none !important;
-      /* Additional positioning safeguards */
+      /* Additional positioning safeguards for iframe */
       float: none !important;
       clear: none !important;
       display: block !important;
       visibility: visible !important;
       opacity: 1 !important;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif !important;
+    }
+
+    /* Iframe-specific overrides for Entity admin */
+    html.iframe-context .ga-bot,
+    body.iframe-context .ga-bot,
+    .ga-bot.iframe-context {
+      position: fixed !important;
+      bottom: 20px !important;
+      right: 20px !important;
+      z-index: 2147483647 !important;
+      width: 90px !important;
+      height: 90px !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      transform: none !important;
+      top: auto !important;
+      left: auto !important;
+      float: none !important;
+      clear: none !important;
+      display: block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif !important;
     }
 
     /* Reduced motion */
@@ -571,7 +596,7 @@
   </style>
 </head>
 <body>
-  <div class="ga-bot" id="gaBot" style="position: fixed !important; bottom: 20px !important; right: 20px !important; z-index: 999999 !important; width: 90px !important; height: 90px !important; margin: 0 !important; padding: 0 !important; transform: none !important; top: auto !important; left: auto !important; float: none !important; clear: none !important; display: block !important; visibility: visible !important; opacity: 1 !important;">
+  <div class="ga-bot" id="gaBot" style="position: fixed !important; bottom: 20px !important; right: 20px !important; z-index: 2147483647 !important; width: 90px !important; height: 90px !important; margin: 0 !important; padding: 0 !important; transform: none !important; top: auto !important; left: auto !important; float: none !important; clear: none !important; display: block !important; visibility: visible !important; opacity: 1 !important; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif !important;">
     <button class="ga-bot__button" id="gaBotBtn" aria-haspopup="dialog" aria-expanded="false" aria-controls="gaBotPanel" aria-label="Åpne chat med Gabrielsen AI" title="Åpne Gabrielsen AI">
       <img src="./assets/logo.png" alt="Gabrielsen AI" style="width: 90px; height: 90px;" />
     </button>
@@ -604,6 +629,14 @@
      */
     (function() {
       'use strict';
+
+      // Detect iframe context and apply special handling
+      const isInIframe = window.self !== window.top;
+      if (isInIframe) {
+        document.documentElement.classList.add('iframe-context');
+        document.body.classList.add('iframe-context');
+        console.log('🤖 Chatbot detected iframe context - applying special positioning');
+      }
 
       // DOM elements
       const bot = document.getElementById('gaBot');

@@ -60,7 +60,7 @@ const EMBEDDED_KNOWLEDGE = {
 // FAQ Configuration for common chip questions
 const FAQ_RESPONSES = {
   "obos akademi": {
-    reply: "OBOS Akademi\n\nEt fotballakademi for jenter og gutter i alderen 7-13 år.\n\nFølger skoleruta og tar kun fri på skolens fridager.\n\nMan kan delta fra 1-5 dager per uke.\n\nPris: 955,- til 2500,- per måned avhengig av antall dager.\n\nAkademiet fokuserer på teknisk utvikling og fotballglede.",
+    reply: "Et fotballakademi for jenter og gutter i alderen 7-13 år.\n\nFølger skoleruta og tar kun fri på skolens fridager.\n\nMan kan delta fra 1-5 dager per uke.\n\nPris: 955,- til 2500,- per måned avhengig av antall dager.\n\nAkademiet fokuserer på teknisk utvikling og fotballglede.",
     sources: [
       {
         title: "OBOS Akademi",
@@ -75,7 +75,7 @@ const FAQ_RESPONSES = {
     ]
   },
   "akademi+": {
-    reply: "OBOS Akademi+\n\nFor de ekstra ivrige fotballspillerne.\n\nDette er en intensiv variant av akademiet.\n\nFor barn som ønsker mer trening og utvikling.\n\nKontakt lars.henrik@askerfotball.no for mer informasjon.\n\nPerfekt for de som vil ta fotballen til neste nivå.",
+    reply: "For de ekstra ivrige fotballspillerne.\n\nDette er en intensiv variant av akademiet.\n\nFor barn som ønsker mer trening og utvikling.\n\nKontakt lars.henrik@askerfotball.no for mer informasjon.\n\nPerfekt for de som vil ta fotballen til neste nivå.",
     sources: [
       {
         title: "OBOS Akademi+", 
@@ -90,7 +90,7 @@ const FAQ_RESPONSES = {
     ]
   },
   "kontakt klubben": {
-    reply: "Kontakt Asker Fotball\n\nAdministrasjon:\n\nRolf-Magne Walstad\nDaglig og sportslig leder\nE-post: walstad@askerfotball.no\n\nMorten Sommerfeldt\nMarkedsansvarlig\nE-post: morten@askerfotball.no\nTelefon: +47 907 51 170\n\nGenerelt:\nE-post: post@askerfotball.no\n\nVi svarer raskt på alle henvendelser.",
+    reply: "Administrasjon:\n\nRolf-Magne Walstad\nDaglig og sportslig leder\nE-post: walstad@askerfotball.no\n\nMorten Sommerfeldt\nMarkedsansvarlig\nE-post: morten@askerfotball.no\nTelefon: +47 907 51 170\n\nGenerelt:\nE-post: post@askerfotball.no\n\nVi svarer raskt på alle henvendelser.",
     source: {
       title: "Kontakt",
       url: "https://askerfotball.no/om-klubben/ansatte",
@@ -98,7 +98,7 @@ const FAQ_RESPONSES = {
     }
   },
   "a-laget": {
-    reply: "Asker Fotball A-lag\n\nSterk spillertropp med både erfarne og unge spillere.\n\nTrenerteam:\n\nMagnus Bredal - Hovedtrener\nBård Heggset - Assistenttrener\nIsmet Duracak - Keepertrener\nJakob Lillestjerna - Analyseansvarlig\nAlain Antonio Astudillo - Medisinsk ansvarlig\n\nMed fokus på resultater og utvikling.",
+    reply: "Sterk spillertropp med både erfarne og unge spillere.\n\nTrenerteam:\n\nMagnus Bredal - Hovedtrener\nBård Heggset - Assistenttrener\nIsmet Duracak - Keepertrener\nJakob Lillestjerna - Analyseansvarlig\nAlain Antonio Astudillo - Medisinsk ansvarlig\n\nMed fokus på resultater og utvikling.",
     source: {
       title: "A-laget",
       url: "https://askerfotball.no/lag", 
