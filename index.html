@@ -10,7 +10,7 @@
   <style>
     :root {
       --bot-width: 380px;
-      --bot-height: 600px; /* Increased height */
+      --bot-height: 650px; /* Increased height to accommodate footer */
       --radius: 16px;
       --primary: #0f172a;
       --cyan: #06b6d4;
@@ -35,7 +35,7 @@
 
     body {
       font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-      background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('https://askerfotball.no') center/cover no-repeat fixed;
+      background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('./asker.png') center/cover no-repeat fixed;
       color: #333;
       line-height: 1.5;
       overflow-x: hidden;
@@ -80,11 +80,11 @@
     /* Bot Panel */
     .ga-bot__panel {
       position: absolute;
-      bottom: 80px;
+      bottom: 0;
       right: 0;
       width: var(--bot-width);
-      max-height: 75vh; /* Increased from 70vh to 75vh */
-      height: var(--bot-height); /* Set fixed height for consistency */
+      height: var(--bot-height); /* Fixed height to prevent layout shifts */
+      max-height: 75vh;
       background: white; /* Always white background */
       border-radius: var(--radius);
       box-shadow: var(--shadow); /* Always show shadow */
@@ -104,6 +104,13 @@
       transform: translateY(0) scale(1);
       pointer-events: auto;
       visibility: visible; /* Show when open */
+    }
+
+    /* Hide button when panel is open */
+    .ga-bot--open .ga-bot__button {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
     }
 
     /* Close Button - positioned in top-right corner */
@@ -136,18 +143,14 @@
 
     /* Messages */
     .ga-bot__messages {
-      flex: 1;
       padding: 16px;
       padding-top: 48px; /* Add top padding to account for close button */
-      overflow-y: auto;
       overflow-x: hidden;
       scroll-behavior: smooth;
       list-style: none;
       display: flex;
       flex-direction: column;
       gap: 12px;
-      min-height: 200px; /* Reduced to make room for footer */
-      max-height: calc(75vh - 220px); /* Reduced to account for footer */
       -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS/macOS */
     }
 
@@ -254,6 +257,7 @@
       gap: 8px;
       flex-shrink: 0;
       margin-top: 0;
+      background: white;
     }
 
     .ga-bot__form-input-row {
@@ -326,12 +330,13 @@
         width: calc(100vw - 40px); /* Account for margins */
         max-width: var(--bot-width);
         right: 0; /* Align with button */
+        bottom: 0; /* Keep at bottom on mobile too */
       }
 
       .ga-bot__messages {
-        min-height: 180px; /* Reduced to make room for footer */
+        min-height: 160px; /* Reduced to make room for footer */
         padding-top: 44px; /* Slightly less padding on mobile */
-        max-height: calc(75vh - 180px); /* Reduced to account for footer */
+        max-height: calc(75vh - 200px); /* Reduced to account for footer */
         -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
       }
 
@@ -361,6 +366,7 @@
       .af-footer {
         font-size: 14px;
         padding: 10px 12px;
+        min-height: 50px; /* Ensure footer has enough height on mobile */
       }
 
       .af-footer-logo {
@@ -373,11 +379,15 @@
     .af-chat {
       display: flex;
       flex-direction: column;
-      height: 100%;
+      flex: 1;
+      min-height: 0; /* Allow flex item to shrink below content size */
     }
 
     .af-chat__log {
       flex: 1;
+      min-height: 0; /* Allow flex item to shrink below content size */
+      overflow-y: auto;
+      padding-bottom: 8px; /* Add some bottom padding */
     }
 
     .af-chat__chips {
@@ -386,7 +396,8 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 8px;
-      margin-bottom: 8px;
+      margin-bottom: 0;
+      flex-shrink: 0;
     }
 
     .af-chip {
@@ -433,6 +444,9 @@
       background: #f8fafc;
       border-top: 1px solid var(--gray-200);
       flex-shrink: 0;
+      position: relative;
+      z-index: 10;
+      min-height: 60px; /* Ensure footer has enough height */
     }
 
     .af-footer-text {
@@ -444,6 +458,8 @@
       width: 32px;
       height: 32px;
       flex-shrink: 0;
+      display: block;
+      border-radius: 50%;
     }
 
     .af-footer-link {
