@@ -271,6 +271,7 @@ exports.handler = async (event, context) => {
 
     // EMBEDDED KNOWLEDGE SEARCH
     const searchResults = searchEmbeddedKnowledge(messageToSend);
+    console.log('🔍 Search results:', searchResults.length);
     
     if (searchResults.length === 0) {
       return {
