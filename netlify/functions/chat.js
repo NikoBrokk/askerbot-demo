@@ -415,7 +415,7 @@ exports.handler = async (event, context) => {
         },
         body: JSON.stringify({ 
           reply: faqResponse.reply,
-          sources: faqResponse.sources || [faqResponse.source],
+          sources: faqResponse.sources || [faqResponse.source], // FAQ can have up to 2 sources
           usage: null,
           ragUsed: false,
           faqUsed: true
@@ -517,8 +517,8 @@ exports.handler = async (event, context) => {
       };
     }
 
-    // Build sources array
-    const sources = searchResults.map(result => ({
+    // Build sources array - limit to 1 source for RAG responses
+    const sources = searchResults.slice(0, 1).map(result => ({
       title: result.title,
       url: result.url,
       score: result.score

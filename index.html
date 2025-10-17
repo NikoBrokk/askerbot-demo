@@ -35,7 +35,7 @@
 
     body {
       font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-      background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('./asker.png') center/cover no-repeat fixed;
+      background: transparent;
       color: #333;
       line-height: 1.5;
       overflow-x: hidden;
@@ -45,10 +45,15 @@
     /* Bot Container - v2.0 */
     .ga-bot {
       position: fixed !important;
-      bottom: 20px !important; /* Add some margin from bottom edge */
-      right: 20px !important; /* Add some margin from right edge */
-      z-index: 9999 !important; /* Match iframe z-index */
+      bottom: 20px !important; /* Fixed position from bottom edge */
+      right: 20px !important; /* Fixed position from right edge */
+      z-index: 9999 !important; /* High z-index to stay on top */
       font-family: inherit;
+      /* Force positioning */
+      top: auto !important;
+      left: auto !important;
+      margin: 0 !important;
+      padding: 0 !important;
     }
 
     /* Bot Button */
@@ -63,8 +68,8 @@
       position: relative;
       padding: 0;
       margin: 0;
-      width: 154px; /* 20% smaller than 192px */
-      height: 154px;
+      width: 60px; /* Much smaller for just the logo */
+      height: 60px;
     }
 
     .ga-bot__button:hover {
@@ -85,9 +90,9 @@
       width: var(--bot-width);
       height: var(--bot-height); /* Fixed height to prevent layout shifts */
       max-height: 75vh;
-      background: white; /* Always white background */
+      background: white; /* White background only when open */
       border-radius: var(--radius);
-      box-shadow: var(--shadow); /* Always show shadow */
+      box-shadow: var(--shadow); /* Shadow only when open */
       display: flex;
       flex-direction: column;
       opacity: 0;
@@ -322,8 +327,9 @@
     /* Responsive */
     @media (max-width: 480px) {
       .ga-bot {
-        bottom: 20px; /* Keep same margin as desktop */
-        right: 20px; /* Keep same margin as desktop */
+        bottom: 20px !important; /* Keep same margin as desktop */
+        right: 20px !important; /* Keep same margin as desktop */
+        position: fixed !important; /* Ensure fixed positioning on mobile */
       }
 
       .ga-bot__panel {
@@ -509,6 +515,16 @@
       justify-content: flex-end;
     }
 
+    /* Force bottom-right positioning - override any other styles */
+    #gaBot {
+      position: fixed !important;
+      bottom: 20px !important;
+      right: 20px !important;
+      top: auto !important;
+      left: auto !important;
+      z-index: 9999 !important;
+    }
+
     /* Reduced motion */
     @media (prefers-reduced-motion: reduce) {
       .ga-bot__message {
@@ -523,9 +539,9 @@
   </style>
 </head>
 <body>
-  <div class="ga-bot" id="gaBot">
+  <div class="ga-bot" id="gaBot" style="position: fixed !important; bottom: 20px !important; right: 20px !important; z-index: 9999 !important;">
     <button class="ga-bot__button" id="gaBotBtn" aria-haspopup="dialog" aria-expanded="false" aria-controls="gaBotPanel" aria-label="Åpne chat med Gabrielsen AI" title="Åpne Gabrielsen AI">
-      <img src="./assets/logo.png" alt="Gabrielsen AI" style="width: 154px; height: 154px;" />
+      <img src="./assets/logo.png" alt="Gabrielsen AI" style="width: 60px; height: 60px;" />
     </button>
 
     <section id="gaBotPanel" class="ga-bot__panel" role="dialog" aria-modal="true" aria-label="Gabrielsen AI chat">
