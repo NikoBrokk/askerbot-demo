@@ -100,15 +100,29 @@ function checkFAQ(query) {
  */
 function loadChunkMetadata() {
   try {
-    const bm25Dir = path.join(__dirname, '..', '..', 'storage', 'index', 'bm25');
-    const metadataPath = path.join(bm25Dir, 'chunk-metadata.json');
+    // Try multiple possible paths for Netlify Functions environment
+    const possiblePaths = [
+      path.join(__dirname, '..', '..', 'storage', 'index', 'bm25', 'chunk-metadata.json'),
+      path.join(process.cwd(), 'storage', 'index', 'bm25', 'chunk-metadata.json'),
+      path.join('/tmp', 'storage', 'index', 'bm25', 'chunk-metadata.json')
+    ];
     
-    if (!fs.existsSync(metadataPath)) {
-      console.warn('Chunk metadata not found, skipping search');
+    let metadataPath = null;
+    for (const testPath of possiblePaths) {
+      if (fs.existsSync(testPath)) {
+        metadataPath = testPath;
+        console.log('Found metadata at:', metadataPath);
+        break;
+      }
+    }
+    
+    if (!metadataPath) {
+      console.warn('Chunk metadata not found in any location:', possiblePaths);
       return null;
     }
     
     const metadata = JSON.parse(fs.readFileSync(metadataPath, 'utf8'));
+    console.log(`Loaded ${Object.keys(metadata).length} metadata entries`);
     return metadata;
   } catch (error) {
     console.error('Error loading chunk metadata:', error.message);
