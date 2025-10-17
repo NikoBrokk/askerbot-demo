@@ -4,6 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Askerbot – Demo</title>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
   <style>
     :root {
       --bot-width: 380px;
@@ -32,18 +35,19 @@
 
     body {
       font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-      background: transparent;
+      background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('https://askerfotball.no') center/cover no-repeat fixed;
       color: #333;
       line-height: 1.5;
       overflow-x: hidden;
+      min-height: 100vh;
     }
 
-    /* Bot Container */
+    /* Bot Container - v2.0 */
     .ga-bot {
-      position: fixed;
-      bottom: 20px; /* Add some margin from bottom edge */
-      right: 20px; /* Add some margin from right edge */
-      z-index: 9999; /* Match iframe z-index */
+      position: fixed !important;
+      bottom: 20px !important; /* Add some margin from bottom edge */
+      right: 20px !important; /* Add some margin from right edge */
+      z-index: 9999 !important; /* Match iframe z-index */
       font-family: inherit;
     }
 
