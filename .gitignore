@@ -9,7 +9,10 @@ node_modules/
 .env.production.local
 
 # Generated data (can be recreated with npm run reindex)
-# storage/ - Commented out to include in deployment
+storage/
+# Only include essential files for deployment
+!storage/index/bm25/
+!storage/index/bm25/*.json
 
 # Logs
 *.log
