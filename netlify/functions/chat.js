@@ -123,10 +123,21 @@ function searchEmbeddedKnowledge(query) {
       if (data.content.toLowerCase().includes(word)) score += 1;
     });
     
-    if (score > 0) {
+    // Special handling for common terms
+    if (queryLower.includes('trener') || queryLower.includes('coach') || queryLower.includes('hovedtrener')) {
+      if (key === 'trenere') score += 20;
+    }
+    if (queryLower.includes('klubb') || queryLower.includes('navn')) {
+      if (key === 'klubb_info') score += 15;
+    }
+    if (queryLower.includes('stadion') || queryLower.includes('bane') || queryLower.includes('hvor')) {
+      if (key === 'stadion') score += 15;
+        }
+        
+        if (score > 0) {
       results.push({
         key,
-        score,
+              score,
         title: data.title,
         content: data.content,
         url: data.url
