@@ -127,7 +127,7 @@ function searchEmbeddedKnowledge(query) {
     if (queryLower.includes('trener') || queryLower.includes('coach') || queryLower.includes('hovedtrener')) {
       if (key === 'trenere') score += 20;
     }
-    if (queryLower.includes('klubb') || queryLower.includes('navn')) {
+    if (queryLower.includes('klubb') || queryLower.includes('navn') || queryLower.includes('laget') || queryLower.includes('heter')) {
       if (key === 'klubb_info') score += 15;
     }
     if (queryLower.includes('stadion') || queryLower.includes('bane') || queryLower.includes('hvor')) {

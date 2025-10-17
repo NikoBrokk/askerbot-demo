@@ -41,9 +41,9 @@
     /* Bot Container */
     .ga-bot {
       position: fixed;
-      bottom: 0;
-      right: 0;
-      z-index: 2147483000;
+      bottom: 20px; /* Add some margin from bottom edge */
+      right: 20px; /* Add some margin from right edge */
+      z-index: 9999; /* Match iframe z-index */
       font-family: inherit;
     }
 
@@ -81,9 +81,9 @@
       width: var(--bot-width);
       max-height: 75vh; /* Increased from 70vh to 75vh */
       height: var(--bot-height); /* Set fixed height for consistency */
-      background: white;
+      background: white; /* Always white background */
       border-radius: var(--radius);
-      box-shadow: var(--shadow);
+      box-shadow: var(--shadow); /* Always show shadow */
       display: flex;
       flex-direction: column;
       opacity: 0;
@@ -92,12 +92,14 @@
       pointer-events: none;
       overflow: hidden;
       position: relative;
+      visibility: hidden; /* Completely hidden when closed */
     }
 
     .ga-bot--open .ga-bot__panel {
       opacity: 1;
       transform: translateY(0) scale(1);
       pointer-events: auto;
+      visibility: visible; /* Show when open */
     }
 
     /* Close Button - positioned in top-right corner */
@@ -312,14 +314,14 @@
     /* Responsive */
     @media (max-width: 480px) {
       .ga-bot {
-        bottom: 0;
-        right: 0;
+        bottom: 20px; /* Keep same margin as desktop */
+        right: 20px; /* Keep same margin as desktop */
       }
 
       .ga-bot__panel {
-        width: calc(100vw - 32px);
+        width: calc(100vw - 40px); /* Account for margins */
         max-width: var(--bot-width);
-        right: -16px;
+        right: 0; /* Align with button */
       }
 
       .ga-bot__messages {
