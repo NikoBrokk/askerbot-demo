@@ -1,6 +1,8 @@
 {
   "title": "Solidaritetsfondet / Asker Fotball",
   "url": "https://askerfotball.no/om-klubben/solidaritetsfondet",
+  "type": "static",
+  "priority": 1,
   "breadcrumbs": [
     "/--",
     "##### OBOS og Equinor har nylig gitt bidrag til Solidaritetsfondet! Les mer her;"
@@ -12,5 +14,5 @@
     "description": "Asker fotball har etablert Solidaritetsfond"
   },
   "word_count": 155,
-  "parsed_at": "2025-10-16T14:10:43.502Z"
+  "parsed_at": "2025-10-20T16:54:45.890Z"
 }

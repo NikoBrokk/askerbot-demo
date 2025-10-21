@@ -1,89 +1,71 @@
 {
-  "timestamp": "2025-10-17T13:35:36.453Z",
+  "timestamp": "2025-10-19T18:24:03.166Z",
   "endpoint": "http://localhost:8888/.netlify/functions/chat",
-  "duration": 58.445,
+  "duration": 933.233,
   "statistics": {
     "totalQuestions": 20,
-    "averageScore": 2.8,
-    "medianScore": 1,
-    "goodScores": 3,
-    "weakScores": 17,
-    "fallbackRate": 75,
-    "unexpectedFallbacks": 14
+    "averageScore": 6.3,
+    "medianScore": 8,
+    "goodScores": 12,
+    "weakScores": 8,
+    "fallbackRate": 15,
+    "unexpectedFallbacks": 3
   },
   "results": [
     {
       "index": 1,
       "question": "Hvordan melder jeg barnet mitt på Asker Fotball camp?",
-      "score": 1,
+      "score": 0,
       "isFallback": true,
-      "sourceCount": 1,
+      "sourceCount": 0,
       "expectedRag": true,
-      "ragUsed": true,
-      "hasSources": true,
-      "reply": "Uffda, her ble jeg stående uvitende i offside, prøv denne lenken eller endre spørsmålet!",
-      "sources": [
-        {
-          "title": "OBOS Akademi",
-          "url": "https://askerfotball.no/lag/utviklingslag/akademi",
-          "score": 18
-        }
-      ],
-      "error": null
+      "ragUsed": false,
+      "hasSources": false,
+      "reply": "",
+      "sources": [],
+      "error": "fetch failed"
     },
     {
       "index": 2,
       "question": "Hvor finner jeg terminliste for G15 Asker?",
-      "score": 1,
+      "score": 0,
       "isFallback": true,
-      "sourceCount": 1,
+      "sourceCount": 0,
       "expectedRag": true,
-      "ragUsed": true,
-      "hasSources": true,
-      "reply": "Uffda, her ble jeg stående uvitende i offside, prøv denne lenken eller endre spørsmålet!",
-      "sources": [
-        {
-          "title": "Føyka stadion",
-          "url": "https://askerfotball.no/om-stadion",
-          "score": 15
-        }
-      ],
-      "error": null
+      "ragUsed": false,
+      "hasSources": false,
+      "reply": "",
+      "sources": [],
+      "error": "fetch failed"
     },
     {
       "index": 3,
       "question": "Hvem kontakter jeg om faktura eller betaling?",
+      "score": 0,
+      "isFallback": true,
+      "sourceCount": 0,
+      "expectedRag": true,
+      "ragUsed": false,
+      "hasSources": false,
+      "reply": "",
+      "sources": [],
+      "error": "fetch failed"
+    },
+    {
+      "index": 4,
+      "question": "Hvor ligger Føyka stadion og hvor kan jeg parkere?",
       "score": 8,
       "isFallback": false,
       "sourceCount": 1,
       "expectedRag": true,
       "ragUsed": true,
       "hasSources": true,
-      "reply": "For spørsmål om faktura eller betaling, kan du kontakte klubben direkte på post@askerfotball.no.",
+      "reply": "Føyka stadion ligger på Føyka i Asker. Du kan parkere mot avgift nedenfor stadion, så husk å ha en synlig billett i vinduet! Velkommen til fotballfest!",
       "sources": [
         {
-          "title": "Kontakt",
-          "url": "https://askerfotball.no/om-klubben/ansatte",
-          "score": 18
-        }
-      ],
-      "error": null
-    },
-    {
-      "index": 4,
-      "question": "Hvor ligger Føyka stadion og hvor kan jeg parkere?",
-      "score": 1,
-      "isFallback": true,
-      "sourceCount": 1,
-      "expectedRag": true,
-      "ragUsed": true,
-      "hasSources": true,
-      "reply": "Føyka stadion ligger på Føyka i Asker. \n\nUffda, her ble jeg stående uvitende i offside, prøv denne lenken eller endre spørsmålet!",
-      "sources": [
-        {
-          "title": "Føyka stadion",
-          "url": "https://askerfotball.no/om-stadion",
-          "score": 24
+          "title": "Parkering på Føyka",
+          "url": "https://askerfotball.no/om-stadion/slik-finner-du-frem",
+          "score": 51
         }
       ],
       "error": null
@@ -91,18 +73,18 @@
     {
       "index": 5,
       "question": "Hvem er trenerne på utviklingslagene?",
-      "score": 1,
-      "isFallback": true,
+      "score": 8,
+      "isFallback": false,
       "sourceCount": 1,
       "expectedRag": true,
       "ragUsed": true,
       "hasSources": true,
-      "reply": "Uffda, her ble jeg stående uvitende i offside, prøv denne lenken eller endre spørsmålet!",
+      "reply": "Utviklingslagene ledes av trenere som deler klubbens mål og verdier. Spillerutvikler er Svein Roger Pettersen (Sveinroger.pettersen@ntg.no, tlf.: 951 63 103). Hver gruppe har også støtte fra foresatte som backer trenerne. For mer spesifik informasjon om hvert lag, kan du sjekke klubbens nettsider!",
       "sources": [
         {
-          "title": "Trenere",
+          "title": "Trenere A-laget",
           "url": "https://askerfotball.no/lag",
-          "score": 20
+          "score": 51
         }
       ],
       "error": null
@@ -116,12 +98,12 @@
       "expectedRag": true,
       "ragUsed": true,
       "hasSources": true,
-      "reply": "For å bli med på OBOS Akademi, kan du kontakte klubben direkte for mer informasjon om påmelding. \n\nPrisen for akademiet varierer fra 955,- til 2500,- per måned, avhengig av antall dager du deltar. \n\nDu kan nå klubben på post@askerfotball.no eller ringe +47 907 51 170 for oppdaterte priser og medlemskap.",
+      "reply": "For å bli med på OBOS Akademi, kan du melde deg på via denne lenken: https://app.rubic.no/Public/Events/33825. \n\nPrisen varierer fra 955,- til 2500,- per måned, avhengig av hvor mange dager du ønsker å delta. Har du flere spørsmål, er det bare å ta kontakt!",
       "sources": [
         {
-          "title": "Priser og medlemskap",
-          "url": "https://askerfotball.no",
-          "score": 21
+          "title": "OBOS Akademi",
+          "url": "https://askerfotball.no/lag/utviklingslag/akademi",
+          "score": 47
         }
       ],
       "error": null
@@ -129,18 +111,18 @@
     {
       "index": 7,
       "question": "Hvordan melder jeg interesse for å bli frivillig på kampdag?",
-      "score": 1,
-      "isFallback": true,
+      "score": 6,
+      "isFallback": false,
       "sourceCount": 1,
       "expectedRag": true,
-      "ragUsed": true,
+      "ragUsed": false,
       "hasSources": true,
-      "reply": "Uffda, her ble jeg stående uvitende i offside, prøv denne lenken eller endre spørsmålet!",
+      "reply": "For å melde interesse for å bli frivillig på kampdag eller andre arrangementer:\n\nKontakt klubben på:\nE-post: post@askerfotball.no\nTelefon: +47 907 51 170\n\nVi setter stor pris på frivillig innsats!",
       "sources": [
         {
-          "title": "Føyka stadion",
-          "url": "https://askerfotball.no/om-stadion",
-          "score": 15
+          "title": "Frivillig arbeid",
+          "url": "https://askerfotball.no",
+          "score": 10
         }
       ],
       "error": null
@@ -148,18 +130,18 @@
     {
       "index": 8,
       "question": "Finnes det et solidaritetsfond eller støtteordning?",
-      "score": 1,
-      "isFallback": true,
+      "score": 8,
+      "isFallback": false,
       "sourceCount": 1,
       "expectedRag": true,
       "ragUsed": true,
       "hasSources": true,
-      "reply": "Uffda, her ble jeg stående uvitende i offside, prøv denne lenken eller endre spørsmålet!",
+      "reply": "Ja, Asker Fotball har etablert et Solidaritetsfond for å gi støtte i økonomisk krevende situasjoner. Fondet jobber sammen med familiene for å finne løsninger, men dekker ikke hele deltakeravgiften. For mer informasjon, kan du kontakte sportslig leder på walstad@askerfotball.no.",
       "sources": [
         {
-          "title": "OBOS Akademi",
-          "url": "https://askerfotball.no/lag/utviklingslag/akademi",
-          "score": 1
+          "title": "Solidaritetsfondet",
+          "url": "https://askerfotball.no/om-klubben/solidaritetsfondet",
+          "score": 28
         }
       ],
       "error": null
@@ -186,18 +168,18 @@
     {
       "index": 10,
       "question": "Hva er Asker United, og hvem kan delta?",
-      "score": 1,
-      "isFallback": true,
+      "score": 8,
+      "isFallback": false,
       "sourceCount": 1,
       "expectedRag": true,
       "ragUsed": true,
       "hasSources": true,
-      "reply": "Uffda, her ble jeg stående uvitende i offside, prøv denne lenken eller endre spørsmålet!",
+      "reply": "Asker United er et samfunnslag innen Asker Fotball som fokuserer på inkludering og gir voksne muligheten til å spille fotball på et mer avslappet nivå. Alle voksne som ønsker å delta og ha det moro med fotball er velkomne! Ta gjerne kontakt med klubben for mer informasjon om påmelding.",
       "sources": [
         {
-          "title": "Om klubben",
+          "title": "Påmelding og registrering",
           "url": "https://askerfotball.no",
-          "score": 16
+          "score": 34
         }
       ],
       "error": null
@@ -205,18 +187,18 @@
     {
       "index": 11,
       "question": "Hva er åpningstidene i fotballhuset?",
-      "score": 1,
-      "isFallback": true,
+      "score": 8,
+      "isFallback": false,
       "sourceCount": 1,
       "expectedRag": true,
       "ragUsed": true,
       "hasSources": true,
-      "reply": "Uffda, her ble jeg stående uvitende i offside, prøv denne lenken eller endre spørsmålet!",
+      "reply": "Fotballhuset har åpningstider som følger:\\nMan-Fre: 08.00-20.00\\nLørdag: 10.00-14.00\\nSøndag: 10.00-14.00\\nTa gjerne turen innom for å handle supporterutstyr eller ta en hyggelig fotballprat!",
       "sources": [
         {
-          "title": "Om klubben",
-          "url": "https://askerfotball.no",
-          "score": 15
+          "title": "Fotballhuset og åpningstider",
+          "url": "https://askerfotball.no/om-stadion/fotballhuset",
+          "score": 58
         }
       ],
       "error": null
@@ -224,18 +206,18 @@
     {
       "index": 12,
       "question": "Hva er klubbens sportsplan eller visjon To Steg Frem?",
-      "score": 1,
-      "isFallback": true,
+      "score": 8,
+      "isFallback": false,
       "sourceCount": 1,
       "expectedRag": true,
       "ragUsed": true,
       "hasSources": true,
-      "reply": "Uffda, her ble jeg stående uvitende i offside, prøv denne lenken eller endre spørsmålet!",
+      "reply": "To Skritt Frem er Asker Fotballs program for livsmestring og folkehelse. Det fokuserer på å styrke sosiale og emosjonelle ferdigheter, samt bygge god psykisk helse for alle involverte i idretten. Målet er å utvikle både bedre idrettsutøvere og mennesker, med vekt på sosial kompetanse blant ansatte, trenere, lagledere, utøvere og foresatte.",
       "sources": [
         {
-          "title": "Om klubben",
-          "url": "https://askerfotball.no",
-          "score": 15
+          "title": "To Skritt Frem - klubbens sportsplan",
+          "url": "https://askerfotball.no/om-klubben/to-steg-frem",
+          "score": 26
         }
       ],
       "error": null
@@ -243,18 +225,18 @@
     {
       "index": 13,
       "question": "Hvor finner jeg informasjon om styret i klubben?",
-      "score": 1,
-      "isFallback": true,
+      "score": 8,
+      "isFallback": false,
       "sourceCount": 1,
       "expectedRag": true,
       "ragUsed": true,
       "hasSources": true,
-      "reply": "Uffda, her ble jeg stående uvitende i offside, prøv denne lenken eller endre spørsmålet!",
+      "reply": "Du kan finne informasjon om styret i Asker Fotball på vår nettside under seksjonen for om klubben. Der finner du detaljer om styreleder, nestleder og styremedlemmer. Besøk gjerne https://askerfotball.no/om-klubben/styret-asker-fotball for mer informasjon!",
       "sources": [
         {
-          "title": "Om klubben",
-          "url": "https://askerfotball.no",
-          "score": 15
+          "title": "Styret i Asker Fotball",
+          "url": "https://askerfotball.no/om-klubben/styret-asker-fotball",
+          "score": 23
         }
       ],
       "error": null
@@ -262,18 +244,18 @@
     {
       "index": 14,
       "question": "Hvordan booker jeg baner eller anlegg?",
-      "score": 1,
-      "isFallback": true,
+      "score": 8,
+      "isFallback": false,
       "sourceCount": 1,
       "expectedRag": true,
       "ragUsed": true,
       "hasSources": true,
-      "reply": "Uffda, her ble jeg stående uvitende i offside, prøv denne lenken eller endre spørsmålet!",
+      "reply": "For å booke baner eller anlegg, kan du kontakte klubben på post@askerfotball.no eller ringe +47 907 51 170. Vi hjelper deg gjerne med booking av Føyka stadion og andre fasiliteter!",
       "sources": [
         {
-          "title": "Føyka stadion",
-          "url": "https://askerfotball.no/om-stadion",
-          "score": 15
+          "title": "Booking av baner og anlegg",
+          "url": "https://askerfotball.no",
+          "score": 69
         }
       ],
       "error": null
@@ -300,18 +282,18 @@
     {
       "index": 16,
       "question": "Har dere retningslinjer for barnefotballen?",
-      "score": 1,
-      "isFallback": true,
+      "score": 6,
+      "isFallback": false,
       "sourceCount": 1,
       "expectedRag": true,
-      "ragUsed": true,
+      "ragUsed": false,
       "hasSources": true,
-      "reply": "Uffda, her ble jeg stående uvitende i offside, prøv denne lenken eller endre spørsmålet!",
+      "reply": "Asker Fotball har retningslinjer for barnefotball som fokuserer på spillerutvikling og trivsel.\n\nVåre fire ledestjerner er:\n• Ærlighet\n• Hardt arbeid\n• Ydmykhet\n• Laget først\n\nFor mer informasjon om retningslinjer, kontakt klubben på post@askerfotball.no.",
       "sources": [
         {
-          "title": "OBOS Akademi",
-          "url": "https://askerfotball.no/lag/utviklingslag/akademi",
-          "score": 17
+          "title": "Retningslinjer for barnefotball",
+          "url": "https://askerfotball.no",
+          "score": 10
         }
       ],
       "error": null
@@ -319,18 +301,18 @@
     {
       "index": 17,
       "question": "Når er neste klubbdugnad og hvordan melder jeg meg?",
-      "score": 6,
-      "isFallback": true,
+      "score": 8,
+      "isFallback": false,
       "sourceCount": 1,
       "expectedRag": false,
       "ragUsed": true,
       "hasSources": true,
-      "reply": "Uffda, her ble jeg stående uvitende i offside, prøv denne lenken eller endre spørsmålet!",
+      "reply": "Neste klubbdugnad blir annonsert på klubbens nettsider og i Facebook-grupper. For å melde deg på, kan du kontakte laglederen din, sende en e-post til post@askerfotball.no, eller sjekke Facebook-gruppene for mer informasjon. Vi setter stor pris på all hjelp!",
       "sources": [
         {
-          "title": "Om klubben",
-          "url": "https://askerfotball.no",
-          "score": 15
+          "title": "Fotballhuset og åpningstider",
+          "url": "https://askerfotball.no/om-stadion/fotballhuset",
+          "score": 38
         }
       ],
       "error": null
@@ -344,12 +326,12 @@
       "expectedRag": true,
       "ragUsed": true,
       "hasSources": true,
-      "reply": "Hovedtrener for Asker Fotball er Magnus Bredal. Assistenttrener er Bård Heggset, og keepertrener er Ismet Duracak. For mer informasjon om trenerne, kan du besøke: https://askerfotball.no/lag.",
+      "reply": "Selvfølgelig! Hvilket lag ønsker du kontaktinformasjon til? Her er noen eksempler:\n\n- G13: Lars Henrik Dahl (lars.henrik@askerfotball.no)\n- G14: Mathis Banggren (Mathis@askerfotball.no)\n- G15: Fausto Ferreras Gromaz (pocholadam@hotmail.com)\n\nGi meg beskjed hvis du trenger mer informasjon!",
       "sources": [
         {
-          "title": "Trenere",
+          "title": "Trenere A-laget",
           "url": "https://askerfotball.no/lag",
-          "score": 20
+          "score": 51
         }
       ],
       "error": null
@@ -357,18 +339,18 @@
     {
       "index": 19,
       "question": "Hvordan kan mitt firma bli sponsor?",
-      "score": 1,
-      "isFallback": true,
+      "score": 6,
+      "isFallback": false,
       "sourceCount": 1,
       "expectedRag": true,
-      "ragUsed": true,
+      "ragUsed": false,
       "hasSources": true,
-      "reply": "Uffda, her ble jeg stående uvitende i offside, prøv denne lenken eller endre spørsmålet!",
+      "reply": "For informasjon om sponsormuligheter:\n\nKontakt Morten Sommerfeldt (markedsansvarlig):\nE-post: morten@askerfotball.no\nTelefon: +47 907 51 170\n\nVi har flere sponsorpakker tilgjengelig.",
       "sources": [
         {
-          "title": "Føyka stadion",
-          "url": "https://askerfotball.no/om-stadion",
-          "score": 15
+          "title": "Sponsormuligheter",
+          "url": "https://askerfotball.no",
+          "score": 10
         }
       ],
       "error": null
@@ -376,18 +358,18 @@
     {
       "index": 20,
       "question": "Hvor melder jeg avvik eller sender inn en bekymring?",
-      "score": 1,
-      "isFallback": true,
+      "score": 8,
+      "isFallback": false,
       "sourceCount": 1,
       "expectedRag": true,
       "ragUsed": true,
       "hasSources": true,
-      "reply": "Uffda, her ble jeg stående uvitende i offside, prøv denne lenken eller endre spørsmålet!",
+      "reply": "For å varsle om uønskede hendelser eller sende inn en bekymring, kan du sende en e-post til post@askerfotball.no. Alle varsler er beskyttet av personvern og vil bli behandlet deretter. Takk for at du bidrar til et trygt miljø!",
       "sources": [
         {
-          "title": "Føyka stadion",
-          "url": "https://askerfotball.no/om-stadion",
-          "score": 15
+          "title": "Kontakt",
+          "url": "https://askerfotball.no/om-klubben/ansatte",
+          "score": 28
         }
       ],
       "error": null

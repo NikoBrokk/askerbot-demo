@@ -17,9 +17,11 @@
     "serve": "npx serve .",
     "start": "node express-server.js",
     "server": "node express-server.js",
+    "test": "node scripts/rag-test.js",
     "test:smoke": "node scripts/smoke-rag.js",
     "test:ui": "npx playwright test --reporter=list",
-    "predeploy:check": "npm run test:smoke && npm run test:ui"
+    "predeploy:check": "npm run test:smoke && npm run test:ui",
+    "organize:reports": "node scripts/move-reports-to-context.js"
   },
   "keywords": [
     "chatbot",

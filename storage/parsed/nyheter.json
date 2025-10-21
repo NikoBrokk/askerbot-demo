@@ -1,13 +1,15 @@
 {
   "title": "Nyheter / Asker Fotball",
   "url": "https://askerfotball.no/nyheter",
+  "type": "static",
+  "priority": 1,
   "breadcrumbs": [],
-  "content": "# Nyheter-->### oktober 2025•09. oktober 2025Eidsvold Turn neste!Bortekamp på Eidsvoll lørdag klokken 14:00•08. oktober 2025Stian kommer på OBOS + søndagStian Stray Molde (28) kommer til Føyka for å treffe spillerne på OBOS Akademi+•03. oktober 2025Asker - Kjelsås flyttes til søndagNy tid: Søndag 13:00 på Føyka### september 2025•30. september 2025OBOS Høstcamp dag 3Stor innsats av alle deltagerne på Føyka disse dagene!•24. september 2025Bortetur neste: Stjørdals-BlinkTMT Stadion Sandskogan 14:00 lørdag•24. september 2025Velkommen til OBOS Akademi+Asker Fotball inviterer til OBOS Akademi + for spillere født 2013-2015•18. september 2025Spennende uker for ungdomsfotballen i klubbenRolf-Magne med en liten oppdatering fra ungdomslagene!•17. september 2025Hjemmekamp: Alta kommerNy skjebnekamp venter.•11. september 2025Før kampen: StrømmenKveldskamp på Føyka? Bli med da! 19:00 lørdag.•10. september 2025Skolecupen var en suksessSeks skoler møttes tirsdag for å spille turnering.### {{value.month}}•{{article.publish_from}}#### {{article.headline}}{{tag}}{{article.intro}}Vis Flere-->Vis Flere## FilterVisSkjul filtre### Artikler•Med Video (1)",
+  "content": "# Nyheter-->### oktober 2025•16. oktober 2025Gåfotballen med besøk fra BærumDet ble spilt kamp onsdag!•16. oktober 2025Siste hjemmekamp i serienLevanger på Føyka søndag 15:00•09. oktober 2025Eidsvold Turn neste!Bortekamp på Eidsvoll lørdag klokken 14:00•08. oktober 2025Stian kommer på OBOS + søndagStian Stray Molde (28) kommer til Føyka for å treffe spillerne på OBOS Akademi+•03. oktober 2025Asker - Kjelsås flyttes til søndagNy tid: Søndag 13:00 på Føyka### september 2025•30. september 2025OBOS Høstcamp dag 3Stor innsats av alle deltagerne på Føyka disse dagene!•24. september 2025Bortetur neste: Stjørdals-BlinkTMT Stadion Sandskogan 14:00 lørdag•24. september 2025Velkommen til OBOS Akademi+Asker Fotball inviterer til OBOS Akademi + for spillere født 2013-2015•18. september 2025Spennende uker for ungdomsfotballen i klubbenRolf-Magne med en liten oppdatering fra ungdomslagene!•17. september 2025Hjemmekamp: Alta kommerNy skjebnekamp venter.### {{value.month}}•{{article.publish_from}}#### {{article.headline}}{{tag}}{{article.intro}}Vis Flere-->Vis Flere## FilterVisSkjul filtre### Artikler•Med Video (1)",
   "published_at": null,
   "lang": "no",
   "meta": {
     "description": "   Asker Fotball."
   },
-  "word_count": 134,
-  "parsed_at": "2025-10-16T14:10:43.285Z"
+  "word_count": 130,
+  "parsed_at": "2025-10-20T16:54:44.582Z"
 }

@@ -1,6 +1,8 @@
 {
   "title": "Varslingsknapp Asker Fotball / Asker Fotball",
   "url": "https://askerfotball.no/om-klubben/varslingsknapp-asker-fotball",
+  "type": "static",
+  "priority": 1,
   "breadcrumbs": [],
   "content": "Varslingsknapp Asker Fotball / Asker Fotball\n••\n••\n•••\n•• •Varsling av uønskede hendelser i klubben[Forsiden](https://askerfotball.no/)\n/\n/-->[Varslingsknapp Asker Fotball](mailto:post@askerfotball.no)Merk: Alle varsler er beskyttet av personvern - og vil også bli behandlet deretter.&nbsp;Annonse:### Populære søk[PROFIL](https://askerfotball.no/pwa)[REDIGER PROFIL](https://askerfotball.no/pwa?edit=true)EPostMobilnummerFødselsdatoAdressePostnr.PoststedKjønn#### PushmeldingerSpesielle utvalgte nyheterAlle nyheterKamphendelser#### Kommunikasjon og SamtykkerREDIGER SAMTYKKERNyheterLagTerminlisteResultaterOm stadionOm klubbenAskerfotballens historieMarkedSamfunnButikkFøyka OBOS-campOBOS-AkademietFordelsprogramPUSH-VARSLINGERXX## HeaderContentXHeaderContentDenne nettsiden bruker cookies – se nærmere i vår cookie- og personvernerklæring.[Ok](#cookie-line-accept)[Les mer her](https://www.obos-ligaen.no/personvern)",
   "published_at": null,
@@ -9,5 +11,5 @@
     "description": "Varsling av uønskede hendelser i klubben"
   },
   "word_count": 62,
-  "parsed_at": "2025-10-16T14:10:43.591Z"
+  "parsed_at": "2025-10-20T16:54:45.976Z"
 }

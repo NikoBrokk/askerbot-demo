@@ -37,13 +37,43 @@ class HTMLParser {
       
       // Bygg URL mapping basert på allowlist
       this.urlMapping = {};
-      for (const url of allowlist.urls) {
-        // Konverter URL til filnavn
-        const fileName = this.urlToFileName(url);
-        this.urlMapping[fileName] = url;
+      
+      // Håndter ny struktur med static_pages og news_articles
+      if (allowlist.static_pages && allowlist.news_articles) {
+        // Legg til statiske sider
+        for (const url of allowlist.static_pages) {
+          const fileName = this.urlToFileName(url);
+          this.urlMapping[fileName] = {
+            url: url,
+            type: 'static',
+            priority: allowlist.config?.static_priority?.base_score || 1.0
+          };
+        }
+        
+        // Legg til nyhetsartikler
+        for (const url of allowlist.news_articles) {
+          const fileName = this.urlToFileName(url);
+          this.urlMapping[fileName] = {
+            url: url,
+            type: 'news',
+            priority: allowlist.config?.news_priority?.fresh_boost || 1.0
+          };
+        }
+        
+        console.log(`✅ Loaded ${allowlist.static_pages.length} static pages and ${allowlist.news_articles.length} news articles`);
+      } else {
+        // Bakoverkompatibilitet for gammel struktur
+        for (const url of allowlist.urls) {
+          const fileName = this.urlToFileName(url);
+          this.urlMapping[fileName] = {
+            url: url,
+            type: 'unknown',
+            priority: 1.0
+          };
+        }
+        console.log(`✅ Loaded ${Object.keys(this.urlMapping).length} URLs from allowlist (legacy format)`);
       }
       
-      console.log(`✅ Loaded ${Object.keys(this.urlMapping).length} URLs from allowlist`);
       return allowlist;
     } catch (error) {
       throw new Error(`Kunne ikke laste allowlist: ${error.message}`);
@@ -952,12 +982,17 @@ class HTMLParser {
     console.log(`  📄 Parserer ${filename}`);
     
     const filePath = path.join(this.rawDir, filename);
-    const url = this.urlMapping[filename];
+    const urlMapping = this.urlMapping[filename];
     
-    if (!url) {
+    if (!urlMapping) {
       console.log(`    ⚠️  Ingen URL mapping for ${filename}`);
       return null;
     }
+    
+    // Håndter både ny og gammel struktur
+    const url = typeof urlMapping === 'string' ? urlMapping : urlMapping.url;
+    const type = typeof urlMapping === 'string' ? 'unknown' : urlMapping.type;
+    const priority = typeof urlMapping === 'string' ? 1.0 : urlMapping.priority;
 
     try {
       // Les HTML
@@ -970,6 +1005,8 @@ class HTMLParser {
       const result = {
         title: parsed.title,
         url: url,
+        type: type,
+        priority: priority,
         breadcrumbs: parsed.breadcrumbs,
         content: parsed.content,
         published_at: parsed.published_at,

@@ -1,6 +1,8 @@
 {
-  "title": "Gutter 14 / Asker Fotball",
+  "title": "Gutter 14 / Asker Fotball (URL: gutter-13)",
   "url": "https://askerfotball.no/lag/utviklingslag/gutter-13",
+  "type": "static",
+  "priority": 1,
   "breadcrumbs": [
     "/--",
     "--",
@@ -13,5 +15,5 @@
     "description": "   Asker Fotball."
   },
   "word_count": 47,
-  "parsed_at": "2025-10-16T14:10:43.184Z"
+  "parsed_at": "2025-10-20T16:54:44.470Z"
 }

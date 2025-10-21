@@ -36,14 +36,63 @@ class KnowledgeBaseFetcher {
   }
 
   /**
-   * Les allowlist.json
+   * Les allowlist.json og returner alle URLer (bakoverkompatibilitet)
    */
   async loadAllowlist() {
     try {
       const data = await fs.readFile(this.allowlistPath, 'utf8');
-      return JSON.parse(data);
+      const allowlist = JSON.parse(data);
+      
+      // Hvis ny struktur, kombiner static_pages og news_articles
+      if (allowlist.static_pages && allowlist.news_articles) {
+        return {
+          ...allowlist,
+          urls: [...allowlist.static_pages, ...allowlist.news_articles]
+        };
+      }
+      
+      // Bakoverkompatibilitet for gammel struktur
+      return allowlist;
     } catch (error) {
       throw new Error(`Kunne ikke lese allowlist: ${error.message}`);
+    }
+  }
+
+  /**
+   * Hent kun statiske sider
+   */
+  async loadStaticPages() {
+    try {
+      const data = await fs.readFile(this.allowlistPath, 'utf8');
+      const allowlist = JSON.parse(data);
+      
+      if (allowlist.static_pages) {
+        return allowlist.static_pages;
+      }
+      
+      // Fallback til gammel struktur
+      return allowlist.urls || [];
+    } catch (error) {
+      throw new Error(`Kunne ikke lese statiske sider: ${error.message}`);
+    }
+  }
+
+  /**
+   * Hent kun nyhetsartikler
+   */
+  async loadNewsArticles() {
+    try {
+      const data = await fs.readFile(this.allowlistPath, 'utf8');
+      const allowlist = JSON.parse(data);
+      
+      if (allowlist.news_articles) {
+        return allowlist.news_articles;
+      }
+      
+      // Fallback til gammel struktur
+      return [];
+    } catch (error) {
+      throw new Error(`Kunne ikke lese nyhetsartikler: ${error.message}`);
     }
   }
 

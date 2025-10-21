@@ -1,0 +1,52 @@
+{
+  "stadion_detaljert": {
+    "title": "Føyka stadion - Detaljert informasjon",
+    "content": "Føyka stadion ligger på Føyka i Asker. Stadion har 1450 sitteplasser og total kapasitet på 2400 inkludert ståplasser. Anlegget har undervarme, kunstgress og flomlys. For parkering: Det er begrenset parkering ved stadion, men det finnes offentlig parkering i nærheten. Anbefales å bruke kollektivtransport eller parkere i sentrum og gå til stadion. Fotballhuset har garderober og klubbhus. Adresse: Føyka, Asker.",
+    "url": "https://askerfotball.no/om-stadion"
+  },
+  "trenere_ungdom": {
+    "title": "Trenere for ungdomslag",
+    "content": "G15-gutter: Fausto Ferreras Gromaz (Hovedtrener, pocholadam@hotmail.com), Per Christian Brandvik (Lagleder). For andre aldersgrupper, kontakt klubben på post@askerfotball.no for oppdatert trenerliste.",
+    "url": "https://askerfotball.no/lag/utviklingslag"
+  },
+  "samfunnslag_priser": {
+    "title": "Samfunnslag - priser og påmelding",
+    "content": "Samfunnslagene er for voksne som vil spille fotball på et mer avslappet nivå. For oppdaterte priser og påmelding, kontakt klubben direkte på post@askerfotball.no eller ring +47 907 51 170. Prisene varierer avhengig av sesong og aktivitetsnivå.",
+    "url": "https://askerfotball.no/lag/samfunnslag"
+  },
+  "dugnad_info": {
+    "title": "Klubbdugnad og frivillig arbeid",
+    "content": "Asker Fotball arrangerer regelmessige dugnader for å vedlikeholde anlegget. For informasjon om neste dugnad og påmelding, kontakt klubben på post@askerfotball.no eller følg med på nettsiden. Frivillig arbeid er alltid velkommen!",
+    "url": "https://askerfotball.no"
+  },
+  "booking_stadion": {
+    "title": "Booking av Føyka stadion",
+    "content": "For å booke Føyka stadion til privat bruk, kontakt klubben på post@askerfotball.no eller ring +47 907 51 170. Det er mulig å booke både hovedbanen og treningsbaner. Priser og tilgjengelighet varierer avhengig av sesong og arrangement.",
+    "url": "https://askerfotball.no/om-stadion"
+  },
+  "barnefotball_retningslinjer": {
+    "title": "Retningslinjer for barnefotball",
+    "content": "Asker Fotball følger NFFs retningslinjer for barnefotball med fokus på glede, utvikling og inkludering. Alle trenere er sertifiserte og følger klubbens verdier. For spesifikke retningslinjer, kontakt klubben på post@askerfotball.no.",
+    "url": "https://askerfotball.no/lag/utviklingslag"
+  },
+  "resultater_kamper": {
+    "title": "Resultater og kamper",
+    "content": "For oppdaterte resultater og kampprogram, besøk klubbens nettside eller kontakt klubben på post@askerfotball.no. Resultater publiseres regelmessig etter hver kamp.",
+    "url": "https://askerfotball.no/resultater"
+  },
+  "styret_detaljert": {
+    "title": "Styret i Asker Fotball",
+    "content": "Styreleder: Ulrik Arneberg (ulrik@profildesign.no). Nestleder: Espen Falck (espen@profildesign.no). Styremedlemmer: Aksel Svensson, Marie Grønnestad, Espen Røisland, Vegard Dokken, Jannicke B Nilsen. For kontakt med styret, send e-post til post@askerfotball.no.",
+    "url": "https://askerfotball.no/om-klubben/styret-asker-fotball"
+  },
+  "sponsor_muligheter": {
+    "title": "Sponsormuligheter",
+    "content": "Asker Fotball tilbyr forskjellige sponsormuligheter for bedrifter. For informasjon om sponsorpakker og priser, kontakt Morten Sommerfeldt (morten@askerfotball.no, +47 907 51 170) eller send e-post til post@askerfotball.no.",
+    "url": "https://askerfotball.no/om-klubben/marked"
+  },
+  "fotballhuset_åpningstider": {
+    "title": "Fotballhuset - åpningstider og fasiliteter",
+    "content": "Fotballhuset har garderober, klubbhus og møterom. Åpningstider varierer avhengig av arrangementer og kamper. For oppdaterte åpningstider og booking, kontakt klubben på post@askerfotball.no eller ring +47 907 51 170.",
+    "url": "https://askerfotball.no/om-stadion/fotballhuset"
+  }
+}

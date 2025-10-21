@@ -1,6 +1,8 @@
 {
   "title": "Styret / Asker Fotball",
   "url": "https://askerfotball.no/om-klubben/styret-asker-fotball",
+  "type": "static",
+  "priority": 1,
   "breadcrumbs": [
     "/--",
     "--",
@@ -13,5 +15,5 @@
     "description": "   Asker Fotball."
   },
   "word_count": 52,
-  "parsed_at": "2025-10-16T14:10:43.565Z"
+  "parsed_at": "2025-10-20T16:54:45.952Z"
 }
