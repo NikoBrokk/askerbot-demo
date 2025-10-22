@@ -16,7 +16,7 @@
       "Repetitive content"
     ],
     "chunk_type": "structured_content",
-    "created_at": "2025-10-20T16:52:58.399Z"
+    "created_at": "2025-10-21T13:54:10.761Z"
   },
   "lag_chunk_1": {
     "title": "Lag / Asker Fotball",
@@ -33,7 +33,7 @@
     "quality_score": 24,
     "quality_issues": [],
     "chunk_type": "general_content",
-    "created_at": "2025-10-20T16:52:58.400Z"
+    "created_at": "2025-10-21T13:54:10.762Z"
   },
   "lag_samfunn_asker-united_chunk_0": {
     "title": "Asker United / Asker Fotball",
@@ -50,7 +50,7 @@
     "quality_score": 30,
     "quality_issues": [],
     "chunk_type": "general_content",
-    "created_at": "2025-10-20T16:52:58.401Z"
+    "created_at": "2025-10-21T13:54:10.763Z"
   },
   "lag_samfunn_om-samfunnslagene_chunk_0": {
     "title": "Om Samfunnslagene / Asker Fotball",
@@ -69,7 +69,7 @@
       "Contains navigation content"
     ],
     "chunk_type": "match_info",
-    "created_at": "2025-10-20T16:52:58.402Z"
+    "created_at": "2025-10-21T13:54:10.764Z"
   },
   "lag_utviklingslag_chunk_0": {
     "title": "Utviklingslag / Asker Fotball",
@@ -88,7 +88,7 @@
       "Contains navigation content"
     ],
     "chunk_type": "match_info",
-    "created_at": "2025-10-20T16:52:58.402Z"
+    "created_at": "2025-10-21T13:54:10.765Z"
   },
   "lag_utviklingslag_2012-kullet_chunk_0": {
     "title": "Gutter 13 / Asker Fotball",
@@ -111,7 +111,7 @@
       "Contains navigation content"
     ],
     "chunk_type": "match_info",
-    "created_at": "2025-10-20T16:52:58.403Z"
+    "created_at": "2025-10-21T13:54:10.765Z"
   },
   "lag_utviklingslag_akademi_chunk_0": {
     "title": "OBOS-AKADEMIET / Asker Fotball",
@@ -128,7 +128,7 @@
     "quality_score": 28,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.404Z"
+    "created_at": "2025-10-21T13:54:10.766Z"
   },
   "lag_utviklingslag_akademi_chunk_1": {
     "title": "OBOS-AKADEMIET / Asker Fotball",
@@ -145,7 +145,7 @@
     "quality_score": 54,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.404Z"
+    "created_at": "2025-10-21T13:54:10.766Z"
   },
   "lag_utviklingslag_akademi_chunk_2": {
     "title": "OBOS-AKADEMIET / Asker Fotball",
@@ -162,7 +162,7 @@
     "quality_score": 32,
     "quality_issues": [],
     "chunk_type": "general_content",
-    "created_at": "2025-10-20T16:52:58.404Z"
+    "created_at": "2025-10-21T13:54:10.766Z"
   },
   "lag_utviklingslag_g19-junior_chunk_0": {
     "title": "G19 Junior / Asker Fotball",
@@ -181,7 +181,7 @@
       "Contains navigation content"
     ],
     "chunk_type": "match_info",
-    "created_at": "2025-10-20T16:52:58.404Z"
+    "created_at": "2025-10-21T13:54:10.768Z"
   },
   "lag_utviklingslag_gutter-13_chunk_0": {
     "title": "Gutter 14 / Asker Fotball",
@@ -204,7 +204,7 @@
       "Contains navigation content"
     ],
     "chunk_type": "match_info",
-    "created_at": "2025-10-20T16:52:58.405Z"
+    "created_at": "2025-10-21T13:54:10.768Z"
   },
   "lag_utviklingslag_gutter-14_chunk_0": {
     "title": "Gutter 15 / Asker Fotball",
@@ -227,7 +227,7 @@
       "Contains navigation content"
     ],
     "chunk_type": "match_info",
-    "created_at": "2025-10-20T16:52:58.405Z"
+    "created_at": "2025-10-21T13:54:10.768Z"
   },
   "lag_utviklingslag_gutter-15_chunk_0": {
     "title": "Gutter 16 / Asker Fotball",
@@ -250,7 +250,7 @@
       "Contains navigation content"
     ],
     "chunk_type": "match_info",
-    "created_at": "2025-10-20T16:52:58.405Z"
+    "created_at": "2025-10-21T13:54:10.769Z"
   },
   "lag_utviklingslag_om-utviklingslagene_chunk_0": {
     "title": "Om utviklingslagene / Asker Fotball",
@@ -267,7 +267,7 @@
     "quality_score": 28,
     "quality_issues": [],
     "chunk_type": "club_info",
-    "created_at": "2025-10-20T16:52:58.406Z"
+    "created_at": "2025-10-21T13:54:10.769Z"
   },
   "lag_utviklingslag_om-utviklingslagene_chunk_1": {
     "title": "Om utviklingslagene / Asker Fotball",
@@ -286,7 +286,7 @@
       "Contains navigation content"
     ],
     "chunk_type": "match_info",
-    "created_at": "2025-10-20T16:52:58.406Z"
+    "created_at": "2025-10-21T13:54:10.769Z"
   },
   "nyheter_chunk_0": {
     "title": "Nyheter / Asker Fotball",
@@ -294,16 +294,16 @@
     "breadcrumbs": [],
     "chunk_id": "nyheter_chunk_0",
     "idx": 0,
-    "content": "# Nyheter-->### oktober 2025•16. oktober 2025Gåfotballen med besøk fra BærumDet ble spilt kamp onsdag!•16. oktober 2025Siste hjemmekamp i serienLevanger på Føyka søndag 15:00•09. oktober 2025Eidsvold Turn neste!Bortekamp på Eidsvoll lørdag klokken 14:00•08. oktober 2025Stian kommer på OBOS + søndagStian Stray Molde (28) kommer til Føyka for å treffe spillerne på OBOS Akademi+•03. oktober 2025Asker - Kjelsås flyttes til søndagNy tid: Søndag 13:00 på Føyka### september 2025•30. september 2025OBOS Høstcamp dag 3Stor innsats av alle deltagerne på Føyka disse dagene!•24. september 2025Bortetur neste: Stjørdals-BlinkTMT Stadion Sandskogan 14:00 lørdag•24. september 2025Velkommen til OBOS Akademi+Asker Fotball inviterer til OBOS Akademi + for spillere født 2013-2015•18. september 2025Spennende uker for ungdomsfotballen i klubbenRolf-Magne med en liten oppdatering fra ungdomslagene!•17. september 2025Hjemmekamp: Alta kommerNy skjebnekamp venter.### {{value.month}}•{{article.publish_from}}#### {{article.headline}}{{tag}}{{article.intro}}Vis Flere-->Vis Flere## FilterVisSkjul filtre### Artikler•Med Video (1)",
+    "content": "# Nyheter-->### oktober 2025•20. oktober 2025Seriegull for G15!Søndag kveld avsluttet G15 sesongen - Øverst på pallen!•20. oktober 2025G14 har blitt kretsmestere!2011-gjengen ble kretsmestere forrige lørdag! På egen hjemmebane sikret de gull!•16. oktober 2025Gåfotballen med besøk fra BærumDet ble spilt kamp onsdag!•16. oktober 2025Siste hjemmekamp i serienLevanger på Føyka søndag 15:00•09. oktober 2025Eidsvold Turn neste!Bortekamp på Eidsvoll lørdag klokken 14:00•08. oktober 2025Stian kommer på OBOS + søndagStian Stray Molde (28) kommer til Føyka for å treffe spillerne på OBOS Akademi+•03. oktober 2025Asker - Kjelsås flyttes til søndagNy tid: Søndag 13:00 på Føyka### september 2025•30. september 2025OBOS Høstcamp dag 3Stor innsats av alle deltagerne på Føyka disse dagene!•24. september 2025Bortetur neste: Stjørdals-BlinkTMT Stadion Sandskogan 14:00 lørdag•24. september 2025Velkommen til OBOS Akademi+Asker Fotball inviterer til OBOS Akademi + for spillere født 2013-2015### {{value.month}}•{{article.publish_from}}#### {{article.headline}}{{tag}}{{article.intro}}Vis Flere-->Vis Flere## FilterVisSkjul filtre### Artikler•Med Video (1)",
     "total_chunks": 1,
-    "original_word_count": 130,
-    "chunk_word_count": 130,
-    "chunk_char_count": 1115,
-    "heading": "Nyheter-->### oktober 2025•16. oktober 2025Gåfotballen med besøk fra BærumDet ble spilt kamp onsdag!•16. oktober 2025Siste hjemmekamp i serienLevanger på Føyka søndag 15:00•09. oktober 2025Eidsvold Turn neste!Bortekamp på Eidsvoll lørdag klokken 14:00•08. oktober 2025Stian kommer på OBOS + søndagStian Stray Molde (28) kommer til Føyka for å treffe spillerne på OBOS Akademi+•03. oktober 2025Asker - Kjelsås flyttes til søndagNy tid: Søndag 13:00 på Føyka### september 2025•30. september 2025OBOS Høstcamp dag 3Stor innsats av alle deltagerne på Føyka disse dagene!•24. september 2025Bortetur neste: Stjørdals-BlinkTMT Stadion Sandskogan 14:00 lørdag•24. september 2025Velkommen til OBOS Akademi+Asker Fotball inviterer til OBOS Akademi + for spillere født 2013-2015•18. september 2025Spennende uker for ungdomsfotballen i klubbenRolf-Magne med en liten oppdatering fra ungdomslagene!•17. september 2025Hjemmekamp: Alta kommerNy skjebnekamp venter.### {{value.month}}•{{article.publish_from}}#### {{article.headline}}{{tag}}{{article.intro}}Vis Flere-->Vis Flere## FilterVisSkjul filtre### Artikler•Med Video (1)",
-    "quality_score": 37,
+    "original_word_count": 138,
+    "chunk_word_count": 138,
+    "chunk_char_count": 1147,
+    "heading": "Nyheter-->### oktober 2025•20. oktober 2025Seriegull for G15!Søndag kveld avsluttet G15 sesongen - Øverst på pallen!•20. oktober 2025G14 har blitt kretsmestere!2011-gjengen ble kretsmestere forrige lørdag! På egen hjemmebane sikret de gull!•16. oktober 2025Gåfotballen med besøk fra BærumDet ble spilt kamp onsdag!•16. oktober 2025Siste hjemmekamp i serienLevanger på Føyka søndag 15:00•09. oktober 2025Eidsvold Turn neste!Bortekamp på Eidsvoll lørdag klokken 14:00•08. oktober 2025Stian kommer på OBOS + søndagStian Stray Molde (28) kommer til Føyka for å treffe spillerne på OBOS Akademi+•03. oktober 2025Asker - Kjelsås flyttes til søndagNy tid: Søndag 13:00 på Føyka### september 2025•30. september 2025OBOS Høstcamp dag 3Stor innsats av alle deltagerne på Føyka disse dagene!•24. september 2025Bortetur neste: Stjørdals-BlinkTMT Stadion Sandskogan 14:00 lørdag•24. september 2025Velkommen til OBOS Akademi+Asker Fotball inviterer til OBOS Akademi + for spillere født 2013-2015### {{value.month}}•{{article.publish_from}}#### {{article.headline}}{{tag}}{{article.intro}}Vis Flere-->Vis Flere## FilterVisSkjul filtre### Artikler•Med Video (1)",
+    "quality_score": 33,
     "quality_issues": [],
     "chunk_type": "news",
-    "created_at": "2025-10-20T16:52:58.406Z"
+    "created_at": "2025-10-21T13:54:10.769Z"
   },
   "nyheter_1.runde-nm-sondag_chunk_0": {
     "title": "1.runde NM søndag / Asker Fotball",
@@ -320,7 +320,7 @@
     "quality_score": 30,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.406Z"
+    "created_at": "2025-10-21T13:54:10.770Z"
   },
   "nyheter_1.uttaket-for-unionsduellen-2025-er-klart_chunk_0": {
     "title": "1. uttaket for Unionsduellen 2025 er klart! / Asker Fotball",
@@ -337,7 +337,7 @@
     "quality_score": 41,
     "quality_issues": [],
     "chunk_type": "list_content",
-    "created_at": "2025-10-20T16:52:58.407Z"
+    "created_at": "2025-10-21T13:54:10.771Z"
   },
   "nyheter_1.uttaket-for-unionsduellen-2025-er-klart_chunk_1": {
     "title": "1. uttaket for Unionsduellen 2025 er klart! / Asker Fotball",
@@ -354,7 +354,75 @@
     "quality_score": 28,
     "quality_issues": [],
     "chunk_type": "general_content",
-    "created_at": "2025-10-20T16:52:58.407Z"
+    "created_at": "2025-10-21T13:54:10.771Z"
+  },
+  "nyheter_10-ar-med-asker-united_chunk_0": {
+    "title": "10 år med Asker United / Asker Fotball",
+    "url": "https://askerfotball.no/nyheter/10-ar-med-asker-united",
+    "breadcrumbs": [],
+    "chunk_id": "nyheter_10-ar-med-asker-united_chunk_0",
+    "idx": 0,
+    "content": "10 år med Asker UnitedLørdag feiret Asker United og Asker Fotball seg selv. For 10 år med gode aktiviteter og samhold er så absolutt en hyllest verdig.[Forsiden](https://askerfotball.no/)\n/\n/-->I det som var flagget som en Jubileumskamp på Føyka, ble det lørdag også spilt en forkamp mellom vårt eget G15-lag og nevnte Asker United.&nbsp;Trenerteam og spillere følger nøye med på det som leveres på banen.Og både tempoet og innsatsen var det ingenting å si på. Og når Norges Beste Speaker kommenterte fra speakerbua, var rammene lagt for et spennende oppgjør.&nbsp;Frithjof Wilborn storkoste seg i speakerbua når United satte opp dampen.Asker United, Europas beste lag, så sitt lys april 2013, og har siden den gang drevet god aktivitet for sine spillere. Med fast treningstid hugget inn i stein, mandager kl 18:00, har laget både utviklet fotballspillere og mennesker gjennom sin 10-årige fartstid.&nbsp;2 meget sentrale personer for Asker United; Rolf Hartviksen og Espen Foss. De talte og delte historier for en lydhør forsamling under jubileumsmiddag på Leangkollen hotell.Med spillere i aldersspennet fra 14 til 61 år, så vitner det om et stort mangfold og fellesskap i Asker United. Og både spillere, ledere og foreldre / supportere, har gjennom United sine leverår, i felleskap delt gleder og sorger med fotballen som midtpunkt.",
+    "total_chunks": 2,
+    "original_word_count": 394,
+    "chunk_word_count": 208,
+    "chunk_char_count": 1335,
+    "heading": null,
+    "quality_score": 30,
+    "quality_issues": [],
+    "chunk_type": "stadium_info",
+    "created_at": "2025-10-21T13:54:10.772Z"
+  },
+  "nyheter_10-ar-med-asker-united_chunk_1": {
+    "title": "10 år med Asker United / Asker Fotball",
+    "url": "https://askerfotball.no/nyheter/10-ar-med-asker-united",
+    "breadcrumbs": [],
+    "chunk_id": "nyheter_10-ar-med-asker-united_chunk_1",
+    "idx": 1,
+    "content": "ed. Og både spillere, ledere og foreldre / supportere, har gjennom United sine leverår, i felleskap delt gleder og sorger med fotballen som midtpunkt.\n\nSelv om ikke resultat ikke alltid har vært like viktig, er vinnerviljen til alle som løper utpå matta, stor.&nbsp;Et av høydepunktene for Asker United, var vennskapskampen på Skaugum i 2018. Her møtte man både kongelige, artister og avdankede fotballstjerner. Kampen var jevn og etterpå var det bare god stemning i det kronprinsfamilien inviterte til bespisning i sitt flotte hjem på Skaugum.&nbsp;Her er United på Skaugum. I skjønn forening med noen kjente ansikter rundt om på lagbildet.Men vi må heller ikke glemme det årlig høydepunktet, hvor United hvert år møter A-laget til superviktig vennskapskamp på Føyka. Hvor disse kampene alltid leveres med målgaranti, til speakers store fortvilelse. For man skal ha tunga rett i munnen når målene begynner å renne inn.&nbsp;Her fra siste kamp i 2022. Asker United vs A-laget. Målrikt ble den denne gangen også. Og humøret på topp etterpå.Etter starten i 2013, så er altså bevisene på at Asker United lever i beste velgående vel dokumentert. Og for Asker Fotball har opprettelsen av United vært en berikelse på alle plan. Vi gleder oss til de neste 10!**Asker United - Europas Beste Lag!**Annonse:Publisert: 23.04.2023Skrevet av: Redaksjonenshare-facebook",
+    "total_chunks": 2,
+    "original_word_count": 394,
+    "chunk_word_count": 210,
+    "chunk_char_count": 1355,
+    "heading": null,
+    "quality_score": 34,
+    "quality_issues": [],
+    "chunk_type": "match_info",
+    "created_at": "2025-10-21T13:54:10.772Z"
+  },
+  "nyheter_10-ar-med-gatelaget_chunk_0": {
+    "title": "10 år med Gatelaget / Asker Fotball",
+    "url": "https://askerfotball.no/nyheter/10-ar-med-gatelaget",
+    "breadcrumbs": [],
+    "chunk_id": "nyheter_10-ar-med-gatelaget_chunk_0",
+    "idx": 0,
+    "content": "10 år med GatelagetLørdag var det duket for Jubileumsmiddag for Gatelaget. 10 års levetid ble markert med både sterke og vakre inntrykk.[Forsiden](https://askerfotball.no/)\n/\n/-->På bildet over; **Wenche Rudsengen**, **Aina Rype** og** André Muri** - selve limet i det indre livet til&nbsp;Gatelaget. De fikk alle sin&nbsp;velfortjente hyllest, for uten dem hadde ikke **Gatelaget **vært den suksessen man er i dag. Og ikke minst med10 års levetid og soliditet. Men også spillerne skal ha sin ære - mer om det litt lenger ned i saken.&nbsp;I anledningen ble det avholdt festmiddag hos våre eminente samarbeidspartner** Quality Hotel** **Leangkollen**. Og her var det god representasjon fra \"alle etater\" og venner av Asker Fotball.&nbsp;Rune Klemetsdal t.h., fikk sin velfortjente hyllest da han regnes som Gatelagets (og Asker Uniteds) \"far\". I det han for 13 år siden etablerte begge prosjektene. Daglig leder Rolf Magne Walstad overrakte bukett som takk på vegne av klubben.&nbsp;Ordfører Lene Conradi selvsagt på plass for å kaste glans over arrangementet. Men også med fine ord om Gatelagets betydning, samt kommunens rolle som sentral og viktig medspiller.Kveldens konferansier Frithjoft Wilborn kom rett fra speakerbua på Føyka og ledet middagen med bravur. Rune Klemetsdal også i form lørdags kveld.Ingenting å si på rammen hos samarbeidspartner Quality Leangkollen.",
+    "total_chunks": 2,
+    "original_word_count": 397,
+    "chunk_word_count": 203,
+    "chunk_char_count": 1374,
+    "heading": null,
+    "quality_score": 28,
+    "quality_issues": [],
+    "chunk_type": "stadium_info",
+    "created_at": "2025-10-21T13:54:10.772Z"
+  },
+  "nyheter_10-ar-med-gatelaget_chunk_1": {
+    "title": "10 år med Gatelaget / Asker Fotball",
+    "url": "https://askerfotball.no/nyheter/10-ar-med-gatelaget",
+    "breadcrumbs": [],
+    "chunk_id": "nyheter_10-ar-med-gatelaget_chunk_1",
+    "idx": 1,
+    "content": "a på Føyka og ledet middagen med bravur. Rune Klemetsdal også i form lørdags kveld.Ingenting å si på rammen hos samarbeidspartner Quality Leangkollen.\n\nVæret spilte også på lag.Cathrine fortalte en sterk historie om viktigheten av Gatelaget for henne.Are Lerstein var også på podiet og fortalte om sin tid med Gatelaget. Og kom med lovnader om at han stiller med keeperhansker under Nasjonal Turnering i Bergen i juni.Duett; Stine Muri sang vakkert og ble nydelig akkompagnert av Torbjørn på piano.Hege fremførte et eget flott dikt for å hedre Wenche og Aina og deres betydning ovenfor spillerne på Gatelaget.Rød løper; kjekke karer gjør seg klar for festmiddag! Jon, André og Håvar.Arne Knoph, tidligere Asker Fotball-mann, nå sjef i Fotballstiftelsen, var også på talelisten. Og han hadde også med seg gaver til Gatelaget.&nbsp;Alt i alt ble det en vellykket seanse lørdags kveld. Og det var både en klump&nbsp;i halsen, tårer i øyekroken og løs latter i det sentrale skikkelser i og rundt Gatelaget talte til forsamlingen. Mange ble takket for sitt engasjement og ikke minst samspillet mellom klubb og kommune ble dratt frem. En modell til etterfølgelse for alle gatelag i Norge.&nbsp;**Asker Fotball takker alle fremmøtte og vi planlegger nå for de neste 10 år.****Eller de neste 100, som ordfører Lene Conradi ymtet frempå i sin tale!**&nbsp;Annonse:Publisert: 25.04.2023Skrevet av: Redaksjonenshare-facebook",
+    "total_chunks": 2,
+    "original_word_count": 397,
+    "chunk_word_count": 217,
+    "chunk_char_count": 1413,
+    "heading": null,
+    "quality_score": 30,
+    "quality_issues": [],
+    "chunk_type": "stadium_info",
+    "created_at": "2025-10-21T13:54:10.772Z"
   },
   "nyheter_5-dager-igjen_chunk_0": {
     "title": "5 dager igjen.... / Asker Fotball",
@@ -371,7 +439,7 @@
     "quality_score": 34,
     "quality_issues": [],
     "chunk_type": "match_info",
-    "created_at": "2025-10-20T16:52:58.407Z"
+    "created_at": "2025-10-21T13:54:10.773Z"
   },
   "nyheter_5-dager-igjen_chunk_1": {
     "title": "5 dager igjen.... / Asker Fotball",
@@ -388,7 +456,7 @@
     "quality_score": 30,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.407Z"
+    "created_at": "2025-10-21T13:54:10.773Z"
   },
   "nyheter_a-laget-reiser-til-levanger-sondag_chunk_0": {
     "title": "A-laget reiser til Levanger søndag / Asker Fotball",
@@ -405,7 +473,7 @@
     "quality_score": 30,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.408Z"
+    "created_at": "2025-10-21T13:54:10.774Z"
   },
   "nyheter_advokatfirmaet-leknes-blir-med-videre_chunk_0": {
     "title": "Advokatfirmaet Leknes blir med videre! / Asker Fotball",
@@ -424,7 +492,7 @@
       "Contains navigation content"
     ],
     "chunk_type": "match_info",
-    "created_at": "2025-10-20T16:52:58.408Z"
+    "created_at": "2025-10-21T13:54:10.774Z"
   },
   "nyheter_akershus-fylkeskommune-var-pa-besok_chunk_0": {
     "title": "Akershus Fylkeskommune var på besøk! / Asker Fotball",
@@ -441,7 +509,7 @@
     "quality_score": 30,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.408Z"
+    "created_at": "2025-10-21T13:54:10.775Z"
   },
   "nyheter_akershus-fylkeskommune-var-pa-besok_chunk_1": {
     "title": "Akershus Fylkeskommune var på besøk! / Asker Fotball",
@@ -458,7 +526,7 @@
     "quality_score": 28,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.408Z"
+    "created_at": "2025-10-21T13:54:10.775Z"
   },
   "nyheter_asker-fotball-melder-overgang-fra-x-til-bluesky_chunk_0": {
     "title": "Asker Fotball melder overgang fra X til Bluesky / Asker Fotball",
@@ -477,7 +545,41 @@
       "Contains navigation content"
     ],
     "chunk_type": "match_info",
-    "created_at": "2025-10-20T16:52:58.409Z"
+    "created_at": "2025-10-21T13:54:10.775Z"
+  },
+  "nyheter_asker-fotball-og-skagahogdi-forlenger-samarbeid_chunk_0": {
+    "title": "Asker Fotball og Skagahøgdi forlenger samarbeid / Asker Fotball",
+    "url": "https://askerfotball.no/nyheter/asker-fotball-og-skagahogdi-forlenger-samarbeid",
+    "breadcrumbs": [],
+    "chunk_id": "nyheter_asker-fotball-og-skagahogdi-forlenger-samarbeid_chunk_0",
+    "idx": 0,
+    "content": "Asker Fotball og Skagahøgdi forlenger samarbeidFør helgen ble avtalen som sikrer forlengelse av samarbeidet mellom Asker Fotball og Skagahøgdi, signert.[Forsiden](https://askerfotball.no/)\n/\n/-->Styreleder **Tarald Skagefoss** og daglig leder **Rolf-Magne Walstad**, signerte fredag avtalen som legger grunnlag for ett** tre-årig samarbeid (2021-23).**Samarbeidet har vært fruktbart for begge parter over flere år allerede, og selv om 2020 brakte flere utfordringer for en bedrift i reiselivs / ferie - bransjen er optimismen på plass.«Vi har og har hatt fornøyde gjester og eiere av leiligheter i året som ligger bak oss, men skulle som alle andre ønsket oss flere» sier **Tarald**, før han poengterer at man har god tro på neste trinn.Det er god aktivitet og flotte forhold på Skagahøgdi om dagen. Nå forlenges samarbeidet mellom klubb og \"destinasjonen\" på toppen av alpinbakken i Gol.Det startes salgsprosess med nytt byggetrinn til uka, og vi er glad for at Asker Fotball og deres nettverk har gitt utrykk for nysgjerrighet. (se [www.skagahogdi.no](http://www.skagahogdi.no) )**For Asker Fotballs del er også dette positivt.**«Vi som driver med fotball, vet at vi ikke vinner alle kamper. De vi taper lærer vi av.",
+    "total_chunks": 2,
+    "original_word_count": 271,
+    "chunk_word_count": 180,
+    "chunk_char_count": 1218,
+    "heading": null,
+    "quality_score": 30,
+    "quality_issues": [],
+    "chunk_type": "general_content",
+    "created_at": "2025-10-21T13:54:10.775Z"
+  },
+  "nyheter_asker-fotball-og-skagahogdi-forlenger-samarbeid_chunk_1": {
+    "title": "Asker Fotball og Skagahøgdi forlenger samarbeid / Asker Fotball",
+    "url": "https://askerfotball.no/nyheter/asker-fotball-og-skagahogdi-forlenger-samarbeid",
+    "breadcrumbs": [],
+    "chunk_id": "nyheter_asker-fotball-og-skagahogdi-forlenger-samarbeid_chunk_1",
+    "idx": 1,
+    "content": "gahogdi.no) )**For Asker Fotballs del er også dette positivt.**«Vi som driver med fotball, vet at vi ikke vinner alle kamper. De vi taper lærer vi av.\n\nForan 2021-sesongen håper vi å lykkes fra start, både i seriespill men også når vi skal sette fart sammen med Skagahøgdi og salgsaktiviteten sammen med dem utover vinteren og ikke minst våren», sier **Walstad**.Å skape inntekter i samarbeid med partnerne er helt avgjørende for den sportslige satsningen i AF, og en forutsetning for videre framgang.- Vi ser sammen&nbsp;positivt på tiden som kommer og håper samfunnet vender tilbake til normalen i sommer, avslutter&nbsp;to fornøyde partnere._Ta kontakt med Rune hos oss for mere informasjon og muligheter til fjells:&nbsp;_[rune@askerfotball.no](mailto:rune@askerfotball.no)910 01 626Annonse:Publisert: 16.03.2021Skrevet av: Redaksjonenshare-facebook",
+    "total_chunks": 2,
+    "original_word_count": 271,
+    "chunk_word_count": 117,
+    "chunk_char_count": 853,
+    "heading": null,
+    "quality_score": 28,
+    "quality_issues": [],
+    "chunk_type": "general_content",
+    "created_at": "2025-10-21T13:54:10.775Z"
   },
   "nyheter_asker-kjelsas-flyttes-til-sondag_chunk_0": {
     "title": "Asker - Kjelsås flyttes til søndag / Asker Fotball",
@@ -496,7 +598,7 @@
       "Contains navigation content"
     ],
     "chunk_type": "match_info",
-    "created_at": "2025-10-20T16:52:58.409Z"
+    "created_at": "2025-10-21T13:54:10.776Z"
   },
   "nyheter_askerfotballen-historie_chunk_0": {
     "title": "Askerfotballens historie / Asker Fotball",
@@ -513,7 +615,7 @@
     "quality_score": 28,
     "quality_issues": [],
     "chunk_type": "club_info",
-    "created_at": "2025-10-20T16:52:58.409Z"
+    "created_at": "2025-10-21T13:54:10.776Z"
   },
   "nyheter_askerfotballen-historie_chunk_1": {
     "title": "Askerfotballens historie / Asker Fotball",
@@ -530,7 +632,7 @@
     "quality_score": 30,
     "quality_issues": [],
     "chunk_type": "news",
-    "created_at": "2025-10-20T16:52:58.409Z"
+    "created_at": "2025-10-21T13:54:10.776Z"
   },
   "nyheter_bare-nesten_chunk_0": {
     "title": "Bare nesten... / Asker Fotball",
@@ -547,7 +649,41 @@
     "quality_score": 32,
     "quality_issues": [],
     "chunk_type": "match_info",
-    "created_at": "2025-10-20T16:52:58.410Z"
+    "created_at": "2025-10-21T13:54:10.776Z"
+  },
+  "nyheter_bjorknes-forlenger-samarbeidet-med-asker-fotball-ut-2023_chunk_0": {
+    "title": "Bjørknes forlenger samarbeidet med Asker Fotball ut 2023 / Asker Fotball",
+    "url": "https://askerfotball.no/nyheter/bjorknes-forlenger-samarbeidet-med-asker-fotball-ut-2023",
+    "breadcrumbs": [],
+    "chunk_id": "nyheter_bjorknes-forlenger-samarbeidet-med-asker-fotball-ut-2023_chunk_0",
+    "idx": 0,
+    "content": "Bjørknes forlenger samarbeidet med Asker Fotball ut 2023Asker Fotball kan nå presentere fantastiske nyheter idet det gode samarbeidet med Bjørknes forlenges og styrkes. Det betyr 20 studieplasser med 80% rabatt og veiledning til venner av klubben.[Forsiden](https://askerfotball.no/)\n/\n/-->Bjørknes er en tradisjonsrik skole som tilbyr privatistundervisning med høy kvalitet.",
+    "total_chunks": 2,
+    "original_word_count": 206,
+    "chunk_word_count": 48,
+    "chunk_char_count": 375,
+    "heading": null,
+    "quality_score": 16,
+    "quality_issues": [],
+    "chunk_type": "news",
+    "created_at": "2025-10-21T13:54:10.777Z"
+  },
+  "nyheter_bjorknes-forlenger-samarbeidet-med-asker-fotball-ut-2023_chunk_1": {
+    "title": "Bjørknes forlenger samarbeidet med Asker Fotball ut 2023 / Asker Fotball",
+    "url": "https://askerfotball.no/nyheter/bjorknes-forlenger-samarbeidet-med-asker-fotball-ut-2023",
+    "breadcrumbs": [],
+    "chunk_id": "nyheter_bjorknes-forlenger-samarbeidet-med-asker-fotball-ut-2023_chunk_1",
+    "idx": 1,
+    "content": "til venner av klubben.[Forsiden](https://askerfotball.no/)\n/\n/-->Bjørknes er en tradisjonsrik skole som tilbyr privatistundervisning med høy kvalitet.\n\nVåre lærere er engasjerte, kunnskapsrike og eksperter på eksamensrettet undervisning!Bjørknes har et bredt tilbud innenfor studiespesialiserende fag, og tilbyr både stedlig undervisning, streaming og nettkurs.Trenger man veiledning i forkant eller underveis i studiet, vil våre erfarne rådgivere være tilgjengelig året rundt.Streamingproduktet gir elevene høy grad av fleksibilitet, og innebærer at man kan følge klasseromsundervisningen fra der man måtte være – live eller i opptak understreker daglig leder Hanne Dypdahl.Vi er veldig glade for at Bjørknes blir med oss videre sier Rune Klemetsdal.&nbsp; At vi nå får 20 studieplasser til 80 % rabatt, betyr mye for spillere og ansatte og at vi i sammen med Bjørknes kan tilby både veiledning og studier.&nbsp; Dette vil styrke klubben, spillere og våre ansattes muligheter for vekst og økt kompetanse.**NÅ gir vi også DEG muligheten til å benytte tilbudet som venn av Asker Fotball.****Vi har satt av 3 plasser og førstemann til mølla gjelder!****Kontakt Stefan Myrvold - stefan.myrvold@bjorknes.no**[Bjørknes 1](https://bjorknes.no/?utm_source=asker&amp;utm_medium=affiliate&amp;utm_campaign=brand)[Bjørknes 2](https://bjorknes.no/privatist?utm_source=asker&amp;utm_medium=affiliate&amp;utm_campaign=brand)Annonse:Publisert: 18.11.2021Skrevet av: Redaksjonenshare-facebook",
+    "total_chunks": 2,
+    "original_word_count": 206,
+    "chunk_word_count": 174,
+    "chunk_char_count": 1477,
+    "heading": null,
+    "quality_score": 30,
+    "quality_issues": [],
+    "chunk_type": "general_content",
+    "created_at": "2025-10-21T13:54:10.777Z"
   },
   "nyheter_blytung-2.omgang-endte-med-tap_chunk_0": {
     "title": "Blytung 2.omgang endte med tap / Asker Fotball",
@@ -564,7 +700,7 @@
     "quality_score": 26,
     "quality_issues": [],
     "chunk_type": "general_content",
-    "created_at": "2025-10-20T16:52:58.410Z"
+    "created_at": "2025-10-21T13:54:10.777Z"
   },
   "nyheter_blytung-2.omgang-endte-med-tap_chunk_1": {
     "title": "Blytung 2.omgang endte med tap / Asker Fotball",
@@ -583,7 +719,7 @@
       "Contains navigation content"
     ],
     "chunk_type": "match_info",
-    "created_at": "2025-10-20T16:52:58.410Z"
+    "created_at": "2025-10-21T13:54:10.777Z"
   },
   "nyheter_bortekamp-mot-tromsdalen-i-helgen_chunk_0": {
     "title": "Bortekamp mot Tromsdalen i helgen / Asker Fotball",
@@ -600,7 +736,7 @@
     "quality_score": 26,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.410Z"
+    "created_at": "2025-10-21T13:54:10.777Z"
   },
   "nyheter_bortetur-neste-stjordals-blink_chunk_0": {
     "title": "Bortetur neste: Stjørdals-Blink / Asker Fotball",
@@ -617,7 +753,7 @@
     "quality_score": 26,
     "quality_issues": [],
     "chunk_type": "news",
-    "created_at": "2025-10-20T16:52:58.411Z"
+    "created_at": "2025-10-21T13:54:10.777Z"
   },
   "nyheter_butikk_chunk_0": {
     "title": "Butikk / Asker Fotball",
@@ -636,7 +772,7 @@
       "Contains navigation content"
     ],
     "chunk_type": "match_info",
-    "created_at": "2025-10-20T16:52:58.411Z"
+    "created_at": "2025-10-21T13:54:10.778Z"
   },
   "nyheter_cup-exit-etter-straffekonk_chunk_0": {
     "title": "Cup-exit etter straffekonk / Asker Fotball",
@@ -653,7 +789,7 @@
     "quality_score": 28,
     "quality_issues": [],
     "chunk_type": "general_content",
-    "created_at": "2025-10-20T16:52:58.411Z"
+    "created_at": "2025-10-21T13:54:10.778Z"
   },
   "nyheter_cup-exit-etter-straffekonk_chunk_1": {
     "title": "Cup-exit etter straffekonk / Asker Fotball",
@@ -670,7 +806,7 @@
     "quality_score": 28,
     "quality_issues": [],
     "chunk_type": "general_content",
-    "created_at": "2025-10-20T16:52:58.411Z"
+    "created_at": "2025-10-21T13:54:10.778Z"
   },
   "nyheter_disse-moter-gatelaget-i-nasjonal-turnering_chunk_0": {
     "title": "Disse møter gatelaget i nasjonal turnering / Asker Fotball",
@@ -687,7 +823,7 @@
     "quality_score": 28,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.411Z"
+    "created_at": "2025-10-21T13:54:10.779Z"
   },
   "nyheter_disse-moter-gatelaget-i-nasjonal-turnering_chunk_1": {
     "title": "Disse møter gatelaget i nasjonal turnering / Asker Fotball",
@@ -704,7 +840,7 @@
     "quality_score": 28,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.411Z"
+    "created_at": "2025-10-21T13:54:10.779Z"
   },
   "nyheter_dobbelkamp-i-helgen_chunk_0": {
     "title": "Dobbelkamp i vente / Asker Fotball",
@@ -721,7 +857,7 @@
     "quality_score": 28,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.412Z"
+    "created_at": "2025-10-21T13:54:10.779Z"
   },
   "nyheter_dobbelkamp-i-helgen_chunk_1": {
     "title": "Dobbelkamp i vente / Asker Fotball",
@@ -738,7 +874,7 @@
     "quality_score": 44,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.412Z"
+    "created_at": "2025-10-21T13:54:10.779Z"
   },
   "nyheter_egon-asker-forlenger-samarbeidet_chunk_0": {
     "title": "Egon Asker forlenger samarbeidet / Asker Fotball",
@@ -755,7 +891,7 @@
     "quality_score": 26,
     "quality_issues": [],
     "chunk_type": "general_content",
-    "created_at": "2025-10-20T16:52:58.412Z"
+    "created_at": "2025-10-21T13:54:10.779Z"
   },
   "nyheter_egon-asker-forlenger-samarbeidet_chunk_1": {
     "title": "Egon Asker forlenger samarbeidet / Asker Fotball",
@@ -772,7 +908,7 @@
     "quality_score": 30,
     "quality_issues": [],
     "chunk_type": "general_content",
-    "created_at": "2025-10-20T16:52:58.412Z"
+    "created_at": "2025-10-21T13:54:10.779Z"
   },
   "nyheter_eidsvold-turn-neste_chunk_0": {
     "title": "Eidsvold Turn neste! / Asker Fotball",
@@ -791,7 +927,7 @@
       "Contains navigation content"
     ],
     "chunk_type": "match_info",
-    "created_at": "2025-10-20T16:52:58.413Z"
+    "created_at": "2025-10-21T13:54:10.780Z"
   },
   "nyheter_eric-har-signert-for-skeid_chunk_0": {
     "title": "Eric har signert for Skeid / Asker Fotball",
@@ -808,7 +944,7 @@
     "quality_score": 32,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.413Z"
+    "created_at": "2025-10-21T13:54:10.781Z"
   },
   "nyheter_for-kamp-skeid-pa-foyka_chunk_0": {
     "title": "Før kamp: Skeid på Føyka / Asker Fotball",
@@ -825,7 +961,7 @@
     "quality_score": 26,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.414Z"
+    "created_at": "2025-10-21T13:54:10.781Z"
   },
   "nyheter_for-kamp-strindheim_chunk_0": {
     "title": "Før kamp: Strindheim / Asker Fotball",
@@ -842,7 +978,7 @@
     "quality_score": 30,
     "quality_issues": [],
     "chunk_type": "match_info",
-    "created_at": "2025-10-20T16:52:58.414Z"
+    "created_at": "2025-10-21T13:54:10.782Z"
   },
   "nyheter_for-kampen-follo-pa-bortebane_chunk_0": {
     "title": "Før kampen: Follo på bortebane / Asker Fotball",
@@ -859,7 +995,7 @@
     "quality_score": 32,
     "quality_issues": [],
     "chunk_type": "match_info",
-    "created_at": "2025-10-20T16:52:58.415Z"
+    "created_at": "2025-10-21T13:54:10.782Z"
   },
   "nyheter_for-kampen-grorud-borte_chunk_0": {
     "title": "Før kampen: Grorud borte / Asker Fotball",
@@ -876,7 +1012,7 @@
     "quality_score": 30,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.415Z"
+    "created_at": "2025-10-21T13:54:10.782Z"
   },
   "nyheter_for-kampen-honefoss-pa-aka-arena_chunk_0": {
     "title": "Før kampen: Hønefoss på Aka Arena / Asker Fotball",
@@ -893,7 +1029,7 @@
     "quality_score": 32,
     "quality_issues": [],
     "chunk_type": "match_info",
-    "created_at": "2025-10-20T16:52:58.415Z"
+    "created_at": "2025-10-21T13:54:10.782Z"
   },
   "nyheter_for-kampen-mjondalen_chunk_0": {
     "title": "Før kampen: Mjøndalen / Asker Fotball",
@@ -910,7 +1046,7 @@
     "quality_score": 30,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.416Z"
+    "created_at": "2025-10-21T13:54:10.783Z"
   },
   "nyheter_for-kampen-rana-borte_chunk_0": {
     "title": "Før kampen: Rana borte / Asker Fotball",
@@ -927,7 +1063,7 @@
     "quality_score": 32,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.416Z"
+    "created_at": "2025-10-21T13:54:10.783Z"
   },
   "nyheter_for-kampen-stjordals-blink_chunk_0": {
     "title": "Før kampen - Stjørdals-Blink / Asker Fotball",
@@ -944,7 +1080,7 @@
     "quality_score": 32,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.416Z"
+    "created_at": "2025-10-21T13:54:10.783Z"
   },
   "nyheter_for-kampen-stjordals-blink_chunk_1": {
     "title": "Før kampen - Stjørdals-Blink / Asker Fotball",
@@ -961,7 +1097,7 @@
     "quality_score": 30,
     "quality_issues": [],
     "chunk_type": "general_content",
-    "created_at": "2025-10-20T16:52:58.416Z"
+    "created_at": "2025-10-21T13:54:10.783Z"
   },
   "nyheter_for-kampen-strindheim-pa-foyka_chunk_0": {
     "title": "Før kampen: Strindheim på Føyka / Asker Fotball",
@@ -978,7 +1114,7 @@
     "quality_score": 28,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.417Z"
+    "created_at": "2025-10-21T13:54:10.783Z"
   },
   "nyheter_for-kampen-strommen-borte_chunk_0": {
     "title": "Før kampen: Strømmen borte / Asker Fotball",
@@ -995,7 +1131,7 @@
     "quality_score": 30,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.417Z"
+    "created_at": "2025-10-21T13:54:10.784Z"
   },
   "nyheter_for-kampen-strommen_chunk_0": {
     "title": "Før kampen: Strømmen / Asker Fotball",
@@ -1012,7 +1148,7 @@
     "quality_score": 28,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.417Z"
+    "created_at": "2025-10-21T13:54:10.784Z"
   },
   "nyheter_for-kampen-ull-kisa_chunk_0": {
     "title": "Før kampen: Ull/Kisa / Asker Fotball",
@@ -1029,7 +1165,7 @@
     "quality_score": 28,
     "quality_issues": [],
     "chunk_type": "general_content",
-    "created_at": "2025-10-20T16:52:58.418Z"
+    "created_at": "2025-10-21T13:54:10.785Z"
   },
   "nyheter_for-tungt-i-undertall_chunk_0": {
     "title": "For tungt i undertall / Asker Fotball",
@@ -1046,7 +1182,7 @@
     "quality_score": 28,
     "quality_issues": [],
     "chunk_type": "general_content",
-    "created_at": "2025-10-20T16:52:58.418Z"
+    "created_at": "2025-10-21T13:54:10.785Z"
   },
   "nyheter_forlenget-samarbeid-med-nemus_chunk_0": {
     "title": "Forlenget samarbeid med Nemus / Asker Fotball",
@@ -1063,7 +1199,7 @@
     "quality_score": 28,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.418Z"
+    "created_at": "2025-10-21T13:54:10.785Z"
   },
   "nyheter_forlenget-samarbeid-med-nemus_chunk_1": {
     "title": "Forlenget samarbeid med Nemus / Asker Fotball",
@@ -1080,7 +1216,7 @@
     "quality_score": 28,
     "quality_issues": [],
     "chunk_type": "general_content",
-    "created_at": "2025-10-20T16:52:58.418Z"
+    "created_at": "2025-10-21T13:54:10.785Z"
   },
   "nyheter_fotballfesten-pa-skaugum_chunk_0": {
     "title": "Fotballfesten på skaugum / Asker Fotball",
@@ -1097,7 +1233,58 @@
     "quality_score": 32,
     "quality_issues": [],
     "chunk_type": "general_content",
-    "created_at": "2025-10-20T16:52:58.419Z"
+    "created_at": "2025-10-21T13:54:10.785Z"
+  },
+  "nyheter_foyka-camp-og-foyka-akademi_chunk_0": {
+    "title": "Føyka Camp og Føyka Akademi! / Asker Fotball",
+    "url": "https://askerfotball.no/nyheter/foyka-camp-og-foyka-akademi",
+    "breadcrumbs": [],
+    "chunk_id": "nyheter_foyka-camp-og-foyka-akademi_chunk_0",
+    "idx": 0,
+    "content": "Føyka Camp og Føyka Akademi!Nå åpner vi for påmelding til sommerens aktiviteter på Føyka![Forsiden](https://askerfotball.no/)\n/\n/-->**Føyka Camp **og **Føyka Akademi** for jenter og gutter fra 6 -14 år - \"fotballskole\" er nå klart for påmelding fra **mandag **av. Både for&nbsp;juni og i august tiltakene.&nbsp;**Nytt av året er er at vi utvider til 5 dagers opplegg, mandag til og med fredag.****Asker Fotball Kvinner **og **Asker Fotball** arrangerer for 35. året på rad fotballaktiviteter i sommerferien.Nytt av året så arrangerer vi Akademi/ Keeperakademi både i uke 25 og 33 i tillegg til Føyka Fotballcamp.&nbsp;**Datoer; 19. – 23. juni ( uke 25) og 14. – 18. august (uke 33)**&nbsp;**Føyka fotball-camp for barn 6-14 år **Alder; 6-14 årSted; Føyka, Asker StadionTid; 09:00 – 16:00Pris; kr 2.190 betales ved påmelding til til kontonummer 2220.08.17803 og merkes barnets navnPåmeldingen er ikke gyldig før betalingen er registrertPåmeldingsfrist uke 25; søndag 11. juniPåmeldingsfrist uke 33; søndag 6.",
+    "total_chunks": 3,
+    "original_word_count": 312,
+    "chunk_word_count": 149,
+    "chunk_char_count": 1007,
+    "heading": null,
+    "quality_score": 24,
+    "quality_issues": [],
+    "chunk_type": "stadium_info",
+    "created_at": "2025-10-21T13:54:10.785Z"
+  },
+  "nyheter_foyka-camp-og-foyka-akademi_chunk_1": {
+    "title": "Føyka Camp og Føyka Akademi! / Asker Fotball",
+    "url": "https://askerfotball.no/nyheter/foyka-camp-og-foyka-akademi",
+    "breadcrumbs": [],
+    "chunk_id": "nyheter_foyka-camp-og-foyka-akademi_chunk_1",
+    "idx": 1,
+    "content": " og merkes barnets navnPåmeldingen er ikke gyldig før betalingen er registrertPåmeldingsfrist uke 25; søndag 11. juniPåmeldingsfrist uke 33; søndag 6.\n\naugustPrisen inkluderer; frukt, drikke, t-skjorte, drikkeflaske samt grillmat til lunsj fredag.Barnet må ha med matpakke alle dager.Påbudt med fotballsko og leggskinnDet er viktig at alle felter i påmeldingsskjemaet fylles utVed spørsmål kontakt Lars Henrik Dahl, epost [lars.henrik@askerfotball.no](mailto:lars.henrik@askerfotball.no) &nbsp;mob 94836704&nbsp;Linker til påmelding;Føyka Fotballcamp uke 25; [https://arrangement.spoortz.no/register/#/412988](https://arrangement.spoortz.no/register/#/412988)Føyka Fotballcamp uke 33; [https://arrangement.spoortz.no/register/#/412987](https://arrangement.spoortz.no/register/#/412987)&nbsp;&nbsp;**Akademi/keeperakademi for barn 11 – 14 år som er**-Interessert og motivert for litt mer fotball enn gjennomsnittet-Treningsvillige-Har et ønske om å utvikle seg- Få ekstra fotballtrening med andre ivrige på samme alder&nbsp;Sted; Føyka KunstgressTid; 10:00 – 15:00Pris; kr 3.190 betales ved påmelding til kontonummer 2220.08.17803 og merkes barnets navnPåmeldingen er ikke gyldig før betalingen er registrertPrisen inkluderer; frukt, drikke, t-skjorte, drikkeflaske samt grillmat til lunsj fredag.Påmeldingsfrist uke 25; søndag 11. juniPåmeldingsfrist uke 33; søndag 6.",
+    "total_chunks": 3,
+    "original_word_count": 312,
+    "chunk_word_count": 144,
+    "chunk_char_count": 1368,
+    "heading": null,
+    "quality_score": 26,
+    "quality_issues": [],
+    "chunk_type": "stadium_info",
+    "created_at": "2025-10-21T13:54:10.786Z"
+  },
+  "nyheter_foyka-camp-og-foyka-akademi_chunk_2": {
+    "title": "Føyka Camp og Føyka Akademi! / Asker Fotball",
+    "url": "https://askerfotball.no/nyheter/foyka-camp-og-foyka-akademi",
+    "breadcrumbs": [],
+    "chunk_id": "nyheter_foyka-camp-og-foyka-akademi_chunk_2",
+    "idx": 2,
+    "content": "uderer; frukt, drikke, t-skjorte, drikkeflaske samt grillmat til lunsj fredag.Påmeldingsfrist uke 25; søndag 11. juniPåmeldingsfrist uke 33; søndag 6.\n\naugustBarnet må ha med matpakke alle dager.Påbudt med fotballsko og leggskinnDet er viktig at alle felter i påmeldingsskjemaet fylles utVed spørsmål kontakt Lars Henrik Dahl, epost [lars.henrik@askerfotball.no](mailto:lars.henrik@askerfotball.no)&nbsp; mob 94836704&nbsp;Linker til påmelding;Akademi/keeperakademi uke 25; [https://arrangement.spoortz.no/register/#/412981](https://arrangement.spoortz.no/register/#/412981)Akademi/keeperakademi uke 33; [https://arrangement.spoortz.no/register/#/412984](https://arrangement.spoortz.no/register/#/412984)Annonse:Publisert: 19.02.2023Skrevet av: Redaksjonenshare-facebook",
+    "total_chunks": 3,
+    "original_word_count": 312,
+    "chunk_word_count": 59,
+    "chunk_char_count": 770,
+    "heading": null,
+    "quality_score": 26,
+    "quality_issues": [],
+    "chunk_type": "general_content",
+    "created_at": "2025-10-21T13:54:10.786Z"
   },
   "nyheter_g19-nm-kamp-mot-mjondalen_chunk_0": {
     "title": "G19: NM-kamp mot Mjøndalen / Asker Fotball",
@@ -1114,7 +1301,7 @@
     "quality_score": 28,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.419Z"
+    "created_at": "2025-10-21T13:54:10.786Z"
   },
   "nyheter_g19-pa-vei-hjemover-etter-vellykket-treningsleir_chunk_0": {
     "title": "G19 på vei hjemover etter vellykket treningsleir / Asker Fotball",
@@ -1131,7 +1318,7 @@
     "quality_score": 30,
     "quality_issues": [],
     "chunk_type": "general_content",
-    "created_at": "2025-10-20T16:52:58.419Z"
+    "created_at": "2025-10-21T13:54:10.786Z"
   },
   "nyheter_g19-pa-vei-hjemover-etter-vellykket-treningsleir_chunk_1": {
     "title": "G19 på vei hjemover etter vellykket treningsleir / Asker Fotball",
@@ -1148,7 +1335,7 @@
     "quality_score": 18,
     "quality_issues": [],
     "chunk_type": "general_content",
-    "created_at": "2025-10-20T16:52:58.419Z"
+    "created_at": "2025-10-21T13:54:10.786Z"
   },
   "nyheter_g19-valerenga-er-motstander-i-nm_chunk_0": {
     "title": "G19 - Vålerenga er motstander i NM / Asker Fotball",
@@ -1165,7 +1352,7 @@
     "quality_score": 28,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.419Z"
+    "created_at": "2025-10-21T13:54:10.787Z"
   },
   "nyheter_g19-valerenga-er-motstander-i-nm_chunk_1": {
     "title": "G19 - Vålerenga er motstander i NM / Asker Fotball",
@@ -1182,7 +1369,7 @@
     "quality_score": 18,
     "quality_issues": [],
     "chunk_type": "general_content",
-    "created_at": "2025-10-20T16:52:58.419Z"
+    "created_at": "2025-10-21T13:54:10.787Z"
   },
   "nyheter_gafotballen-med-besok-fra-baerum_chunk_0": {
     "title": "Gåfotballen med besøk fra Bærum / Asker Fotball",
@@ -1201,7 +1388,24 @@
       "Contains navigation content"
     ],
     "chunk_type": "match_info",
-    "created_at": "2025-10-20T16:52:58.420Z"
+    "created_at": "2025-10-21T13:54:10.787Z"
+  },
+  "nyheter_gatelaget-tar-samfunnsansvar_chunk_0": {
+    "title": "Gatelaget tar samfunnsansvar / Asker Fotball",
+    "url": "https://askerfotball.no/nyheter/gatelaget-tar-samfunnsansvar",
+    "breadcrumbs": [],
+    "chunk_id": "nyheter_gatelaget-tar-samfunnsansvar_chunk_0",
+    "idx": 0,
+    "content": "Gatelaget tar samfunnsansvarEn ny vellykket dugnad gjennomført av gatelaget til Asker Fotball.[Forsiden](https://askerfotball.no/)\n/\n/-->Bærum kommune ved Ingvild Tandberg ga Gatelaget oppdraget med å plukke rent et område for Stillehavsøsters på Borøya.Stillehavsøsters er en uønsket art i Oslofjorden og som med sine&nbsp;sylskarpe kanter gjør at mange badegjester kutter seg. Derfor&nbsp;ønsker man&nbsp;å rett og slett rydde denne arten vekk fra våre badeplasser, og sikre allmenheten fortsatt god tilgang til fjorden uten å skade seg.&nbsp; &nbsp;Østers-pickers in action! Oppdraget var enkelt og greit, vi må ta knekken på og fjerne Stillehavsøstersen fra Oslofjorden!Forholdene lå til rette for en god dugnad, med fortsatt god temperatur i vannet, lite vind og lett overskyet vær.&nbsp;Og for en innsats som ble lagt ned&nbsp;denne ettermiddagen!&nbsp;Gatelaget plukket&nbsp;**600 kg**&nbsp;av den uønskede arten Stillehavsøsters.Sånn ser over 1/2 tonn med Stillehavsøsters ut i plukket form. 600 kg i posene som etterhvert ble fraktet bort med bil fra Møller Bil Asker &amp; Bærum.**Møller Bil Asker og Bærum** stilte med gratis WV Varebil slik at vi fikk transportert Stillehavsøstersen til avtalt depot.Takk til **Ingvild Tandberg **for at vi i år også fikk en dugnad som bidrar til et bedre miljø.Jon Matre holdt et høyt og godt tempo under sankingen.&nbsp;Annonse:Publisert: 13.09.2022Skrevet av: Redaksjonenshare-facebook",
+    "total_chunks": 1,
+    "original_word_count": 198,
+    "chunk_word_count": 198,
+    "chunk_char_count": 1434,
+    "heading": null,
+    "quality_score": 26,
+    "quality_issues": [],
+    "chunk_type": "general_content",
+    "created_at": "2025-10-21T13:54:10.787Z"
   },
   "nyheter_generalprove-lordag-orn-horten-pa-bortebane_chunk_0": {
     "title": "Generalprøve lørdag - Ørn-Horten på bortebane / Asker Fotball",
@@ -1218,7 +1422,7 @@
     "quality_score": 28,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.420Z"
+    "created_at": "2025-10-21T13:54:10.787Z"
   },
   "nyheter_handelsbanken-stotter-videre_chunk_0": {
     "title": "Handelsbanken støtter videre! / Asker Fotball",
@@ -1235,7 +1439,7 @@
     "quality_score": 26,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.420Z"
+    "created_at": "2025-10-21T13:54:10.788Z"
   },
   "nyheter_hbk-seier-lordag_chunk_0": {
     "title": "HBK-seier lørdag / Asker Fotball",
@@ -1252,7 +1456,24 @@
     "quality_score": 30,
     "quality_issues": [],
     "chunk_type": "general_content",
-    "created_at": "2025-10-20T16:52:58.421Z"
+    "created_at": "2025-10-21T13:54:10.788Z"
+  },
+  "nyheter_her-er-alt-du-trenger-a-vite-om-billetter-til-askers-hjemmekamper_chunk_0": {
+    "title": "Her er alt du trenger å vite om billetter til Askers hjemmekamper / Asker Fotball",
+    "url": "https://askerfotball.no/nyheter/her-er-alt-du-trenger-a-vite-om-billetter-til-askers-hjemmekamper",
+    "breadcrumbs": [],
+    "chunk_id": "nyheter_her-er-alt-du-trenger-a-vite-om-billetter-til-askers-hjemmekamper_chunk_0",
+    "idx": 0,
+    "content": "Her er alt du trenger å vite om billetter til Askers hjemmekamper[Forsiden](https://askerfotball.no/)\n/\n/-->På grunn av&nbsp;Covid-19 og&nbsp;smittervernreglene&nbsp;gjelder følgende for sesongen 2020 for de som vil se Asker Fotball på Føyka.&nbsp;Billetter til kamp **MÅ**&nbsp;kjøpes&nbsp;i&nbsp;billettboden. Billettboden åpner en klokketime før kampstart.&nbsp;Alle **MÅ&nbsp;**benytte inngangen fra gressbanen og gå innom billettboden for å&nbsp;registrere seg med navn og&nbsp;telefonnummer. Dette gjelder også de som har sesongkort.For å forkorte køen&nbsp;oppfordrer klubben til&nbsp;at man skriver dette på en egen lapp&nbsp; - bruk blokkbokstaver&nbsp; -&nbsp;og leverer den til de som sitter i billettboden.Når det gjelder betaling av billett eller kjøp i kiosk&nbsp;er det kun bankkort &nbsp;og Vipps som godkjennes.&nbsp; (Ikke kredittkort eller kontanter )**VIKTIG:&nbsp;**Husk å holde avstand, sitte med en meters avstand og **benytt antibac** som er plassert ut på arenaen.&nbsp;Det er KUN tillatt å slippe inn 200 tilskuere på stadion. Vi ber om forståelse for dette.&nbsp;Sees på Føyka!Annonse:Publisert: 08.07.2020, oppdatert: 15.08.2020Skrevet av: Dag M. VegelKontakt:\n[dag@askerfotball.no](mailto:dag@askerfotball.no)share-facebook",
+    "total_chunks": 1,
+    "original_word_count": 148,
+    "chunk_word_count": 148,
+    "chunk_char_count": 1252,
+    "heading": null,
+    "quality_score": 28,
+    "quality_issues": [],
+    "chunk_type": "stadium_info",
+    "created_at": "2025-10-21T13:54:10.788Z"
   },
   "nyheter_her-kjoper-du-sesongkort_chunk_0": {
     "title": "Her kjøper du sesongkort! / Asker Fotball",
@@ -1269,7 +1490,7 @@
     "quality_score": 39,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.421Z"
+    "created_at": "2025-10-21T13:54:10.788Z"
   },
   "nyheter_her-kjoper-du-sesongkort_chunk_1": {
     "title": "Her kjøper du sesongkort! / Asker Fotball",
@@ -1286,7 +1507,7 @@
     "quality_score": 26,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.421Z"
+    "created_at": "2025-10-21T13:54:10.788Z"
   },
   "nyheter_hjemmekamp-alta-kommer_chunk_0": {
     "title": "Hjemmekamp: Alta kommer / Asker Fotball",
@@ -1303,7 +1524,7 @@
     "quality_score": 30,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.422Z"
+    "created_at": "2025-10-21T13:54:10.788Z"
   },
   "nyheter_honefoss-kommer-lordag_chunk_0": {
     "title": "Hønefoss kommer lørdag / Asker Fotball",
@@ -1320,7 +1541,7 @@
     "quality_score": 30,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.422Z"
+    "created_at": "2025-10-21T13:54:10.789Z"
   },
   "nyheter_hvalstrandfestivalen-blir-til-asker-live_chunk_0": {
     "title": "Hvalstrandfestivalen blir til Asker Live / Asker Fotball",
@@ -1337,7 +1558,7 @@
     "quality_score": 26,
     "quality_issues": [],
     "chunk_type": "news",
-    "created_at": "2025-10-20T16:52:58.422Z"
+    "created_at": "2025-10-21T13:54:10.789Z"
   },
   "nyheter_jatta-scoring-holdt-ikke-for-poeng_chunk_0": {
     "title": "Jatta-scoring holdt ikke for poeng / Asker Fotball",
@@ -1354,7 +1575,7 @@
     "quality_score": 32,
     "quality_issues": [],
     "chunk_type": "match_info",
-    "created_at": "2025-10-20T16:52:58.423Z"
+    "created_at": "2025-10-21T13:54:10.789Z"
   },
   "nyheter_jens-dobbel-og-ett-poeng-mot-tromsdalen_chunk_0": {
     "title": "Jens-dobbel og ett poeng mot Tromsdalen / Asker Fotball",
@@ -1371,7 +1592,7 @@
     "quality_score": 28,
     "quality_issues": [],
     "chunk_type": "general_content",
-    "created_at": "2025-10-20T16:52:58.423Z"
+    "created_at": "2025-10-21T13:54:10.789Z"
   },
   "nyheter_jens-dobbel-og-ett-poeng-mot-tromsdalen_chunk_1": {
     "title": "Jens-dobbel og ett poeng mot Tromsdalen / Asker Fotball",
@@ -1388,7 +1609,7 @@
     "quality_score": 32,
     "quality_issues": [],
     "chunk_type": "match_info",
-    "created_at": "2025-10-20T16:52:58.423Z"
+    "created_at": "2025-10-21T13:54:10.789Z"
   },
   "nyheter_joachim-tatt-ut-pa-u18-landslaget_chunk_0": {
     "title": "Joachim tatt ut på U18-landslaget / Asker Fotball",
@@ -1405,7 +1626,26 @@
     "quality_score": 28,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.423Z"
+    "created_at": "2025-10-21T13:54:10.790Z"
+  },
+  "nyheter_kiwi-fortsetter-samarbeidet-i-2-nye-ar_chunk_0": {
+    "title": "KIWI fortsetter samarbeidet i 2 nye år / Asker Fotball",
+    "url": "https://askerfotball.no/nyheter/kiwi-fortsetter-samarbeidet-i-2-nye-ar",
+    "breadcrumbs": [],
+    "chunk_id": "nyheter_kiwi-fortsetter-samarbeidet-i-2-nye-ar_chunk_0",
+    "idx": 0,
+    "content": "KIWI fortsetter samarbeidet i 2 nye år / Asker Fotball\n••\n••\n•••\n•• •Nok en samarbeidspartner ser verdien av å spille på lag med Asker Fotball[Forsiden](https://askerfotball.no/)\n/\n/-->- Vi er glade for at **Kiwi **fortsatt ønsker å være med i nettverket til Asker Fotball. For oss er det viktig med langsiktige og lojal partnere og **Kiwi** har vært med oss en årrekke, det setter klubben veldig pris på sier **markedssjef Rune Klemetsdal.&nbsp;**Grønt er skjønt - og KIWI er butikken Asker Fotball benytter. For butikkene finner man over hele landet.&nbsp;Annonse:### Populære søk[PROFIL](https://askerfotball.no/pwa)[REDIGER PROFIL](https://askerfotball.no/pwa?edit=true)EPostMobilnummerFødselsdatoAdressePostnr.PoststedKjønn#### PushmeldingerSpesielle utvalgte nyheterAlle nyheterKamphendelser#### Kommunikasjon og SamtykkerREDIGER SAMTYKKERNyheterLagTerminlisteResultaterOm stadionOm klubbenAskerfotballens historieMarkedSamfunnButikkFøyka OBOS-campOBOS-AkademietFordelsprogramPUSH-VARSLINGERXX## HeaderContentXHeaderContentDenne nettsiden bruker cookies – se nærmere i vår cookie- og personvernerklæring.[Ok](#cookie-line-accept)[Les mer her](https://www.obos-ligaen.no/personvern)",
+    "total_chunks": 1,
+    "original_word_count": 119,
+    "chunk_word_count": 119,
+    "chunk_char_count": 1187,
+    "heading": null,
+    "quality_score": 17,
+    "quality_issues": [
+      "Contains navigation content"
+    ],
+    "chunk_type": "match_info",
+    "created_at": "2025-10-21T13:54:10.790Z"
   },
   "nyheter_kiwi-paskecamp-er-like-rundt-hjorne_chunk_0": {
     "title": "Kiwi Påskecamp er like rundt hjørnet! / Asker Fotball",
@@ -1422,7 +1662,7 @@
     "quality_score": 28,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.424Z"
+    "created_at": "2025-10-21T13:54:10.790Z"
   },
   "nyheter_kjelsas-pa-bortebane-sondag_chunk_0": {
     "title": "Kjelsås på bortebane søndag / Asker Fotball",
@@ -1439,7 +1679,7 @@
     "quality_score": 30,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.424Z"
+    "created_at": "2025-10-21T13:54:10.790Z"
   },
   "nyheter_kjop-sesongkort-her_chunk_0": {
     "title": "Kjøp sesongkort her! / Asker Fotball",
@@ -1458,7 +1698,7 @@
       "Contains navigation content"
     ],
     "chunk_type": "match_info",
-    "created_at": "2025-10-20T16:52:58.424Z"
+    "created_at": "2025-10-21T13:54:10.790Z"
   },
   "nyheter_knepent-hjemmetap_chunk_0": {
     "title": "Knepent hjemmetap / Asker Fotball",
@@ -1475,7 +1715,7 @@
     "quality_score": 30,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.424Z"
+    "created_at": "2025-10-21T13:54:10.791Z"
   },
   "nyheter_konkurransen-oker-tre-nye-i-a-troppen_chunk_0": {
     "title": "Konkurransen øker - Tre nye i A-troppen / Asker Fotball",
@@ -1492,7 +1732,7 @@
     "quality_score": 28,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.425Z"
+    "created_at": "2025-10-21T13:54:10.791Z"
   },
   "nyheter_konkurransen-oker-tre-nye-i-a-troppen_chunk_1": {
     "title": "Konkurransen øker - Tre nye i A-troppen / Asker Fotball",
@@ -1509,7 +1749,7 @@
     "quality_score": 26,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.425Z"
+    "created_at": "2025-10-21T13:54:10.791Z"
   },
   "nyheter_kyst-og-sjoservice-danner-samarbeid-med-asker-fotball_chunk_0": {
     "title": "Kyst og Sjøservice danner samarbeid med Asker Fotball / Asker Fotball",
@@ -1526,7 +1766,7 @@
     "quality_score": 24,
     "quality_issues": [],
     "chunk_type": "general_content",
-    "created_at": "2025-10-20T16:52:58.425Z"
+    "created_at": "2025-10-21T13:54:10.791Z"
   },
   "nyheter_kyst-og-sjoservice-danner-samarbeid-med-asker-fotball_chunk_1": {
     "title": "Kyst og Sjøservice danner samarbeid med Asker Fotball / Asker Fotball",
@@ -1543,7 +1783,7 @@
     "quality_score": 24,
     "quality_issues": [],
     "chunk_type": "general_content",
-    "created_at": "2025-10-20T16:52:58.425Z"
+    "created_at": "2025-10-21T13:54:10.791Z"
   },
   "nyheter_kyst-og-sjoservice-danner-samarbeid-med-asker-fotball_chunk_2": {
     "title": "Kyst og Sjøservice danner samarbeid med Asker Fotball / Asker Fotball",
@@ -1560,7 +1800,7 @@
     "quality_score": 26,
     "quality_issues": [],
     "chunk_type": "general_content",
-    "created_at": "2025-10-20T16:52:58.425Z"
+    "created_at": "2025-10-21T13:54:10.791Z"
   },
   "nyheter_lengste-bortereisen-venter-sondag_chunk_0": {
     "title": "Lengste bortereisen venter søndag / Asker Fotball",
@@ -1577,7 +1817,7 @@
     "quality_score": 30,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.425Z"
+    "created_at": "2025-10-21T13:54:10.792Z"
   },
   "nyheter_mange-fordeler-gjennom-asker-fotball_chunk_0": {
     "title": "Mange fordeler gjennom Asker Fotball / Asker Fotball",
@@ -1594,7 +1834,7 @@
     "quality_score": 28,
     "quality_issues": [],
     "chunk_type": "general_content",
-    "created_at": "2025-10-20T16:52:58.425Z"
+    "created_at": "2025-10-21T13:54:10.792Z"
   },
   "nyheter_mange-fordeler-gjennom-asker-fotball_chunk_1": {
     "title": "Mange fordeler gjennom Asker Fotball / Asker Fotball",
@@ -1611,7 +1851,7 @@
     "quality_score": 28,
     "quality_issues": [],
     "chunk_type": "general_content",
-    "created_at": "2025-10-20T16:52:58.426Z"
+    "created_at": "2025-10-21T13:54:10.792Z"
   },
   "nyheter_mange-fordeler-gjennom-asker-fotball_chunk_2": {
     "title": "Mange fordeler gjennom Asker Fotball / Asker Fotball",
@@ -1628,7 +1868,7 @@
     "quality_score": 32,
     "quality_issues": [],
     "chunk_type": "general_content",
-    "created_at": "2025-10-20T16:52:58.426Z"
+    "created_at": "2025-10-21T13:54:10.792Z"
   },
   "nyheter_midtstoppere-har-signert_chunk_0": {
     "title": "Midtstoppere har signert! / Asker Fotball",
@@ -1645,7 +1885,7 @@
     "quality_score": 28,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.426Z"
+    "created_at": "2025-10-21T13:54:10.792Z"
   },
   "nyheter_midtstoppere-har-signert_chunk_1": {
     "title": "Midtstoppere har signert! / Asker Fotball",
@@ -1662,7 +1902,7 @@
     "quality_score": 28,
     "quality_issues": [],
     "chunk_type": "general_content",
-    "created_at": "2025-10-20T16:52:58.426Z"
+    "created_at": "2025-10-21T13:54:10.792Z"
   },
   "nyheter_mjondalen-var-effektive_chunk_0": {
     "title": "Mjøndalen var effektive / Asker Fotball",
@@ -1679,7 +1919,7 @@
     "quality_score": 28,
     "quality_issues": [],
     "chunk_type": "match_info",
-    "created_at": "2025-10-20T16:52:58.426Z"
+    "created_at": "2025-10-21T13:54:10.792Z"
   },
   "nyheter_neste-hjemmekamp-2.paskedag_chunk_0": {
     "title": "Neste hjemmekamp: 2.påskedag / Asker Fotball",
@@ -1696,7 +1936,7 @@
     "quality_score": 30,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.426Z"
+    "created_at": "2025-10-21T13:54:10.793Z"
   },
   "nyheter_neste-hjemmekamp-2.paskedag_chunk_1": {
     "title": "Neste hjemmekamp: 2.påskedag / Asker Fotball",
@@ -1713,7 +1953,7 @@
     "quality_score": 30,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.426Z"
+    "created_at": "2025-10-21T13:54:10.793Z"
   },
   "nyheter_nikolai-brokhaug-gabrielsen-pa-utlan_chunk_0": {
     "title": "Nikolai Brokhaug Gabrielsen på utlån / Asker Fotball",
@@ -1730,7 +1970,7 @@
     "quality_score": 32,
     "quality_issues": [],
     "chunk_type": "match_info",
-    "created_at": "2025-10-20T16:52:58.427Z"
+    "created_at": "2025-10-21T13:54:10.793Z"
   },
   "nyheter_noah-blir-vaerende_chunk_0": {
     "title": "Noah blir værende! / Asker Fotball",
@@ -1747,7 +1987,7 @@
     "quality_score": 30,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.427Z"
+    "created_at": "2025-10-21T13:54:10.794Z"
   },
   "nyheter_ny-back-har-signert_chunk_0": {
     "title": "Ny back har signert / Asker Fotball",
@@ -1764,7 +2004,7 @@
     "quality_score": 30,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.427Z"
+    "created_at": "2025-10-21T13:54:10.794Z"
   },
   "nyheter_ny-kontrakt-for-erik-hejer_chunk_0": {
     "title": "Ny kontrakt for Erik Hejer / Asker Fotball",
@@ -1784,7 +2024,7 @@
     "quality_score": 28,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.427Z"
+    "created_at": "2025-10-21T13:54:10.795Z"
   },
   "nyheter_ny-lordagskamp-venter_chunk_0": {
     "title": "Ny lørdagskamp venter! / Asker Fotball",
@@ -1801,7 +2041,7 @@
     "quality_score": 48,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.428Z"
+    "created_at": "2025-10-21T13:54:10.795Z"
   },
   "nyheter_ny-lordagskamp-venter_chunk_1": {
     "title": "Ny lørdagskamp venter! / Asker Fotball",
@@ -1818,7 +2058,7 @@
     "quality_score": 27,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.428Z"
+    "created_at": "2025-10-21T13:54:10.795Z"
   },
   "nyheter_ny-poengdeling_chunk_0": {
     "title": "Ny poengdeling / Asker Fotball",
@@ -1835,7 +2075,7 @@
     "quality_score": 30,
     "quality_issues": [],
     "chunk_type": "match_info",
-    "created_at": "2025-10-20T16:52:58.428Z"
+    "created_at": "2025-10-21T13:54:10.796Z"
   },
   "nyheter_ny-poengdeling_chunk_1": {
     "title": "Ny poengdeling / Asker Fotball",
@@ -1852,7 +2092,7 @@
     "quality_score": 26,
     "quality_issues": [],
     "chunk_type": "general_content",
-    "created_at": "2025-10-20T16:52:58.428Z"
+    "created_at": "2025-10-21T13:54:10.796Z"
   },
   "nyheter_ny-spiss-klar_chunk_0": {
     "title": "Ny spiss klar! / Asker Fotball",
@@ -1869,7 +2109,26 @@
     "quality_score": 26,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.428Z"
+    "created_at": "2025-10-21T13:54:10.796Z"
+  },
+  "nyheter_ny-trener-for-g15-og-obos-akademi_chunk_0": {
+    "title": "Ny trener for G15 og OBOS Akademi / Asker Fotball",
+    "url": "https://askerfotball.no/nyheter/ny-trener-for-g15-og-obos-akademi",
+    "breadcrumbs": [],
+    "chunk_id": "nyheter_ny-trener-for-g15-og-obos-akademi_chunk_0",
+    "idx": 0,
+    "content": "Ny trener for G15 og OBOS Akademi / Asker Fotball\n••\n••\n•••\n•• •Trenerstaben på Føyka fornyes foran 2025[Forsiden](https://askerfotball.no/)\n/\n/-->Mandag 2. Desember møter **Mathis Banggren for første gang G2010-laget på Føyka.**Han overtar gruppa som **Emilio Martinez **har ledet i to sesonger.Mathis (24) kommer til oss 1.1.25 etter da å ha avsluttet en jobb med ungdomslag og Akademi i **Stoppen**.Han er opprinnelig fra Hønefoss / Ringerike, og ser fram til å bidra så vel på **OBOS-akademi** som med **«Aktive lokalsamfunn» på Borgen**.«*Triggeren for jobben var allikevel G2010-gutta, som jeg har hørt spennende ting om*», sier Mathis til askerfotball.no**Velkommen til Føyka Mathis!**Mathis gleder seg til å komme i gang på Føyka!&nbsp;Annonse:### Populære søk[PROFIL](https://askerfotball.no/pwa)[REDIGER PROFIL](https://askerfotball.no/pwa?edit=true)EPostMobilnummerFødselsdatoAdressePostnr.PoststedKjønn#### PushmeldingerSpesielle utvalgte nyheterAlle nyheterKamphendelser#### Kommunikasjon og SamtykkerREDIGER SAMTYKKERNyheterLagTerminlisteResultaterOm stadionOm klubbenAskerfotballens historieMarkedSamfunnButikkFøyka OBOS-campOBOS-AkademietFordelsprogramPUSH-VARSLINGERXX## HeaderContentXHeaderContentDenne nettsiden bruker cookies – se nærmere i vår cookie- og personvernerklæring.[Ok](#cookie-line-accept)[Les mer her](https://www.obos-ligaen.no/personvern)",
+    "total_chunks": 1,
+    "original_word_count": 140,
+    "chunk_word_count": 140,
+    "chunk_char_count": 1373,
+    "heading": null,
+    "quality_score": 17,
+    "quality_issues": [
+      "Contains navigation content"
+    ],
+    "chunk_type": "match_info",
+    "created_at": "2025-10-21T13:54:10.796Z"
   },
   "nyheter_nytt-tilbud-pa-foyka_chunk_0": {
     "title": "Ekstratilbud på Føyka for gutter født 2013-2014 / Asker Fotball",
@@ -1886,7 +2145,27 @@
     "quality_score": 30,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.428Z"
+    "created_at": "2025-10-21T13:54:10.796Z"
+  },
+  "nyheter_obos-camp-del-2_chunk_0": {
+    "title": "OBOS Camp del 2 / Asker Fotball",
+    "url": "https://askerfotball.no/nyheter/obos-camp-del-2",
+    "breadcrumbs": [
+      "/--",
+      "Og her er nøkkeltallene;&nbsp;• 253 deltakere"
+    ],
+    "chunk_id": "nyheter_obos-camp-del-2_chunk_0",
+    "idx": 0,
+    "content": "OBOS Camp del 2Så er vi i gang med en ny runde OBOS Camp på Føyka. En herlig fotballuke før skolene starter opp, står på programmet.[Forsiden](https://askerfotball.no/)\n/\n/-->Og her er nøkkeltallene;&nbsp;• 253 deltakere\n• 43 trenere / instruktører&nbsp;\n• 3 ledere i full sving\n• I gang kl&nbsp;08:00 til sistemann er ferdig med rydding rundt 16:30….Tirsdagen startet med regn, mye regn. Det var oppholdsvær rundt lunsj og fram til Smoothie-pausen, før himmelen åpnet seg på nytt.Godt å ha en instruktør å lene seg på når kroppen trenger litt hvile og skoa er gjennomvåteOg mange tapre 7-8-åringer fikk testet seg i en våt fotballhverdag, særlig gruppene som hold til på naturgresset.&nbsp;Men da er en sterk trener er godt å ha når skoa er «søkkvåte».Heldigvis er prognosene for resten av uken bedre - så her bare kjører vi på!Annonse:Publisert: 16.08.2023Skrevet av: Redaksjonenshare-facebook",
+    "total_chunks": 1,
+    "original_word_count": 140,
+    "chunk_word_count": 140,
+    "chunk_char_count": 895,
+    "heading": null,
+    "quality_score": 33,
+    "quality_issues": [],
+    "chunk_type": "stadium_info",
+    "created_at": "2025-10-21T13:54:10.797Z"
   },
   "nyheter_obos-camp-uke-32-oppsummert_chunk_0": {
     "title": "OBOS-camp uke 32 oppsummert / Asker Fotball",
@@ -1903,7 +2182,7 @@
     "quality_score": 28,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.429Z"
+    "created_at": "2025-10-21T13:54:10.797Z"
   },
   "nyheter_obos-camp-uke-33_chunk_0": {
     "title": "OBOS-Camp uke 33 / Asker Fotball",
@@ -1920,7 +2199,7 @@
     "quality_score": 30,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.429Z"
+    "created_at": "2025-10-21T13:54:10.797Z"
   },
   "nyheter_obos-hostcamp-dag-3_chunk_0": {
     "title": "OBOS Høstcamp dag 3 / Asker Fotball",
@@ -1939,7 +2218,7 @@
       "Contains navigation content"
     ],
     "chunk_type": "match_info",
-    "created_at": "2025-10-20T16:52:58.429Z"
+    "created_at": "2025-10-21T13:54:10.797Z"
   },
   "nyheter_obos-hostcamp-uke-40_chunk_0": {
     "title": "OBOS Høstcamp Uke 40 / Asker Fotball",
@@ -1956,7 +2235,41 @@
     "quality_score": 30,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.430Z"
+    "created_at": "2025-10-21T13:54:10.798Z"
+  },
+  "nyheter_partnertreff-og-juleavslutning_chunk_0": {
+    "title": "Partnertreff og juleavslutning / Asker Fotball",
+    "url": "https://askerfotball.no/nyheter/partnertreff-og-juleavslutning",
+    "breadcrumbs": [],
+    "chunk_id": "nyheter_partnertreff-og-juleavslutning_chunk_0",
+    "idx": 0,
+    "content": "Partnertreff og juleavslutningMandag inviterte Asker Fotball sine partnere og venner til juleavslutning. Og med perfekte rammer det ble det en meget hyggelig start på uka.[Forsiden](https://askerfotball.no/)\n/\n/-->For når man kan starte et partnertreff med julebuffet hos **Quality Hotel Leangkollen, **er lista på mange måter lagt. God stemning blandt våre samarbeidspartnere var det, og praten gikk flittig rundt bordene.&nbsp;Hotelldirektør på Quality Hotel Leangkollen, Merete Emanuelsen, fikk en velfortjent blomst for både godt vertskap og samarbeid.Og med velvalgte ord fra **markedssjef Rune Klemetsdal **og **daglig leder Rolf Magne Walstad**, var det også en god anledning for å hedre gode støttespillere av Asker Fotball.Etter lunsj ble lokasjonen endret til Kråka Pub og Wettre Bryggerier. Og OBOS fikk prisen som Årets Samarbeidspartner.&nbsp;Så etter et nydelig inntak av julemat, ble så dagens oppmøte busset til **Kråka Pub **for både jule-øl smaking og ytterligere utmerkelser fra klubbens side.&nbsp;Bryggeri-sjef Hans E. Wettre taler til forsamlingen. Og ikke minst, det smakes på årets julebrygg. Noe bryggeriet har mange sorter av.Og avslutningsvis kunne klubben både presentere spennende strategi-planer, samt presentere en viktig re-signering for a-laget; målmann **Vegard Pedersen.&nbsp;**Avtroppende a-lagstrener Vegard Skogheim taler også til klubbens partnere.",
+    "total_chunks": 2,
+    "original_word_count": 346,
+    "chunk_word_count": 187,
+    "chunk_char_count": 1387,
+    "heading": null,
+    "quality_score": 30,
+    "quality_issues": [],
+    "chunk_type": "general_content",
+    "created_at": "2025-10-21T13:54:10.798Z"
+  },
+  "nyheter_partnertreff-og-juleavslutning_chunk_1": {
+    "title": "Partnertreff og juleavslutning / Asker Fotball",
+    "url": "https://askerfotball.no/nyheter/partnertreff-og-juleavslutning",
+    "breadcrumbs": [],
+    "chunk_id": "nyheter_partnertreff-og-juleavslutning_chunk_1",
+    "idx": 1,
+    "content": "ntere en viktig re-signering for a-laget; målmann **Vegard Pedersen.&nbsp;**Avtroppende a-lagstrener Vegard Skogheim taler også til klubbens partnere.\n\nHer takker han for følget og ønsker samtidig klubben all lykke til videre.Disse ble hedret mandag:&nbsp;• **OBOS** - Årets Samarbeidspartner.&nbsp;\n• **Ivar Nilsen **- mangeårig vaktmann på Fotballhuset under kamper og arrangement.&nbsp;\n• **Ole Jacob Johansen** - tidligere styreverv og lokalpolitiker som i mange år har talt idrettens sak på Rådhuset.&nbsp;\n• **Merete Emanuelsen** - hotelldirektør Quality Hotel Leangkollen -&nbsp;&nbsp;som nylig re-signerte en ny og viktig samarbeidsavtale med klubben.&nbsp;\n• **Hans E. Wettre **- bryggerisjef som stiller opp med lokaler og brygg i lune omgivelser.&nbsp;\n• **Sponsorrådet **v/ **Torry Einan i Energima**, **Jarle Berggaard Telia** og **Roger Hansen&nbsp;Møller Bil Asker og Bærum**\n• **Vegard Skogheim** - a-lags trener de siste 3 år som nå tar fatt på nye oppgaver utenfor Føyka.&nbsp;**Asker Fotball** takker med det alle sine partnere og venner for året som har gått. Oppturer og nedturer har det vært, men det planlegges for et godt nytt år&nbsp;og markedsavdelingen kan allerede røpe spennende planer 2023!&nbsp;Annonse:Publisert: 28.11.2022Skrevet av: Redaksjonenshare-facebook",
+    "total_chunks": 2,
+    "original_word_count": 346,
+    "chunk_word_count": 176,
+    "chunk_char_count": 1292,
+    "heading": null,
+    "quality_score": 50,
+    "quality_issues": [],
+    "chunk_type": "stadium_info",
+    "created_at": "2025-10-21T13:54:10.798Z"
   },
   "nyheter_poengdeling-mot-follo_chunk_0": {
     "title": "Poengdeling mot Follo / Asker Fotball",
@@ -1973,7 +2286,24 @@
     "quality_score": 28,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.430Z"
+    "created_at": "2025-10-21T13:54:10.798Z"
+  },
+  "nyheter_quality-hotel-leangkollen-ny-gull-partner_chunk_0": {
+    "title": "Quality Hotel Leangkollen ny Gull-partner! / Asker Fotball",
+    "url": "https://askerfotball.no/nyheter/quality-hotel-leangkollen-ny-gull-partner",
+    "breadcrumbs": [],
+    "chunk_id": "nyheter_quality-hotel-leangkollen-ny-gull-partner_chunk_0",
+    "idx": 0,
+    "content": "Quality Hotel Leangkollen ny Gull-partner!Quality Hotel Leangkollen er ny stolt GULL-samarbeidspartner med Asker Fotball.[Forsiden](https://askerfotball.no/)\n/\n/-->- Det er en fantastisk signering for Asker Fotball, jubler markedssjef **Rune Klemetsda**l.&nbsp;Avtalen vil bidra til vekst for klubben ved at vi nå har gode fasiliteter for mange av våre aktiviteter. Inkludert markedsaktiviteter i nettverket som virkelig er i god utvikling, avslutter **Klemetsdal**.Quality Hotel Leangkollen - vakre omgivelser, god mat og service i verdenstoppen. Bedre blir det ikke.**Quality Hotel Leangkollen** retter seg primært mot konferanse- og selskapsmarkedet, men vi vil også minne om at hotellet ikke kun er for hotellets gjester.- Hos oss er alle hjertelig velkommen! Det er mektig historie i veggene som vi gjerne forteller mer om, vi er kjent for vårt gode kjøkken og har en beliggenhet mange kan misunne oss. Det er ganske så greit å sitte på terrassen en sommerkveld og nyte utsikten utover Oslofjorden med en deilig forfriskning. Vi ser frem til et spennende samarbeid og håper vi kan være med på å bidra til suksess for klubben, **avslutter daglig leder Merete Emanuelsen hos Quality Hotel Leangkollen.&nbsp;**Annonse:Publisert: 04.04.2022Skrevet av: Espen FalckKontakt:\n[espen@profildesign.no](mailto:espen@profildesign.no)share-facebook",
+    "total_chunks": 1,
+    "original_word_count": 183,
+    "chunk_word_count": 183,
+    "chunk_char_count": 1340,
+    "heading": null,
+    "quality_score": 26,
+    "quality_issues": [],
+    "chunk_type": "club_info",
+    "created_at": "2025-10-21T13:54:10.799Z"
   },
   "nyheter_rana-kommer_chunk_0": {
     "title": "Rana kommer! / Asker Fotball",
@@ -1990,7 +2320,7 @@
     "quality_score": 30,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.430Z"
+    "created_at": "2025-10-21T13:54:10.799Z"
   },
   "nyheter_referat-fra-arsmote_chunk_0": {
     "title": "Referat fra årsmøte / Asker Fotball",
@@ -2007,7 +2337,7 @@
     "quality_score": 30,
     "quality_issues": [],
     "chunk_type": "general_content",
-    "created_at": "2025-10-20T16:52:58.430Z"
+    "created_at": "2025-10-21T13:54:10.799Z"
   },
   "nyheter_referat-fra-arsmote_chunk_1": {
     "title": "Referat fra årsmøte / Asker Fotball",
@@ -2024,7 +2354,7 @@
     "quality_score": 30,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.430Z"
+    "created_at": "2025-10-21T13:54:10.799Z"
   },
   "nyheter_referat-fra-arsmote_chunk_2": {
     "title": "Referat fra årsmøte / Asker Fotball",
@@ -2041,7 +2371,7 @@
     "quality_score": 28,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.431Z"
+    "created_at": "2025-10-21T13:54:10.799Z"
   },
   "nyheter_roman-dobbel-rent-bur-og-tre-poeng_chunk_0": {
     "title": "Roman-dobbel, rent bur og tre poeng! / Asker Fotball",
@@ -2058,7 +2388,41 @@
     "quality_score": 28,
     "quality_issues": [],
     "chunk_type": "general_content",
-    "created_at": "2025-10-20T16:52:58.431Z"
+    "created_at": "2025-10-21T13:54:10.800Z"
+  },
+  "nyheter_samarbeid-med-soderberg-partners-wealth-management_chunk_0": {
+    "title": "Samarbeid med Söderberg & Partners Wealth Management / Asker Fotball",
+    "url": "https://askerfotball.no/nyheter/samarbeid-med-soderberg-partners-wealth-management",
+    "breadcrumbs": [],
+    "chunk_id": "nyheter_samarbeid-med-soderberg-partners-wealth-management_chunk_0",
+    "idx": 0,
+    "content": "Samarbeid med Söderberg &amp; Partners Wealth ManagementSöderberg &amp; Partners Wealth Management ønskes herved velkommen inn i Asker Fotball-familien[Forsiden](https://askerfotball.no/)\n/\n/-->Vi er stolte og glade over å kunne annonsere vårt nye samarbeid med **Söderberg &amp; Partners** **Wealth Management**. Dette partnerskapet vil bidra både økonomisk og strategisk, og hjelpe klubben med å nå våre mål innen aktivitet, sport og sosial bærekraft. Vi har funnet en utmerket match med et selskap som deler de samme verdiene som vi står for.Gjennom samarbeidet med **Söderberg &amp; Partners Wealth Management** får vi muligheten til å styrke det samfunnsansvaret som er en integrert del av klubbens DNA. Samtidig gir det oss bedre forutsetninger for å nå våre sportslige mål om å bygge et toppfotballag som hele bygda kan være stolte av.Söderberg &amp; Partners Wealth Management er en av Nordens ledende formuesrådgivere. De bistår privatpersoner, investeringsselskaper, stiftelser og andre organisasjoner med forvaltning av finansielle verdier. Som klient får du en personlig rådgiver støttet av et team av eksperter innen alt fra analyse og investeringer til skattemessige og juridiske spørsmål. I tillegg tilbyr de via deres søsterselskap eksperter fra Söderberg &amp; Partners PensjonsrådgivningFlere av selskapets ansatte har sterk tilknytning til Asker, inkludert Simen Grung Smedberg, som også er en engasjert pappatrener for Drengsrud 2017.",
+    "total_chunks": 2,
+    "original_word_count": 332,
+    "chunk_word_count": 205,
+    "chunk_char_count": 1454,
+    "heading": null,
+    "quality_score": 28,
+    "quality_issues": [],
+    "chunk_type": "general_content",
+    "created_at": "2025-10-21T13:54:10.800Z"
+  },
+  "nyheter_samarbeid-med-soderberg-partners-wealth-management_chunk_1": {
+    "title": "Samarbeid med Söderberg & Partners Wealth Management / Asker Fotball",
+    "url": "https://askerfotball.no/nyheter/samarbeid-med-soderberg-partners-wealth-management",
+    "breadcrumbs": [],
+    "chunk_id": "nyheter_samarbeid-med-soderberg-partners-wealth-management_chunk_1",
+    "idx": 1,
+    "content": "gFlere av selskapets ansatte har sterk tilknytning til Asker, inkludert Simen Grung Smedberg, som også er en engasjert pappatrener for Drengsrud 2017.\n\nPå første trening etter sommeren fikk de ivrige guttene fra Drengsrud utdelt nye akademigensere av spillere fra A-laget.Det var stor begeistring i garderoben da E**rik, Kristoffer, Stian, Eskild og Sander** møtte opp for å dele ut utstyr og ta bilder med de unge, håpefulle spillerne.Som ny samarbeidspartner til Asker Fotball, skal selvfølgelig Söderberg &amp; Partners Wealth Management&nbsp;sin logo pryde Asker-tøy i år.&nbsp;Som klient får du en personlig rådgiver som har med seg et team av eksperter innen alt fra analyse og investeringer til skattemessige og juridiske problemstillinger. I tillegg til god pensjonsrådgivning via deres søsterselskap Söderberg &amp; Partners Pensjonsrådgivning.&nbsp;Stor stas for unge fotballspillere å få hilse på a-lagsgutta i garderoben.En liten fotosession hører med når store og små fotballspillere møtesLes mer: [https://www.soderbergpartners.no/formuesradgivning/](https://www.soderbergpartners.no/formuesradgivning/)Annonse:Publisert: 02.09.2024, oppdatert: 04.09.2024Skrevet av: Redaksjonenshare-facebook",
+    "total_chunks": 2,
+    "original_word_count": 332,
+    "chunk_word_count": 149,
+    "chunk_char_count": 1206,
+    "heading": null,
+    "quality_score": 30,
+    "quality_issues": [],
+    "chunk_type": "general_content",
+    "created_at": "2025-10-21T13:54:10.800Z"
   },
   "nyheter_sander-emanuelsen-spiller-sin-siste-kamp-pa-lordag_chunk_0": {
     "title": "Sander Emanuelsen spiller sin siste kamp på lørdag / Asker Fotball",
@@ -2075,7 +2439,7 @@
     "quality_score": 30,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.431Z"
+    "created_at": "2025-10-21T13:54:10.800Z"
   },
   "nyheter_seier-mot-alta_chunk_0": {
     "title": "Seier mot Alta! / Asker Fotball",
@@ -2092,7 +2456,7 @@
     "quality_score": 30,
     "quality_issues": [],
     "chunk_type": "general_content",
-    "created_at": "2025-10-20T16:52:58.431Z"
+    "created_at": "2025-10-21T13:54:10.801Z"
   },
   "nyheter_siste-hjemmekamp-i-serien_chunk_0": {
     "title": "Siste hjemmekamp i serien / Asker Fotball",
@@ -2109,7 +2473,7 @@
     "quality_score": 28,
     "quality_issues": [],
     "chunk_type": "match_info",
-    "created_at": "2025-10-20T16:52:58.432Z"
+    "created_at": "2025-10-21T13:54:10.801Z"
   },
   "nyheter_skolecupen-var-en-suksess_chunk_0": {
     "title": "Skolecupen var en suksess / Asker Fotball",
@@ -2126,7 +2490,7 @@
     "quality_score": 30,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.432Z"
+    "created_at": "2025-10-21T13:54:10.801Z"
   },
   "nyheter_slik-oppsummerer-vi-obos-camp_chunk_0": {
     "title": "Slik oppsummerer vi OBOS-Camp! / Asker Fotball",
@@ -2143,7 +2507,7 @@
     "quality_score": 28,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.432Z"
+    "created_at": "2025-10-21T13:54:10.801Z"
   },
   "nyheter_smell-pa-tobb-arena_chunk_0": {
     "title": "Smell på TOBB Arena / Asker Fotball",
@@ -2160,7 +2524,7 @@
     "quality_score": 28,
     "quality_issues": [],
     "chunk_type": "general_content",
-    "created_at": "2025-10-20T16:52:58.432Z"
+    "created_at": "2025-10-21T13:54:10.801Z"
   },
   "nyheter_soderberg-partners-wealth-management-forlenger_chunk_0": {
     "title": "Söderberg & Partners Wealth Management forlenger! / Asker Fotball",
@@ -2177,7 +2541,7 @@
     "quality_score": 26,
     "quality_issues": [],
     "chunk_type": "general_content",
-    "created_at": "2025-10-20T16:52:58.432Z"
+    "created_at": "2025-10-21T13:54:10.802Z"
   },
   "nyheter_sommerens-beste-eventyr-obos-camp_chunk_0": {
     "title": "Sommerens beste eventyr - Obos Camp / Asker Fotball",
@@ -2194,7 +2558,7 @@
     "quality_score": 26,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.433Z"
+    "created_at": "2025-10-21T13:54:10.802Z"
   },
   "nyheter_spennende-uker-for-ungdomsfotballen-i-klubben_chunk_0": {
     "title": "Spennende uker for ungdomsfotballen i klubben / Asker Fotball",
@@ -2211,7 +2575,7 @@
     "quality_score": 32,
     "quality_issues": [],
     "chunk_type": "match_info",
-    "created_at": "2025-10-20T16:52:58.433Z"
+    "created_at": "2025-10-21T13:54:10.802Z"
   },
   "nyheter_spennende-uker-for-ungdomsfotballen-i-klubben_chunk_1": {
     "title": "Spennende uker for ungdomsfotballen i klubben / Asker Fotball",
@@ -2228,7 +2592,7 @@
     "quality_score": 32,
     "quality_issues": [],
     "chunk_type": "match_info",
-    "created_at": "2025-10-20T16:52:58.433Z"
+    "created_at": "2025-10-21T13:54:10.802Z"
   },
   "nyheter_status-pa-troppen-for-sesongstart_chunk_0": {
     "title": "Status på troppen før sesongstart / Asker Fotball",
@@ -2245,7 +2609,7 @@
     "quality_score": 32,
     "quality_issues": [],
     "chunk_type": "match_info",
-    "created_at": "2025-10-20T16:52:58.433Z"
+    "created_at": "2025-10-21T13:54:10.803Z"
   },
   "nyheter_status-pa-troppen-for-sesongstart_chunk_1": {
     "title": "Status på troppen før sesongstart / Asker Fotball",
@@ -2262,7 +2626,7 @@
     "quality_score": 30,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.433Z"
+    "created_at": "2025-10-21T13:54:10.803Z"
   },
   "nyheter_stenbro-fortsetter-som-samarbeidspartner_chunk_0": {
     "title": "Stenbro fortsetter som samarbeidspartner! / Asker Fotball",
@@ -2279,7 +2643,7 @@
     "quality_score": 26,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.434Z"
+    "created_at": "2025-10-21T13:54:10.803Z"
   },
   "nyheter_stian-kommer-pa-obos-sondag_chunk_0": {
     "title": "Stian kommer på OBOS + søndag / Asker Fotball",
@@ -2296,7 +2660,7 @@
     "quality_score": 28,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.434Z"
+    "created_at": "2025-10-21T13:54:10.803Z"
   },
   "nyheter_storseier-pa-foyka-gress_chunk_0": {
     "title": "Storseier på Føyka Gress! / Asker Fotball",
@@ -2313,7 +2677,7 @@
     "quality_score": 30,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.434Z"
+    "created_at": "2025-10-21T13:54:10.803Z"
   },
   "nyheter_tallglede-er-ny-samarbeidspartner_chunk_0": {
     "title": "Tallglede er ny samarbeidspartner! / Asker Fotball",
@@ -2330,7 +2694,7 @@
     "quality_score": 26,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.434Z"
+    "created_at": "2025-10-21T13:54:10.804Z"
   },
   "nyheter_tallglede-er-ny-samarbeidspartner_chunk_1": {
     "title": "Tallglede er ny samarbeidspartner! / Asker Fotball",
@@ -2347,7 +2711,7 @@
     "quality_score": 30,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.434Z"
+    "created_at": "2025-10-21T13:54:10.804Z"
   },
   "nyheter_tap-pa-overtid_chunk_0": {
     "title": "Tap på overtid / Asker Fotball",
@@ -2364,7 +2728,7 @@
     "quality_score": 28,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.435Z"
+    "created_at": "2025-10-21T13:54:10.804Z"
   },
   "nyheter_tap-pa-overtid_chunk_1": {
     "title": "Tap på overtid / Asker Fotball",
@@ -2381,7 +2745,7 @@
     "quality_score": 30,
     "quality_issues": [],
     "chunk_type": "general_content",
-    "created_at": "2025-10-20T16:52:58.435Z"
+    "created_at": "2025-10-21T13:54:10.804Z"
   },
   "nyheter_tungt-nederlag-mot-stjordals-blink_chunk_0": {
     "title": "Tungt nederlag mot Stjørdals-Blink / Asker Fotball",
@@ -2398,7 +2762,7 @@
     "quality_score": 28,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.435Z"
+    "created_at": "2025-10-21T13:54:10.804Z"
   },
   "nyheter_ull-kisa-ble-for-sterke-til-slutt_chunk_0": {
     "title": "Ull/kisa ble for sterke til slutt / Asker Fotball",
@@ -2415,7 +2779,7 @@
     "quality_score": 28,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.435Z"
+    "created_at": "2025-10-21T13:54:10.805Z"
   },
   "nyheter_velkommen-til-obos-akademi_chunk_0": {
     "title": "Velkommen til OBOS Akademi+ / Asker Fotball",
@@ -2432,7 +2796,7 @@
     "quality_score": 32,
     "quality_issues": [],
     "chunk_type": "player_list",
-    "created_at": "2025-10-20T16:52:58.436Z"
+    "created_at": "2025-10-21T13:54:10.805Z"
   },
   "nyheter_velkommen-til-obos-akademi_chunk_1": {
     "title": "Velkommen til OBOS Akademi+ / Asker Fotball",
@@ -2449,7 +2813,7 @@
     "quality_score": 20,
     "quality_issues": [],
     "chunk_type": "player_list",
-    "created_at": "2025-10-20T16:52:58.436Z"
+    "created_at": "2025-10-21T13:54:10.805Z"
   },
   "nyheter_vi-drar-til-jessheim-pa-lordag_chunk_0": {
     "title": "Vi drar til Jessheim på lørdag / Asker Fotball",
@@ -2466,7 +2830,7 @@
     "quality_score": 28,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.436Z"
+    "created_at": "2025-10-21T13:54:10.806Z"
   },
   "nyheter_vi-onsker-flere-frivillige-velkommen-i-klubben_chunk_0": {
     "title": "Vi ønsker flere frivillige velkommen i klubben! / Asker Fotball",
@@ -2483,7 +2847,7 @@
     "quality_score": 30,
     "quality_issues": [],
     "chunk_type": "general_content",
-    "created_at": "2025-10-20T16:52:58.436Z"
+    "created_at": "2025-10-21T13:54:10.806Z"
   },
   "nyheter_videre_chunk_0": {
     "title": "VIDERE! / Asker Fotball",
@@ -2503,7 +2867,24 @@
     "quality_score": 30,
     "quality_issues": [],
     "chunk_type": "match_info",
-    "created_at": "2025-10-20T16:52:58.436Z"
+    "created_at": "2025-10-21T13:54:10.806Z"
+  },
+  "nyheter_wettre-bryggeri-og-kraka-pub-ny-partner_chunk_0": {
+    "title": "Wettre Bryggeri og Kråka Pub ny partner. / Asker Fotball",
+    "url": "https://askerfotball.no/nyheter/wettre-bryggeri-og-kraka-pub-ny-partner",
+    "breadcrumbs": [],
+    "chunk_id": "nyheter_wettre-bryggeri-og-kraka-pub-ny-partner_chunk_0",
+    "idx": 0,
+    "content": "Wettre Bryggeri og Kråka Pub ny partner.Vi er glade for å kunne melde at Wettre Bryggeri og Kråka Pub blir med i nettverkspoolen til Asker Fotball.[Forsiden](https://askerfotball.no/)\n/\n/-->**WETTRE BRYGGERI **er et mikrobryggeri på **Søndre Vettre** gård i Asker.&nbsp;Bryggeriet produserer ca. 70.000 liter øl årlig og har ca. 25 egne øl-sorter i porteføljen, som selges gjennom dagligvare, spesialbutikker, Vinmonopolet og HORECA (Hotell, Restaurant og Cantine).&nbsp;I tillegg til egenproduksjon av øl, produserer de spesialøl for bedrifter, hoteller og restauranter.&nbsp;**Bryggeriet** har også en egen pub (**Kråka pub**) som er åpen for publikum hver fredag. I den idylliske gamle låven på Søndre Vettre gård.De andre dagene arrangeres&nbsp;forskjellige skreddersydde events som ølsmaking, kick-off, firmafester, private arrangementer m.m.Det er ikke ofte ledelsen i Asker Fotball er på pub dagtid. Men unntak ble gjort for å ønske Wettre Bryggeri velkommen inn i Asker-familien. Her ved&nbsp; Bryggerimester Marius Hansen (til venstre) og Hans Ellef Wettre. Flankert av Rolf Magne Walstad og Rune Klemetsdal.&nbsp;Ta kontakt med** Hans Ellef Wettre **for ytterligere informasjon og skreddersydde opplegg for deg og din virksomhet eller aktivitet!***hans.e.wettre@wettrebryggeri.com******Tlf.: +47 920 90&nbsp;809***&nbsp;Annonse:Publisert: 24.11.2020Skrevet av: Redaksjonenshare-facebook",
+    "total_chunks": 1,
+    "original_word_count": 179,
+    "chunk_word_count": 179,
+    "chunk_char_count": 1396,
+    "heading": null,
+    "quality_score": 24,
+    "quality_issues": [],
+    "chunk_type": "general_content",
+    "created_at": "2025-10-21T13:54:10.807Z"
   },
   "om-klubben_chunk_0": {
     "title": "Om Klubben / Asker Fotball",
@@ -2511,18 +2892,18 @@
     "breadcrumbs": [],
     "chunk_id": "om-klubben_chunk_0",
     "idx": 0,
-    "content": "Om Klubben / Asker Fotball\n••\n••\n•••\n•• •16. okt. 2025Gåfotballen med besøk fra Bærum16. okt. 2025Siste hjemmekamp i serien•Eidsvold Turn neste!•Stian kommer på OBOS + søndag•Asker - Kjelsås flyttes til søndag•OBOS Høstcamp dag 3•Bortetur neste: Stjørdals-Blink[Se flere nyheter](https://askerfotball.no/nyheter)### Populære søk[PROFIL](https://askerfotball.no/pwa)[REDIGER PROFIL](https://askerfotball.no/pwa?edit=true)EPostMobilnummerFødselsdatoAdressePostnr.PoststedKjønn#### PushmeldingerSpesielle utvalgte nyheterAlle nyheterKamphendelser#### Kommunikasjon og SamtykkerREDIGER SAMTYKKERNyheterLagTerminlisteResultaterOm stadionOm klubbenAskerfotballens historieMarkedSamfunnButikkFøyka OBOS-campOBOS-AkademietFordelsprogramPUSH-VARSLINGERXX## HeaderContentXHeaderContentDenne nettsiden bruker cookies – se nærmere i vår cookie- og personvernerklæring.[Ok](#cookie-line-accept)[Les mer her](https://www.obos-ligaen.no/personvern)",
+    "content": "Om Klubben / Asker Fotball\n••\n••\n•••\n•• •20. okt. 2025Seriegull for G15!20. okt. 2025G14 har blitt kretsmestere!•Gåfotballen med besøk fra Bærum•Siste hjemmekamp i serien•Eidsvold Turn neste!•Stian kommer på OBOS + søndag•Asker - Kjelsås flyttes til søndag[Se flere nyheter](https://askerfotball.no/nyheter)### Populære søk[PROFIL](https://askerfotball.no/pwa)[REDIGER PROFIL](https://askerfotball.no/pwa?edit=true)EPostMobilnummerFødselsdatoAdressePostnr.PoststedKjønn#### PushmeldingerSpesielle utvalgte nyheterAlle nyheterKamphendelser#### Kommunikasjon og SamtykkerREDIGER SAMTYKKERNyheterLagTerminlisteResultaterOm stadionOm klubbenAskerfotballens historieMarkedSamfunnButikkFøyka OBOS-campOBOS-AkademietFordelsprogramPUSH-VARSLINGERXX## HeaderContentXHeaderContentDenne nettsiden bruker cookies – se nærmere i vår cookie- og personvernerklæring.[Ok](#cookie-line-accept)[Les mer her](https://www.obos-ligaen.no/personvern)",
     "total_chunks": 1,
     "original_word_count": 69,
     "chunk_word_count": 69,
-    "chunk_char_count": 933,
+    "chunk_char_count": 928,
     "heading": null,
     "quality_score": 17,
     "quality_issues": [
       "Contains navigation content"
     ],
     "chunk_type": "match_info",
-    "created_at": "2025-10-20T16:52:58.437Z"
+    "created_at": "2025-10-21T13:54:10.808Z"
   },
   "om-klubben_ansatte_chunk_0": {
     "title": "Ansatte / Asker Fotball",
@@ -2539,7 +2920,7 @@
     "quality_score": 32,
     "quality_issues": [],
     "chunk_type": "match_info",
-    "created_at": "2025-10-20T16:52:58.437Z"
+    "created_at": "2025-10-21T13:54:10.809Z"
   },
   "om-klubben_arsmoter_chunk_0": {
     "title": "Årsmøter / Asker Fotball",
@@ -2558,7 +2939,7 @@
       "Contains navigation content"
     ],
     "chunk_type": "match_info",
-    "created_at": "2025-10-20T16:52:58.437Z"
+    "created_at": "2025-10-21T13:54:10.809Z"
   },
   "om-klubben_historiske-fakta_chunk_0": {
     "title": "Historiske fakta / Asker Fotball",
@@ -2575,7 +2956,7 @@
     "quality_score": 28,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.438Z"
+    "created_at": "2025-10-21T13:54:10.810Z"
   },
   "om-klubben_historiske-fakta_chunk_1": {
     "title": "Historiske fakta / Asker Fotball",
@@ -2592,7 +2973,7 @@
     "quality_score": 32,
     "quality_issues": [],
     "chunk_type": "schedule",
-    "created_at": "2025-10-20T16:52:58.438Z"
+    "created_at": "2025-10-21T13:54:10.810Z"
   },
   "om-klubben_historiske-fakta_chunk_2": {
     "title": "Historiske fakta / Asker Fotball",
@@ -2609,7 +2990,7 @@
     "quality_score": 18,
     "quality_issues": [],
     "chunk_type": "general_content",
-    "created_at": "2025-10-20T16:52:58.438Z"
+    "created_at": "2025-10-21T13:54:10.810Z"
   },
   "om-klubben_klubbens-lover_chunk_0": {
     "title": "Klubbens lover / Asker Fotball",
@@ -2628,7 +3009,7 @@
       "Contains navigation content"
     ],
     "chunk_type": "match_info",
-    "created_at": "2025-10-20T16:52:58.438Z"
+    "created_at": "2025-10-21T13:54:10.810Z"
   },
   "om-klubben_marked_chunk_0": {
     "title": "Marked / Asker Fotball",
@@ -2645,7 +3026,7 @@
     "quality_score": 43,
     "quality_issues": [],
     "chunk_type": "list_content",
-    "created_at": "2025-10-20T16:52:58.438Z"
+    "created_at": "2025-10-21T13:54:10.810Z"
   },
   "om-klubben_marked_chunk_1": {
     "title": "Marked / Asker Fotball",
@@ -2662,7 +3043,7 @@
     "quality_score": 66,
     "quality_issues": [],
     "chunk_type": "list_content",
-    "created_at": "2025-10-20T16:52:58.439Z"
+    "created_at": "2025-10-21T13:54:10.810Z"
   },
   "om-klubben_marked_chunk_2": {
     "title": "Marked / Asker Fotball",
@@ -2679,7 +3060,7 @@
     "quality_score": 18,
     "quality_issues": [],
     "chunk_type": "general_content",
-    "created_at": "2025-10-20T16:52:58.439Z"
+    "created_at": "2025-10-21T13:54:10.810Z"
   },
   "om-klubben_media_chunk_0": {
     "title": "Presse / media / Asker Fotball",
@@ -2696,7 +3077,7 @@
     "quality_score": 30,
     "quality_issues": [],
     "chunk_type": "general_content",
-    "created_at": "2025-10-20T16:52:58.439Z"
+    "created_at": "2025-10-21T13:54:10.811Z"
   },
   "om-klubben_samfunn_chunk_0": {
     "title": "Samfunn / Asker Fotball",
@@ -2713,7 +3094,7 @@
     "quality_score": 30,
     "quality_issues": [],
     "chunk_type": "general_content",
-    "created_at": "2025-10-20T16:52:58.439Z"
+    "created_at": "2025-10-21T13:54:10.811Z"
   },
   "om-klubben_samfunn_chunk_1": {
     "title": "Samfunn / Asker Fotball",
@@ -2730,7 +3111,7 @@
     "quality_score": 31,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.439Z"
+    "created_at": "2025-10-21T13:54:10.811Z"
   },
   "om-klubben_solidaritetsfondet_chunk_0": {
     "title": "Solidaritetsfondet / Asker Fotball",
@@ -2750,7 +3131,7 @@
     "quality_score": 28,
     "quality_issues": [],
     "chunk_type": "news",
-    "created_at": "2025-10-20T16:52:58.439Z"
+    "created_at": "2025-10-21T13:54:10.811Z"
   },
   "om-klubben_styret-asker-fotball_chunk_0": {
     "title": "Styret / Asker Fotball",
@@ -2773,7 +3154,7 @@
       "Contains navigation content"
     ],
     "chunk_type": "match_info",
-    "created_at": "2025-10-20T16:52:58.439Z"
+    "created_at": "2025-10-21T13:54:10.811Z"
   },
   "om-klubben_to-steg-frem_chunk_0": {
     "title": "To Skritt Frem / Asker Fotball",
@@ -2790,7 +3171,7 @@
     "quality_score": 16,
     "quality_issues": [],
     "chunk_type": "general_content",
-    "created_at": "2025-10-20T16:52:58.440Z"
+    "created_at": "2025-10-21T13:54:10.812Z"
   },
   "om-klubben_to-steg-frem_chunk_1": {
     "title": "To Skritt Frem / Asker Fotball",
@@ -2807,7 +3188,7 @@
     "quality_score": 30,
     "quality_issues": [],
     "chunk_type": "general_content",
-    "created_at": "2025-10-20T16:52:58.440Z"
+    "created_at": "2025-10-21T13:54:10.812Z"
   },
   "om-klubben_to-steg-frem_chunk_2": {
     "title": "To Skritt Frem / Asker Fotball",
@@ -2824,7 +3205,7 @@
     "quality_score": 30,
     "quality_issues": [],
     "chunk_type": "general_content",
-    "created_at": "2025-10-20T16:52:58.440Z"
+    "created_at": "2025-10-21T13:54:10.812Z"
   },
   "om-klubben_varslingsknapp-asker-fotball_chunk_0": {
     "title": "Varslingsknapp Asker Fotball / Asker Fotball",
@@ -2843,7 +3224,7 @@
       "Contains navigation content"
     ],
     "chunk_type": "match_info",
-    "created_at": "2025-10-20T16:52:58.440Z"
+    "created_at": "2025-10-21T13:54:10.812Z"
   },
   "om-stadion_fotballhuset_chunk_0": {
     "title": "Fotballhuset / Asker Fotball",
@@ -2862,7 +3243,7 @@
       "Contains navigation content"
     ],
     "chunk_type": "match_info",
-    "created_at": "2025-10-20T16:52:58.440Z"
+    "created_at": "2025-10-21T13:54:10.812Z"
   },
   "om-stadion_foyka-stadion_chunk_0": {
     "title": "Føyka Stadion / Asker Fotball",
@@ -2881,7 +3262,7 @@
       "Contains navigation content"
     ],
     "chunk_type": "match_info",
-    "created_at": "2025-10-20T16:52:58.440Z"
+    "created_at": "2025-10-21T13:54:10.812Z"
   },
   "om-stadion_slik-finner-du-frem_chunk_0": {
     "title": "Slik finner du frem / Asker Fotball",
@@ -2900,7 +3281,7 @@
       "Contains navigation content"
     ],
     "chunk_type": "match_info",
-    "created_at": "2025-10-20T16:52:58.440Z"
+    "created_at": "2025-10-21T13:54:10.813Z"
   },
   "partnere_chunk_0": {
     "title": "Partnere / Asker Fotball",
@@ -2919,7 +3300,7 @@
       "Contains navigation content"
     ],
     "chunk_type": "match_info",
-    "created_at": "2025-10-20T16:52:58.440Z"
+    "created_at": "2025-10-21T13:54:10.813Z"
   },
   "partnere_bli-samarbeidspartner_chunk_0": {
     "title": "Bli samarbeidspartner / Asker Fotball",
@@ -2936,7 +3317,7 @@
     "quality_score": 48,
     "quality_issues": [],
     "chunk_type": "list_content",
-    "created_at": "2025-10-20T16:52:58.441Z"
+    "created_at": "2025-10-21T13:54:10.813Z"
   },
   "partnere_bli-samarbeidspartner_chunk_1": {
     "title": "Bli samarbeidspartner / Asker Fotball",
@@ -2953,7 +3334,7 @@
     "quality_score": 74,
     "quality_issues": [],
     "chunk_type": "list_content",
-    "created_at": "2025-10-20T16:52:58.441Z"
+    "created_at": "2025-10-21T13:54:10.813Z"
   },
   "resultater_chunk_0": {
     "title": "Resultater / Asker Fotball",
@@ -2972,7 +3353,7 @@
       "Very short content"
     ],
     "chunk_type": "structured_content",
-    "created_at": "2025-10-20T16:52:58.441Z"
+    "created_at": "2025-10-21T13:54:10.813Z"
   },
   "resultater_chunk_1": {
     "title": "Resultater / Asker Fotball",
@@ -2991,7 +3372,7 @@
       "Very short content"
     ],
     "chunk_type": "match_info",
-    "created_at": "2025-10-20T16:52:58.441Z"
+    "created_at": "2025-10-21T13:54:10.813Z"
   },
   "resultater_chunk_2": {
     "title": "Resultater / Asker Fotball",
@@ -3008,7 +3389,7 @@
     "quality_score": 29,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.441Z"
+    "created_at": "2025-10-21T13:54:10.813Z"
   },
   "resultater_chunk_3": {
     "title": "Resultater / Asker Fotball",
@@ -3025,7 +3406,7 @@
     "quality_score": 31,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.441Z"
+    "created_at": "2025-10-21T13:54:10.813Z"
   },
   "resultater_chunk_4": {
     "title": "Resultater / Asker Fotball",
@@ -3042,7 +3423,7 @@
     "quality_score": 31,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.441Z"
+    "created_at": "2025-10-21T13:54:10.813Z"
   },
   "resultater_chunk_5": {
     "title": "Resultater / Asker Fotball",
@@ -3059,7 +3440,7 @@
     "quality_score": 31,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.441Z"
+    "created_at": "2025-10-21T13:54:10.813Z"
   },
   "resultater_chunk_6": {
     "title": "Resultater / Asker Fotball",
@@ -3076,7 +3457,7 @@
     "quality_score": 31,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.441Z"
+    "created_at": "2025-10-21T13:54:10.813Z"
   },
   "resultater_chunk_7": {
     "title": "Resultater / Asker Fotball",
@@ -3093,7 +3474,7 @@
     "quality_score": 31,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.441Z"
+    "created_at": "2025-10-21T13:54:10.814Z"
   },
   "resultater_chunk_8": {
     "title": "Resultater / Asker Fotball",
@@ -3110,7 +3491,7 @@
     "quality_score": 31,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.441Z"
+    "created_at": "2025-10-21T13:54:10.814Z"
   },
   "resultater_chunk_9": {
     "title": "Resultater / Asker Fotball",
@@ -3127,7 +3508,7 @@
     "quality_score": 21,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.441Z"
+    "created_at": "2025-10-21T13:54:10.814Z"
   },
   "resultater_chunk_10": {
     "title": "Resultater / Asker Fotball",
@@ -3144,7 +3525,7 @@
     "quality_score": 38,
     "quality_issues": [],
     "chunk_type": "stadium_info",
-    "created_at": "2025-10-20T16:52:58.441Z"
+    "created_at": "2025-10-21T13:54:10.814Z"
   },
   "terminliste_chunk_0": {
     "title": "Terminliste / Asker Fotball",
@@ -3163,6 +3544,6 @@
       "Contains navigation content"
     ],
     "chunk_type": "match_info",
-    "created_at": "2025-10-20T16:52:58.441Z"
+    "created_at": "2025-10-21T13:54:10.814Z"
   }
 }

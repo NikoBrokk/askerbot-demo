@@ -1,45 +1,53 @@
 {
-  "timestamp": "21.10.2025, 15:23:48",
+  "analysis": {
+    "overallScore": 55,
+    "fallbackCount": 1,
+    "avgResponseTime": 2823,
+    "problems": "Klarte ikke svare på spørsmål 8 (fallback):\n  \"Hvor ofte møtes styret?\".\n\nSpørsmål 1, 2, 9 hadde lav kvalitet\n  (48%, 44%, 32%).\n\n6 spørsmål hadde treg responstid (>3s).",
+    "tiltak": "1. Legg til info om møtes styret i EMBEDDED_KNOWLEDGE i netlify/functions/chat.js.\n\n2. Forbedre: Terminliste - A-lagets kamper: utvid med mer detaljer; Føyka stadion-entry: legg til fullstendig adresse.\n\n3. Optimaliser BM25-søk og øk caching i chat.js.",
+    "cursorPrompt": "OPPGAVE:\nForbedre Askerbot basert på testresultater\n\nTESTSCORE: 55%\n\nWORKSPACE:\n/Users/nikolaigabrielsen/Downloads/askerbot-demo/\n\nSPESIFIKKE PROBLEMER:\n\n1. FALLBACK-SVAR\n   (1 spørsmål):\n\n   1) \"Hvor ofte møtes styret?\"\n\n   TILTAK:\n   - Åpne netlify/functions/chat.js\n   - Finn EMBEDDED_KNOWLEDGE objektet\n     (ca. linje 493)\n   - Legg til nye entries for\n     manglende emner\n   - Test med: npm run test\n\n2. LAV SVAR-KVALITET\n   (3 spørsmål):\n\n   1) \"Hvor kan jeg se resultater?\"\n      (score: 48%)\n   2) \"Hvor ligger Føyka stadion?\"\n      (score: 44%)\n   3) \"Hvor arrangeres sommerleiren?\"\n      (score: 32%)\n\n   TILTAK:\n   - Finn relevante entries i\n     EMBEDDED_KNOWLEDGE\n   - Utvid \"content\" feltet med\n     mer detaljert info\n   - Legg til spesifikke detaljer\n     (priser, tider, adresser)\n\n3. YTELSE\n   (6 spørsmål >3s):\n\n   TILTAK:\n   - Gjennomgå caching-strategi\n     i chat.js\n   - Vurder å øke CACHE_TTL verdier\n   - Optimaliser searchBM25()\n     funksjonen\n\nVERIFISERING:\nKjør \"npm run test\" for å verifisere\nforbedringene.\n"
+  },
   "testResults": [
     {
-      "question": "Hvem er spillerutvikler?",
-      "answer": "Spillerutvikler i Asker Fotball er Svein Roger Pettersen. Du kan kontakte ham på e-post sveinroger.pettersen@ntg.no eller telefon 951 63 103 for mer informasjon om spillerutvikling."
+      "question": "Hvor kan jeg se resultater?",
+      "answer": "Du kan følge med på resultater og kamper ved å laste ned Norsk LigaFotball appen (NLF) eller bruke MinFotball. Disse appene gir deg oppdateringer om Asker Fotballs kamper og resultater. God fotballprat!"
     },
     {
-      "question": "Hva inkluderer sesongkortet?",
+      "question": "Hvor ligger Føyka stadion?",
+      "answer": "Føyka stadion ligger på Føyka i Asker. Det er en kunstgressbane som brukes av Asker Fotball, og stadion har også Fotballhuset med garderober og klubbhus. Velkommen til en fotballopplevelse!"
+    },
+    {
+      "question": "Hvem er styreleder?",
+      "answer": "Styreleder i Asker Fotball er Ulrik Arneberg. Hvis du har spørsmål til ham, kan du kontakte ham på ulrik@profildesign.no."
+    },
+    {
+      "question": "Kan mitt firma bli sponsor?",
+      "answer": "For informasjon om sponsormuligheter:\n\nKontakt Morten Sommerfeldt (markedsansvarlig):\nE-post: morten@askerfotball.no\nTelefon: +47 907 51 170\n\nVi har flere sponsorpakker tilgjengelig."
+    },
+    {
+      "question": "Hvem skriver artiklene?",
+      "answer": "Artiklene på Asker Fotballs nettsider skrives av klubbens ansatte, inkludert mediaansvarlig Mathis Banggren. For spesifikke henvendelser om innhold, kan du kontakte ham direkte på Mathis@askerfotball.no."
+    },
+    {
+      "question": "Hvem er hovedtrener?",
+      "answer": "Hovedtreneren for A-laget i Asker Fotball er Magnus Bredal. Hvis du har flere spørsmål om laget eller trenerne, er det bare å spørre!"
+    },
+    {
+      "question": "Hva inkluderer medlemskapet?",
+      "answer": "Medlemskapet i Asker Fotball inkluderer tilgang til treninger, deltakelse på kamper og aktiviteter i klubben. For spesifikke detaljer om hva som inngår i medlemskapet, anbefaler jeg å kontakte klubben direkte på post@askerfotball.no. De kan gi deg den mest oppdaterte informasjonen!"
+    },
+    {
+      "question": "Hvor ofte møtes styret?",
       "answer": "Det spørsmålet har jeg ikke informasjon om i øyeblikket. Prøv å stille det på en annen måte, eller kontakt klubben direkte på post@askerfotball.no for personlig hjelp."
     },
     {
-      "question": "Kan jeg reservere plass?",
-      "answer": "For å reservere plass til baner eller anlegg, kan du kontakte klubben på post@askerfotball.no eller ringe +47 907 51 170. Vi hjelper deg gjerne med booking!"
+      "question": "Hvor arrangeres sommerleiren?",
+      "answer": "Sommerleiren, OBOS Camp, arrangeres på Føyka og Risenga kunstgress i Asker. Det blir et spennende eventyr for barn i alderen 6-14 år!"
     },
     {
-      "question": "Hvor sitter jeg med sesongkort?",
-      "answer": "Det spørsmålet har jeg ikke informasjon om i øyeblikket. Prøv å stille det på en annen måte, eller kontakt klubben direkte på post@askerfotball.no for personlig hjelp."
-    },
-    {
-      "question": "Finnes det frivillighetsgrupper?",
-      "answer": "For å melde interesse for å bli frivillig på kampdag eller andre arrangementer:\n\nKontakt klubben på:\nE-post: post@askerfotball.no\nTelefon: +47 907 51 170\n\nVi setter stor pris på frivillig innsats!"
-    },
-    {
-      "question": "Når ble klubben stiftet?",
-      "answer": "Asker Fotball ble stiftet i 1898, da fotballen begynte å rulle ved Hartmanns pensjonatskole på Hvalstad. Klubben har en rik historie som strekker seg over 125 år!"
-    },
-    {
-      "question": "Hvor melder jeg avvik?",
-      "answer": "For å melde avvik eller bekymringsmeldinger i klubben, kan du kontakte Asker Fotball på post@askerfotball.no. Alle varsler blir behandlet med personvern i fokus. Takk for at du bidrar til et trygt miljø!"
-    },
-    {
-      "question": "Finnes det treningssal?",
-      "answer": "Det spørsmålet har jeg ikke informasjon om i øyeblikket. Prøv å stille det på en annen måte, eller kontakt klubben direkte på post@askerfotball.no for personlig hjelp."
-    },
-    {
-      "question": "Hvordan fungerer junioravdelingen?",
-      "answer": "Junioravdelingen i Asker Fotball består av flere lag, inkludert Asker United som har både junior- og seniorlag. Lagene deltar i serie- og cupspill gjennom sesongen, og treningen skjer en gang i uken ute, samt en gang inne om vinteren. For mer informasjon om spesifikke lag eller aktiviteter, kan du kontakte lagleder eller trener direkte."
-    },
-    {
-      "question": "Hva er forskjellen mellom akademi og akademi+?",
-      "answer": "For de ekstra ivrige fotballspillerne.\n\nDette er en intensiv variant av akademiet.\n\nFor barn som ønsker mer trening og utvikling.\n\nKontakt lars.henrik@askerfotball.no for mer informasjon.\n\nPerfekt for de som vil ta fotballen til neste nivå."
+      "question": "Kan jeg kjøpe billett på stadion?",
+      "answer": "Det er ikke spesifisert om du kan kjøpe billett direkte på stadion. Jeg anbefaler å sjekke Asker Fotballs nettsider for mer informasjon om billettkjøp, eller kontakte klubben direkte på post@askerfotball.no for detaljer."
     }
-  ]
+  ],
+  "timestamp": "22.10.2025, 14:19:00"
 }

@@ -15,9 +15,9 @@
       --primary: #0f172a;
       --cyan: #06b6d4;
       --blue: #3b82f6;
-      --purple-light: #e1bee7;
-      --purple-dark: #6A0DAD;
-      --purple-medium: #9c27b0;
+      --blue-light: #dbeafe;
+      --blue-dark: #1e40af;
+      --blue-medium: #2563eb;
       --gray-50: #f8fafc;
       --gray-100: #f1f5f9;
       --gray-200: #e2e8f0;
@@ -181,8 +181,8 @@
     }
 
     .ga-bot__message--user {
-      background: var(--purple-light);
-      color: var(--purple-dark);
+      background: var(--blue-light);
+      color: var(--blue-dark);
       align-self: flex-end;
       margin-left: auto;
     }
@@ -248,13 +248,13 @@
 
     /* Animated Input Placeholder */
     .ga-bot__form input.typing {
-      background: linear-gradient(135deg, #f8fafc 0%, #e1bee7 100%);
-      color: var(--purple-dark);
+      background: linear-gradient(135deg, #f8fafc 0%, #dbeafe 100%);
+      color: var(--blue-dark);
       font-style: italic;
     }
 
     .ga-bot__form input.typing::placeholder {
-      color: var(--purple-dark);
+      color: var(--blue-dark);
       animation: wave 1.5s ease-in-out infinite;
     }
 
@@ -297,7 +297,7 @@
     }
 
     .ga-bot__form button {
-      background: var(--purple-dark);
+      background: var(--blue-dark);
       color: white;
       border: none;
       border-radius: 20px;
@@ -311,8 +311,8 @@
 
     .ga-bot__form button:hover,
     .ga-bot__form button:focus {
-      background: var(--purple-medium);
-      outline: 2px solid var(--purple-dark);
+      background: var(--blue-medium);
+      outline: 2px solid var(--blue-dark);
       outline-offset: 2px;
     }
 
@@ -437,10 +437,10 @@
       font-weight: 500;
       margin: 0;
       cursor: pointer;
-      background: #6A0DAD;
+      background: #1e40af;
       color: white;
       transition: all 0.2s ease;
-      box-shadow: 0 2px 4px rgba(106, 13, 173, 0.2);
+      box-shadow: 0 2px 4px rgba(30, 64, 175, 0.2);
       text-align: center;
       white-space: nowrap;
       overflow: hidden;
@@ -448,13 +448,13 @@
     }
 
     .af-chip:hover {
-      background: #7B1FA2;
+      background: #2563eb;
       transform: translateY(-1px);
-      box-shadow: 0 4px 8px rgba(106, 13, 173, 0.3);
+      box-shadow: 0 4px 8px rgba(30, 64, 175, 0.3);
     }
 
     .af-chip:focus {
-      outline: 2px solid #6A0DAD;
+      outline: 2px solid #1e40af;
       outline-offset: 2px;
     }
 
@@ -491,10 +491,10 @@
     }
 
     .af-footer-link {
-      color: var(--purple-dark);
+      color: var(--blue-dark);
       text-decoration: none;
       font-weight: 500;
-      background: var(--purple-light);
+      background: var(--blue-light);
       padding: 4px 8px;
       border-radius: 12px;
       transition: all 0.2s ease;
@@ -502,10 +502,10 @@
     }
 
     .af-footer-link:hover {
-      background: var(--purple-medium);
+      background: var(--blue-medium);
       color: white;
       transform: translateY(-1px);
-      box-shadow: 0 2px 4px rgba(106, 13, 173, 0.3);
+      box-shadow: 0 2px 4px rgba(30, 64, 175, 0.3);
     }
 
     .af-footer-logo-link {
@@ -667,6 +667,13 @@
         
         if (isOpen) {
           panel.setAttribute('aria-hidden', 'false');
+          
+          // Send postMessage to parent window when opening
+          if (isInIframe) {
+            window.parent.postMessage({ type: 'ASKERBOT_TOGGLE', open: true }, '*');
+            console.log('📤 Sent ASKERBOT_TOGGLE (open: true) to parent');
+          }
+          
           if (!isInitialized) {
             initializeBot();
           }
@@ -678,6 +685,12 @@
         } else {
           panel.setAttribute('aria-hidden', 'true');
           button.focus();
+          
+          // Send postMessage to parent window when closing
+          if (isInIframe) {
+            window.parent.postMessage({ type: 'ASKERBOT_TOGGLE', open: false }, '*');
+            console.log('📤 Sent ASKERBOT_TOGGLE (open: false) to parent');
+          }
         }
       }
 
@@ -687,7 +700,7 @@
       function initializeBot() {
         if (isInitialized) return;
         
-        addMessage('Hei på deg 😄\n\nJeg er Gabrielsen AI – like pålitelig som flomlyset på Føyka en mandag kveld! Spør meg om alt fra klubbhistorie til trenerteam!', 'assistant');
+        addMessage('Hei! 👋 Jeg er Gabrielsen AI, og jeg hjelper deg med å finne informasjon fra Asker Fotballs hjemmeside. Still meg et spørsmål eller trykk på en av knappene!', 'assistant');
         
         // Vis chips umiddelbart etter velkomstmelding
         setTimeout(() => {

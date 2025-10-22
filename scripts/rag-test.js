@@ -835,12 +835,16 @@ class TestHistoryManager {
   }
 
   saveSimpleTest(testData) {
+    // Analyze problems and generate improvement suggestions
+    const analysis = this.analyzeProblems(testData);
+    
     const simpleData = {
-      timestamp: new Date(testData.timestamp).toLocaleString('no-NO'),
+      analysis: analysis,
       testResults: testData.report.results.map(result => ({
         question: result.query,
         answer: result.reply || 'No response'
-      }))
+      })),
+      timestamp: new Date(testData.timestamp).toLocaleString('no-NO')
     };
     
     const simplePath = path.join(CONFIG.resultsDir, 'simple-test-results.json');
@@ -857,6 +861,193 @@ class TestHistoryManager {
     } catch (error) {
       console.error('Could not save simple test results:', error.message);
     }
+  }
+
+  analyzeProblems(testData) {
+    const report = testData.report;
+    
+    // Find specific worst performers
+    const sortedByScore = [...report.results]
+      .map((result, index) => ({ ...result, questionNumber: index + 1 }))
+      .sort((a, b) => a.overallScore - b.overallScore);
+    
+    const fallbackResults = report.results
+      .map((result, index) => ({ ...result, questionNumber: index + 1 }))
+      .filter(r => r.fallbackUsed);
+    
+    const lowQualityResults = report.results
+      .map((result, index) => ({ ...result, questionNumber: index + 1 }))
+      .filter(r => r.answerQuality < 0.5);
+    
+    const slowResults = report.results
+      .map((result, index) => ({ ...result, questionNumber: index + 1 }))
+      .filter(r => r.responseTime > 3000);
+    
+    // Build specific problem description with line breaks for readability
+    const problemParts = [];
+    
+    // Fallback issues (most critical)
+    if (fallbackResults.length > 0) {
+      const questions = fallbackResults.slice(0, 3).map(r => r.questionNumber).join(', ');
+      const topics = fallbackResults.slice(0, 3).map(r => `"${r.query}"`).join(',\n  ');
+      problemParts.push(`Klarte ikke svare på spørsmål ${questions} (fallback):\n  ${topics}.`);
+    }
+    
+    // Low quality answers
+    if (lowQualityResults.length > 0 && lowQualityResults.length !== fallbackResults.length) {
+      const nonFallbackLowQuality = lowQualityResults.filter(r => !r.fallbackUsed).slice(0, 3);
+      if (nonFallbackLowQuality.length > 0) {
+        const questions = nonFallbackLowQuality.map(r => r.questionNumber).join(', ');
+        const scores = nonFallbackLowQuality.map(r => Math.round(r.overallScore * 100)).join('%, ');
+        problemParts.push(`Spørsmål ${questions} hadde lav kvalitet\n  (${scores}%).`);
+      }
+    }
+    
+    // Slow responses
+    if (slowResults.length > 3) {
+      problemParts.push(`${slowResults.length} spørsmål hadde treg responstid (>3s).`);
+    }
+    
+    const problems = problemParts.length > 0 
+      ? problemParts.join('\n\n')
+      : 'Ingen kritiske problemer funnet.';
+    
+    // Build specific action items based on actual failures
+    const actionParts = [];
+    
+    // Specific actions for fallbacks
+    if (fallbackResults.length > 0) {
+      const topics = fallbackResults.slice(0, 3).map(r => {
+        // Extract key topic from question
+        const q = r.query.toLowerCase();
+        if (q.includes('farger')) return 'klubbens farger';
+        if (q.includes('kiosk')) return 'kiosk/kantina';
+        if (q.includes('g19') && q.includes('på')) return 'G19-spillerliste';
+        if (q.includes('g14') && q.includes('på')) return 'G14-spillerliste';
+        if (q.includes('g13') && q.includes('på')) return 'G13-spillerliste';
+        if (q.includes('g15') && q.includes('på')) return 'G15-spillerliste';
+        if (q.includes('egon')) return 'partnere (Egon Asker)';
+        if (q.includes('bus')) return 'bussholdeplass/transport';
+        if (q.includes('app')) return 'mobilapp';
+        if (q.includes('billett')) return 'billettpriser';
+        // Extract last meaningful words
+        const words = q.replace(/\?/g, '').split(' ').filter(w => !['hvem', 'hva', 'hvor', 'når', 'hvordan', 'er', 'på', 'i', 'av', 'til', 'fra'].includes(w));
+        return words.slice(-2).join(' ');
+      });
+      
+      const uniqueTopics = [...new Set(topics)];
+      actionParts.push(`Legg til info om ${uniqueTopics.join(', ')} i EMBEDDED_KNOWLEDGE i netlify/functions/chat.js`);
+    }
+    
+    // Specific actions for low quality
+    if (lowQualityResults.length > 0 && lowQualityResults.length !== fallbackResults.length) {
+      const nonFallbackLowQuality = lowQualityResults.filter(r => !r.fallbackUsed).slice(0, 2);
+      if (nonFallbackLowQuality.length > 0) {
+        const improvements = nonFallbackLowQuality.map(r => {
+          const q = r.query.toLowerCase();
+          // Identify the EMBEDDED_KNOWLEDGE entry and suggest specific improvement
+          if (q.includes('stadion') && q.includes('ligger')) return 'Føyka stadion-entry: legg til fullstendig adresse';
+          if (q.includes('sommerleir') && q.includes('arrangeres')) return 'OBOS Camp-entry: legg til detaljer om aktiviteter';
+          if (q.includes('parkering') && q.includes('koster')) return 'Parkering-entry: legg til spesifikke priser';
+          if (q.includes('e-post') || q.includes('epost')) return 'Kontakt-entry: gjør e-postadresse mer synlig';
+          if (q.includes('frivillig')) return 'Frivillig-entry: legg til prosess og krav';
+          if (q.includes('dager') && q.includes('akademi')) return 'Akademi-entry: presiser dag-valg mer tydelig';
+          
+          // Generic improvement based on question type
+          const entry = r.sources && r.sources.length > 0 ? r.sources[0].title : 'relevant entry';
+          return `${entry}: utvid med mer detaljer`;
+        });
+        actionParts.push(`Forbedre: ${improvements.join('; ')}`);
+      }
+    }
+    
+    // Action for slow responses
+    if (slowResults.length > 5) {
+      actionParts.push('Optimaliser BM25-søk og øk caching i chat.js');
+    }
+    
+    const tiltak = actionParts.length > 0 
+      ? actionParts.map((part, i) => `${i + 1}. ${part}`).join('.\n\n') + '.'
+      : 'Fortsett med jevnlig vedlikehold.';
+    
+    // Generate specific Cursor Agent prompt
+    const cursorPrompt = this.generateCursorPrompt(report, fallbackResults, lowQualityResults, slowResults);
+    
+    return {
+      overallScore: Math.round(report.summary.avgOverallScore * 100),
+      fallbackCount: fallbackResults.length,
+      avgResponseTime: Math.round(report.summary.avgResponseTime),
+      problems: problems,
+      tiltak: tiltak,
+      cursorPrompt: cursorPrompt
+    };
+  }
+
+  generateCursorPrompt(report, fallbackResults, lowQualityResults, slowResults) {
+    const promptParts = [];
+    
+    promptParts.push('OPPGAVE:\n');
+    promptParts.push('Forbedre Askerbot basert på testresultater\n\n');
+    promptParts.push(`TESTSCORE: ${Math.round(report.summary.avgOverallScore * 100)}%\n\n`);
+    promptParts.push('WORKSPACE:\n');
+    promptParts.push('/Users/nikolaigabrielsen/Downloads/askerbot-demo/\n');
+    promptParts.push('\n');
+    promptParts.push('SPESIFIKKE PROBLEMER:\n');
+    
+    // Fallback issues
+    if (fallbackResults.length > 0) {
+      promptParts.push(`\n1. FALLBACK-SVAR\n`);
+      promptParts.push(`   (${fallbackResults.length} spørsmål):\n\n`);
+      fallbackResults.slice(0, 3).forEach((r, i) => {
+        promptParts.push(`   ${i + 1}) "${r.query}"\n`);
+      });
+      promptParts.push('\n   TILTAK:\n');
+      promptParts.push('   - Åpne netlify/functions/chat.js\n');
+      promptParts.push('   - Finn EMBEDDED_KNOWLEDGE objektet\n');
+      promptParts.push('     (ca. linje 493)\n');
+      promptParts.push('   - Legg til nye entries for\n');
+      promptParts.push('     manglende emner\n');
+      promptParts.push('   - Test med: npm run test\n');
+    }
+    
+    // Low quality issues
+    if (lowQualityResults.length > 0 && lowQualityResults.length !== fallbackResults.length) {
+      const nonFallbackLowQuality = lowQualityResults.filter(r => !r.fallbackUsed).slice(0, 3);
+      if (nonFallbackLowQuality.length > 0) {
+        promptParts.push(`\n2. LAV SVAR-KVALITET\n`);
+        promptParts.push(`   (${nonFallbackLowQuality.length} spørsmål):\n\n`);
+        nonFallbackLowQuality.forEach((r, i) => {
+          const score = Math.round(r.overallScore * 100);
+          promptParts.push(`   ${i + 1}) "${r.query}"\n`);
+          promptParts.push(`      (score: ${score}%)\n`);
+        });
+        promptParts.push('\n   TILTAK:\n');
+        promptParts.push('   - Finn relevante entries i\n');
+        promptParts.push('     EMBEDDED_KNOWLEDGE\n');
+        promptParts.push('   - Utvid "content" feltet med\n');
+        promptParts.push('     mer detaljert info\n');
+        promptParts.push('   - Legg til spesifikke detaljer\n');
+        promptParts.push('     (priser, tider, adresser)\n');
+      }
+    }
+    
+    // Performance issues
+    if (slowResults.length > 5) {
+      promptParts.push(`\n3. YTELSE\n`);
+      promptParts.push(`   (${slowResults.length} spørsmål >3s):\n\n`);
+      promptParts.push('   TILTAK:\n');
+      promptParts.push('   - Gjennomgå caching-strategi\n');
+      promptParts.push('     i chat.js\n');
+      promptParts.push('   - Vurder å øke CACHE_TTL verdier\n');
+      promptParts.push('   - Optimaliser searchBM25()\n');
+      promptParts.push('     funksjonen\n');
+    }
+    
+    promptParts.push('\nVERIFISERING:\n');
+    promptParts.push('Kjør "npm run test" for å verifisere\n');
+    promptParts.push('forbedringene.\n');
+    
+    return promptParts.join('');
   }
 
   getPreviousTest() {

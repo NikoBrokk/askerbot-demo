@@ -3,6 +3,21 @@
  * Embeds essential data directly in the function to avoid file access issues
  */
 
+// Norwegian stopwords for better relevance calculation
+const NORWEGIAN_STOPWORDS = new Set([
+  'jeg', 'du', 'han', 'hun', 'vi', 'de', 'den', 'det', 'denne', 'dette',
+  'er', 'var', 'har', 'hadde', 'kan', 'kunne', 'vil', 'ville', 'skal', 'skulle',
+  'må', 'måtte', 'bli', 'blir', 'blitt', 'være', 'vært',
+  'og', 'eller', 'men', 'for', 'på', 'i', 'av', 'til', 'fra', 'med', 'om',
+  'hva', 'hvem', 'hvor', 'når', 'hvordan', 'hvorfor',
+  'en', 'ei', 'et', 'ett', 'som', 'de', 'dem',
+  'meg', 'deg', 'seg', 'oss', 'dere',
+  'min', 'mitt', 'mine', 'din', 'ditt', 'dine',
+  'sin', 'sitt', 'sine', 'vår', 'vårt', 'våre',
+  'noe', 'noen', 'ingen', 'alle', 'hver',
+  'lese', 'se', 'finne', 'få', 'gjøre'
+]);
+
 // Enhanced caching with multiple layers
 const responseCache = new Map();
 const searchCache = new Map();
@@ -47,6 +62,20 @@ function setCachedResponse(query, response) {
 const fs = require('fs');
 const path = require('path');
 const bm25 = require('wink-bm25-text-search');
+
+// Hybrid Search Integration (OpenAI Semantic + BM25 Keyword)
+let hybridSearchAvailable = false;
+let hybridSearchModule = null;
+let queryIntelligenceModule = null;
+
+try {
+  hybridSearchModule = require('./semantic-search');
+  queryIntelligenceModule = require('./query-intelligence');
+  hybridSearchAvailable = true;
+  console.log('✅ Hybrid search modules loaded');
+} catch (error) {
+  console.log('⚠️  Hybrid search not available:', error.message);
+}
 
 let bm25Engine = null;
 let chunkMetadata = null;
@@ -382,7 +411,7 @@ async function searchBM25(query, limit = 3, apiKey = null) {
         matchedTerms: data.terms,
         aiAnalysis: aiAnalysis
       };
-    }).filter(r => r && r.relevance > (aiAnalysis ? 0.3 : 0.4)) // Lower threshold for AI-enhanced search
+    }).filter(r => r && r.relevance > (aiAnalysis ? 0.25 : 0.35)) // Lower threshold for AI-enhanced search and stopword-aware relevance
       .sort((a, b) => b.score - a.score)
       .slice(0, limit);
     
@@ -400,21 +429,33 @@ async function searchBM25(query, limit = 3, apiKey = null) {
 }
 
 function calculateRelevance(query, chunk) {
-  const queryWords = query.toLowerCase().split(/\s+/).filter(w => w.length > 2);
+  const queryWords = query.toLowerCase()
+    .replace(/[^\wæøå\s]/g, ' ') // Remove special characters but keep Norwegian letters
+    .split(/\s+/)
+    .filter(w => w.length > 2);
   const chunkText = (chunk.title + ' ' + chunk.content).toLowerCase();
   
+  // Separate significant words from stopwords
+  const significantWords = queryWords.filter(w => !NORWEGIAN_STOPWORDS.has(w));
+  const hasSignificantWords = significantWords.length > 0;
+  
   let matches = 0;
+  let significantMatches = 0;
   let weightedScore = 0;
   
-  // Enhanced relevance calculation with weighted scoring
+  // Enhanced relevance calculation with stopword awareness
   for (const word of queryWords) {
     if (chunkText.includes(word)) {
       matches++;
-      // Weight title matches higher than content matches
+      const isSignificant = !NORWEGIAN_STOPWORDS.has(word);
+      const wordWeight = isSignificant ? 1.0 : 0.1; // Significant words get 10x weight
+      
       if (chunk.title.toLowerCase().includes(word)) {
-        weightedScore += 3;
+        weightedScore += 3 * wordWeight;
+        if (isSignificant) significantMatches++;
       } else {
-        weightedScore += 1;
+        weightedScore += 1 * wordWeight;
+        if (isSignificant) significantMatches++;
       }
     }
   }
@@ -429,23 +470,29 @@ function calculateRelevance(query, chunk) {
   let priorityBoost = 1.0;
   
   if (chunk.type === 'static') {
-    priorityBoost = 1.0; // Statiske sider er utgangspunktet
+    priorityBoost = 1.0;
   } else if (chunk.type === 'news') {
-    // Beregn aldersbasert score for nyhetsartikler
     priorityBoost = calculateNewsPriority(chunk);
   }
   
-  // Apply explicit priority if available (overrides type-based calculation)
   if (chunk.priority && typeof chunk.priority === 'number') {
     priorityBoost = chunk.priority;
   }
   
-  // Return weighted relevance score (0-1 scale) with priority boost
-  const baseScore = queryWords.length > 0 ? matches / queryWords.length : 0;
-  const weightedRelevance = Math.min(1, weightedScore / (queryWords.length * 2 + 5));
+  // Calculate relevance based on significant words if available
+  let baseScore;
+  if (hasSignificantWords) {
+    // Use significant words only for relevance (ignore stopwords)
+    baseScore = significantMatches / significantWords.length;
+  } else {
+    // Fallback to all words if no significant words found
+    baseScore = queryWords.length > 0 ? matches / queryWords.length : 0;
+  }
+  
+  const weightedRelevance = Math.min(1, weightedScore / (significantWords.length * 2 + 5));
   const finalScore = Math.max(baseScore, weightedRelevance) * priorityBoost;
   
-  return Math.min(1, finalScore); // Cap at 1.0
+  return Math.min(1, finalScore);
 }
 
 /**
@@ -1015,21 +1062,54 @@ async function searchEmbeddedKnowledge(query, apiKey) {
   
   const sortedResults = results.sort((a, b) => b.score - a.score);
   
-  // If no good results from embedded knowledge, try AI-enhanced BM25
+  // If no good results from embedded knowledge, try AI-enhanced search
   if (sortedResults.length === 0 || sortedResults[0].score < 30) {
-    console.log('🔍 Low embedded knowledge scores, trying AI-enhanced BM25 search...');
-    const bm25Results = await searchBM25(query, 3, apiKey);
+    console.log('🔍 Low embedded knowledge scores, trying enhanced search...');
     
-    if (bm25Results.length > 0) {
-      console.log('✅ Found', bm25Results.length, 'AI-enhanced BM25 results');
-      return bm25Results.map(result => ({
-        key: `bm25_${result.title.toLowerCase().replace(/\s+/g, '_')}`,
-        score: result.score,
+    // Classify query intent for better results
+    if (hybridSearchAvailable && queryIntelligenceModule) {
+      const queryIntent = queryIntelligenceModule.classifyQueryIntent(query);
+      if (queryIntent) {
+        console.log('🎯 Query intent detected:', {
+          intent: queryIntent.intent,
+          confidence: queryIntent.confidence,
+          boostTerms: queryIntent.boostTerms
+        });
+      }
+    }
+    
+    // Get BM25 results
+    const bm25Results = await searchBM25(query, 5, apiKey);
+    
+    // Try hybrid search if available
+    let finalResults = bm25Results;
+    if (hybridSearchAvailable && hybridSearchModule && apiKey) {
+      try {
+        console.log('🔬 Attempting hybrid search (BM25 + Vector)...');
+        const hybridResults = await hybridSearchModule.hybridSearch(query, bm25Results, 3, apiKey);
+        if (hybridResults && hybridResults.length > 0) {
+          console.log('✅ Hybrid search successful:', hybridResults.length, 'results');
+          finalResults = hybridResults;
+        } else {
+          console.log('⚠️  Hybrid search returned no results, using BM25 only');
+        }
+      } catch (hybridError) {
+        console.log('⚠️  Hybrid search failed, falling back to BM25:', hybridError.message);
+      }
+    }
+    
+    if (finalResults.length > 0) {
+      console.log('✅ Found', finalResults.length, 'search results');
+      return finalResults.map(result => ({
+        key: `search_${result.title.toLowerCase().replace(/\s+/g, '_')}`,
+        score: result.hybridScore || result.score,
         title: result.title,
         content: result.content,
         url: result.url,
         relevance: result.relevance,
-        source: 'bm25_ai_enhanced',
+        source: result.combinedFrom || result.source || 'bm25',
+        bm25Score: result.bm25Score,
+        vectorScore: result.vectorScore,
         aiAnalysis: result.aiAnalysis
       }));
     }

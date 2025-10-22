@@ -1,55 +1,78 @@
 {
-  "timestamp": "2025-10-19T18:24:03.166Z",
+  "timestamp": "2025-10-22T11:19:47.629Z",
   "endpoint": "http://localhost:8888/.netlify/functions/chat",
-  "duration": 933.233,
+  "duration": 68.891,
   "statistics": {
     "totalQuestions": 20,
-    "averageScore": 6.3,
+    "averageScore": 7.3,
     "medianScore": 8,
-    "goodScores": 12,
-    "weakScores": 8,
-    "fallbackRate": 15,
-    "unexpectedFallbacks": 3
+    "goodScores": 13,
+    "weakScores": 7,
+    "fallbackRate": 0,
+    "unexpectedFallbacks": 0
   },
   "results": [
     {
       "index": 1,
       "question": "Hvordan melder jeg barnet mitt på Asker Fotball camp?",
-      "score": 0,
-      "isFallback": true,
-      "sourceCount": 0,
+      "score": 6,
+      "isFallback": false,
+      "sourceCount": 2,
       "expectedRag": true,
       "ragUsed": false,
-      "hasSources": false,
-      "reply": "",
-      "sources": [],
-      "error": "fetch failed"
+      "hasSources": true,
+      "reply": "For å melde barnet ditt på OBOS Akademi:\n\n📝 Gå til påmeldingssiden: https://app.rubic.no/Public/Events/33825\n\n🎯 Akademiet er for barn i alderen 7-13 år\n💰 Pris: 955,- til 2500,- per måned (avhengig av antall dager)\n📅 Man kan delta fra 1-5 dager per uke\n\nAkademiet følger skoleruta og tar kun fri på skolens fridager.\n\nSpørsmål? Kontakt lars.henrik@askerfotball.no",
+      "sources": [
+        {
+          "title": "Meld på OBOS Akademi",
+          "url": "https://app.rubic.no/Public/Events/33825",
+          "score": 10
+        },
+        {
+          "title": "OBOS Akademi",
+          "url": "https://askerfotball.no/lag/utviklingslag/akademi",
+          "score": 10
+        }
+      ],
+      "error": null
     },
     {
       "index": 2,
       "question": "Hvor finner jeg terminliste for G15 Asker?",
-      "score": 0,
-      "isFallback": true,
-      "sourceCount": 0,
+      "score": 6,
+      "isFallback": false,
+      "sourceCount": 1,
       "expectedRag": true,
       "ragUsed": false,
-      "hasSources": false,
-      "reply": "",
-      "sources": [],
-      "error": "fetch failed"
+      "hasSources": true,
+      "reply": "Terminlisten på askerfotball.no/terminliste viser A-lagets kommende kamper og kampprogram.\n\nFor andre lag og aldersgrupper (G13, G14, G15, G19, etc.), kontakt lagleder eller trener direkte for å få terminliste for det aktuelle laget.",
+      "sources": [
+        {
+          "title": "Terminliste - A-laget",
+          "url": "https://askerfotball.no/terminliste",
+          "score": 10
+        }
+      ],
+      "error": null
     },
     {
       "index": 3,
       "question": "Hvem kontakter jeg om faktura eller betaling?",
-      "score": 0,
-      "isFallback": true,
-      "sourceCount": 0,
+      "score": 8,
+      "isFallback": false,
+      "sourceCount": 1,
       "expectedRag": true,
-      "ragUsed": false,
-      "hasSources": false,
-      "reply": "",
-      "sources": [],
-      "error": "fetch failed"
+      "ragUsed": true,
+      "hasSources": true,
+      "reply": "For spørsmål om faktura eller betaling, kan du kontakte Sølvi Dahl på solvi.dahl@askerfotball.no. Du kan også ringe klubben på +47 907 51 170 for hjelp.",
+      "sources": [
+        {
+          "title": "Kontakt klubben - e-post telefon daglig leder",
+          "url": "https://askerfotball.no/om-klubben/ansatte",
+          "score": 27
+        }
+      ],
+      "error": null
     },
     {
       "index": 4,
@@ -60,12 +83,12 @@
       "expectedRag": true,
       "ragUsed": true,
       "hasSources": true,
-      "reply": "Føyka stadion ligger på Føyka i Asker. Du kan parkere mot avgift nedenfor stadion, så husk å ha en synlig billett i vinduet! Velkommen til fotballfest!",
+      "reply": "Føyka stadion ligger på Føyka i Asker. Du kan parkere mot avgift nedenfor stadion, så husk å ha en synlig billett i vinduet. God tur til kampen!",
       "sources": [
         {
-          "title": "Parkering på Føyka",
-          "url": "https://askerfotball.no/om-stadion/slik-finner-du-frem",
-          "score": 51
+          "title": "Føyka stadion - hvor ligger stadion",
+          "url": "https://askerfotball.no/om-stadion",
+          "score": 41
         }
       ],
       "error": null
@@ -79,12 +102,12 @@
       "expectedRag": true,
       "ragUsed": true,
       "hasSources": true,
-      "reply": "Utviklingslagene ledes av trenere som deler klubbens mål og verdier. Spillerutvikler er Svein Roger Pettersen (Sveinroger.pettersen@ntg.no, tlf.: 951 63 103). Hver gruppe har også støtte fra foresatte som backer trenerne. For mer spesifik informasjon om hvert lag, kan du sjekke klubbens nettsider!",
+      "reply": "Utviklingslagene ledes av dyktige trenere som har fokus på spillerutvikling. Svein Roger Pettersen er spillerutvikler, og han kan kontaktes på sveinroger.pettersen@ntg.no. Hvert lag har også sine egne trenere, så hvis du ønsker spesifikke navn for et bestemt lag, kan jeg hjelpe med det!",
       "sources": [
         {
-          "title": "Trenere A-laget",
+          "title": "Lagoversikt - hvor mange lag har klubben",
           "url": "https://askerfotball.no/lag",
-          "score": 51
+          "score": 32
         }
       ],
       "error": null
@@ -98,12 +121,12 @@
       "expectedRag": true,
       "ragUsed": true,
       "hasSources": true,
-      "reply": "For å bli med på OBOS Akademi, kan du melde deg på via denne lenken: https://app.rubic.no/Public/Events/33825. \n\nPrisen varierer fra 955,- til 2500,- per måned, avhengig av hvor mange dager du ønsker å delta. Har du flere spørsmål, er det bare å ta kontakt!",
+      "reply": "For å bli med på OBOS Akademi, kan du følge disse trinnene: \n\n1) Besøk askerfotball.no \n2) Velg riktig lag/aktivitet \n3) Fyll ut skjema og betal kontingent. \n\nPrisen for akademiet varierer fra 955,- til 2500,- per måned, avhengig av antall dager du deltar. For mer informasjon, kan du kontakte klubben direkte på post@askerfotball.no.",
       "sources": [
         {
-          "title": "OBOS Akademi",
-          "url": "https://askerfotball.no/lag/utviklingslag/akademi",
-          "score": 47
+          "title": "Priser medlemskap - hva koster kostnad",
+          "url": "https://askerfotball.no",
+          "score": 38
         }
       ],
       "error": null
@@ -136,12 +159,12 @@
       "expectedRag": true,
       "ragUsed": true,
       "hasSources": true,
-      "reply": "Ja, Asker Fotball har etablert et Solidaritetsfond for å gi støtte i økonomisk krevende situasjoner. Fondet jobber sammen med familiene for å finne løsninger, men dekker ikke hele deltakeravgiften. For mer informasjon, kan du kontakte sportslig leder på walstad@askerfotball.no.",
+      "reply": "Ja, Asker Fotball har etablert et Solidaritetsfond som gir mulighet for støtte i økonomisk krevende situasjoner. Fondet skal bidra til å dekke deltakerkostnader for barn og ungdom i klubben. For mer informasjon, kan du kontakte sportslig leder på walstad@askerfotball.no.",
       "sources": [
         {
-          "title": "Solidaritetsfondet",
+          "title": "Solidaritetsfondet - finnes solidaritetsfond",
           "url": "https://askerfotball.no/om-klubben/solidaritetsfondet",
-          "score": 28
+          "score": 59
         }
       ],
       "error": null
@@ -174,12 +197,12 @@
       "expectedRag": true,
       "ragUsed": true,
       "hasSources": true,
-      "reply": "Asker United er et samfunnslag innen Asker Fotball som fokuserer på inkludering og gir voksne muligheten til å spille fotball på et mer avslappet nivå. Alle voksne som ønsker å delta og ha det moro med fotball er velkomne! Ta gjerne kontakt med klubben for mer informasjon om påmelding.",
+      "reply": "Asker United er et samfunnslag i Asker Fotball som inkluderer både junior- og seniorlag. Lagene deltar i serie- og cupspill gjennom sesongen, og treningene foregår en gang i uken ute og en gang inne om vinteren. Dette laget er åpent for alle som ønsker å delta, spesielt de som ønsker å være en del av et inkluderende fellesskap. For mer informasjon, ta gjerne kontakt med klubben!",
       "sources": [
         {
-          "title": "Påmelding og registrering",
-          "url": "https://askerfotball.no",
-          "score": 34
+          "title": "OBOS Akademi - pris, kostnad og påmelding",
+          "url": "https://askerfotball.no/lag/utviklingslag/akademi",
+          "score": 32
         }
       ],
       "error": null
@@ -193,12 +216,12 @@
       "expectedRag": true,
       "ragUsed": true,
       "hasSources": true,
-      "reply": "Fotballhuset har åpningstider som følger:\\nMan-Fre: 08.00-20.00\\nLørdag: 10.00-14.00\\nSøndag: 10.00-14.00\\nTa gjerne turen innom for å handle supporterutstyr eller ta en hyggelig fotballprat!",
+      "reply": "Fotballhuset har følgende åpningstider:\\n\nMan-Fre: 08.00-20.00\\n\nLørdag: 10.00-14.00\\n\nSøndag: 10.00-14.00\\n\nTa gjerne turen innom for en hyggelig fotballprat!",
       "sources": [
         {
-          "title": "Fotballhuset og åpningstider",
+          "title": "Fotballhuset åpningstider - når åpent lukket",
           "url": "https://askerfotball.no/om-stadion/fotballhuset",
-          "score": 58
+          "score": 41
         }
       ],
       "error": null
@@ -212,12 +235,12 @@
       "expectedRag": true,
       "ragUsed": true,
       "hasSources": true,
-      "reply": "To Skritt Frem er Asker Fotballs program for livsmestring og folkehelse. Det fokuserer på å styrke sosiale og emosjonelle ferdigheter, samt bygge god psykisk helse for alle involverte i idretten. Målet er å utvikle både bedre idrettsutøvere og mennesker, med vekt på sosial kompetanse blant ansatte, trenere, lagledere, utøvere og foresatte.",
+      "reply": "To Skritt Frem er Asker Fotballs program for livsmestring og folkehelse. Det fokuserer på å styrke sosiale og emosjonelle ferdigheter, samt bygge god psykisk helse for alle involverte i idretten. Målet er å utvikle både bedre idrettsutøvere og mennesker, samtidig som den sosiale kompetansen blant ansatte, trenere, lagledere, utøvere og foresatte styrkes.",
       "sources": [
         {
           "title": "To Skritt Frem - klubbens sportsplan",
           "url": "https://askerfotball.no/om-klubben/to-steg-frem",
-          "score": 26
+          "score": 44
         }
       ],
       "error": null
@@ -231,12 +254,12 @@
       "expectedRag": true,
       "ragUsed": true,
       "hasSources": true,
-      "reply": "Du kan finne informasjon om styret i Asker Fotball på vår nettside under seksjonen for om klubben. Der finner du detaljer om styreleder, nestleder og styremedlemmer. Besøk gjerne https://askerfotball.no/om-klubben/styret-asker-fotball for mer informasjon!",
+      "reply": "Du kan finne informasjon om styret i Asker Fotball på klubbens nettside under seksjonen for styret. Her finner du navnene på styreleder, nestleder og styremedlemmer, samt kontaktinformasjon. Besøk gjerne https://askerfotball.no/om-klubben/styret-asker-fotball for mer detaljer!",
       "sources": [
         {
-          "title": "Styret i Asker Fotball",
-          "url": "https://askerfotball.no/om-klubben/styret-asker-fotball",
-          "score": 23
+          "title": "Terminliste - A-lagets kamper",
+          "url": "https://askerfotball.no/terminliste",
+          "score": 39
         }
       ],
       "error": null
@@ -255,7 +278,7 @@
         {
           "title": "Booking av baner og anlegg",
           "url": "https://askerfotball.no",
-          "score": 69
+          "score": 60
         }
       ],
       "error": null
@@ -307,11 +330,11 @@
       "expectedRag": false,
       "ragUsed": true,
       "hasSources": true,
-      "reply": "Neste klubbdugnad blir annonsert på klubbens nettsider og i Facebook-grupper. For å melde deg på, kan du kontakte laglederen din, sende en e-post til post@askerfotball.no, eller sjekke Facebook-gruppene for mer informasjon. Vi setter stor pris på all hjelp!",
+      "reply": "Neste klubbdugnad vil bli annonsert på Asker Fotballs nettsider og i Facebook-gruppene. For å melde deg på, kan du kontakte lagleder, sende en e-post til post@askerfotball.no, eller melde deg via Facebook-gruppene. Alle medlemmer oppfordres til å delta!",
       "sources": [
         {
-          "title": "Fotballhuset og åpningstider",
-          "url": "https://askerfotball.no/om-stadion/fotballhuset",
+          "title": "Klubbdugnad frivillig og dugnad",
+          "url": "https://askerfotball.no",
           "score": 38
         }
       ],
@@ -326,12 +349,12 @@
       "expectedRag": true,
       "ragUsed": true,
       "hasSources": true,
-      "reply": "Selvfølgelig! Hvilket lag ønsker du kontaktinformasjon til? Her er noen eksempler:\n\n- G13: Lars Henrik Dahl (lars.henrik@askerfotball.no)\n- G14: Mathis Banggren (Mathis@askerfotball.no)\n- G15: Fausto Ferreras Gromaz (pocholadam@hotmail.com)\n\nGi meg beskjed hvis du trenger mer informasjon!",
+      "reply": "Selvfølgelig! Hvilket lag er du interessert i? Jeg kan gi deg kontaktinformasjon til trenerne for de ulike utviklingslagene eller A-laget.",
       "sources": [
         {
-          "title": "Trenere A-laget",
+          "title": "Lagoversikt - hvor mange lag har klubben",
           "url": "https://askerfotball.no/lag",
-          "score": 51
+          "score": 30
         }
       ],
       "error": null
@@ -364,12 +387,12 @@
       "expectedRag": true,
       "ragUsed": true,
       "hasSources": true,
-      "reply": "For å varsle om uønskede hendelser eller sende inn en bekymring, kan du sende en e-post til post@askerfotball.no. Alle varsler er beskyttet av personvern og vil bli behandlet deretter. Takk for at du bidrar til et trygt miljø!",
+      "reply": "For å varsle om uønskede hendelser, avvik eller sende inn en bekymringsmelding, kan du kontakte klubben på post@askerfotball.no. Alle varsler behandles med høy grad av personvern.",
       "sources": [
         {
-          "title": "Kontakt",
+          "title": "Kontakt klubben - e-post telefon daglig leder",
           "url": "https://askerfotball.no/om-klubben/ansatte",
-          "score": 28
+          "score": 69
         }
       ],
       "error": null
