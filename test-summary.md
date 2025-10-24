@@ -1,35 +1,34 @@
 # Test Summary
 
-**Tidspunkt**: 24.10.2025, 16:34:55
+**Tidspunkt**: 24.10.2025, 16:53:45
 
 ---
 
 ## 📊 Analyse
 
-- **Overall Score**: 54%
-- **Fallback Count**: 2
-- **Avg Response Time**: 6300ms
+- **Overall Score**: 60%
+- **Fallback Count**: 1
+- **Avg Response Time**: 3802ms
 
 ### 🔍 Problemer
 
-Klarte ikke svare på spørsmål "g13-lag", "nærmeste bussholdeplass" (fallback):
-  "Hvem er på G13-laget?",
-  "Hvor er nærmeste bussholdeplass?".
+Klarte ikke svare på spørsmål "neste klubbdugnad" (fallback):
+  "Når er neste klubbdugnad?".
 
-Spørsmål "asker fotball", "billett stadion", "e-postadressen klubben" hadde lav kvalitet
-  (44%, 56%, 53%).
+Spørsmål "asker united", "samfunnslag" hadde lav kvalitet
+  (46%, 64%).
 
-9 spørsmål hadde treg responstid (>3s).
+8 spørsmål hadde treg responstid (>3s).
 
 ### 💡 Tiltak
 
-1. Legg til info om G13-spillerliste, bussholdeplass/transport i EMBEDDED_KNOWLEDGE i netlify/functions/chat.js.
+1. Legg til info om neste klubbdugnad i EMBEDDED_KNOWLEDGE i netlify/functions/chat.js.
 
 2. Forbedre lav-kvalitet svar i EMBEDDED_KNOWLEDGE:
-   - Askerfotballens historie (44%): utvid content-feltet med mer spesifikke detaljer (kontaktinfo, tider, priser, steg-for-steg)
-   - Billetter til kamper - enkeltbilletter VIP og sesongkort (56%): utvid content-feltet med mer spesifikke detaljer (kontaktinfo, tider, priser, steg-for-steg).
+   - Asker United (46%): utvid med kontaktinfo til trenerne og treningsdager (mandag kveld)
+   - Samfunnslag detaljer (64%): utvid content-feltet med mer spesifikke detaljer (kontaktinfo, tider, priser, steg-for-steg).
 
-3. Reduser responstid (gjennomsnitt 6780ms for trege svar):
+3. Reduser responstid (gjennomsnitt 4204ms for trege svar):
    - Øk CACHE_TTL fra 10 til 20 minutter (linje 25 i chat.js)
    - Øk SEARCH_CACHE_TTL fra 30 til 60 minutter (linje 26)
    - Reduser BM25 limit fra 5 til 3 chunks (linje 1082).
@@ -40,7 +39,7 @@ Spørsmål "asker fotball", "billett stadion", "e-postadressen klubben" hadde la
 OPPGAVE:
 Forbedre Askerbot basert på testresultater
 
-TESTSCORE: 54%
+TESTSCORE: 60%
 
 WORKSPACE:
 /Users/nikolaigabrielsen/Downloads/askerbot-demo/
@@ -48,12 +47,10 @@ WORKSPACE:
 SPESIFIKKE PROBLEMER:
 
 1. FALLBACK-SVAR
-   (2 spørsmål):
+   (1 spørsmål):
 
-   1) "Hvem er på G13-laget?"
-      (tema: g13-lag)
-   2) "Hvor er nærmeste bussholdeplass?"
-      (tema: nærmeste bussholdeplass)
+   1) "Når er neste klubbdugnad?"
+      (tema: neste klubbdugnad)
 
    TILTAK:
    - Åpne netlify/functions/chat.js
@@ -61,31 +58,22 @@ SPESIFIKKE PROBLEMER:
      (ca. linje 493)
    - Legg til nye entries:
 
-   Eksempel 1 (g13-lag):
+   Eksempel 1 (neste klubbdugnad):
    {
-     title: "g13-lag",
-     keywords: ["g13-lag"],
-     content: "[legg til relevant info her]"
-   }
-
-   Eksempel 2 (nærmeste bussholdeplass):
-   {
-     title: "nærmeste bussholdeplass",
-     keywords: ["nærmeste", "bussholdeplass"],
+     title: "neste klubbdugnad",
+     keywords: ["neste", "klubbdugnad"],
      content: "[legg til relevant info her]"
    }
 
    - Test med: npm run test
 
 2. LAV SVAR-KVALITET
-   (3 spørsmål):
+   (2 spørsmål):
 
-   1) "Hvem grunnla Asker Fotball?"
-      (score: 44%, entry: Askerfotballens historie)
-   2) "Kan jeg kjøpe billett på stadion?"
-      (score: 56%, entry: Billetter til kamper - enkeltbilletter VIP og sesongkort)
-   3) "Hva er e-postadressen til klubben?"
-      (score: 53%, entry: Kontakt klubben - e-post telefon daglig leder)
+   1) "Hva er Asker United?"
+      (score: 46%, entry: Asker United)
+   2) "Finnes det samfunnslag?"
+      (score: 64%, entry: Samfunnslag detaljer)
 
    TILTAK:
    - Åpne netlify/functions/chat.js
@@ -102,8 +90,8 @@ SPESIFIKKE PROBLEMER:
      * Bruk steg-for-steg hvis prosess
 
 3. YTELSE
-   (9 spørsmål >3s,
-   gjennomsnitt 6780ms):
+   (8 spørsmål >3s,
+   gjennomsnitt 4204ms):
 
    TILTAK:
    - Åpne netlify/functions/chat.js
@@ -126,42 +114,48 @@ forbedringene.
 
 ## 📝 Spørsmål og Svar
 
-### 1. Hvem grunnla Asker Fotball?
+### 1. Hva er betalingsfristen?
 
-Asker Fotball ble grunnlagt i 1898 da fotballen begynte å rulle ved Hartmanns pensjonatskole på Hvalstad. Klubben har siden utviklet seg gjennom flere fusjoner og endringer, og har vært en viktig del av lokalsamfunnet i over 125 år.
+Det spesifikke spørsmålet om betalingsfristen har jeg ikke informasjon om i øyeblikket. Du kan kontakte klubben direkte på post@askerfotball.no for personlig hjelp.
 
-### 2. Kan jeg kjøpe billett på stadion?
+### 2. Hvem skriver artiklene?
 
-Ja, du kan kjøpe billetter på stadion før kampstart på kampdager. For mer informasjon om billettpriser og typer billetter, kan du også besøke askerfotball.no eller kontakte klubben direkte. Velkommen til kamp!
+Artiklene på Asker Fotballs nettsider skrives av klubbens ansatte, inkludert mediaansvarlig Mathis Banggren. For spesifikke spørsmål om innholdet kan du kontakte ham direkte på Mathis@askerfotball.no.
 
-### 3. Hva er e-postadressen til klubben?
+### 3. Finnes det kunstgress?
 
-E-postadressen til klubben er post@askerfotball.no. Hvis du har spørsmål eller trenger hjelp, er det bare å sende en e-post!
+Ja, Føyka stadion har en kunstgressbane som brukes av Asker Fotball. Det er et flott anlegg for både trening og kamper!
 
-### 4. Kan jeg låne utstyr?
+### 4. Hva er Asker United?
 
-Ja, du kan låne fotballutstyr og treningsmateriell! For mer informasjon om utlån, ta kontakt med klubben på post@askerfotball.no eller snakk med lagleder for ditt lag. Vi er her for å hjelpe deg!
+Asker United er en del av Asker Fotballs samfunnsprosjekt og består av både junior- og seniorlag. Lagene deltar i serie- og cupspill gjennom sesongen, og de trener en gang i uken ute, samt en gang om vinteren inne i Drengsrudhallen. Dette laget fokuserer på å inkludere alle og skape et godt miljø for spillere.
 
-### 5. Hvem er på G14-laget?
+### 5. Finnes det familierabatt?
 
-Jeg har ikke spesifikke detaljer om spillerne på G14-laget. For informasjon om spillere eller påmelding, kan du kontakte trenerne direkte: Lars Henrik Dahl (lars.henrik@askerfotball.no) eller Erik Hejer. De vil kunne gi deg den informasjonen du trenger!
+Ja, det finnes familierabatter for medlemmer i Asker Fotball! \nFor mer informasjon om spesifikke tilbud og rabatter for familier med flere barn, kan du kontakte klubben på post@askerfotball.no eller ringe +47 907 51 170.
 
-### 6. Hvem er på G13-laget?
+### 6. Når er sommerleiren?
+
+Sommerleiren, OBOS Camp, arrangeres i uke 26 (23.-27. juni), uke 32 (4.-7. august, for 10-14 år) og uke 33 (11.-15. august). Det blir moro på Føyka og Risenga kunstgress!
+
+### 7. Finnes det samfunnslag?
+
+Ja, Asker Fotball har tre samfunnslag: 
+
+- Asker United (junior og senior lag)
+- Gatelaget (for mennesker med rusrelaterte lidelser)
+- Hæppe (nysatsing for ungdom for å forebygge utenforskap)
+
+Disse lagene tilbyr ulike aktiviteter og deltar i serie og cupspill. Ta gjerne kontakt med klubben for mer informasjon!
+
+### 8. Hvem er på G14-laget?
+
+Jeg har ikke spesifikke detaljer om spillerne på G14-laget. For informasjon om spillere eller påmelding, anbefaler jeg å kontakte trenerne direkte: Lars Henrik Dahl (lars.henrik@askerfotball.no) eller Erik Hejer. De kan gi deg den informasjonen du trenger!
+
+### 9. Hvem er treneren på G15-guttene?
+
+G15 laget har Mathis Banggren som hovedtrener, med Eric Haugen og Nikolai Brokhaug Gabrielsen som assistenttrenere. For mer informasjon kan du kontakte Mathis direkte på Mathis@askerfotball.no.
+
+### 10. Når er neste klubbdugnad?
 
 Det spørsmålet har jeg ikke informasjon om i øyeblikket. Prøv å stille det på en annen måte, eller kontakt klubben direkte på post@askerfotball.no for personlig hjelp.
-
-### 7. Hvem kan jeg ringe om spørsmål?
-
-Du kan ringe Rolf-Magne Walstad, daglig leder, eller Morten Sommerfeldt, markedsansvarlig, på +47 907 51 170 for spørsmål om klubben. De vil gjerne hjelpe deg!
-
-### 8. Hvor er nærmeste bussholdeplass?
-
-Det spørsmålet har jeg ikke informasjon om i øyeblikket. Prøv å stille det på en annen måte, eller kontakt klubben direkte på post@askerfotball.no for personlig hjelp.
-
-### 9. Hva er 2012-kullet?
-
-2012-kullet er et spesifikt årskull i Asker Fotball som har egne treningsprogram og aktiviteter. Dette kullet gir unge spillere muligheten til å utvikle seg i et tilpasset miljø. For mer informasjon om treninger og aktiviteter, kan du kontakte klubben direkte!
-
-### 10. Kan jeg delta på årsmøtet?
-
-Ja, som medlem av Asker Fotball kan du delta på årsmøtet! Informasjon om datoer og innkalling finner du på klubbens nettside. Det er en flott mulighet til å engasjere seg og få innblikk i klubbens aktiviteter.

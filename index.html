@@ -95,31 +95,45 @@
     /* Bot Panel */
     .ga-bot__panel {
       position: fixed;
+      top: 20px; /* Start from top of screen */
       bottom: 20px; /* Extend to bottom of screen */
       right: 20px; /* Align with button */
       width: var(--bot-width);
-      height: calc(100vh - 40px); /* Take up almost full height, leaving small margin */
+      height: calc(100vh - 40px); /* Use full viewport height minus margins */
       max-height: calc(100vh - 40px); /* Ensure it doesn't exceed viewport */
-      background: transparent; /* Completely transparent when closed */
+      background: transparent !important; /* Completely transparent when closed */
+      border: none !important; /* Remove any borders */
       border-radius: var(--radius);
-      display: flex;
+      display: none !important; /* Completely hidden when closed - no outline visible */
       flex-direction: column;
-      opacity: 0;
+      opacity: 0 !important;
       transform: translateY(30px) scale(0.9);
       transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      pointer-events: none;
+      pointer-events: none !important;
       overflow: hidden;
-      visibility: hidden; /* Completely hidden when closed */
+      visibility: hidden !important; /* Completely hidden when closed */
+      box-shadow: none !important; /* Remove any shadows when closed */
+      outline: none !important; /* Remove any outlines */
     }
 
     .ga-bot--open .ga-bot__panel {
-      opacity: 1;
+      display: flex !important; /* Show as flex when open */
+      opacity: 1 !important;
       transform: translateY(0) scale(1);
-      pointer-events: auto;
-      visibility: visible; /* Show when open */
-      background: white; /* White background only when open */
-      box-shadow: var(--shadow); /* Shadow only when open */
+      pointer-events: auto !important;
+      visibility: visible !important; /* Show when open */
+      background: white !important; /* White background only when open */
+      box-shadow: var(--shadow) !important; /* Shadow only when open */
       animation: slideInUp 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    /* Ensure all panel children are hidden when panel is closed */
+    .ga-bot__panel * {
+      visibility: hidden;
+    }
+
+    .ga-bot--open .ga-bot__panel * {
+      visibility: visible;
     }
 
     /* Keep button visible when panel is open */
@@ -168,6 +182,8 @@
       flex-direction: column;
       gap: 12px;
       -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS/macOS */
+      flex: 1; /* Allow messages to fill available space */
+      min-height: 0; /* Allow flex item to shrink */
     }
 
     .ga-bot__message {
@@ -272,7 +288,7 @@
       flex-direction: column;
       gap: 8px;
       flex-shrink: 0;
-      margin-top: 0;
+      margin: 0; /* Remove all margins */
       background: white;
     }
 
@@ -358,16 +374,18 @@
         width: calc(100vw - 40px); /* Account for margins */
         max-width: var(--bot-width);
         right: 20px; /* Align with button */
+        top: 20px; /* Start from top on mobile too */
         bottom: 20px; /* Extend to bottom on mobile too */
-        height: calc(100vh - 40px); /* Take up almost full height on mobile */
+        height: calc(100vh - 40px); /* Use full viewport height on mobile too */
         max-height: calc(100vh - 40px); /* Ensure it fits on mobile */
       }
 
       .ga-bot__messages {
-        min-height: 160px; /* Reduced to make room for footer */
+        flex: 1; /* Allow messages to fill available space on mobile */
         padding-top: 44px; /* Slightly less padding on mobile */
-        max-height: calc(75vh - 200px); /* Reduced to account for footer */
+        max-height: none; /* Remove height restrictions */
         -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
+        min-height: 0; /* Allow flex item to shrink */
       }
 
       .ga-bot__close {
@@ -409,15 +427,16 @@
     .af-chat {
       display: flex;
       flex-direction: column;
-      flex: 1;
+      flex: 1; /* Grow to fill available space */
       min-height: 0; /* Allow flex item to shrink below content size */
     }
 
     .af-chat__log {
-      flex: 1;
-      min-height: 0; /* Allow flex item to shrink below content size */
+      flex: 1; /* Grow to fill available space */
       overflow-y: auto;
       padding-bottom: 8px; /* Add some bottom padding */
+      max-height: none; /* Remove height restrictions */
+      min-height: 0; /* Remove minimum height */
     }
 
     .af-chat__chips {
