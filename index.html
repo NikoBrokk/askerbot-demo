@@ -49,8 +49,8 @@
       right: 20px !important; /* Fixed position from viewport right */
       z-index: 2147483647 !important; /* Maximum z-index value for iframe contexts */
       font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif !important;
-      width: 90px !important; /* 50% larger than 60px */
-      height: 90px !important;
+      width: 108px !important; /* 20% larger than 90px */
+      height: 108px !important;
       /* Force positioning - override any other positioning */
       top: auto !important;
       left: auto !important;
@@ -77,8 +77,8 @@
       position: relative;
       padding: 0;
       margin: 0;
-      width: 90px; /* 50% larger than 60px */
-      height: 90px;
+      width: 108px; /* 20% larger than 90px */
+      height: 108px;
     }
 
     .ga-bot__button:hover {
@@ -95,14 +95,13 @@
     /* Bot Panel */
     .ga-bot__panel {
       position: fixed;
-      bottom: 130px; /* Moved down a bit more, but still above the logo */
+      bottom: 20px; /* Extend to bottom of screen */
       right: 20px; /* Align with button */
       width: var(--bot-width);
-      height: var(--bot-height); /* Fixed height to prevent layout shifts */
-      max-height: calc(100vh - 160px); /* Adjusted to account for new position */
-      background: white; /* White background only when open */
+      height: calc(100vh - 40px); /* Take up almost full height, leaving small margin */
+      max-height: calc(100vh - 40px); /* Ensure it doesn't exceed viewport */
+      background: transparent; /* Completely transparent when closed */
       border-radius: var(--radius);
-      box-shadow: var(--shadow); /* Shadow only when open */
       display: flex;
       flex-direction: column;
       opacity: 0;
@@ -118,6 +117,8 @@
       transform: translateY(0) scale(1);
       pointer-events: auto;
       visibility: visible; /* Show when open */
+      background: white; /* White background only when open */
+      box-shadow: var(--shadow); /* Shadow only when open */
       animation: slideInUp 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 
@@ -357,8 +358,9 @@
         width: calc(100vw - 40px); /* Account for margins */
         max-width: var(--bot-width);
         right: 20px; /* Align with button */
-        bottom: 130px; /* Position above button on mobile too */
-        max-height: calc(100vh - 160px); /* Ensure it fits on mobile */
+        bottom: 20px; /* Extend to bottom on mobile too */
+        height: calc(100vh - 40px); /* Take up almost full height on mobile */
+        max-height: calc(100vh - 40px); /* Ensure it fits on mobile */
       }
 
       .ga-bot__messages {
@@ -545,8 +547,8 @@
       top: auto !important;
       left: auto !important;
       z-index: 2147483647 !important; /* Maximum z-index for iframe contexts */
-      width: 90px !important; /* 50% larger than 60px */
-      height: 90px !important;
+      width: 108px !important; /* 20% larger than 90px */
+      height: 108px !important;
       margin: 0 !important;
       padding: 0 !important;
       transform: none !important;
@@ -567,8 +569,8 @@
       bottom: 20px !important;
       right: 20px !important;
       z-index: 2147483647 !important;
-      width: 90px !important;
-      height: 90px !important;
+      width: 108px !important;
+      height: 108px !important;
       margin: 0 !important;
       padding: 0 !important;
       transform: none !important;
@@ -596,9 +598,9 @@
   </style>
 </head>
 <body>
-  <div class="ga-bot" id="gaBot" style="position: fixed !important; bottom: 20px !important; right: 20px !important; z-index: 2147483647 !important; width: 90px !important; height: 90px !important; margin: 0 !important; padding: 0 !important; transform: none !important; top: auto !important; left: auto !important; float: none !important; clear: none !important; display: block !important; visibility: visible !important; opacity: 1 !important; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif !important;">
+  <div class="ga-bot" id="gaBot" style="position: fixed !important; bottom: 20px !important; right: 20px !important; z-index: 2147483647 !important; width: 108px !important; height: 108px !important; margin: 0 !important; padding: 0 !important; transform: none !important; top: auto !important; left: auto !important; float: none !important; clear: none !important; display: block !important; visibility: visible !important; opacity: 1 !important; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif !important;">
     <button class="ga-bot__button" id="gaBotBtn" aria-haspopup="dialog" aria-expanded="false" aria-controls="gaBotPanel" aria-label="Åpne chat med Gabrielsen AI" title="Åpne Gabrielsen AI">
-      <img src="./assets/logo.png" alt="Gabrielsen AI" style="width: 90px; height: 90px;" />
+      <img src="./assets/logo.png" alt="Gabrielsen AI" style="width: 108px; height: 108px;" />
     </button>
 
     <section id="gaBotPanel" class="ga-bot__panel" role="dialog" aria-modal="true" aria-label="Gabrielsen AI chat">

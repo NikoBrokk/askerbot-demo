@@ -7,15 +7,15 @@ const path = require('path');
  * Update Allowlist from News Crawl Results
  * 
  * Dette scriptet tar resultatene fra crawl-news-3months.js
- * og legger til nye, kvalifiserte nyhetsartikler i allowlist.json
+ * og legger til nye, kvalifiserte nyhetsartikler i config/allowlist.json
  */
 
 class AllowlistUpdater {
   constructor() {
     this.baseDir = path.join(__dirname, '..');
-    this.allowlistPath = path.join(this.baseDir, 'allowlist.json');
+    this.allowlistPath = path.join(this.baseDir, 'config/allowlist.json');
     this.crawlResultsPath = path.join(this.baseDir, 'storage', 'raw', 'news-crawl-results.json');
-    this.backupPath = path.join(this.baseDir, 'allowlist.json.backup');
+    this.backupPath = path.join(this.baseDir, 'config/allowlist.json.backup');
   }
 
   /**

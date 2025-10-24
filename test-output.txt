@@ -1,0 +1,177 @@
+
+> askerbot@1.0.0 test
+> node scripts/rag-test.js
+
+🚀 Starting RAG Test Suite for Asker Fotball Chatbot
+============================================================
+📝 Selected 10 random questions from pool of 242 questions
+
+[1/10] Testing: "Hva koster enkeltbillett?"
+   ✅ 4084ms | Score: 64% | FALLBACK
+[2/10] Testing: "Hvor mange lag har klubben?"
+   ✅ 2580ms | Score: 47% | SUCCESS
+[3/10] Testing: "Hva koster det å være med i akademiet?"
+   ✅ 4720ms | Score: 71% | SUCCESS
+[4/10] Testing: "Hva koster treningsleir?"
+   ✅ 7823ms | Score: 64% | FALLBACK
+[5/10] Testing: "Finnes det dopingkontroll?"
+   ✅ 4468ms | Score: 60% | SUCCESS
+[6/10] Testing: "Finnes det veteranlag?"
+   ✅ 4603ms | Score: 60% | SUCCESS
+[7/10] Testing: "Hva koster det å være medlem?"
+   ✅ 4422ms | Score: 76% | SUCCESS
+[8/10] Testing: "Kan jeg kjøpe VIP-billetter?"
+   ✅ 3900ms | Score: 60% | FALLBACK
+[9/10] Testing: "Hva er hashtag for klubben?"
+   ✅ 3765ms | Score: 36% | SUCCESS
+[10/10] Testing: "Finnes det retningslinjer?"
+   ✅ 8ms | Score: 68% | SUCCESS
+💾 Results saved to: /Users/nikolaigabrielsen/Downloads/askerbot-demo/storage/metrics/simple-test-results.json
+💾 Results also saved to: /Users/nikolaigabrielsen/Downloads/askerbot-demo/simple-test-results.json
+📄 Readable summary saved to: /Users/nikolaigabrielsen/Downloads/askerbot-demo/test-summary.md
+
+================================================================================
+📊 RAG TEST RESULTS
+================================================================================
+
+🎯 TEST SUMMARY
+Timestamp: 22.10.2025, 15:53:21
+Questions Tested: 10
+Overall Score: 61%
+Average Response Time: 4037ms
+
+📝 QUESTIONS & ANSWERS
+--------------------------------------------------------------------------------
+
+1. Q: Hva koster enkeltbillett?
+   A: Det spørsmålet har jeg ikke informasjon om i øyeblikket. Prøv å stille det på en annen måte, eller kontakt klubben direkte på post@askerfotball.no for personlig hjelp.
+   📚 Sources: Priser medlemskap - hva koster kostnad
+   📊 Score: 64% | Time: 4084ms | FALLBACK
+
+2. Q: Hvor mange lag har klubben?
+   A: Asker Fotball har flere lag på ulike nivåer: A-lag (senior), samfunnslag (Asker United), og utviklingslag som OBOS Akademi, G13, G14, G15, og G19. Klubben tilbyr et variert tilbud for spillere fra barn til voksne!
+   📚 Sources: Lagoversikt - hvor mange lag har klubben
+   📊 Score: 47% | Time: 2580ms | SUCCESS
+
+3. Q: Hva koster det å være med i akademiet?
+   A: Å være med i OBOS Akademi koster mellom 955,- og 2500,- per måned, avhengig av hvor mange dager man deltar i uken. For mer informasjon om priser og medlemskap, kan du kontakte klubben direkte på post@askerfotball.no eller ringe +47 907 51 170.
+   📚 Sources: Priser medlemskap - hva koster kostnad
+   📊 Score: 71% | Time: 4720ms | SUCCESS
+
+4. Q: Hva koster treningsleir?
+   A: Det spørsmålet har jeg ikke informasjon om i øyeblikket. Prøv å stille det på en annen måte, eller kontakt klubben direkte på post@askerfotball.no for personlig hjelp.
+   📚 Sources: Priser medlemskap - hva koster kostnad
+   📊 Score: 64% | Time: 7823ms | FALLBACK
+
+5. Q: Finnes det dopingkontroll?
+   A: Ja, Asker Fotball følger Norges idrettsforbunds retningslinjer for dopingkontroll og ren idrett. Klubben støtter dopingfri idrett og gjennomfører testing og kontroll i henhold til nasjonale regler. For spesifikke spørsmål, kan du kontakte klubben på post@askerfotball.no.
+   📚 Sources: Dopingkontroll og antidoping
+   📊 Score: 60% | Time: 4468ms | SUCCESS
+
+6. Q: Finnes det veteranlag?
+   A: Ja, Asker Fotball har et veteranlag som spiller gåfotball. Dette er en flott aktivitet for eldre spillere som ønsker å spille fotball i et sosialt miljø. Det arrangeres kamper og treninger med påfølgende mat og fotballprat. Ta gjerne kontakt med klubben for mer informasjon!
+   📚 Sources: Lagoversikt - hvor mange lag har klubben
+   📊 Score: 60% | Time: 4603ms | SUCCESS
+
+7. Q: Hva koster det å være medlem?
+   A: Medlemskap i OBOS Akademi koster mellom 955,- og 2500,- per måned, avhengig av hvor mange dager man deltar. For mer informasjon om priser og medlemskap, kan du kontakte klubben direkte på post@askerfotball.no eller ringe +47 907 51 170.
+   📚 Sources: Priser medlemskap - hva koster kostnad
+   📊 Score: 76% | Time: 4422ms | SUCCESS
+
+8. Q: Kan jeg kjøpe VIP-billetter?
+   A: Det spørsmålet har jeg ikke informasjon om i øyeblikket. Prøv å stille det på en annen måte, eller kontakt klubben direkte på post@askerfotball.no for personlig hjelp.
+   📚 Sources: Parkering på Føyka - hvor parkere bil
+   📊 Score: 60% | Time: 3900ms | FALLBACK
+
+9. Q: Hva er hashtag for klubben?
+   A: Hashtaggen for Asker Fotball er #askerfotball. Bruk den gjerne når du deler bilder og opplevelser fra kampene!
+   📚 Sources: Retningslinjer for barnefotball
+   📊 Score: 36% | Time: 3765ms | SUCCESS
+
+10. Q: Finnes det retningslinjer?
+   A: Asker Fotball har retningslinjer for barnefotball som fokuserer på spillerutvikling og trivsel.
+
+Våre fire ledestjerner er:
+• Ærlighet
+• Hardt arbeid
+• Ydmykhet
+• Laget først
+
+For mer informasjon om retningslinjer, kontakt klubben på post@askerfotball.no.
+   📚 Sources: Retningslinjer for barnefotball
+   📊 Score: 68% | Time: 8ms | SUCCESS
+
+📈 ENHANCED KPI METRICS
+--------------------------------------------------------------------------------
+Answer Quality:         55%
+Confidence Level:       80%
+Usefulness:             61%
+Source Relevance:       41%
+Technical Quality:      72%
+Knowledge Gaps:         100%
+Critical Gaps:          0
+Fallback Rate:          30%
+Cache Hit Rate:         0%
+FAQ Usage Rate:         10%
+RAG Usage Rate:         90%
+
+⚠️  WORST PERFORMERS
+--------------------------------------------------------------------------------
+1. "Hva er hashtag for klubben?" - Score: 36%
+   Reason: Poor answer quality - lacks semantic relevance, completeness, or accuracy
+   Knowledge Gaps: Lacks specific details (prices, times, contact info)
+2. "Hvor mange lag har klubben?" - Score: 47%
+   Reason: Poor answer quality - lacks semantic relevance, completeness, or accuracy
+   Knowledge Gaps: Lacks specific details (prices, times, contact info)
+3. "Finnes det dopingkontroll?" - Score: 60%
+   Reason: Slow response time
+
+📊 COMPARISON WITH PREVIOUS TEST
+--------------------------------------------------------------------------------
+Overall Score: 61% (+0%)
+Response Time: 4037ms (+0ms)
+Fallback Rate: 30% (+0%)
+Trend: ➡️ STABLE
+
+📈 HISTORICAL OVERVIEW (38 tests)
+--------------------------------------------------------------------------------
+Average Score (all time): 57%
+Best Score: 66%
+Worst Score: 48%
+Score Range: 18%
+
+🔍 DIAGNOSTIC ANALYSIS
+--------------------------------------------------------------------------------
+• High fallback rate (30%) - RAG system needs improvement
+• Slow response times (4037ms average) - performance optimization needed
+• High knowledge gap rate (100%) - responses frequently lack specific information
+
+🛠️  IMPROVEMENT RECOMMENDATIONS
+--------------------------------------------------------------------------------
+
+🤖 CODE AGENT PROMPT:
+```
+You are a RAG system improvement agent. Based on the enhanced test results, make these specific improvements to netlify/functions/chat.js:
+
+1. High fallback rate detected. Review searchEmbeddedKnowledge function and improve query matching.
+2. Slow response times. Optimize BM25 search and consider caching improvements.
+
+Focus on improving the searchEmbeddedKnowledge function and related helper functions.
+```
+
+📚 KNOWLEDGE BASE AGENT PROMPT:
+```
+You are a knowledge base improvement agent. Based on the enhanced test results, improve the knowledge base in netlify/functions/chat.js:
+
+1. High knowledge gap rate - add more specific details to reduce generic responses
+
+Focus on expanding EMBEDDED_KNOWLEDGE and FAQ_RESPONSES with more comprehensive, specific information.
+```
+
+👤 MANUAL RECOMMENDATIONS:
+• Expand knowledge base with more specific details to reduce generic responses
+• Consider server performance optimization or hosting upgrade
+
+================================================================================
+✅ Test completed successfully!
+💾 Results saved to: /Users/nikolaigabrielsen/Downloads/askerbot-demo/storage/metrics/rag-test-history.json

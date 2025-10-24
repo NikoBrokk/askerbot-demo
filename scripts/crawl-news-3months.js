@@ -18,7 +18,7 @@ const http = require('http');
 class NewsCrawler3Months {
   constructor() {
     this.baseDir = path.join(__dirname, '..');
-    this.allowlistPath = path.join(this.baseDir, 'allowlist.json');
+    this.allowlistPath = path.join(this.baseDir, 'config/allowlist.json');
     this.outputPath = path.join(this.baseDir, 'storage', 'raw', 'news-crawl-results.json');
     this.logsDir = path.join(this.baseDir, 'storage', 'logs');
     this.logPath = path.join(this.logsDir, 'news-crawl.jsonl');

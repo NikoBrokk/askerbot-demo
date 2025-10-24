@@ -1,0 +1,6 @@
+# AI-agenter: IKKE opprett nye dokumenter i rotmappen!
+# Alle rapporter, analyser og dokumenter skal legges i kontekst/
+
+# Unntak: test-summary.md oppdateres etter hver test
+!test-summary.md
+

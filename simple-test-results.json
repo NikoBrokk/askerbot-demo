@@ -1,53 +1,53 @@
 {
   "analysis": {
-    "overallScore": 55,
-    "fallbackCount": 1,
-    "avgResponseTime": 2823,
-    "problems": "Klarte ikke svare på spørsmål 8 (fallback):\n  \"Hvor ofte møtes styret?\".\n\nSpørsmål 1, 2, 9 hadde lav kvalitet\n  (48%, 44%, 32%).\n\n6 spørsmål hadde treg responstid (>3s).",
-    "tiltak": "1. Legg til info om møtes styret i EMBEDDED_KNOWLEDGE i netlify/functions/chat.js.\n\n2. Forbedre: Terminliste - A-lagets kamper: utvid med mer detaljer; Føyka stadion-entry: legg til fullstendig adresse.\n\n3. Optimaliser BM25-søk og øk caching i chat.js.",
-    "cursorPrompt": "OPPGAVE:\nForbedre Askerbot basert på testresultater\n\nTESTSCORE: 55%\n\nWORKSPACE:\n/Users/nikolaigabrielsen/Downloads/askerbot-demo/\n\nSPESIFIKKE PROBLEMER:\n\n1. FALLBACK-SVAR\n   (1 spørsmål):\n\n   1) \"Hvor ofte møtes styret?\"\n\n   TILTAK:\n   - Åpne netlify/functions/chat.js\n   - Finn EMBEDDED_KNOWLEDGE objektet\n     (ca. linje 493)\n   - Legg til nye entries for\n     manglende emner\n   - Test med: npm run test\n\n2. LAV SVAR-KVALITET\n   (3 spørsmål):\n\n   1) \"Hvor kan jeg se resultater?\"\n      (score: 48%)\n   2) \"Hvor ligger Føyka stadion?\"\n      (score: 44%)\n   3) \"Hvor arrangeres sommerleiren?\"\n      (score: 32%)\n\n   TILTAK:\n   - Finn relevante entries i\n     EMBEDDED_KNOWLEDGE\n   - Utvid \"content\" feltet med\n     mer detaljert info\n   - Legg til spesifikke detaljer\n     (priser, tider, adresser)\n\n3. YTELSE\n   (6 spørsmål >3s):\n\n   TILTAK:\n   - Gjennomgå caching-strategi\n     i chat.js\n   - Vurder å øke CACHE_TTL verdier\n   - Optimaliser searchBM25()\n     funksjonen\n\nVERIFISERING:\nKjør \"npm run test\" for å verifisere\nforbedringene.\n"
+    "overallScore": 54,
+    "fallbackCount": 2,
+    "avgResponseTime": 6300,
+    "problems": "Klarte ikke svare på spørsmål \"g13-lag\", \"nærmeste bussholdeplass\" (fallback):\n  \"Hvem er på G13-laget?\",\n  \"Hvor er nærmeste bussholdeplass?\".\n\nSpørsmål \"asker fotball\", \"billett stadion\", \"e-postadressen klubben\" hadde lav kvalitet\n  (44%, 56%, 53%).\n\n9 spørsmål hadde treg responstid (>3s).",
+    "tiltak": "1. Legg til info om G13-spillerliste, bussholdeplass/transport i EMBEDDED_KNOWLEDGE i netlify/functions/chat.js.\n\n2. Forbedre lav-kvalitet svar i EMBEDDED_KNOWLEDGE:\n   - Askerfotballens historie (44%): utvid content-feltet med mer spesifikke detaljer (kontaktinfo, tider, priser, steg-for-steg)\n   - Billetter til kamper - enkeltbilletter VIP og sesongkort (56%): utvid content-feltet med mer spesifikke detaljer (kontaktinfo, tider, priser, steg-for-steg).\n\n3. Reduser responstid (gjennomsnitt 6780ms for trege svar):\n   - Øk CACHE_TTL fra 10 til 20 minutter (linje 25 i chat.js)\n   - Øk SEARCH_CACHE_TTL fra 30 til 60 minutter (linje 26)\n   - Reduser BM25 limit fra 5 til 3 chunks (linje 1082).",
+    "cursorPrompt": "OPPGAVE:\nForbedre Askerbot basert på testresultater\n\nTESTSCORE: 54%\n\nWORKSPACE:\n/Users/nikolaigabrielsen/Downloads/askerbot-demo/\n\nSPESIFIKKE PROBLEMER:\n\n1. FALLBACK-SVAR\n   (2 spørsmål):\n\n   1) \"Hvem er på G13-laget?\"\n      (tema: g13-lag)\n   2) \"Hvor er nærmeste bussholdeplass?\"\n      (tema: nærmeste bussholdeplass)\n\n   TILTAK:\n   - Åpne netlify/functions/chat.js\n   - Finn EMBEDDED_KNOWLEDGE objektet\n     (ca. linje 493)\n   - Legg til nye entries:\n\n   Eksempel 1 (g13-lag):\n   {\n     title: \"g13-lag\",\n     keywords: [\"g13-lag\"],\n     content: \"[legg til relevant info her]\"\n   }\n\n   Eksempel 2 (nærmeste bussholdeplass):\n   {\n     title: \"nærmeste bussholdeplass\",\n     keywords: [\"nærmeste\", \"bussholdeplass\"],\n     content: \"[legg til relevant info her]\"\n   }\n\n   - Test med: npm run test\n\n2. LAV SVAR-KVALITET\n   (3 spørsmål):\n\n   1) \"Hvem grunnla Asker Fotball?\"\n      (score: 44%, entry: Askerfotballens historie)\n   2) \"Kan jeg kjøpe billett på stadion?\"\n      (score: 56%, entry: Billetter til kamper - enkeltbilletter VIP og sesongkort)\n   3) \"Hva er e-postadressen til klubben?\"\n      (score: 53%, entry: Kontakt klubben - e-post telefon daglig leder)\n\n   TILTAK:\n   - Åpne netlify/functions/chat.js\n   - Finn EMBEDDED_KNOWLEDGE objektet\n     (ca. linje 493)\n   - For hver entry ovenfor:\n     * Utvid \"content\" feltet\n     * Legg til konkrete detaljer:\n       - Priser (eks: \"955-2500kr/mnd\")\n       - Tider (eks: \"mandag 18:00\")\n       - Adresser (eks: \"Skaugumvegen 4\")\n       - Kontaktinfo (navn + e-post)\n       - Direktelenker til relevante sider\n     * Bruk steg-for-steg hvis prosess\n\n3. YTELSE\n   (9 spørsmål >3s,\n   gjennomsnitt 6780ms):\n\n   TILTAK:\n   - Åpne netlify/functions/chat.js\n   - Linje 25: Endre CACHE_TTL\n     fra 10 * 60 * 1000\n     til 20 * 60 * 1000\n   - Linje 26: Endre SEARCH_CACHE_TTL\n     fra 30 * 60 * 1000\n     til 60 * 60 * 1000\n   - Linje 1082: Endre searchBM25 limit\n     fra 5 til 3\n\nVERIFISERING:\nKjør \"npm run test\" for å verifisere\nforbedringene.\n"
   },
   "testResults": [
     {
-      "question": "Hvor kan jeg se resultater?",
-      "answer": "Du kan følge med på resultater og kamper ved å laste ned Norsk LigaFotball appen (NLF) eller bruke MinFotball. Disse appene gir deg oppdateringer om Asker Fotballs kamper og resultater. God fotballprat!"
-    },
-    {
-      "question": "Hvor ligger Føyka stadion?",
-      "answer": "Føyka stadion ligger på Føyka i Asker. Det er en kunstgressbane som brukes av Asker Fotball, og stadion har også Fotballhuset med garderober og klubbhus. Velkommen til en fotballopplevelse!"
-    },
-    {
-      "question": "Hvem er styreleder?",
-      "answer": "Styreleder i Asker Fotball er Ulrik Arneberg. Hvis du har spørsmål til ham, kan du kontakte ham på ulrik@profildesign.no."
-    },
-    {
-      "question": "Kan mitt firma bli sponsor?",
-      "answer": "For informasjon om sponsormuligheter:\n\nKontakt Morten Sommerfeldt (markedsansvarlig):\nE-post: morten@askerfotball.no\nTelefon: +47 907 51 170\n\nVi har flere sponsorpakker tilgjengelig."
-    },
-    {
-      "question": "Hvem skriver artiklene?",
-      "answer": "Artiklene på Asker Fotballs nettsider skrives av klubbens ansatte, inkludert mediaansvarlig Mathis Banggren. For spesifikke henvendelser om innhold, kan du kontakte ham direkte på Mathis@askerfotball.no."
-    },
-    {
-      "question": "Hvem er hovedtrener?",
-      "answer": "Hovedtreneren for A-laget i Asker Fotball er Magnus Bredal. Hvis du har flere spørsmål om laget eller trenerne, er det bare å spørre!"
-    },
-    {
-      "question": "Hva inkluderer medlemskapet?",
-      "answer": "Medlemskapet i Asker Fotball inkluderer tilgang til treninger, deltakelse på kamper og aktiviteter i klubben. For spesifikke detaljer om hva som inngår i medlemskapet, anbefaler jeg å kontakte klubben direkte på post@askerfotball.no. De kan gi deg den mest oppdaterte informasjonen!"
-    },
-    {
-      "question": "Hvor ofte møtes styret?",
-      "answer": "Det spørsmålet har jeg ikke informasjon om i øyeblikket. Prøv å stille det på en annen måte, eller kontakt klubben direkte på post@askerfotball.no for personlig hjelp."
-    },
-    {
-      "question": "Hvor arrangeres sommerleiren?",
-      "answer": "Sommerleiren, OBOS Camp, arrangeres på Føyka og Risenga kunstgress i Asker. Det blir et spennende eventyr for barn i alderen 6-14 år!"
+      "question": "Hvem grunnla Asker Fotball?",
+      "answer": "Asker Fotball ble grunnlagt i 1898 da fotballen begynte å rulle ved Hartmanns pensjonatskole på Hvalstad. Klubben har siden utviklet seg gjennom flere fusjoner og endringer, og har vært en viktig del av lokalsamfunnet i over 125 år."
     },
     {
       "question": "Kan jeg kjøpe billett på stadion?",
-      "answer": "Det er ikke spesifisert om du kan kjøpe billett direkte på stadion. Jeg anbefaler å sjekke Asker Fotballs nettsider for mer informasjon om billettkjøp, eller kontakte klubben direkte på post@askerfotball.no for detaljer."
+      "answer": "Ja, du kan kjøpe billetter på stadion før kampstart på kampdager. For mer informasjon om billettpriser og typer billetter, kan du også besøke askerfotball.no eller kontakte klubben direkte. Velkommen til kamp!"
+    },
+    {
+      "question": "Hva er e-postadressen til klubben?",
+      "answer": "E-postadressen til klubben er post@askerfotball.no. Hvis du har spørsmål eller trenger hjelp, er det bare å sende en e-post!"
+    },
+    {
+      "question": "Kan jeg låne utstyr?",
+      "answer": "Ja, du kan låne fotballutstyr og treningsmateriell! For mer informasjon om utlån, ta kontakt med klubben på post@askerfotball.no eller snakk med lagleder for ditt lag. Vi er her for å hjelpe deg!"
+    },
+    {
+      "question": "Hvem er på G14-laget?",
+      "answer": "Jeg har ikke spesifikke detaljer om spillerne på G14-laget. For informasjon om spillere eller påmelding, kan du kontakte trenerne direkte: Lars Henrik Dahl (lars.henrik@askerfotball.no) eller Erik Hejer. De vil kunne gi deg den informasjonen du trenger!"
+    },
+    {
+      "question": "Hvem er på G13-laget?",
+      "answer": "Det spørsmålet har jeg ikke informasjon om i øyeblikket. Prøv å stille det på en annen måte, eller kontakt klubben direkte på post@askerfotball.no for personlig hjelp."
+    },
+    {
+      "question": "Hvem kan jeg ringe om spørsmål?",
+      "answer": "Du kan ringe Rolf-Magne Walstad, daglig leder, eller Morten Sommerfeldt, markedsansvarlig, på +47 907 51 170 for spørsmål om klubben. De vil gjerne hjelpe deg!"
+    },
+    {
+      "question": "Hvor er nærmeste bussholdeplass?",
+      "answer": "Det spørsmålet har jeg ikke informasjon om i øyeblikket. Prøv å stille det på en annen måte, eller kontakt klubben direkte på post@askerfotball.no for personlig hjelp."
+    },
+    {
+      "question": "Hva er 2012-kullet?",
+      "answer": "2012-kullet er et spesifikt årskull i Asker Fotball som har egne treningsprogram og aktiviteter. Dette kullet gir unge spillere muligheten til å utvikle seg i et tilpasset miljø. For mer informasjon om treninger og aktiviteter, kan du kontakte klubben direkte!"
+    },
+    {
+      "question": "Kan jeg delta på årsmøtet?",
+      "answer": "Ja, som medlem av Asker Fotball kan du delta på årsmøtet! Informasjon om datoer og innkalling finner du på klubbens nettside. Det er en flott mulighet til å engasjere seg og få innblikk i klubbens aktiviteter."
     }
   ],
-  "timestamp": "22.10.2025, 14:19:00"
+  "timestamp": "24.10.2025, 16:34:55"
 }

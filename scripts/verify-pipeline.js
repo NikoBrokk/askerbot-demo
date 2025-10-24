@@ -2,7 +2,7 @@
 
 /**
  * Pipeline Verification Script for Askerbot
- * Verifiserer at alle URLer fra allowlist.json har blitt:
+ * Verifiserer at alle URLer fra config/allowlist.json har blitt:
  * 1. Fetchet (raw HTML)
  * 2. Parset (parsed JSON)
  * 3. Chunket (chunks JSONL)
@@ -16,7 +16,7 @@ const path = require('path');
 class PipelineVerifier {
   constructor() {
     this.baseDir = path.join(__dirname, '..');
-    this.allowlistPath = path.join(this.baseDir, 'allowlist.json');
+    this.allowlistPath = path.join(this.baseDir, 'config/allowlist.json');
     this.rawDir = path.join(this.baseDir, 'storage', 'raw');
     this.parsedDir = path.join(this.baseDir, 'storage', 'parsed');
     this.chunksDir = path.join(this.baseDir, 'storage', 'chunks');

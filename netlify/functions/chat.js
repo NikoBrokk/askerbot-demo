@@ -527,7 +527,7 @@ const EMBEDDED_KNOWLEDGE = {
   "klubb_info": {
     "title": "Om klubben",
     "content": "Asker Fotball er fotballklubben i Asker. Klubben spiller på Føyka stadion og har både A-lag og ungdomslag. Klubben er sponset av OBOS og har et sterkt fokus på ungdomsutvikling.",
-    "url": "https://askerfotball.no"
+    "url": "https://askerfotball.no/om-klubben"
   },
   "akademi_info": {
     "title": "OBOS Akademi - pris, kostnad og påmelding",
@@ -550,8 +550,8 @@ const EMBEDDED_KNOWLEDGE = {
     "url": "https://askerfotball.no/om-stadion"
   },
   "fotballhuset": {
-    "title": "Fotballhuset åpningstider - når åpent lukket",
-    "content": "Fotballhuset er stedet du kan handle supporterutstyr og klubbkolleksjonen vår. Her ligger supporter-butikken der du kan treffe ansatte i Asker Fotball. Ta gjerne turen innom for en hyggelig fotballprat og en kaffekopp. Åpningstider: Man-Fre 08.00-20.00, Lørdag 10.00-14:00, Søndag 10.00-14.00",
+    "title": "Fotballhuset åpningstider - kiosk supporterbutikk",
+    "content": "Fotballhuset er stedet du kan handle supporterutstyr, klubbkolleksjon og nyte en kaffekopp. Her ligger supporter-butikken der du kan treffe ansatte i Asker Fotball. Fotballhuset fungerer som klubbens kiosk på kampdager med servering av kaffe og snacks. Ta gjerne turen innom for en hyggelig fotballprat! Åpningstider: Man-Fre 08.00-20.00, Lørdag 10.00-14:00, Søndag 10.00-14.00",
     "url": "https://askerfotball.no/om-stadion/fotballhuset"
   },
   "parkering": {
@@ -567,21 +567,21 @@ const EMBEDDED_KNOWLEDGE = {
   "lag_struktur": {
     "title": "Lag og struktur",
     "content": "Asker Fotball har A-lag, samfunnslag og utviklingslag. A-laget spiller i sin respektive divisjon. Samfunnslagene inkluderer Asker United (junior og senior), Gatelaget (stiftet 2013, et av de mest rutinerte lagene i landet), og Hæppe (nysatsing for ungdom, forebygging av utenforskap). Utviklingslagene inkluderer OBOS Akademi for barn 7-13 år.",
-    "url": "https://askerfotball.no/lag"
+    "url": "https://askerfotball.no/lag/samfunn/om-samfunnslagene"
   },
   "asker_united": {
     "title": "Asker United - samfunnslag finnes det",
     "content": "Asker United er en del av Asker Fotballs samfunnsprosjekt. Vi har to lag (junior og senior) som begge deltar i serie og cupspill gjennom sesongen. Lagene trener en gang i uken ute, inkludert kamp, og en gang om vinteren inne i Drengsrudhallen. Trenere: Henrik Vister og Oddvar Høiholdt.",
-    "url": "https://askerfotball.no/lag/samfunn/asker-united"
+    "url": "https://askerfotball.no/nyheter/10-ar-med-asker-united"
   },
   "priser_medlemskap": {
     "title": "Priser medlemskap - hva koster kostnad",
     "content": "OBOS Akademi koster 955,- til 2500,- per måned avhengig av antall dager. For oppdaterte priser og medlemskap, kontakt klubben direkte på post@askerfotball.no eller ring +47 907 51 170.",
-    "url": "https://askerfotball.no"
+    "url": "https://askerfotball.no/lag/utviklingslag/akademi"
   },
   "spillere_a_lag": {
     "title": "Spillere A-laget - tropp og spillertropp",
-    "content": "A-laget har en sterk spillertropp med både erfarne og unge spillere. Blant spillerne finner du keepere som Oskar Slotta Karlsen og Sigurd Olav Normann, forsvarsspillere som Jonas Skulstad og Joachim Prent-Eckbo, midtbanespillere som Mohammed Jatta og Jimmy Kenyi, og angrepsspillere som Jens-Erik Johansen og Lansana Sesay.",
+    "content": "A-laget har en sterk spillertropp med både erfarne og unge spillere. Blant spillerne finner du keepere som Oskar Slotta Karlsen og Sigurd Olav Normann, forsvarsspillere som Jonas Skulstad og Joachim Prent-Eckbo, midtbanespillere som Mohammed Jatta og Jimmy Kenyi, og angrepsspillere som Jens-Erik Johansen og Lansana Sesay. For oppdatert spillerstall, se askerfotball.no/lag",
     "url": "https://askerfotball.no/lag"
   },
   "lag_oversikt": {
@@ -630,24 +630,24 @@ const EMBEDDED_KNOWLEDGE = {
     "url": "https://askerfotball.no/terminliste"
   },
   "frivillig": {
-    "title": "Frivillig arbeid",
-    "content": "For å melde interesse for å bli frivillig på kampdag eller andre arrangementer, kontakt klubben på post@askerfotball.no eller ring +47 907 51 170. Vi setter stor pris på frivillig innsats!",
-    "url": "https://askerfotball.no"
+    "title": "Frivillig arbeid - ungdom og voksne",
+    "content": "Både ungdom og voksne kan melde interesse for å bli frivillig på kampdag eller andre arrangementer. Det er ingen aldersgrense for frivillig innsats i klubben - alle bidrag er velkomne! Kontakt klubben på post@askerfotball.no eller ring +47 907 51 170. Vi setter stor pris på frivillig innsats!",
+    "url": "https://askerfotball.no/nyheter/vi-onsker-flere-frivillige-velkommen-i-klubben"
   },
   "booking_baner": {
     "title": "Booking av baner og anlegg",
     "content": "For å booke baner eller anlegg, kontakt klubben på post@askerfotball.no eller ring +47 907 51 170. Vi kan hjelpe deg med booking av Føyka stadion og andre fasiliteter.",
-    "url": "https://askerfotball.no"
+    "url": "https://askerfotball.no/om-stadion/foyka-stadion"
   },
   "retningslinjer": {
     "title": "Retningslinjer for barnefotball",
     "content": "Asker Fotball har retningslinjer for barnefotball som fokuserer på spillerutvikling og trivsel. Våre fire ledestjerner er: Ærlighet – Hardt arbeid – Ydmykhet – Laget først. For mer informasjon om retningslinjer, kontakt klubben på post@askerfotball.no.",
-    "url": "https://askerfotball.no"
+    "url": "https://askerfotball.no/lag/utviklingslag/om-utviklingslagene"
   },
   "sponsor": {
     "title": "Sponsormuligheter",
     "content": "For informasjon om sponsormuligheter, kontakt Morten Sommerfeldt (markedsansvarlig) på morten@askerfotball.no eller ring +47 907 51 170. Vi har flere sponsorpakker tilgjengelig.",
-    "url": "https://askerfotball.no"
+    "url": "https://askerfotball.no/partnere/bli-samarbeidspartner"
   },
   "klubbens_lover": {
     "title": "Klubbens lover",
@@ -687,27 +687,27 @@ const EMBEDDED_KNOWLEDGE = {
   "2012_kullet": {
     "title": "2012-kullet",
     "content": "2012-kullet er et spesifikt årskull som har egne treningsprogram og aktiviteter. Kontakt klubben for mer informasjon om dette kullet.",
-    "url": "https://askerfotball.no/lag/utviklingslag"
+    "url": "https://askerfotball.no/lag/utviklingslag/2012-kullet"
   },
   "asker_united": {
     "title": "Asker United",
     "content": "Asker United er en del av Asker Fotballs samfunnsprosjekt med både junior og senior lag. Lagene deltar i serie og cupspill gjennom sesongen og trener en gang i uken ute (inkludert kamp) og en gang om vinteren inne i Drengsrudhallen. Trenere: Henrik Vister og Oddvar Høiholdt.",
-    "url": "https://askerfotball.no/lag/samfunnslag/asker-united"
+    "url": "https://askerfotball.no/lag/samfunn/asker-united"
   },
   "samfunnslag_detaljert": {
     "title": "Samfunnslag detaljer",
     "content": "Asker Fotball har tre samfunnslag: Asker United (junior og senior lag, deltar i serie og cupspill), Gatelaget (stiftet 2013, et av de mest rutinerte lagene i landet), og Hæppe (nysatsing for ungdom, forebygging av utenforskap). Kontakt klubben for påmelding og priser.",
-    "url": "https://askerfotball.no/lag/samfunnslag"
+    "url": "https://askerfotball.no/lag/samfunn/om-samfunnslagene"
   },
   "gatelaget": {
     "title": "Gatelaget - samfunnslag for rusrelaterte lidelser",
     "content": "Gatelaget er et samfunnslag i Asker Fotball, stiftet i 2013, og er et av de mest rutinerte lagene i landet. Laget tilbyr fotballaktivitet for mennesker med rusrelaterte lidelser og fungerer som ettervern. Omtales som «Verdens beste ettervern?» og «forbausende gode resultater» i forskningsrapport fra USN. Laget deltar i nasjonale turneringer og er en del av klubbens samfunnsengasjement. Kontakt: post@askerfotball.no",
-    "url": "https://askerfotball.no/lag/samfunn"
+    "url": "https://askerfotball.no/nyheter/10-ar-med-gatelaget"
   },
   "haeppe": {
     "title": "Hæppe",
     "content": "Hæppe er Asker Fotballs nysatsing innen samfunnslag. Det tar sikte på å tilby fotball og fysisk aktivitet til ungdom for å redusere passive hverdager og til forebygging av utenforskap.",
-    "url": "https://askerfotball.no/lag/samfunn"
+    "url": "https://askerfotball.no/lag/samfunn/om-samfunnslagene"
   },
   "veteranlag_gafotball": {
     "title": "Veteranlag - Gåfotball for eldre spillere",
@@ -732,17 +732,17 @@ const EMBEDDED_KNOWLEDGE = {
   "betalingsmetoder": {
     "title": "Betalingsmetoder - hvordan betale kontingent",
     "content": "Betaling skjer via: 1) Bankoverførsel 2) Vipps 3) Kontant i fotballhuset. Kontakt Sølvi Dahl (solvi.dahl@askerfotball.no) for fakturaer. Automatisk fornyelse hvert år. For spørsmål: post@askerfotball.no eller ring +47 907 51 170.",
-    "url": "https://askerfotball.no"
+    "url": "https://askerfotball.no/lag/utviklingslag/akademi"
   },
   "familierabatt": {
     "title": "Familierabatt - finnes rabatt",
     "content": "For informasjon om familierabatter og spesielle tilbud, kontakt klubben på post@askerfotball.no eller ring +47 907 51 170. Spesifikke rabatter kan være tilgjengelige for familier med flere barn.",
-    "url": "https://askerfotball.no"
+    "url": "https://askerfotball.no/nyheter/mange-fordeler-gjennom-asker-fotball"
   },
   "påmelding_registrering": {
     "title": "Hvordan melde barn på OBOS Akademi - påmelding og registrering",
     "content": "For påmelding: 1) Besøk askerfotball.no 2) Velg riktig lag/aktivitet 3) Fyll ut skjema og betal kontingent. OBOS Akademi: Meld på via https://app.rubic.no/Public/Events/33825. Spørsmål: post@askerfotball.no",
-    "url": "https://askerfotball.no"
+    "url": "https://askerfotball.no/nyheter/velkommen-til-obos-akademi"
   },
   "terminliste_hvor": {
     "title": "Terminliste kamper og kampprogram - A-laget",
@@ -752,12 +752,52 @@ const EMBEDDED_KNOWLEDGE = {
   "dugnad_info": {
     "title": "Klubbdugnad frivillig og dugnad",
     "content": "Dugnader arrangeres regelmessig for anleggsvedlikehold. Påmelding via: 1) post@askerfotball.no 2) Lagleder 3) Facebook-grupper. Alle medlemmer forventes å delta.",
-    "url": "https://askerfotball.no"
+    "url": "https://askerfotball.no/nyheter/vi-onsker-flere-frivillige-velkommen-i-klubben"
   },
   "app_info": {
     "title": "App og mobilapplikasjoner",
     "content": "Asker Fotball har ikke sin egen app, men vi anbefaler at du laster ned Norsk LigaFotball appen (NLF) for å følge med på kamper og resultater. Du kan også bruke MinFotball for å holde deg oppdatert på fotballaktiviteter.",
-    "url": "https://askerfotball.no"
+    "url": "https://askerfotball.no/terminliste"
+  },
+  "doping_antidoping": {
+    "title": "Dopingkontroll og antidoping",
+    "content": "Asker Fotball følger Norges idrettsforbunds (NIF) retningslinjer for antidoping og ren idrett. Klubben støtter dopingfri idrett og følger alle nasjonale regler for testing og kontroll. For spesifikke spørsmål om dopingkontroll, kontakt klubben på post@askerfotball.no.",
+    "url": "https://askerfotball.no/om-klubben"
+  },
+  "sosiale_medier": {
+    "title": "Sosiale medier - Facebook Instagram Twitter",
+    "content": "Følg Asker Fotball på sosiale medier for nyheter, kampoppdateringer og bilder:\n\nFacebook: facebook.com/askerfotball\nInstagram: @askerfotball\n\nDel dine opplevelser med #askerfotball",
+    "url": "https://askerfotball.no/om-klubben/media"
+  },
+  "partnere_detail": {
+    "title": "Partnere og sponsorer - OBOS Egon Kiwi Handelsbanken",
+    "content": "Asker Fotballs hovedpartnere:\n\nOBOS - Hovedsponsor og navnesponsor for akademiet\nEgon Asker - Restaurant og matpartner på Asker\nKiwi - Dagligvarekjede og supporter\nHandelsbanken - Bankpartner\n\nFor partnerskap og sponsormuligheter, kontakt Morten Sommerfeldt på morten@askerfotball.no eller ring +47 907 51 170.",
+    "url": "https://askerfotball.no/partnere"
+  },
+  "presselounge_tilgang": {
+    "title": "Presselounge og pressefasiliteter",
+    "content": "For tilgang til presseloungen på Føyka stadion, kontakt mediaansvarlig Mathis Banggren på Mathis@askerfotball.no. Pressekort eller godkjenning fra klubben er påkrevd. Presseloungen er åpen på kampdager og tilbyr arbeidsplass for journalister og fotografer.",
+    "url": "https://askerfotball.no/om-klubben/media"
+  },
+  "utstyr_utlan": {
+    "title": "Utstyr og utlån av fotballutstyr",
+    "content": "For informasjon om utlån av fotballutstyr, treningsutstyr eller annet materiell, kontakt klubben på post@askerfotball.no eller ta kontakt med lagleder for ditt lag. Supporterutstyr og klubbkolleksjon kan kjøpes i Fotballhuset (åpent man-fre 08-20, lør-søn 10-14).",
+    "url": "https://askerfotball.no/nyheter/butikk"
+  },
+  "billetter_info": {
+    "title": "Billetter til kamper - enkeltbilletter VIP og sesongkort",
+    "content": "For informasjon om billettpriser, enkeltbilletter, sesongkort og VIP-billetter til hjemmekamper, besøk askerfotball.no eller kontakt klubben på post@askerfotball.no eller ring +47 907 51 170. Billetter kan også kjøpes på stadion før kampstart på kampdager.",
+    "url": "https://askerfotball.no/nyheter/her-er-alt-du-trenger-a-vite-om-billetter-til-askers-hjemmekamper"
+  },
+  "provespiller_pamelding": {
+    "title": "Hvordan bli prøvespiller - påmelding til lag",
+    "content": "For å bli prøvespiller i Asker Fotball, ta kontakt med treneren for det laget du ønsker å bli en del av. Du kan også sende e-post til klubben på post@askerfotball.no for mer informasjon om prøvespill og påmelding. For utviklingslag (barn 7-13 år), se OBOS Akademi. For G13-G19, kontakt lagets trener direkte. Kontakt: post@askerfotball.no eller +47 907 51 170.",
+    "url": "https://askerfotball.no/lag/utviklingslag"
+  },
+  "sesong_resultater": {
+    "title": "Hvordan går det med laget - resultater og tabeller",
+    "content": "For å se hvordan det går med A-laget og andre lag denne sesongen, besøk askerfotball.no/resultater for oppdaterte resultater, tabeller og kampstatistikk. Her finner du også terminliste med kommende kamper. For spesifikke spørsmål om lagets prestasjoner, kontakt klubben på post@askerfotball.no.",
+    "url": "https://askerfotball.no/resultater"
   }
 };
 
@@ -869,7 +909,7 @@ const FAQ_RESPONSES = {
     reply: "For å melde interesse for å bli frivillig på kampdag eller andre arrangementer:\n\nKontakt klubben på:\nE-post: post@askerfotball.no\nTelefon: +47 907 51 170\n\nVi setter stor pris på frivillig innsats!",
     source: {
       title: "Frivillig arbeid",
-      url: "https://askerfotball.no",
+      url: "https://askerfotball.no/nyheter/vi-onsker-flere-frivillige-velkommen-i-klubben",
       score: 10
     }
   },
@@ -894,6 +934,30 @@ const FAQ_RESPONSES = {
     source: {
       title: "Sponsormuligheter",
       url: "https://askerfotball.no",
+      score: 10
+    }
+  },
+  "hvor kan jeg parkere på føyka": {
+    reply: "Du kan parkere mot avgift nedenfor stadion på Føyka.\n\nHusk synlig billett i vinduet!\n\nAdressen er: Føyka, Asker.",
+    source: {
+      title: "Parkering på Føyka",
+      url: "https://askerfotball.no/om-stadion/slik-finner-du-frem",
+      score: 10
+    }
+  },
+  "hva får jeg for å sponse klubben": {
+    reply: "Som sponsor får du:\n\n• Synlighet på stadion og nettsiden\n• Mulighet til å nå ut til et engasjert publikum\n• Positiv profilering gjennom idrett og lokalsamfunn\n\nFor detaljert informasjon om sponsorpakker og fordeler:\n\nKontakt Morten Sommerfeldt (markedsansvarlig):\nE-post: morten@askerfotball.no\nTelefon: +47 907 51 170",
+    source: {
+      title: "Sponsormuligheter",
+      url: "https://askerfotball.no/partnere/bli-samarbeidspartner",
+      score: 10
+    }
+  },
+  "hvor ligger banen": {
+    reply: "Banen ligger på Føyka stadion i Asker.\n\nDet er en kunstgressbane som brukes av Asker Fotball.\n\nStadion har også Fotballhuset med garderober og klubbhus.\n\nAdresse: Føyka, Asker",
+    source: {
+      title: "Føyka stadion",
+      url: "https://askerfotball.no/om-stadion",
       score: 10
     }
   }
@@ -1047,6 +1111,12 @@ async function searchEmbeddedKnowledge(query, apiKey) {
     const semanticMatches = getSemanticMatches(queryLower, key);
     score += semanticMatches;
     
+    // NEW: Apply thematic boost
+    score += getThematicBoost(queryLower, key);
+    
+    // NEW: Apply irrelevance penalty
+    score -= getIrrelevancePenalty(queryLower, key);
+    
     if (score > 0) {
       results.push({
         key,
@@ -1116,6 +1186,342 @@ async function searchEmbeddedKnowledge(query, apiKey) {
   }
   
   return sortedResults;
+}
+
+/**
+ * Get thematic boost score based on query intent
+ */
+function getThematicBoost(query, entryKey) {
+  let boost = 0;
+  
+  // Kontakt og personer
+  if (query.includes('kontakt') || query.includes('hvem er') || 
+      query.includes('epost') || query.includes('e-post') || query.includes('telefon') || query.includes('ring')) {
+    if (entryKey === 'kontakt') boost += 40;
+    if (entryKey === 'media_kommunikasjon' && (query.includes('presse') || query.includes('media'))) boost += 60;
+  }
+  
+  // Regler, lover, retningslinjer
+  if (query.includes('regel') || query.includes('atferd') || query.includes('lov') || 
+      query.includes('vedtekt') || query.includes('retningslinjer')) {
+    if (entryKey === 'retningslinjer') boost += 80;
+    if (entryKey === 'klubbens_lover') boost += 60;
+  }
+  
+  // Atferdskrav specifically
+  if (query.includes('atferdskrav')) {
+    if (entryKey === 'retningslinjer') boost += 40;
+  }
+  
+  // Reglement specifically
+  if (query.includes('reglement')) {
+    if (entryKey === 'klubbens_lover') boost += 100;
+  }
+  
+  // App, livescore, digital
+  if (query.includes('app') || query.includes('livescore') || 
+      (query.includes('følge') && (query.includes('score') || query.includes('resultat')))) {
+    if (entryKey === 'app_info') boost += 70;
+  }
+  
+  // Varsling og bekymringsmeldinger
+  if (query.includes('varsling') || query.includes('bekymring') || 
+      query.includes('avvik') || query.includes('varslingsknapp') ||
+      query.includes('regelbrudd') || query.includes('melde')) {
+    if (entryKey === 'varsling') boost += 120;
+  }
+  
+  // Fasiliteter - kiosk, mat, servering
+  if (query.includes('kiosk') || query.includes('mat') || 
+      query.includes('kaffe') || query.includes('servering')) {
+    if (entryKey === 'fotballhuset') boost += 70;
+  }
+  
+  // Betaling og økonomi
+  if (query.includes('betaling') || query.includes('faktura') || 
+      query.includes('betale') || query.includes('kontingent')) {
+    if (entryKey === 'betalingsmetoder') boost += 50;
+  }
+  
+  // Familierabatt
+  if (query.includes('familie') && query.includes('rabatt')) {
+    if (entryKey === 'familierabatt') boost += 60;
+  }
+  
+  // Sosiale medier og hashtag
+  if (query.includes('facebook') || query.includes('instagram') || 
+      query.includes('twitter') || query.includes('sosiale medier') ||
+      query.includes('hashtag') || query.includes('#') || query.includes('some')) {
+    if (entryKey === 'sosiale_medier') boost += 100;
+  }
+  
+  // Pengestøtte og solidaritetsfond
+  if (query.includes('pengestøtte') || query.includes('penge støtte') || 
+      query.includes('støtte') || query.includes('solidaritet') ||
+      (query.includes('få') && (query.includes('støtte') || query.includes('hjelp'))) ||
+      (query.includes('søke') && query.includes('støtte')) ||
+      query.includes('finansiell') || query.includes('økonomisk hjelp')) {
+    if (entryKey === 'solidaritetsfond') boost += 120;
+  }
+  
+  // Billetter og VIP
+  if (query.includes('billett') || query.includes('vip') || 
+      query.includes('enkeltbillett') || query.includes('sesongkort') ||
+      query.includes('kampbillett') || (query.includes('kjøpe') && query.includes('kamp'))) {
+    if (entryKey === 'billetter_info') boost += 120;
+  }
+  
+  // Camp og leir
+  if (query.includes('camp') || query.includes('leir') || 
+      query.includes('sommerleir') || query.includes('treningsleir')) {
+    if (entryKey === 'obos_camp') boost += 100;
+  }
+  
+  // Prøvespiller og påmelding
+  if (query.includes('prøvespiller') || query.includes('prøve') || 
+      (query.includes('bli') && query.includes('spiller')) || 
+      query.includes('tryout') || (query.includes('melde') && query.includes('på')) ||
+      (query.includes('hvordan') && query.includes('delta'))) {
+    if (entryKey === 'provespiller_pamelding') boost += 120;
+  }
+  
+  // Sesongresultater og tabeller
+  if (query.includes('resultater') || query.includes('går det') || 
+      query.includes('tabell') || query.includes('plassering') ||
+      (query.includes('hvordan') && (query.includes('laget') || query.includes('går'))) ||
+      (query.includes('i') && query.includes('år')) || query.includes('sesong')) {
+    if (entryKey === 'sesong_resultater') boost += 100;
+  }
+  
+  // Veteranlag
+  if (query.includes('veteran') || query.includes('gåfotball') || 
+      query.includes('gå-fotball')) {
+    if (entryKey === 'veteranlag_gafotball') boost += 100;
+  }
+  
+  // Akademi pris/kostnad - specificly for akademi_info not generic priser_medlemskap
+  if ((query.includes('akademi') || query.includes('obos')) && 
+      (query.includes('pris') || query.includes('koster') || query.includes('kostnad'))) {
+    if (entryKey === 'akademi_info') boost += 80;
+  }
+  
+  // Partnere og sponsorer
+  if (query.includes('egon') || query.includes('partner') || query.includes('sponsor')) {
+    if (entryKey === 'partnere_detail') boost += 60;
+  }
+  
+  // Presselounge
+  if (query.includes('presselounge') || (query.includes('presse') && query.includes('lounge'))) {
+    if (entryKey === 'presselounge_tilgang') boost += 80;
+  }
+  
+  // Utstyr og utlån
+  if (query.includes('låne') || query.includes('utlån') || query.includes('utstyr')) {
+    if (entryKey === 'utstyr_utlan') boost += 70;
+  }
+  
+  // Booking og reservasjon
+  if (query.includes('booking') || query.includes('booke') || query.includes('reservere') || query.includes('leie')) {
+    if (entryKey === 'booking_baner') boost += 100;
+  }
+  
+  // Trening og delta
+  if ((query.includes('trene') || query.includes('delta') || query.includes('bli med')) && 
+      !query.includes('akademi') && !query.includes('obos')) {
+    if (entryKey === 'lag_struktur') boost += 60;
+    if (entryKey === 'lag_oversikt') boost += 50;
+  }
+  
+  // Doping
+  if (query.includes('doping') || query.includes('antidoping')) {
+    if (entryKey === 'doping_antidoping') boost += 80;
+  }
+  
+  return boost;
+}
+
+/**
+ * Get penalty for irrelevant entries
+ */
+function getIrrelevancePenalty(query, entryKey) {
+  let penalty = 0;
+  
+  // Terminliste over-matches - penalize unless clearly about matches
+  if (entryKey === 'terminliste' || entryKey === 'terminliste_hvor') {
+    const isAboutMatches = (query.includes('kamp') || query.includes('terminliste') || 
+                          query.includes('program') || query.includes('når spiller') || 
+                          query.includes('motstander') || query.includes('neste kamp')) &&
+                          !query.includes('prøvespiller') && !query.includes('bli spiller') &&
+                          !query.includes('resultater') && !query.includes('går det');
+    const isAboutPrøvespiller = query.includes('prøvespiller') || query.includes('prøve') || 
+                                (query.includes('bli') && query.includes('spiller')) ||
+                                query.includes('tryout');
+    const isAboutResults = query.includes('resultater') || query.includes('går det') || 
+                          query.includes('tabell') || (query.includes('i') && query.includes('år'));
+    
+    if (isAboutPrøvespiller) {
+      penalty += 120; // Very heavy penalty for prøvespiller queries
+    } else if (isAboutResults) {
+      penalty += 100; // Heavy penalty for results queries
+    } else if (!isAboutMatches) {
+      penalty += 40; // Medium penalty for other non-match queries
+    }
+  }
+  
+  // Penalize dugnad/frivillig when asking about financial support
+  if (entryKey === 'dugnad_info' || entryKey === 'frivillig') {
+    const isAboutFinancialSupport = query.includes('pengestøtte') || query.includes('støtte') || 
+                                   query.includes('solidaritet') || query.includes('økonomisk hjelp') ||
+                                   (query.includes('få') && (query.includes('støtte') || query.includes('penger')));
+    if (isAboutFinancialSupport) {
+      penalty += 150; // Very heavy penalty - dugnad is not about financial support
+    }
+  }
+  
+  // Solidaritetsfond over-matches on "finnes det"
+  if (entryKey === 'solidaritetsfond') {
+    const isAboutSolidarity = query.includes('solidaritet') || query.includes('støtte') || 
+                             query.includes('økonomisk') || query.includes('fond') ||
+                             query.includes('pengestøtte') || query.includes('penger');
+    if (!isAboutSolidarity) {
+      penalty += 50;
+    }
+  }
+  
+  // "Om klubben" is too generic
+  if (entryKey === 'klubb_info') {
+    penalty += 25;
+  }
+  
+  // NEW: Penalize generic "priser_medlemskap" when query is about specific topics
+  if (entryKey === 'priser_medlemskap') {
+    // If asking about something other than membership, penalize heavily
+    const isAboutMembership = query.includes('medlemskap') || query.includes('medlem');
+    const isAboutAkademi = query.includes('akademi');
+    const isAboutBilletter = query.includes('billett') || query.includes('vip') || 
+                            query.includes('enkelt') || query.includes('sesongkort') ||
+                            query.includes('kjøpe') || query.includes('inngang');
+    const isAboutLeir = query.includes('leir') || query.includes('camp') || 
+                       query.includes('sommerleir') || query.includes('treningsleir');
+    
+    if (isAboutBilletter) {
+      penalty += 80; // Very heavy penalty for billett-related queries
+    } else if (isAboutLeir) {
+      penalty += 70; // Very heavy penalty for camp-related queries
+    } else if (isAboutAkademi) {
+      penalty += 50; // Heavy penalty if asking about akademi specifically (akademi_info is better)
+    } else if (!isAboutMembership) {
+      penalty += 40; // Medium penalty for other queries
+    }
+  }
+  
+  // NEW: Penalize "parkering" when not asking about parking
+  if (entryKey === 'parkering') {
+    const isAboutParking = query.includes('parkering') || query.includes('parkere') || 
+                          query.includes('bil') || query.includes('kjøre') ||
+                          query.includes('hvor parkere');
+    const isAboutBilletter = query.includes('billett') || query.includes('vip') || 
+                            query.includes('kjøpe') || query.includes('inngang');
+    if (isAboutBilletter) {
+      penalty += 100; // Extreme penalty for billett queries
+    } else if (!isAboutParking) {
+      penalty += 70; // Heavy penalty for other non-parking queries
+    }
+  }
+  
+  // NEW: Penalize "retningslinjer" when asking about social media or hashtags
+  if (entryKey === 'retningslinjer') {
+    const isAboutSocialMedia = query.includes('hashtag') || query.includes('#') ||
+                              query.includes('facebook') || query.includes('instagram') || 
+                              query.includes('twitter') || query.includes('sosiale medier') ||
+                              query.includes('sosiale') || query.includes('media');
+    if (isAboutSocialMedia) {
+      penalty += 80; // Very heavy penalty
+    }
+  }
+  
+  // Penalize "media_kommunikasjon" when asking about hashtag/social media
+  if (entryKey === 'media_kommunikasjon') {
+    const isAboutHashtagOrSocial = query.includes('hashtag') || query.includes('#') ||
+                                   query.includes('facebook') || query.includes('instagram');
+    if (isAboutHashtagOrSocial) {
+      penalty += 90; // Very heavy penalty - prefer sosiale_medier
+    }
+  }
+  
+  // NEW: Penalize "fotballhuset" when asking about junioravdeling or billetter
+  if (entryKey === 'fotballhuset') {
+    const isAboutJunior = query.includes('junior') || query.includes('ungdom') || 
+                         query.includes('junioravdeling') || query.includes('utviklingslag');
+    const isAboutBilletter = query.includes('billett') || query.includes('vip') || 
+                            query.includes('kjøpe') || query.includes('inngang') ||
+                            query.includes('enkeltbillett');
+    if (isAboutBilletter) {
+      penalty += 90; // Very heavy penalty - prefer billetter_info
+    } else if (isAboutJunior) {
+      penalty += 50;
+    }
+  }
+  
+  // NEW: Penalize generic "lag_oversikt" when more specific source exists
+  if (entryKey === 'lag_oversikt') {
+    const isAboutVeteran = query.includes('veteran') || query.includes('gåfotball') || 
+                          query.includes('gå-fotball');
+    const isAboutG19 = query.includes('g19') || query.includes('gutter 19');
+    const isAboutGate = query.includes('gate') || query.includes('gatelaget');
+    const isAboutAkademi = query.includes('akademi') || query.includes('obos akademi');
+    const isAboutPrøvespiller = query.includes('prøvespiller') || query.includes('prøve') || 
+                                (query.includes('bli') && query.includes('spiller'));
+    const isAboutResults = query.includes('resultater') || query.includes('går det') || 
+                          (query.includes('i') && query.includes('år'));
+    
+    if (isAboutPrøvespiller) {
+      penalty += 80; // Heavy penalty - prefer provespiller_pamelding
+    } else if (isAboutResults) {
+      penalty += 70; // Heavy penalty - prefer sesong_resultater
+    } else if (isAboutVeteran) {
+      penalty += 90; // Very heavy penalty - prefer veteranlag_gafotball
+    } else if (isAboutG19 || isAboutGate || isAboutAkademi) {
+      penalty += 45; // Prefer specific sources
+    }
+  }
+  
+  // Penalize "lag_struktur" and "samfunnslag_detaljert" when asking about veteran
+  if (entryKey === 'lag_struktur' || entryKey === 'samfunnslag_detaljert') {
+    const isAboutVeteran = query.includes('veteran') || query.includes('gåfotball') || 
+                          query.includes('gå-fotball');
+    if (isAboutVeteran) {
+      penalty += 85; // Very heavy penalty - prefer veteranlag_gafotball
+    }
+  }
+  
+  // Penalize spillere_a_lag when asking about prøvespiller or results
+  if (entryKey === 'spillere_a_lag') {
+    const isAboutPrøvespiller = query.includes('prøvespiller') || query.includes('prøve') || 
+                                (query.includes('bli') && query.includes('spiller'));
+    const isAboutResults = query.includes('resultater') || query.includes('går det') || 
+                          (query.includes('i') && query.includes('år'));
+    
+    if (isAboutPrøvespiller) {
+      penalty += 90; // Very heavy penalty
+    } else if (isAboutResults) {
+      penalty += 80; // Heavy penalty
+    }
+  }
+  
+  // NEW: Boost akademi_info when asking about akademi price/cost
+  if (entryKey === 'akademi_info') {
+    const isAboutAkademiPrice = (query.includes('akademi') || query.includes('obos')) && 
+                                (query.includes('pris') || query.includes('koster') || 
+                                 query.includes('kostnad') || query.includes('betaling'));
+    if (isAboutAkademiPrice) {
+      // This is handled by negative penalty (boost) in semantic matching already
+      // Just ensure no penalty here
+      penalty -= 10; // Small boost
+    }
+  }
+  
+  return penalty;
 }
 
 /**
@@ -1258,8 +1664,8 @@ function getSemanticMatches(query, key) {
       score: 20
     },
     'akademi_info': {
-      terms: ['akademi', 'skole', 'opplæring', 'utvikling', 'OBOS', 'barn', 'ungdom', 'trening', 'kurs', '7-13', 'skoleruta', 'fridager', 'melde på', 'påmelding', 'camp'],
-      score: 15
+      terms: ['akademi', 'skole', 'opplæring', 'utvikling', 'OBOS', 'barn', 'ungdom', 'trening', 'kurs', '7-13', 'skoleruta', 'fridager', 'melde på', 'påmelding', 'pris akademi', 'kostnad akademi', 'akademi pris', 'akademi kostnad', 'akademi betaling'],
+      score: 40 // Higher score for akademi queries
     },
     // FIXED: Add missing mappings for better source matching
     'kontakt': {
@@ -1303,8 +1709,8 @@ function getSemanticMatches(query, key) {
       score: 15
     },
     'solidaritetsfond': {
-      terms: ['solidaritet', 'fond', 'støtte', 'økonomisk', 'hjelp', 'stønad', 'ordning'],
-      score: 20
+      terms: ['solidaritet', 'fond', 'støtte', 'økonomisk', 'hjelp', 'stønad', 'ordning', 'pengestøtte', 'penge støtte', 'få støtte', 'søke støtte', 'trenger støtte', 'finansiell støtte', 'økonomisk hjelp', 'penger', 'råd'],
+      score: 45 // Higher score for financial support queries
     },
     'varsling': {
       terms: ['varsle', 'varsling', 'bekymring', 'avvik', 'melding', 'uønsket', 'hendelse'],
@@ -1323,8 +1729,8 @@ function getSemanticMatches(query, key) {
       score: 30
     },
     'obos_camp': {
-      terms: ['camp', 'sommerleir', 'sommer', 'ferie', 'uke 26', 'uke 32', 'uke 33', 'lars henrik', 'dahl', 'melde på'],
-      score: 20
+      terms: ['camp', 'sommerleir', 'sommer', 'ferie', 'uke 26', 'uke 32', 'uke 33', 'lars henrik', 'dahl', 'melde på', 'treningsleir', 'leir', 'sommerkamp', 'feriekamp', 'koster camp', 'koster treningsleir', 'koster leir', 'pris camp', 'pris leir'],
+      score: 55 // Very high score for camp-specific queries - increased from 50
     },
     'utviklingslag_trenere': {
       terms: ['utviklingslag', 'trenere', 'trener', 'svein roger', 'pettersen', 'spillerutvikler', 'ungdomslag'],
@@ -1372,6 +1778,79 @@ function getSemanticMatches(query, key) {
     },
     'app_info': {
       terms: ['app', 'applikasjon', 'mobilapp', 'telefonapp', 'nlf', 'norsk ligafotball', 'minfotball', 'mobil'],
+      score: 30
+    },
+    // NEW: Add missing semantic mappings for better source matching
+    'sosiale_medier': {
+      terms: ['hashtag', '#', 'facebook', 'instagram', 'twitter', 'sosiale medier', 'sosiale', 'media', 'følg', 'følge', 'del', 'dele', '#askerfotball', 'bilder', 'opplevelser', 'social', 'some', 'klubbens hashtag', 'klubben hashtag', 'for klubben'],
+      score: 55 // Very high score for specific match - increased from 50
+    },
+    'veteranlag_gafotball': {
+      terms: ['veteran', 'veteranlag', 'gåfotball', 'gå fotball', 'eldre', 'senior spillere', 'gå-fotball', 'veteraner', 'elder', 'finnes veteranlag', 'finnes det veteranlag', 'har veteranlag'],
+      score: 50 // Very high score for specific match - increased from 45
+    },
+    'billetter_info': {
+      terms: ['billett', 'billetter', 'enkeltbillett', 'enkeltbilletter', 'vip', 'vip-billett', 'vip billetter', 'sesongkort', 'kjøpe billett', 'billettkjøp', 'kampbillett', 'kampbilletter', 'kjøpe', 'inngang', 'publikum', 'koster billett', 'koster enkeltbillett', 'billettpris', 'pris billett'],
+      score: 60 // Highest priority for billetter - increased from 55
+    },
+    'provespiller_pamelding': {
+      terms: ['prøvespiller', 'prøve', 'prøv', 'bli med', 'melde på', 'påmelding', 'registrering', 'nye spillere', 'bli spiller', 'hvordan bli', 'delta', 'tryout'],
+      score: 50 // High priority for prøvespiller queries
+    },
+    'sesong_resultater': {
+      terms: ['resultater', 'går det', 'hvordan går', 'tabeller', 'tabell', 'plassering', 'står laget', 'sesong', 'i år', 'denne sesongen', 'poeng', 'kampresultat'],
+      score: 45 // High priority for season/results queries
+    },
+    'g19_junior': {
+      terms: ['g19', 'g19-laget', 'g19 laget', 'gutter 19', 'gutter-19', 'gutter19', 'junior', 'svein roger', 'jakob lillestjerna'],
+      score: 35
+    },
+    '2012_kullet': {
+      terms: ['2012', '2012-kullet', '2012 kullet', 'kullet 2012'],
+      score: 35
+    },
+    'gatelaget': {
+      terms: ['gatelaget', 'gate-laget', 'rusrelaterte', 'rus', 'ettervern'],
+      score: 35
+    },
+    'haeppe': {
+      terms: ['hæppe', 'heppe', 'utenforskap', 'ungdom'],
+      score: 35
+    },
+    'samfunnslag_detaljert': {
+      terms: ['samfunnslag', 'samfunn', 'inkludering', 'tiltak'],
+      score: 30
+    },
+    'partnere_detail': {
+      terms: ['partner', 'partnere', 'sponsor', 'obos', 'egon', 'kiwi', 'handelsbanken'],
+      score: 30
+    },
+    'presselounge_tilgang': {
+      terms: ['presselounge', 'presse', 'lounge', 'tilgang', 'journalist', 'media'],
+      score: 40
+    },
+    'media_kommunikasjon': {
+      terms: ['media', 'mediaansvarlig', 'mathis', 'banggren', 'kommunikasjon', 'pressekontakt'],
+      score: 30
+    },
+    'årsmøter': {
+      terms: ['årsmøte', 'årsmøter', 'møte', 'årlig møte', 'delta', 'medlemsmøte'],
+      score: 35
+    },
+    'betalingsmetoder': {
+      terms: ['betaling', 'betale', 'vipps', 'kontant', 'bank', 'faktura', 'kontingent'],
+      score: 30
+    },
+    'klubbens_lover': {
+      terms: ['lover', 'reglement', 'vedtekter', 'regler', 'klubbens lover'],
+      score: 35
+    },
+    'doping_antidoping': {
+      terms: ['doping', 'dopingkontroll', 'antidoping', 'testing', 'ren idrett'],
+      score: 40
+    },
+    'historiske_profiler': {
+      terms: ['profiler', 'største', 'spillere', 'kamper', 'flest kamper', 'legender'],
       score: 30
     }
   };

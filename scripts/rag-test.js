@@ -292,7 +292,7 @@ const QUESTION_POOL = [
 
 // Test configuration
 const CONFIG = {
-  endpoint: 'http://localhost:8888/.netlify/functions/chat',
+  endpoint: 'http://localhost:8889/.netlify/functions/chat',
   questionsPerTest: 10,
   delayBetweenRequests: 500, // ms
   resultsDir: path.join(__dirname, '..', 'storage', 'metrics'),
@@ -850,17 +850,110 @@ class TestHistoryManager {
     const simplePath = path.join(CONFIG.resultsDir, 'simple-test-results.json');
     const rootSimplePath = path.join(__dirname, '..', 'simple-test-results.json');
     
+    // Also create readable markdown version
+    const markdownPath = path.join(__dirname, '..', 'test-summary.md');
+    const markdown = this.generateMarkdownSummary(testData, analysis);
+    
     try {
-      // Save to metrics directory
+      // Save JSON
       fs.writeFileSync(simplePath, JSON.stringify(simpleData, null, 2));
       console.log(`💾 Results saved to: ${simplePath}`);
       
-      // Also save to root directory
       fs.writeFileSync(rootSimplePath, JSON.stringify(simpleData, null, 2));
       console.log(`💾 Results also saved to: ${rootSimplePath}`);
+      
+      // Save readable markdown
+      fs.writeFileSync(markdownPath, markdown);
+      console.log(`📄 Readable summary saved to: ${markdownPath}`);
     } catch (error) {
       console.error('Could not save simple test results:', error.message);
     }
+  }
+
+  generateMarkdownSummary(testData, analysis) {
+    const lines = [];
+    
+    lines.push('# Test Summary');
+    lines.push('');
+    lines.push(`**Tidspunkt**: ${new Date(testData.timestamp).toLocaleString('no-NO')}`);
+    lines.push('');
+    lines.push('---');
+    lines.push('');
+    
+    // Analysis section
+    lines.push('## 📊 Analyse');
+    lines.push('');
+    lines.push(`- **Overall Score**: ${analysis.overallScore}%`);
+    lines.push(`- **Fallback Count**: ${analysis.fallbackCount}`);
+    lines.push(`- **Avg Response Time**: ${analysis.avgResponseTime}ms`);
+    lines.push('');
+    
+    // Problems
+    lines.push('### 🔍 Problemer');
+    lines.push('');
+    lines.push(analysis.problems);
+    lines.push('');
+    
+    // Actions
+    lines.push('### 💡 Tiltak');
+    lines.push('');
+    lines.push(analysis.tiltak);
+    lines.push('');
+    
+    // Cursor prompt
+    lines.push('### 🤖 Cursor Agent Prompt');
+    lines.push('');
+    lines.push('```');
+    lines.push(analysis.cursorPrompt);
+    lines.push('```');
+    lines.push('');
+    
+    lines.push('---');
+    lines.push('');
+    
+    // Test results
+    lines.push('## 📝 Spørsmål og Svar');
+    lines.push('');
+    
+    testData.report.results.forEach((result, index) => {
+      lines.push(`### ${index + 1}. ${result.query}`);
+      lines.push('');
+      lines.push(result.reply || 'Ingen svar');
+      lines.push('');
+    });
+    
+    return lines.join('\n');
+  }
+
+  // Helper function to extract key topic from question
+  extractKeyTopic(query) {
+    const q = query.toLowerCase();
+    
+    // Specific topic mappings
+    if (q.includes('reglement')) return 'reglement';
+    if (q.includes('årsmøte')) return 'årsmøte';
+    if (q.includes('nyheter')) return 'nyheter';
+    if (q.includes('sesongkort')) return 'sesongkort';
+    if (q.includes('farger')) return 'farger';
+    if (q.includes('kiosk')) return 'kiosk';
+    if (q.includes('presselounge')) return 'presselounge';
+    if (q.includes('sponsor')) return 'sponsor';
+    if (q.includes('rekruttering')) return 'rekruttering';
+    if (q.includes('taktisk')) return 'taktisk trening';
+    if (q.includes('akademi')) return 'akademi';
+    if (q.includes('trene inne')) return 'innendørs';
+    if (q.includes('artikkel')) return 'artikler';
+    if (q.includes('g19') || q.includes('g14') || q.includes('g13') || q.includes('g15')) {
+      const match = q.match(/g\d+/);
+      return match ? match[0] + '-lag' : 'lag';
+    }
+    
+    // Extract meaningful words (remove stopwords)
+    const stopwords = ['hvem', 'hva', 'hvor', 'når', 'hvordan', 'er', 'på', 'i', 'av', 'til', 'fra', 'kan', 'jeg', 'vi', 'du', 'det', 'den', 'blir', 'bli', 'har', 'finnes'];
+    const words = q.replace(/\?/g, '').split(' ').filter(w => w && !stopwords.includes(w));
+    
+    // Return last 1-2 meaningful words
+    return words.length > 0 ? words.slice(-2).join(' ') : 'ukjent';
   }
 
   analyzeProblems(testData) {
@@ -888,18 +981,18 @@ class TestHistoryManager {
     
     // Fallback issues (most critical)
     if (fallbackResults.length > 0) {
-      const questions = fallbackResults.slice(0, 3).map(r => r.questionNumber).join(', ');
+      const topicKeywords = fallbackResults.slice(0, 3).map(r => `"${this.extractKeyTopic(r.query)}"`).join(', ');
       const topics = fallbackResults.slice(0, 3).map(r => `"${r.query}"`).join(',\n  ');
-      problemParts.push(`Klarte ikke svare på spørsmål ${questions} (fallback):\n  ${topics}.`);
+      problemParts.push(`Klarte ikke svare på spørsmål ${topicKeywords} (fallback):\n  ${topics}.`);
     }
     
     // Low quality answers
     if (lowQualityResults.length > 0 && lowQualityResults.length !== fallbackResults.length) {
       const nonFallbackLowQuality = lowQualityResults.filter(r => !r.fallbackUsed).slice(0, 3);
       if (nonFallbackLowQuality.length > 0) {
-        const questions = nonFallbackLowQuality.map(r => r.questionNumber).join(', ');
+        const topicKeywords = nonFallbackLowQuality.map(r => `"${this.extractKeyTopic(r.query)}"`).join(', ');
         const scores = nonFallbackLowQuality.map(r => Math.round(r.overallScore * 100)).join('%, ');
-        problemParts.push(`Spørsmål ${questions} hadde lav kvalitet\n  (${scores}%).`);
+        problemParts.push(`Spørsmål ${topicKeywords} hadde lav kvalitet\n  (${scores}%).`);
       }
     }
     
@@ -945,25 +1038,66 @@ class TestHistoryManager {
       if (nonFallbackLowQuality.length > 0) {
         const improvements = nonFallbackLowQuality.map(r => {
           const q = r.query.toLowerCase();
-          // Identify the EMBEDDED_KNOWLEDGE entry and suggest specific improvement
-          if (q.includes('stadion') && q.includes('ligger')) return 'Føyka stadion-entry: legg til fullstendig adresse';
-          if (q.includes('sommerleir') && q.includes('arrangeres')) return 'OBOS Camp-entry: legg til detaljer om aktiviteter';
-          if (q.includes('parkering') && q.includes('koster')) return 'Parkering-entry: legg til spesifikke priser';
-          if (q.includes('e-post') || q.includes('epost')) return 'Kontakt-entry: gjør e-postadresse mer synlig';
-          if (q.includes('frivillig')) return 'Frivillig-entry: legg til prosess og krav';
-          if (q.includes('dager') && q.includes('akademi')) return 'Akademi-entry: presiser dag-valg mer tydelig';
-          
-          // Generic improvement based on question type
           const entry = r.sources && r.sources.length > 0 ? r.sources[0].title : 'relevant entry';
-          return `${entry}: utvid med mer detaljer`;
+          const score = Math.round(r.overallScore * 100);
+          
+          // Specific improvements with concrete actions
+          if (q.includes('stadion') && q.includes('ligger')) {
+            return `Føyka stadion (${score}%): legg til fullstendig adresse "Skaugumvegen 4, 1387 Asker" i content-feltet`;
+          }
+          if (q.includes('sommerleir') && q.includes('arrangeres') || q.includes('arrangerer')) {
+            return `OBOS Camp (${score}%): utvid content med aktiviteter (fotballtrening, lek, turnering)`;
+          }
+          if (q.includes('parkering') && q.includes('koster')) {
+            return `Parkering (${score}%): legg til konkrete priser i content-feltet`;
+          }
+          if (q.includes('e-post') || q.includes('epost')) {
+            return `Kontakt (${score}%): flytt e-postadresse øverst i content og legg til formatert som "E-post: post@askerfotball.no"`;
+          }
+          if (q.includes('frivillig')) {
+            return `Frivillig (${score}%): legg til steg-for-steg prosess (1. Kontakt..., 2. Bli med på...)`;
+          }
+          if (q.includes('dager') && q.includes('akademi')) {
+            return `Akademi (${score}%): legg til "Du kan velge 1-5 dager per uke" øverst i content`;
+          }
+          if (q.includes('reglement')) {
+            return `${entry} (${score}%): legg til direktelenke til PDF og spesifiser hvilke reglement som finnes`;
+          }
+          if (q.includes('årsmøte')) {
+            return `${entry} (${score}%): legg til info om hvem som kan delta ("alle medlemmer") og typisk måned (februar/mars)`;
+          }
+          if (q.includes('nyheter')) {
+            return `${entry} (${score}%): legg til direktelenke til nyhetsseksjonen på nettsiden`;
+          }
+          if (q.includes('united')) {
+            return `${entry} (${score}%): utvid med kontaktinfo til trenerne og treningsdager (mandag kveld)`;
+          }
+          if (q.includes('akademi')) {
+            return `${entry} (${score}%): legg til info om aldersgruppe (7-13 år) og priser (955-2500kr/mnd)`;
+          }
+          
+          // Generic improvement based on entry
+          return `${entry} (${score}%): utvid content-feltet med mer spesifikke detaljer (kontaktinfo, tider, priser, steg-for-steg)`;
         });
-        actionParts.push(`Forbedre: ${improvements.join('; ')}`);
+        actionParts.push(`Forbedre lav-kvalitet svar i EMBEDDED_KNOWLEDGE:\n   - ${improvements.join('\n   - ')}`);
       }
     }
     
-    // Action for slow responses
+    // Action for slow responses - with specific code changes
     if (slowResults.length > 5) {
-      actionParts.push('Optimaliser BM25-søk og øk caching i chat.js');
+      const avgTime = Math.round(slowResults.reduce((sum, r) => sum + r.responseTime, 0) / slowResults.length);
+      actionParts.push(
+        `Reduser responstid (gjennomsnitt ${avgTime}ms for trege svar):\n` +
+        `   - Øk CACHE_TTL fra 10 til 20 minutter (linje 25 i chat.js)\n` +
+        `   - Øk SEARCH_CACHE_TTL fra 30 til 60 minutter (linje 26)\n` +
+        `   - Reduser BM25 limit fra 5 til 3 chunks (linje 1082)`
+      );
+    } else if (slowResults.length > 2) {
+      const avgTime = Math.round(slowResults.reduce((sum, r) => sum + r.responseTime, 0) / slowResults.length);
+      actionParts.push(
+        `Reduser responstid (${slowResults.length} spørsmål >3s, gjennomsnitt ${avgTime}ms):\n` +
+        `   - Øk CACHE_TTL fra 10 til 15 minutter (linje 25 i chat.js)`
+      );
     }
     
     const tiltak = actionParts.length > 0 
@@ -994,23 +1128,38 @@ class TestHistoryManager {
     promptParts.push('\n');
     promptParts.push('SPESIFIKKE PROBLEMER:\n');
     
-    // Fallback issues
+    // Fallback issues - with specific examples
     if (fallbackResults.length > 0) {
       promptParts.push(`\n1. FALLBACK-SVAR\n`);
       promptParts.push(`   (${fallbackResults.length} spørsmål):\n\n`);
       fallbackResults.slice(0, 3).forEach((r, i) => {
+        const topic = this.extractKeyTopic(r.query);
         promptParts.push(`   ${i + 1}) "${r.query}"\n`);
+        promptParts.push(`      (tema: ${topic})\n`);
       });
       promptParts.push('\n   TILTAK:\n');
       promptParts.push('   - Åpne netlify/functions/chat.js\n');
       promptParts.push('   - Finn EMBEDDED_KNOWLEDGE objektet\n');
       promptParts.push('     (ca. linje 493)\n');
-      promptParts.push('   - Legg til nye entries for\n');
-      promptParts.push('     manglende emner\n');
+      promptParts.push('   - Legg til nye entries:\n\n');
+      
+      // Add specific examples for common missing topics
+      fallbackResults.slice(0, 3).forEach((r, i) => {
+        const q = r.query.toLowerCase();
+        const topic = this.extractKeyTopic(r.query);
+        
+        promptParts.push(`   Eksempel ${i + 1} (${topic}):\n`);
+        promptParts.push('   {\n');
+        promptParts.push(`     title: "${topic}",\n`);
+        promptParts.push(`     keywords: ["${topic.split(' ').join('", "')}"],\n`);
+        promptParts.push('     content: "[legg til relevant info her]"\n');
+        promptParts.push('   }\n\n');
+      });
+      
       promptParts.push('   - Test med: npm run test\n');
     }
     
-    // Low quality issues
+    // Low quality issues - with specific improvements
     if (lowQualityResults.length > 0 && lowQualityResults.length !== fallbackResults.length) {
       const nonFallbackLowQuality = lowQualityResults.filter(r => !r.fallbackUsed).slice(0, 3);
       if (nonFallbackLowQuality.length > 0) {
@@ -1018,29 +1167,52 @@ class TestHistoryManager {
         promptParts.push(`   (${nonFallbackLowQuality.length} spørsmål):\n\n`);
         nonFallbackLowQuality.forEach((r, i) => {
           const score = Math.round(r.overallScore * 100);
+          const entry = r.sources && r.sources.length > 0 ? r.sources[0].title : 'ukjent entry';
           promptParts.push(`   ${i + 1}) "${r.query}"\n`);
-          promptParts.push(`      (score: ${score}%)\n`);
+          promptParts.push(`      (score: ${score}%, entry: ${entry})\n`);
         });
         promptParts.push('\n   TILTAK:\n');
-        promptParts.push('   - Finn relevante entries i\n');
-        promptParts.push('     EMBEDDED_KNOWLEDGE\n');
-        promptParts.push('   - Utvid "content" feltet med\n');
-        promptParts.push('     mer detaljert info\n');
-        promptParts.push('   - Legg til spesifikke detaljer\n');
-        promptParts.push('     (priser, tider, adresser)\n');
+        promptParts.push('   - Åpne netlify/functions/chat.js\n');
+        promptParts.push('   - Finn EMBEDDED_KNOWLEDGE objektet\n');
+        promptParts.push('     (ca. linje 493)\n');
+        promptParts.push('   - For hver entry ovenfor:\n');
+        promptParts.push('     * Utvid "content" feltet\n');
+        promptParts.push('     * Legg til konkrete detaljer:\n');
+        promptParts.push('       - Priser (eks: "955-2500kr/mnd")\n');
+        promptParts.push('       - Tider (eks: "mandag 18:00")\n');
+        promptParts.push('       - Adresser (eks: "Skaugumvegen 4")\n');
+        promptParts.push('       - Kontaktinfo (navn + e-post)\n');
+        promptParts.push('       - Direktelenker til relevante sider\n');
+        promptParts.push('     * Bruk steg-for-steg hvis prosess\n');
       }
     }
     
-    // Performance issues
+    // Performance issues - with specific code changes
     if (slowResults.length > 5) {
+      const avgTime = Math.round(slowResults.reduce((sum, r) => sum + r.responseTime, 0) / slowResults.length);
       promptParts.push(`\n3. YTELSE\n`);
-      promptParts.push(`   (${slowResults.length} spørsmål >3s):\n\n`);
+      promptParts.push(`   (${slowResults.length} spørsmål >3s,\n`);
+      promptParts.push(`   gjennomsnitt ${avgTime}ms):\n\n`);
       promptParts.push('   TILTAK:\n');
-      promptParts.push('   - Gjennomgå caching-strategi\n');
-      promptParts.push('     i chat.js\n');
-      promptParts.push('   - Vurder å øke CACHE_TTL verdier\n');
-      promptParts.push('   - Optimaliser searchBM25()\n');
-      promptParts.push('     funksjonen\n');
+      promptParts.push('   - Åpne netlify/functions/chat.js\n');
+      promptParts.push('   - Linje 25: Endre CACHE_TTL\n');
+      promptParts.push('     fra 10 * 60 * 1000\n');
+      promptParts.push('     til 20 * 60 * 1000\n');
+      promptParts.push('   - Linje 26: Endre SEARCH_CACHE_TTL\n');
+      promptParts.push('     fra 30 * 60 * 1000\n');
+      promptParts.push('     til 60 * 60 * 1000\n');
+      promptParts.push('   - Linje 1082: Endre searchBM25 limit\n');
+      promptParts.push('     fra 5 til 3\n');
+    } else if (slowResults.length > 2) {
+      const avgTime = Math.round(slowResults.reduce((sum, r) => sum + r.responseTime, 0) / slowResults.length);
+      promptParts.push(`\n3. YTELSE\n`);
+      promptParts.push(`   (${slowResults.length} spørsmål >3s,\n`);
+      promptParts.push(`   gjennomsnitt ${avgTime}ms):\n\n`);
+      promptParts.push('   TILTAK:\n');
+      promptParts.push('   - Åpne netlify/functions/chat.js\n');
+      promptParts.push('   - Linje 25: Endre CACHE_TTL\n');
+      promptParts.push('     fra 10 * 60 * 1000\n');
+      promptParts.push('     til 15 * 60 * 1000\n');
     }
     
     promptParts.push('\nVERIFISERING:\n');

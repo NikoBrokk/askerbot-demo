@@ -5,6 +5,11 @@
 [functions]
   directory = "netlify/functions"
 
+# Scheduled Functions - Automatic morning crawl at 06:00 UTC
+# [[functions.scheduled]]
+#   function = "scheduled-crawl"
+#   schedule = "0 6 * * *"  # Every day at 06:00 UTC (08:00 Norwegian time)
+
 [[redirects]]
   from = "/"
   to = "/index.html"

@@ -1,8 +1,8 @@
 {
   "title": "Butikk / Asker Fotball",
   "url": "https://askerfotball.no/nyheter/butikk",
-  "type": "static",
-  "priority": 1,
+  "type": "news",
+  "priority": 1.2,
   "breadcrumbs": [],
   "content": "Butikk / Asker Fotball\n••\n••\n•••\n•• •Ved åpning av Klubb-butikk i 2. etg. på Fotballhuset[Forsiden](https://askerfotball.no/)\n/\n/-->**Klubb-shop; &nbsp;**Du får kjøpt;&nbsp;SesongkortSupporter artiklerHjemme-drakt&nbsp;Våre åpningstider :Hverdager 12.00 -19.00Lørdager 12.00 - 19.00Søndag 12.00 - 19.00 &nbsp;(endringer ved kamper, kan forekomme)Annonse:### Populære søk[PROFIL](https://askerfotball.no/pwa)[REDIGER PROFIL](https://askerfotball.no/pwa?edit=true)EPostMobilnummerFødselsdatoAdressePostnr.PoststedKjønn#### PushmeldingerSpesielle utvalgte nyheterAlle nyheterKamphendelser#### Kommunikasjon og SamtykkerREDIGER SAMTYKKERNyheterLagTerminlisteResultaterOm stadionOm klubbenAskerfotballens historieMarkedSamfunnButikkFøyka OBOS-campOBOS-AkademietFordelsprogramPUSH-VARSLINGERXX## HeaderContentXHeaderContentDenne nettsiden bruker cookies – se nærmere i vår cookie- og personvernerklæring.[Ok](#cookie-line-accept)[Les mer her](https://www.obos-ligaen.no/personvern)",
   "published_at": null,
@@ -11,5 +11,5 @@
     "description": "Ved åpning av Klubb-butikk i 2. etg. på Fotballhuset"
   },
   "word_count": 67,
-  "parsed_at": "2025-10-21T13:54:01.985Z"
+  "parsed_at": "2025-10-24T14:35:36.852Z"
 }

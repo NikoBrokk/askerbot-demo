@@ -40,3 +40,21 @@ __pycache__/
 *$py.class
 # Local Netlify folder
 .netlify
+
+# AI-genererte rapporter og dokumenter (skal i kontekst/ ikke i rot)
+/*_PROMPT.md
+/*_GUIDE.md
+/*_PLAN.md
+/*_SUMMARY.md
+/*_ANALYSIS.md
+/*_ANALYSE.md
+/*_OPPSUMMERING.md
+/*_README.md
+/*_REPORT.md
+/*_FIX.md
+/*_INSTRUKSJON.md
+/*-test-results.md
+/*-test-results.json
+
+# Unntak: test-summary.md er nødvendig
+!test-summary.md

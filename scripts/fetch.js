@@ -15,7 +15,7 @@ class KnowledgeBaseFetcher {
     this.baseDir = path.join(__dirname, '..');
     this.rawDir = path.join(this.baseDir, 'storage', 'raw');
     this.logsDir = path.join(this.baseDir, 'storage', 'logs');
-    this.allowlistPath = path.join(this.baseDir, 'allowlist.json');
+    this.allowlistPath = path.join(this.baseDir, 'config/allowlist.json');
     this.logPath = path.join(this.logsDir, 'fetch.jsonl');
     
     // Konfigurasjon

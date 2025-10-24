@@ -14,7 +14,7 @@ class HTMLParser {
     this.baseDir = path.join(__dirname, '..');
     this.rawDir = path.join(this.baseDir, 'storage', 'raw');
     this.parsedDir = path.join(this.baseDir, 'storage', 'parsed');
-    this.allowlistPath = path.join(this.baseDir, 'allowlist.json');
+    this.allowlistPath = path.join(this.baseDir, 'config/allowlist.json');
     
     // URL mapping will be loaded from allowlist.json
     this.urlMapping = {};
